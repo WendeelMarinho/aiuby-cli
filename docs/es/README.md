@@ -2,7 +2,7 @@
 
 # ECC
 
-![ECC - el sistema operativo nativo del harness para trabajo agentivo](../../assets/hero.png)
+![ECC - el sistema operativo nativo del harness para trabajo agentivo](../../assets/hero-aiuby.png)
 
 [![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&style=flat)](https://github.com/affaan-m/ECC/stargazers)
 [![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&style=flat)](https://github.com/affaan-m/ECC/network/members)

@@ -25,7 +25,7 @@
     "termsOfServiceURL": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
     "brandColor": "#E07856",
     "composerIcon": "../../assets/ecc-icon.svg",
-    "logo": "../../assets/hero.png",
+    "logo": "../../assets/hero-aiuby.png",
     "screenshots": [],
     "defaultPrompt": [
       "Use the tdd-workflow skill to write tests before implementation.",

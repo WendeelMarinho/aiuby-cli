@@ -2,7 +2,7 @@
 
 # Everything Claude Code
 
-![Everything Claude Code — система повышения эффективности сред агентного ИИ](../../assets/hero.png)
+![Everything Claude Code — система повышения эффективности сред агентного ИИ](../../assets/hero-aiuby.png)
 
 [![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
 [![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)

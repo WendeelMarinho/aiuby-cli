@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/hero.png" alt="Aiuby AI Engineering — sistema operacional de engenharia para IA" width="100%" />
+  <img src="assets/hero-aiuby.png" alt="Aiuby AI Engineering — sistema operacional de engenharia para IA" width="100%" />
 </p>
 
 <p align="center">
   <strong>Idioma:</strong>
-  <a href="README.md">Português (Brasil)</a> ·
-  <a href="docs/en/README.md">English</a>
+  <a href="README.md">English</a> ·
+  <a href="README.pt-BR.md">Português (Brasil)</a>
 </p>
 
 <p align="center">
@@ -732,19 +732,19 @@ Este README é o começo da mudança de identidade, não o fim da migração té
 
 Antes do lançamento público da Aiuby, revise:
 
-- [x] Criar a imagem oficial `assets/hero.png` da Aiuby AI Engineering.
-- [ ] Confirmar a URL definitiva do repositório GitHub.
+- [x] Criar a imagem oficial `assets/hero-aiuby.png` da Aiuby AI Engineering.
+- [x] Confirmar a URL definitiva do repositório GitHub.
 - [x] Criar o README completo em Português do Brasil.
 - [x] Preservar uma versão completa em inglês.
-- [ ] Substituir nomes de pacotes e links npm.
+- [x] Substituir nomes de pacotes e links npm.
 - [ ] Substituir identificadores do marketplace e plugin do Claude Code.
-- [ ] Migrar comandos de `ecc` para `aiuby` com retrocompatibilidade.
+- [x] Migrar comandos de `ecc` para `aiuby` com retrocompatibilidade.
 - [ ] Migrar variáveis de ambiente de `ECC_*` para `AIUBY_*`.
 - [ ] Renomear diretórios locais de estado e namespaces de memória.
 - [ ] Atualizar identidade e assets do dashboard.
 - [ ] Atualizar templates de issues, contatos de segurança e links de contribuição.
 - [ ] Revisar referências externas de parceiros, patrocinadores, comunidade e preços.
-- [ ] Preservar licença MIT e avisos de copyright obrigatórios.
+- [x] Preservar licença MIT e avisos de copyright obrigatórios.
 - [ ] Criar documentação de migração para instalações existentes.
 - [ ] Executar a suíte completa de testes, build e empacotamento.
 
