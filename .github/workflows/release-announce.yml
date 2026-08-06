@@ -1,8 +1,9 @@
 name: Release Announce
 
+# Desativado no fork Aiuby: publicava no Discord do projeto original e depende
+# de DISCORD_BOT_TOKEN / DISCORD_ANNOUNCE_CHANNEL_ID que nao existem aqui.
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: read

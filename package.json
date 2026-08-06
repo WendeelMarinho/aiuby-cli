@@ -1,7 +1,7 @@
 {
-  "name": "ecc-universal",
-  "version": "2.1.0",
-  "description": "Harness-native agent operating system for Codex, OpenCode, Cursor, Gemini, Claude Code, and terminal workflows - skills, hooks, rules, MCP conventions, and operator control-plane patterns",
+  "name": "aiuby-cli",
+  "version": "0.1.0",
+  "description": "Aiuby AI Engineering - agents, context, memory, architecture, observability, evaluation, and security installed as an engineering system across Claude Code, Codex, Cursor, OpenCode, Gemini, Zed, and Copilot",
   "publishConfig": {
     "access": "public"
   },
@@ -27,17 +27,17 @@
     "slides"
   ],
   "author": {
-    "name": "Affaan Mustafa",
-    "url": "https://x.com/affaan"
+    "name": "Wendeel Marinho",
+    "url": "https://github.com/WendeelMarinho"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/affaan-m/ECC.git"
+    "url": "git+https://github.com/WendeelMarinho/aiuby-cli.git"
   },
-  "homepage": "https://github.com/affaan-m/ECC#readme",
+  "homepage": "https://github.com/WendeelMarinho/aiuby-cli#readme",
   "bugs": {
-    "url": "https://github.com/affaan-m/ECC/issues"
+    "url": "https://github.com/WendeelMarinho/aiuby-cli/issues"
   },
   "files": [
     ".agents/",
@@ -420,9 +420,14 @@
     "!**/.pytest_cache/**"
   ],
   "bin": {
+    "aiuby": "scripts/ecc.js",
+    "aiuby-install": "scripts/install-apply.js",
+    "aiuby-control-pane": "scripts/control-pane.js",
+    "aiuby-memory-mcp": "scripts/memory-mcp.mjs",
+    "aiuby-plan-canvas": "scripts/plan-canvas.js",
     "ecc": "scripts/ecc.js",
-    "ecc-control-pane": "scripts/control-pane.js",
     "ecc-install": "scripts/install-apply.js",
+    "ecc-control-pane": "scripts/control-pane.js",
     "ecc-memory-mcp": "scripts/memory-mcp.mjs",
     "ecc-plan-canvas": "scripts/plan-canvas.js"
   },

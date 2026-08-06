@@ -733,18 +733,18 @@ Este README é o começo da mudança de identidade, não o fim da migração té
 Antes do lançamento público da Aiuby, revise:
 
 - [x] Criar a imagem oficial `assets/hero.png` da Aiuby AI Engineering.
-- [x] Confirmar a URL definitiva do repositório GitHub.
+- [ ] Confirmar a URL definitiva do repositório GitHub.
 - [x] Criar o README completo em Português do Brasil.
 - [x] Preservar uma versão completa em inglês.
-- [x] Substituir nomes de pacotes e links npm.
+- [ ] Substituir nomes de pacotes e links npm.
 - [ ] Substituir identificadores do marketplace e plugin do Claude Code.
-- [x] Migrar comandos de `ecc` para `aiuby` com retrocompatibilidade.
+- [ ] Migrar comandos de `ecc` para `aiuby` com retrocompatibilidade.
 - [ ] Migrar variáveis de ambiente de `ECC_*` para `AIUBY_*`.
 - [ ] Renomear diretórios locais de estado e namespaces de memória.
 - [ ] Atualizar identidade e assets do dashboard.
 - [ ] Atualizar templates de issues, contatos de segurança e links de contribuição.
 - [ ] Revisar referências externas de parceiros, patrocinadores, comunidade e preços.
-- [x] Preservar licença MIT e avisos de copyright obrigatórios.
+- [ ] Preservar licença MIT e avisos de copyright obrigatórios.
 - [ ] Criar documentação de migração para instalações existentes.
 - [ ] Executar a suíte completa de testes, build e empacotamento.
 
