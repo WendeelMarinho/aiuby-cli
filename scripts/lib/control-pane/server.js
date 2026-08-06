@@ -203,8 +203,8 @@ function createControlPaneServer(options = {}) {
         return;
       }
 
-      if (req.method === 'GET' && requestUrl.pathname === '/assets/ecc-icon.svg') {
-        const iconPath = path.join(repoRoot, 'assets', 'ecc-icon.svg');
+      if (req.method === 'GET' && requestUrl.pathname === '/assets/aiuby-icon.svg') {
+        const iconPath = path.join(repoRoot, 'assets', 'aiuby-icon.svg');
         if (!fs.existsSync(iconPath)) {
           sendText(res, 404, 'not found');
           return;

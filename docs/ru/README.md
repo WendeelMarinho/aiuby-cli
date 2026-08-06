@@ -87,9 +87,9 @@ ECC v2.0.0-rc.1 добавляет публичную историю опера�
 
 ### v2.0.0-rc.1 — Обновление публичного контура, операторские рабочие процессы и ECC 2.0 Alpha (апрель 2026)
 
-- **Dashboard GUI** — новое настольное приложение на Tkinter (`ecc_dashboard.py` или `npm run dashboard`) с переключателем тёмной/светлой темы, настройкой шрифта и логотипом проекта в заголовке и панели задач.
+- **Dashboard GUI** — новое настольное приложение на Tkinter (`aiuby_dashboard.py` или `npm run dashboard`) с переключателем тёмной/светлой темы, настройкой шрифта и логотипом проекта в заголовке и панели задач.
 - **Публичный контур синхронизирован с текущим репозиторием** — метаданные, счётчики каталога, манифесты плагинов и документация для установки теперь соответствуют реальному OSS-набору: 50 агентов, 185 навыков и 68 устаревших совместимых заглушек команд.
-- **Расширение операторских и outbound-рабочих процессов** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `ecc-tools-cost-audit`, `google-workspace-ops`, `project-flow-ops` и `workspace-surface-audit` закрывают операторское направление.
+- **Расширение операторских и outbound-рабочих процессов** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `aiuby-cost-audit`, `google-workspace-ops`, `project-flow-ops` и `workspace-surface-audit` закрывают операторское направление.
 - **Медиа и инструменты запуска** — `manim-video`, `remotion-video-creation` и обновлённые интерфейсы публикации в соцсетях делают технические объяснения и launch-контент частью той же системы.
 - **Рост поддержки фреймворков и продуктов** — `nestjs-patterns`, более развитые пути установки для Codex/OpenCode и расширенная упаковка для разных сред сохраняют полезность репозитория не только для Claude Code.
 - **ECC 2.0 alpha находится в дереве репозитория** — прототип control plane на Rust в `ecc2/` теперь собирается локально и предоставляет команды `dashboard`, `start`, `sessions`, `status`, `stop`, `resume` и `daemon`. Это пригодная к использованию alpha-версия, но ещё не общий релиз.
@@ -140,7 +140,7 @@ ECC v2.0.0-rc.1 добавляет публичную историю опера�
 
 ### v1.4.0 — Многоязычные правила, мастер установки и PM2 (февраль 2026)
 
-- **Интерактивный мастер установки** — новый навык `configure-ecc` предоставляет пошаговую настройку с обнаружением merge/overwrite
+- **Интерактивный мастер установки** — новый навык `configure-aiuby` предоставляет пошаговую настройку с обнаружением merge/overwrite
 - **PM2 и многоагентная оркестрация** — 6 новых команд (`/pm2`, `/multi-plan`, `/multi-execute`, `/multi-backend`, `/multi-frontend`, `/multi-workflow`) для управления сложными многоcервисными рабочими процессами
 - **Архитектура многоязычных правил** — правила реструктурированы из плоских файлов в директории `common/` + `typescript/` + `python/` + `golang/`. Устанавливайте только нужные языки
 - **Переводы на китайский (zh-CN)** — полный перевод всех агентов, команд, навыков и правил (80+ файлов)
@@ -358,7 +358,7 @@ ECC удаляет только файлы, записанные в его insta
 ```bash
 npm run dashboard
 # или
-python3 ./ecc_dashboard.py
+python3 ./aiuby_dashboard.py
 ```
 
 **Возможности:**
@@ -514,7 +514,7 @@ everything-claude-code/
 |   |-- springboot-security/        # Безопасность Spring Boot (НОВОЕ)
 |   |-- springboot-tdd/             # Spring Boot TDD (НОВОЕ)
 |   |-- springboot-verification/    # Spring Boot verification (НОВОЕ)
-|   |-- configure-ecc/              # Интерактивный мастер установки (НОВОЕ)
+|   |-- configure-aiuby/              # Интерактивный мастер установки (НОВОЕ)
 |   |-- security-scan/              # Интеграция аудитора безопасности AgentShield (НОВОЕ)
 |   |-- java-coding-standards/     # Стандарты кодирования Java (НОВОЕ)
 |   |-- jpa-patterns/              # Паттерны JPA/Hibernate (НОВОЕ)
@@ -636,7 +636,7 @@ everything-claude-code/
 |-- mcp-configs/      # Конфигурации MCP-серверов
 |   |-- mcp-servers.json    # GitHub, Supabase, Vercel, Railway и т.д.
 |
-|-- ecc_dashboard.py  # Настольная GUI-панель управления (Tkinter)
+|-- aiuby_dashboard.py  # Настольная GUI-панель управления (Tkinter)
 |
 |-- assets/           # Assets для dashboard
 |   |-- images/
@@ -1222,10 +1222,10 @@ ECC предоставляет **первоклассную поддержку C
 codex
 
 # Автоматическая настройка: синхронизировать assets ECC (AGENTS.md, skills, MCP servers) в ~/.codex
-npm install && bash scripts/sync-ecc-to-codex.sh
-# или: pnpm install && bash scripts/sync-ecc-to-codex.sh
-# или: yarn install && bash scripts/sync-ecc-to-codex.sh
-# или: bun install && bash scripts/sync-ecc-to-codex.sh
+npm install && bash scripts/sync-aiuby-to-codex.sh
+# или: pnpm install && bash scripts/sync-aiuby-to-codex.sh
+# или: yarn install && bash scripts/sync-aiuby-to-codex.sh
+# или: bun install && bash scripts/sync-aiuby-to-codex.sh
 
 # Или вручную: скопировать reference config в домашнюю директорию
 cp .codex/config.toml ~/.codex/config.toml

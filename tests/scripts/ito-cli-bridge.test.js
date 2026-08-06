@@ -12,7 +12,7 @@ const path = require("path");
 const { spawn, spawnSync } = require("child_process");
 
 const REPO_ROOT = path.join(__dirname, "..", "..");
-const ECC_SCRIPT = path.join(REPO_ROOT, "scripts", "ecc.js");
+const ECC_SCRIPT = path.join(REPO_ROOT, "scripts", "aiuby.js");
 const ITO_SCRIPT = path.join(REPO_ROOT, "scripts", "ito.js");
 const CANONICAL_PACKAGE = "Ito-Markets/ito-cloud-runtime/cli/ito-compute-cli";
 const {

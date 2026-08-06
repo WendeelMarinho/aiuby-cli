@@ -122,9 +122,9 @@ Dieses Repo enthält ausschließlich den rohen Code. Die Leitfäden erklären al
 
 ### v2.0.0-rc.1 — Oberflächen-Refresh, Operator-Workflows und ECC 2.0 Alpha (April 2026)
 
-- **Dashboard-GUI** — Neue Tkinter-basierte Desktop-Anwendung (`ecc_dashboard.py` oder `npm run dashboard`) mit Umschalter für dunkles/helles Theme, Schriftanpassung und Projektlogo in Kopfzeile und Taskleiste.
+- **Dashboard-GUI** — Neue Tkinter-basierte Desktop-Anwendung (`aiuby_dashboard.py` oder `npm run dashboard`) mit Umschalter für dunkles/helles Theme, Schriftanpassung und Projektlogo in Kopfzeile und Taskleiste.
 - **Öffentliche Oberfläche mit dem Live-Repo synchronisiert** — Metadaten, Katalogzahlen, Plugin-Manifeste und Install-bezogene Dokumentation entsprechen jetzt der tatsächlichen OSS-Oberfläche: 60 Agents, 232 Skills und 75 Legacy-Command-Shims.
-- **Erweiterung von Operator- und Outbound-Workflows** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `ecc-tools-cost-audit`, `google-workspace-ops`, `project-flow-ops` und `workspace-surface-audit` runden die Operator-Spur ab.
+- **Erweiterung von Operator- und Outbound-Workflows** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `aiuby-cost-audit`, `google-workspace-ops`, `project-flow-ops` und `workspace-surface-audit` runden die Operator-Spur ab.
 - **Medien- und Launch-Tooling** — `manim-video`, `remotion-video-creation` und verbesserte Social-Publishing-Oberflächen machen technische Erklärinhalte und Launch-Content zum Teil desselben Systems.
 - **Wachstum der Framework- und Produktoberfläche** — `nestjs-patterns`, reichhaltigere Codex/OpenCode-Install-Oberflächen und erweitertes Cross-Harness-Packaging halten das Repo auch über Claude Code allein hinaus nutzbar.
 - **ECC 2.0 Alpha ist im Tree** — der Rust-Control-Plane-Prototyp in `ecc2/` baut jetzt lokal und stellt die Befehle `dashboard`, `start`, `sessions`, `status`, `stop`, `resume` und `daemon` bereit. Er ist als Alpha nutzbar, aber noch kein allgemeines Release.
@@ -176,7 +176,7 @@ Dieses Repo enthält ausschließlich den rohen Code. Die Leitfäden erklären al
 
 ### v1.4.0 — Mehrsprachige Rules, Installationsassistent & PM2 (Februar 2026)
 
-- **Interaktiver Installationsassistent** — Der neue `configure-ecc`-Skill bietet ein geführtes Setup mit Merge-/Überschreiben-Erkennung
+- **Interaktiver Installationsassistent** — Der neue `configure-aiuby`-Skill bietet ein geführtes Setup mit Merge-/Überschreiben-Erkennung
 - **PM2 & Multi-Agent-Orchestrierung** — 6 neue Befehle (`/pm2`, `/multi-plan`, `/multi-execute`, `/multi-backend`, `/multi-frontend`, `/multi-workflow`) zur Verwaltung komplexer Multi-Service-Workflows
 - **Architektur für mehrsprachige Rules** — Rules von Flat-Dateien in die Verzeichnisse `common/` + `typescript/` + `python/` + `golang/` umstrukturiert. Installiere nur die Sprachen, die du brauchst
 - **Chinesische (zh-CN) Übersetzungen** — Vollständige Übersetzung aller Agents, Commands, Skills und Rules (80+ Dateien)
@@ -401,7 +401,7 @@ Starte das Desktop-Dashboard, um ECC-Komponenten visuell zu erkunden:
 ```bash
 npm run dashboard
 # oder
-python3 ./ecc_dashboard.py
+python3 ./aiuby_dashboard.py
 ```
 
 **Funktionen:**
@@ -573,7 +573,7 @@ ECC/
 |   |-- springboot-security/        # Spring-Boot-Sicherheit (NEU)
 |   |-- springboot-tdd/             # Spring-Boot-TDD (NEU)
 |   |-- springboot-verification/    # Spring-Boot-Verifikation (NEU)
-|   |-- configure-ecc/              # Interaktiver Installationsassistent (NEU)
+|   |-- configure-aiuby/              # Interaktiver Installationsassistent (NEU)
 |   |-- security-scan/              # Integration des AgentShield-Security-Auditors (NEU)
 |   |-- java-coding-standards/     # Java-Coding-Standards (NEU)
 |   |-- jpa-patterns/              # JPA-/Hibernate-Patterns (NEU)
@@ -697,7 +697,7 @@ ECC/
 |-- mcp-configs/      # MCP-Server-Konfigurationen
 |   |-- mcp-servers.json    # GitHub, Supabase, Vercel, Railway usw.
 |
-|-- ecc_dashboard.py  # Desktop-GUI-Dashboard (Tkinter)
+|-- aiuby_dashboard.py  # Desktop-GUI-Dashboard (Tkinter)
 |
 |-- assets/           # Assets für das Dashboard
 |   |-- images/
@@ -1294,10 +1294,10 @@ ECC bietet **erstklassige Codex-Unterstützung** sowohl für die macOS-App als a
 codex
 
 # Automatisches Setup: ECC-Assets (AGENTS.md, Skills, MCP-Server) nach ~/.codex synchronisieren
-npm install && bash scripts/sync-ecc-to-codex.sh
-# oder: pnpm install && bash scripts/sync-ecc-to-codex.sh
-# oder: yarn install && bash scripts/sync-ecc-to-codex.sh
-# oder: bun install && bash scripts/sync-ecc-to-codex.sh
+npm install && bash scripts/sync-aiuby-to-codex.sh
+# oder: pnpm install && bash scripts/sync-aiuby-to-codex.sh
+# oder: yarn install && bash scripts/sync-aiuby-to-codex.sh
+# oder: bun install && bash scripts/sync-aiuby-to-codex.sh
 
 # Oder manuell: die Referenzkonfiguration in dein Home-Verzeichnis kopieren
 cp .codex/config.toml ~/.codex/config.toml

@@ -9,6 +9,8 @@
 
 'use strict';
 
+const { getEnv } = require('./legacy-compat');
+
 const VALID_PROFILES = new Set(['minimal', 'standard', 'strict']);
 
 function normalizeId(value) {
@@ -16,7 +18,7 @@ function normalizeId(value) {
 }
 
 function getHookProfile() {
-  const raw = String(process.env.ECC_HOOK_PROFILE || 'standard').trim().toLowerCase();
+  const raw = String(getEnv('AIUBY_HOOK_PROFILE', { quiet: true }) || 'standard').trim().toLowerCase(); // aiuby:compat
   return VALID_PROFILES.has(raw) ? raw : 'standard';
 }
 
@@ -51,7 +53,8 @@ function parseProfiles(rawProfiles, fallback = ['standard', 'strict']) {
 }
 
 function isDryRun() {
-  return process.env.ECC_DRY_RUN === '1';
+  // Reads ECC_DRY_RUN, falling back to ECC_DRY_RUN during 0.x. aiuby:compat
+  return getEnv('AIUBY_DRY_RUN', { quiet: true }) === '1';
 }
 
 function isHookEnabled(hookId, options = {}) {

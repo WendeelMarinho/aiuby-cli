@@ -238,7 +238,7 @@ function runTests() {
   console.log('\necc.js --dry-run flag parsing:');
 
   if (test('--dry-run sets ECC_DRY_RUN env var for child commands', () => {
-    const eccJs = path.resolve(__dirname, '..', '..', 'scripts', 'ecc.js');
+    const eccJs = path.resolve(__dirname, '..', '..', 'scripts', 'aiuby.js');
     const result = spawnSync(process.execPath, [eccJs, '--dry-run', '--help'], {
       encoding: 'utf8',
       env: { ...process.env },
@@ -248,7 +248,7 @@ function runTests() {
   })) passed++; else failed++;
 
   if (test('--dry-run is stripped from args so command routing works', () => {
-    const eccJs = path.resolve(__dirname, '..', '..', 'scripts', 'ecc.js');
+    const eccJs = path.resolve(__dirname, '..', '..', 'scripts', 'aiuby.js');
     const result = spawnSync(process.execPath, [eccJs, '--dry-run', 'doctor'], {
       encoding: 'utf8',
       env: { ...process.env },
@@ -260,7 +260,7 @@ function runTests() {
   })) passed++; else failed++;
 
   if (test('--dry-run works with implicit install routing', () => {
-    const eccJs = path.resolve(__dirname, '..', '..', 'scripts', 'ecc.js');
+    const eccJs = path.resolve(__dirname, '..', '..', 'scripts', 'aiuby.js');
     const result = spawnSync(process.execPath, [eccJs, '--dry-run', '--json', 'typescript'], {
       encoding: 'utf8',
       env: { ...process.env },

@@ -173,7 +173,7 @@ Land the harness-neutral work after the required catalog/registry sync, install-
 - **Linked:** issue #2308, PR #2309, PR #2310, PR #2311, PR #2285, PR #2275, PR #2274, PR #2270, PR #2318, PR #2315, PR #2313, PR #2137, issue #2069
 - **MRR angle:** Indirect: keeps the catalog credible and discoverable (catalog quality is a free-tier retention factor) without bloating it with redundant skills that dilute the value prop.
 
-Triage as batches with overlap/dedup review against the existing 200+ skill catalog plus manifest/catalog/command-registry sync and surface tests: the three BMAD-inspired skills (#2309/#2310/#2311 under tracking issue #2308), framework-reviewer family extensions (#2285 nuxt, #2275 React Native, #2280 AL/BC), and assorted new-skill PRs (#2319 ecc-recipes, #2314 quant-trading, #2281 council-multi-model, #2277 living-docs, #2288 mailtrap — needs cred-handling security review). Resolve needs-work conflicting/large PRs (#2274 gateguard rebase, #2270 OMP split, #2318/#2315 large drops). Close low-signal drive-bys: PR #2313 (empty template), PR #2137 (vague AI-slop SOP), agentshield #99 (spam). Route marketing reshare #2069 to content (ECC was 'featured', not a winner).
+Triage as batches with overlap/dedup review against the existing 200+ skill catalog plus manifest/catalog/command-registry sync and surface tests: the three BMAD-inspired skills (#2309/#2310/#2311 under tracking issue #2308), framework-reviewer family extensions (#2285 nuxt, #2275 React Native, #2280 AL/BC), and assorted new-skill PRs (#2319 aiuby-recipes, #2314 quant-trading, #2281 council-multi-model, #2277 living-docs, #2288 mailtrap — needs cred-handling security review). Resolve needs-work conflicting/large PRs (#2274 gateguard rebase, #2270 OMP split, #2318/#2315 large drops). Close low-signal drive-bys: PR #2313 (empty template), PR #2137 (vague AI-slop SOP), agentshield #99 (spam). Route marketing reshare #2069 to content (ECC was 'featured', not a winner).
 
 ## LATER
 
@@ -281,7 +281,7 @@ Notable gaps vs us (missing today):
 | merge | PR #2307 | fix(tests): resolve 10 failing tests on Windows |
 | merge | PR #2293 | chore(deps): bump npm-minor-and-patch group (5 updates) |
 | needs-work | PR #2260 | chore(deps-dev): bump eslint 9.39.2 to 10.5.0 |
-| triage-later | PR #2319 | feat: add ecc-recipes skill |
+| triage-later | PR #2319 | feat: add aiuby-recipes skill |
 | needs-work | PR #2318 | feat: add OpenSpec ecosystem (5 agents, 2 orchestration skills, 3 integrations) |
 | needs-work | PR #2315 | feat(skills): add 10 custom local skills |
 | triage-later | PR #2314 | feat(skills): add quant-trading-systems skill |

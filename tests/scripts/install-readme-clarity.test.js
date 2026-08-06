@@ -59,11 +59,11 @@ function runTests() {
       'README should document dry-run uninstall'
     );
     assert.ok(
-      readme.includes('node scripts/ecc.js list-installed'),
+      readme.includes('node scripts/aiuby.js list-installed'),
       'README should document install-state inspection before reinstalling'
     );
     assert.ok(
-      readme.includes('node scripts/ecc.js doctor'),
+      readme.includes('node scripts/aiuby.js doctor'),
       'README should document doctor before reinstalling'
     );
     assert.ok(

@@ -46,7 +46,7 @@
 ### ECC 2.0アルファ
 
 - `cargo build --manifest-path ecc2/Cargo.toml` がリポジトリのベースラインで通過。
-- `ecc-tui` は現在 `dashboard`、`start`、`sessions`、`status`、`stop`、`resume`、`daemon` を公開。
+- `aiuby-tui` は現在 `dashboard`、`start`、`sessions`、`status`、`stop`、`resume`、`daemon` を公開。
 - アルファはローカル実験で実際に使用可能だが、より広範なコントロールプレーンロードマップは未完成であり、GAとして扱うべきではない。
 
 ### 注記

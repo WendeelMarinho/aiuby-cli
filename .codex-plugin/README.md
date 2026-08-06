@@ -53,7 +53,7 @@ node scripts/codex/check-plugin-cache.js
 > copies only the plugin folder into its install cache, so parent-referenced
 > content may not be exposed in a fresh session. The safer, fully supported
 > path today is the manual sync flow:
-> `npm install && bash scripts/sync-ecc-to-codex.sh`.
+> `npm install && bash scripts/sync-aiuby-to-codex.sh`.
 
 Official Plugin Directory publishing is coming soon. For official OpenAI
 plugin-directory review, package this repo under the `openai/plugins`

@@ -224,10 +224,10 @@ function checkCache(options) {
   if (failures > 0) {
     log(`${failures} cached manifest reference(s) do not resolve.`);
     log('codex plugin list only confirms marketplace registration; it is not proof of runtime skill loading.');
-    const syncScript = path.join(REPO_ROOT, 'scripts', 'sync-ecc-to-codex.sh');
+    const syncScript = path.join(REPO_ROOT, 'scripts', 'sync-aiuby-to-codex.sh');
     if (fs.existsSync(syncScript)) {
       log('Use the supported sync path until the cache contains the referenced files:');
-      log('npm install && bash scripts/sync-ecc-to-codex.sh');
+      log('npm install && bash scripts/sync-aiuby-to-codex.sh');
     } else {
       log('Use the supported manual sync workflow from your ECC installation.');
     }

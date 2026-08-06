@@ -297,14 +297,14 @@ async function runTests() {
           });
           await realAssetApp.listen();
           try {
-            const realAsset = await fetchLocal(`${realAssetApp.url}/assets/ecc-icon.svg`);
+            const realAsset = await fetchLocal(`${realAssetApp.url}/assets/aiuby-icon.svg`);
             assert.strictEqual(realAsset.status, 200);
             assert.match(await realAsset.text(), /<svg/);
           } finally {
             await realAssetApp.close();
           }
 
-          const missingAsset = await fetchLocal(`${app.url}/assets/ecc-icon.svg`);
+          const missingAsset = await fetchLocal(`${app.url}/assets/aiuby-icon.svg`);
           assert.strictEqual(missingAsset.status, 404);
           assert.strictEqual(await missingAsset.text(), 'not found');
 

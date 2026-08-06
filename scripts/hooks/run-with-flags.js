@@ -12,7 +12,12 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const { isHookEnabled, isDryRun } = require('../lib/hook-flags');
+const { bootstrapEnv } = require('../lib/legacy-compat');
 const { buildPreToolUseAdditionalContext } = require('./pretooluse-visible-output');
+
+// Every hook routes through this wrapper, so one call here bridges ECC_* -> AIUBY_*
+// for the whole hook tree. aiuby:compat
+bootstrapEnv();
 
 const MAX_STDIN = 1024 * 1024;
 

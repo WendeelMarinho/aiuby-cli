@@ -183,7 +183,7 @@ rules/python/*           | rules | LIBRARY | zero Python source files           
 
 次のステップがインタラクティブなインストールまたは修復の場合、ハンドオフ先：
 
-- `configure-ecc`
+- `configure-aiuby`
 
 次のステップが重複のクリーンアップまたはカタログレビューの場合、ハンドオフ先：
 

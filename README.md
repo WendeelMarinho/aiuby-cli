@@ -471,7 +471,7 @@ Run Codex once so its configuration directory exists, then synchronize the engin
 
 ```bash
 npm install
-bash scripts/sync-ecc-to-codex.sh
+bash scripts/sync-aiuby-to-codex.sh
 ```
 
 The sync process should preserve existing Codex files and create backups before merging project instructions, skills, prompts, agents, and reference configuration.

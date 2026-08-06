@@ -177,7 +177,7 @@ Scope:
 - `scripts/codex-git-hooks/pre-push`
 - `scripts/codex/check-codex-global-state.sh`
 - `scripts/codex/install-global-git-hooks.sh`
-- `scripts/sync-ecc-to-codex.sh`
+- `scripts/sync-aiuby-to-codex.sh`
 
 Assessment:
 
@@ -217,7 +217,7 @@ Scope:
 - `rules/php/patterns.md`
 - `rules/php/security.md`
 - `rules/php/testing.md`
-- `skills/configure-ecc/SKILL.md`
+- `skills/configure-aiuby/SKILL.md`
 - `skills/laravel-patterns/SKILL.md`
 - `skills/laravel-security/SKILL.md`
 - `skills/laravel-tdd/SKILL.md`

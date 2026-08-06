@@ -13,7 +13,7 @@ const {
   resolveStateStorePath,
 } = require('../../scripts/lib/state-store');
 
-const ECC_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'ecc.js');
+const ECC_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'aiuby.js');
 const STATUS_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'status.js');
 const SESSIONS_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'sessions-cli.js');
 const WORK_ITEMS_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'work-items.js');

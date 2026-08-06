@@ -48,5 +48,5 @@ Until the upstream discovery issues settle, the supported Codex path is the
 manual sync flow documented in the README:
 
 ```bash
-npm install && bash scripts/sync-ecc-to-codex.sh
+npm install && bash scripts/sync-aiuby-to-codex.sh
 ```

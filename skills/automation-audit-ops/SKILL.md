@@ -18,7 +18,7 @@ Pull these ECC-native skills into the workflow when relevant:
 - `workspace-surface-audit` for connector, MCP, hook, and app inventory
 - `knowledge-ops` when the audit needs to reconcile live repo truth with durable context
 - `github-ops` when the answer depends on CI, scheduled workflows, issues, or PR automation
-- `ecc-tools-cost-audit` when the real problem is webhook fanout, queued jobs, or billing burn in the sibling app repo
+- `aiuby-cost-audit` when the real problem is webhook fanout, queued jobs, or billing burn in the sibling app repo
 - `research-ops` when local inventory must be compared against current platform support or public docs
 - `verification-loop` for proving post-fix state instead of relying on assumed recovery
 

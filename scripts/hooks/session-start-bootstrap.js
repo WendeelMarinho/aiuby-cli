@@ -29,7 +29,7 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
-const { resolveEccRoot } = require('../lib/resolve-ecc-root');
+const { resolveEccRoot } = require('../lib/resolve-aiuby-root');
 
 // Read the raw JSON event from stdin
 const raw = fs.readFileSync(0, 'utf8');

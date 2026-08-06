@@ -14,7 +14,7 @@ const installScript = path.join(repoRoot, 'scripts', 'codex', 'install-global-gi
 const pluginCacheCheckScript = path.join(repoRoot, 'scripts', 'codex', 'check-plugin-cache.js');
 const mergeCodexConfigScript = path.join(repoRoot, 'scripts', 'codex', 'merge-codex-config.js');
 const mergeMcpConfigScript = path.join(repoRoot, 'scripts', 'codex', 'merge-mcp-config.js');
-const syncScript = path.join(repoRoot, 'scripts', 'sync-ecc-to-codex.sh');
+const syncScript = path.join(repoRoot, 'scripts', 'sync-aiuby-to-codex.sh');
 const packageJson = JSON.parse(fs.readFileSync(path.join(repoRoot, 'package.json'), 'utf8'));
 const packageVersion = packageJson.version;
 const deterministicPackageEnv = {
@@ -108,7 +108,7 @@ const cacheManifestWithLocalRefs = {
   skills: './skills/',
   mcpServers: './.mcp.json',
   interface: {
-    composerIcon: './assets/ecc-icon.svg',
+    composerIcon: './assets/aiuby-icon.svg',
     logo: './assets/hero.png',
   },
 };
@@ -130,7 +130,7 @@ if (
       assert.match(result.stdout, /\[FAIL\] skills missing/);
       assert.match(result.stdout, /\[FAIL\] mcpServers missing/);
       assert.match(result.stdout, /codex plugin list only confirms marketplace registration/);
-      assert.match(result.stdout, /sync-ecc-to-codex\.sh/);
+      assert.match(result.stdout, /sync-aiuby-to-codex\.sh/);
     } finally {
       cleanup(homeDir);
     }
@@ -173,7 +173,7 @@ if (
     try {
       const cacheDir = seedPluginCache(codexDir, cacheManifestWithLocalRefs, [
         ['.mcp.json', '{"mcpServers":{}}\n'],
-        ['assets/ecc-icon.svg', '<svg />\n'],
+        ['assets/aiuby-icon.svg', '<svg />\n'],
         ['assets/hero.png', 'png\n'],
       ]);
       fs.mkdirSync(path.join(cacheDir, 'skills'), { recursive: true });

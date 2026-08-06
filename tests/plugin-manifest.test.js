@@ -464,7 +464,7 @@ test('plugins/ecc README documents the upstream Codex fragility', () => {
   const source = fs.readFileSync(readmePath, 'utf8');
   assert.ok(source.includes('openai/codex'), 'plugins/ecc README must link the upstream Codex discovery issue');
   assert.ok(source.includes('check-plugin-cache.js'), 'plugins/ecc README must point at the cache health check');
-  assert.ok(source.includes('sync-ecc-to-codex.sh'), 'plugins/ecc README must point at the supported manual sync flow');
+  assert.ok(source.includes('sync-aiuby-to-codex.sh'), 'plugins/ecc README must point at the supported manual sync flow');
 });
 
 test('.opencode/package.json version matches package.json', () => {
@@ -481,7 +481,7 @@ test('user-facing docs do not use overlong legacy marketplace install commands',
   const markdownFiles = [
     path.join(repoRoot, 'README.md'),
     path.join(repoRoot, 'README.zh-CN.md'),
-    path.join(repoRoot, 'skills', 'configure-ecc', 'SKILL.md'),
+    path.join(repoRoot, 'skills', 'configure-aiuby', 'SKILL.md'),
     ...collectMarkdownFiles(path.join(repoRoot, 'docs'))
   ].filter(filePath => !path.relative(repoRoot, filePath).startsWith(`docs${path.sep}drafts${path.sep}`));
 

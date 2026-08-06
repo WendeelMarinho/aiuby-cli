@@ -32,7 +32,7 @@ What exists today:
 
 - `ecc2/` Rust control-plane codebase in the main repo
 - `cargo build --manifest-path ecc2/Cargo.toml` passes
-- `ecc-tui` commands currently available:
+- `aiuby-tui` commands currently available:
   - `dashboard`
   - `start`
   - `sessions`

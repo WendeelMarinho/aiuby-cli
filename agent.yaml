@@ -36,7 +36,7 @@ skills:
   - codebase-onboarding
   - coding-standards
   - compose-multiplatform-patterns
-  - configure-ecc
+  - configure-aiuby
   - contract-first
   - content-engine
   - content-hash-cache-pattern
@@ -168,7 +168,7 @@ commands:
   - cpp-build
   - cpp-review
   - cpp-test
-  - ecc-guide
+  - aiuby-guide
   - epic-claim
   - epic-decompose
   - epic-publish

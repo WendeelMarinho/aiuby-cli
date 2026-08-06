@@ -477,7 +477,7 @@ Execute o Codex uma vez para que o diretório de configuração exista e depois 
 
 ```bash
 npm install
-bash scripts/sync-ecc-to-codex.sh
+bash scripts/sync-aiuby-to-codex.sh
 ```
 
 O processo de sincronização deve preservar arquivos existentes do Codex e criar backups antes de mesclar instruções, skills, prompts, agentes e configurações de referência.

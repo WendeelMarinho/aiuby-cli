@@ -53,7 +53,7 @@ ECC's canonical Codex section name is `[mcp_servers.context7]`. The launcher pac
 
 ### Automatic config.toml merging
 
-The sync script (`scripts/sync-ecc-to-codex.sh`) uses a Node-based TOML parser to safely merge ECC MCP servers into `~/.codex/config.toml`:
+The sync script (`scripts/sync-aiuby-to-codex.sh`) uses a Node-based TOML parser to safely merge ECC MCP servers into `~/.codex/config.toml`:
 
 - **Add-only by default** — missing ECC servers are appended; existing servers are never modified or removed.
 - **7 managed servers** — Supabase, Playwright, Context7, Exa, GitHub, Memory, Sequential Thinking.

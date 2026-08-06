@@ -5235,7 +5235,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
             mapping: vec![
                 "skills/".to_string(),
                 "ecc template".to_string(),
-                "configure-ecc".to_string(),
+                "configure-aiuby".to_string(),
             ],
             notes: vec![
                 "Reusable skills should be ported one by one into ECC-native skills or orchestration templates."
