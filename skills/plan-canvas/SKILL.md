@@ -48,8 +48,8 @@ Codex — or just run the `ecc-plan-canvas` commands directly.
 ecc-plan-canvas open .claude/plans/feature.plan.md
 
 # 2. Block until the human responds. Leave running; re-run if interrupted —
-#    queued feedback is never lost. Run in the background if your harness
-#    time-limits foreground commands.
+# queued feedback is never lost. Run in the background if your harness
+# time-limits foreground commands.
 ecc-plan-canvas await .claude/plans/feature.plan.md
 ```
 

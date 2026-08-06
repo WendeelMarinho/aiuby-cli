@@ -183,7 +183,7 @@ rules/python/*           | rules | LIBRARY | 零个 Python 源文件            
 
 如果下一步是交互式安装或修复，交接至：
 
-* `configure-ecc`
+* `configure-aiuby`
 
 如果下一步是重叠清理或目录审查，交接至：
 

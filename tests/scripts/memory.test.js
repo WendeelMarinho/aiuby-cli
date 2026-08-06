@@ -7,7 +7,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const MEMORY_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'memory.js');
-const ECC_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'ecc.js');
+const ECC_SCRIPT = path.join(__dirname, '..', '..', 'scripts', 'aiuby.js');
 const {
   readBoundedStdin,
   runCommand,

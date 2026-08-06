@@ -338,7 +338,7 @@ everything-claude-code/
 |   |-- springboot-security/        # Spring Boot 安全（新增）
 |   |-- springboot-tdd/             # Spring Boot TDD（新增）
 |   |-- springboot-verification/    # Spring Boot 验证（新增）
-|   |-- configure-ecc/              # 交互式安装向导（新增）
+|   |-- configure-aiuby/              # 交互式安装向导（新增）
 |   |-- security-scan/              # 集成 AgentShield 安全审计（新增）
 |   |-- java-coding-standards/      # Java 编码规范（新增）
 |   |-- jpa-patterns/               # JPA/Hibernate 模式（新增）

@@ -122,9 +122,9 @@ Este repositorio contiene solo el código. Las guías explican todo.
 
 ### v2.0.0-rc.1 — Actualización de Superficie, Flujos de Trabajo de Operador y Alpha de ECC 2.0 (Abr 2026)
 
-- **Dashboard GUI** — Nueva aplicación de escritorio basada en Tkinter (`ecc_dashboard.py` o `npm run dashboard`) con alternancia de tema oscuro/claro, personalización de fuente y logo del proyecto en el encabezado y la barra de tareas.
+- **Dashboard GUI** — Nueva aplicación de escritorio basada en Tkinter (`aiuby_dashboard.py` o `npm run dashboard`) con alternancia de tema oscuro/claro, personalización de fuente y logo del proyecto en el encabezado y la barra de tareas.
 - **Superficie pública sincronizada con el repo en vivo** — metadatos, conteos del catálogo, manifiestos de plugins y documentación de instalación ahora coinciden con la superficie OSS real: 63 agentes, 249 skills y 79 shims de comandos legados.
-- **Expansión de flujos de trabajo de operador y salida** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `ecc-tools-cost-audit`, `google-workspace-ops`, `project-flow-ops` y `workspace-surface-audit` completan el carril de operador.
+- **Expansión de flujos de trabajo de operador y salida** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `aiuby-cost-audit`, `google-workspace-ops`, `project-flow-ops` y `workspace-surface-audit` completan el carril de operador.
 - **Herramientas de medios y lanzamiento** — `manim-video`, `remotion-video-creation` y superficies de publicación social actualizadas integran la creación de contenido técnico y de lanzamiento en el mismo sistema.
 - **Crecimiento de frameworks y productos** — `nestjs-patterns`, superficies de instalación más ricas para Codex/OpenCode y empaquetado cross-harness expandido mantienen el repo utilizable más allá de Claude Code.
 - **Pack de skills de mercados de predicción Itô** — `ito-market-intelligence`, `ito-basket-compare`, `ito-trade-planner`, `ito-data-atlas-agent`, `prediction-market-oracle-research` y `prediction-market-risk-review` añaden flujos de trabajo públicos de mercado/cartera no asesorados, manteniendo el acceso a la API de Itô separado de la facturación de ECC Tools.
@@ -178,7 +178,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 
 ### v1.4.0 — Reglas Multi-Lenguaje, Asistente de Instalación y PM2 (Feb 2026)
 
-- **Asistente de instalación interactivo** — La nueva skill `configure-ecc` proporciona configuración guiada con detección de fusión/sobrescritura
+- **Asistente de instalación interactivo** — La nueva skill `configure-aiuby` proporciona configuración guiada con detección de fusión/sobrescritura
 - **PM2 y orquestación multi-agente** — 6 nuevos comandos (`/pm2`, `/multi-plan`, `/multi-execute`, `/multi-backend`, `/multi-frontend`, `/multi-workflow`) para gestionar flujos de trabajo complejos multi-servicio
 - **Arquitectura de reglas multi-lenguaje** — Reglas reestructuradas de archivos planos en directorios `common/` + `typescript/` + `python/` + `golang/`. Instala solo los lenguajes que necesitas
 - **Traducciones al chino (zh-CN)** — Traducción completa de todos los agentes, comandos, skills y reglas (más de 80 archivos)
@@ -403,7 +403,7 @@ Lanza el dashboard de escritorio para explorar visualmente los componentes de EC
 ```bash
 npm run dashboard
 # o
-python3 ./ecc_dashboard.py
+python3 ./aiuby_dashboard.py
 ```
 
 **Características:**
@@ -565,7 +565,7 @@ ECC/
 |-- contexts/         # Inyección dinámica de contexto en el system prompt
 |-- examples/         # Configuraciones y sesiones de ejemplo
 |-- mcp-configs/      # Configuraciones de servidores MCP
-|-- ecc_dashboard.py  # Dashboard GUI de escritorio (Tkinter)
+|-- aiuby_dashboard.py  # Dashboard GUI de escritorio (Tkinter)
 |-- marketplace.json  # Configuración del marketplace autoalojado
 ```
 
@@ -1152,7 +1152,7 @@ ECC proporciona **soporte de primera clase para Codex** tanto para la app macOS 
 codex
 
 # Configuración automática: sincronizar activos de ECC (AGENTS.md, skills, servidores MCP) en ~/.codex
-npm install && bash scripts/sync-ecc-to-codex.sh
+npm install && bash scripts/sync-aiuby-to-codex.sh
 
 # O manualmente: copiar la configuración de referencia a tu directorio home
 cp .codex/config.toml ~/.codex/config.toml

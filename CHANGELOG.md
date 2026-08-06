@@ -71,7 +71,7 @@
 ### ECC 2.0 Alpha
 
 - `cargo build --manifest-path ecc2/Cargo.toml` passes on the repository baseline.
-- `ecc-tui` currently exposes `dashboard`, `start`, `sessions`, `status`, `stop`, `resume`, and `daemon`.
+- `aiuby-tui` currently exposes `dashboard`, `start`, `sessions`, `status`, `stop`, `resume`, and `daemon`.
 - The alpha is real and usable for local experimentation, but the broader control-plane roadmap remains incomplete and should not be treated as GA.
 
 ### Notes

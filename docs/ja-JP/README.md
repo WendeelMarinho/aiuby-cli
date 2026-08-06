@@ -75,7 +75,7 @@
 
 ### v1.4.0 — マルチ言語ルール、インストールウィザード & PM2（2026年2月）
 
-- **インタラクティブインストールウィザード** — 新しい`configure-ecc`スキルがマージ/上書き検出付きガイドセットアップを提供
+- **インタラクティブインストールウィザード** — 新しい`configure-aiuby`スキルがマージ/上書き検出付きガイドセットアップを提供
 - **PM2 & マルチエージェントオーケストレーション** — 複雑なマルチサービスワークフロー管理用の6つの新コマンド（`/pm2`, `/multi-plan`, `/multi-execute`, `/multi-backend`, `/multi-frontend`, `/multi-workflow`）
 - **マルチ言語ルールアーキテクチャ** — ルールをフラットファイルから`common/` + `typescript/` + `python/` + `golang/`ディレクトリに再構成。必要な言語のみインストール可能
 - **中国語（zh-CN）翻訳** — すべてのエージェント、コマンド、スキル、ルールの完全翻訳（80+ファイル）
@@ -236,7 +236,7 @@ everything-claude-code/
 |   |-- springboot-security/        # Spring Boot セキュリティ（新規）
 |   |-- springboot-tdd/             # Spring Boot TDD（新規）
 |   |-- springboot-verification/    # Spring Boot 検証（新規）
-|   |-- configure-ecc/              # インタラクティブインストールウィザード（新規）
+|   |-- configure-aiuby/              # インタラクティブインストールウィザード（新規）
 |   |-- security-scan/              # AgentShield セキュリティ監査統合（新規）
 |
 |-- commands/         # スラッシュコマンド用クイック実行

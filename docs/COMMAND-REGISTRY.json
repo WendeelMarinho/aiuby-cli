@@ -100,16 +100,16 @@
       "path": "commands/cpp-test.md"
     },
     {
-      "command": "ecc-guide",
+      "command": "aiuby-guide",
       "description": "Navigate ECC's current agents, skills, commands, hooks, install profiles, and docs from the live repository surface.",
       "type": "review",
       "primaryAgents": [],
       "allAgents": [],
       "skills": [
-        "ecc-guide",
+        "aiuby-guide",
         "security-scan"
       ],
-      "path": "commands/ecc-guide.md"
+      "path": "commands/aiuby-guide.md"
     },
     {
       "command": "epic-claim",
@@ -686,7 +686,7 @@
       "primaryAgents": [],
       "allAgents": [],
       "skills": [
-        "ecc-guide"
+        "aiuby-guide"
       ],
       "path": "commands/project-init.md"
     },

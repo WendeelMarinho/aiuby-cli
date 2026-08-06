@@ -786,7 +786,7 @@ test('claude history normalization falls back to filename ids and empty metadata
     metadata: {
       title: 'Path Only',
       inProgress: ['Continue work'],
-      context: ' README.md \n\n scripts/ecc.js ',
+      context: ' README.md \n\n scripts/aiuby.js ',
       notes: 'No risks'
     }
   }, {
@@ -796,7 +796,7 @@ test('claude history normalization falls back to filename ids and empty metadata
 
   assert.strictEqual(pathOnly.session.id, 'path-only-session');
   assert.strictEqual(pathOnly.workers[0].intent.objective, 'Continue work');
-  assert.deepStrictEqual(pathOnly.workers[0].intent.seedPaths, ['README.md', 'scripts/ecc.js']);
+  assert.deepStrictEqual(pathOnly.workers[0].intent.seedPaths, ['README.md', 'scripts/aiuby.js']);
   assert.deepStrictEqual(pathOnly.workers[0].outputs.remainingRisks, ['No risks']);
 });
 

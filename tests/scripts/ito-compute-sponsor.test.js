@@ -375,7 +375,7 @@ function main() {
       assert.doesNotMatch(record, /manual_copy|ito\.compute\.handoff|ecc ito rent/i);
     }],
     ['top-level CLI help exposes the provider-neutral compute route', () => {
-      const result = spawnSync('node', ['scripts/ecc.js', '--help'], {
+      const result = spawnSync('node', ['scripts/aiuby.js', '--help'], {
         cwd: REPO_ROOT,
         encoding: 'utf8',
       });

@@ -83,4 +83,4 @@ diffを表示して承認を得ずに既存の`CLAUDE.md`を置換しないこ�
 - `config/project-stack-mappings.json` — スタックからサーフェスへのヒント
 - `scripts/install-plan.js` — 決定論的な計画解決
 - `scripts/install-apply.js` — ドライランと適用操作
-- `/ecc-guide` — インストール前のインタラクティブな機能ディスカバリー
+- `/aiuby-guide` — インストール前のインタラクティブな機能ディスカバリー

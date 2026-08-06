@@ -3,7 +3,40 @@
 **Origem**: `/plan` — status report do operador (2026-08-06)
 **Repositório**: `/home/wendeel/work/ecc/ECC` — branch `main`
 **Complexidade**: **ALTA** (70–105h técnicas, excluindo design)
-**Status**: aguardando confirmação — nenhum código alterado
+**Status**: aprovado — Fases 0–4 entregues em 2026-08-06
+
+## Progresso
+
+| Fase | Status | Nota |
+|---|---|---|
+| 0 — ADR de nomes | ✅ | `docs/architecture/ADR-0001-aiuby-naming-and-namespaces.md` |
+| 1 — Auditoria em CI | ✅ | `npm run audit:legacy-names`; baseline 7007, ratchet unidirecional |
+| 2 — Camada de compatibilidade | ✅ | env vars, paths, schemas, 5 shims de binário |
+| 3 — `aiuby migrate` | ✅ | dry-run default, backup, rollback, proteção contra duplicata |
+| 4a — Entrypoint da CLI | ✅ | `scripts/aiuby.js`; comando é `aiuby <cmd>` |
+| 4b — Rename de env vars | ⛔ **revertida** | Quebra compat em entrypoints diretos. Regra em ADR §5a |
+| 4c — Renames de arquivo | ✅ | icon, memory-vault doc, sync script, dashboard, resolve-root |
+| 4d — Skills | ✅ | 4 diretórios + cópias traduzidas zh-CN/ja-JP + comando |
+| 4e — Crate Rust | ⚠️ parcial | Metadata e consumidores JS. **Build não verificado — `cargo` ausente** |
+| 5 — Pacotes e distribuição | ⬜ | + ponte para o nome do servidor MCP `ecc-memory-vault` |
+| 6 — Upstream e migração docs | ⬜ | |
+| 7 — Docs e 12 traduções | ⬜ | Resolve as 23 falhas pré-existentes de asserção sobre README |
+| 8 — Contagens automatizadas | ⬜ | |
+| 9 — Identidade visual | ⬜ | `assets/images/community/` está vazio; quebra `npm pack` hoje |
+| 10 — Validação e release | ⬜ | |
+
+**Suíte**: 3457/3480. As 23 falhas são pré-existentes (asserções sobre o README
+reescrito na etapa editorial), confirmadas contra o `HEAD` anterior.
+
+### Correções de premissa descobertas na execução
+
+1. O contador `env-var` da auditoria **não mede progresso** — ele fica alto por
+   todo o `0.x` por design (ADR §5a). O plano original o tratava como dívida a zerar.
+2. `rg` ignora diretórios ocultos por padrão. Buscas manuais de referência
+   precisam de `--hidden`, ou `.codex-plugin/`, `.claude-plugin/`, `.agents/` e
+   `.cursor/` ficam invisíveis.
+3. O sentinel citado em `resolve-aiuby-root.js` é `skills/continuous-learning-v2`,
+   não um dos skills renomeados — o risco sinalizado no plano não existia.
 
 ---
 

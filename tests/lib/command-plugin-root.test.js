@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const assert = require('assert');
-const { INLINE_RESOLVE } = require('../../scripts/lib/resolve-ecc-root');
+const { INLINE_RESOLVE } = require('../../scripts/lib/resolve-aiuby-root');
 
 // Sentinel ECC skill that resolveEccRoot() requires alongside the script tree
 // before accepting a root; kept in sync with the module's DEFAULT_SKILL_PROBE.
@@ -31,17 +31,17 @@ const instinctStatusDoc = fs.readFileSync(path.join(__dirname, '..', '..', 'comm
 
 test('sessions command uses shared inline resolver in all node scripts', () => {
   assert.strictEqual((sessionsDoc.match(/const _r = /g) || []).length, 6);
-  assert.strictEqual((sessionsDoc.match(/scripts','lib','resolve-ecc-root/g) || []).length, 6);
+  assert.strictEqual((sessionsDoc.match(/scripts','lib','resolve-aiuby-root/g) || []).length, 6);
 });
 
 test('skill-health command uses shared inline resolver in all shell snippets', () => {
   assert.strictEqual((skillHealthDoc.match(/var r=\(function/g) || []).length, 3);
-  assert.strictEqual((skillHealthDoc.match(/scripts','lib','resolve-ecc-root/g) || []).length, 3);
+  assert.strictEqual((skillHealthDoc.match(/scripts','lib','resolve-aiuby-root/g) || []).length, 3);
 });
 
 test('instinct-status command uses shared inline resolver (no stale legacy fallback) (#2037)', () => {
   assert.strictEqual((instinctStatusDoc.match(/var r=\(function/g) || []).length, 1);
-  assert.strictEqual((instinctStatusDoc.match(/scripts','lib','resolve-ecc-root/g) || []).length, 1);
+  assert.strictEqual((instinctStatusDoc.match(/scripts','lib','resolve-aiuby-root/g) || []).length, 1);
   // The pre-fix template hard-coded the legacy path as a fallback when
   // CLAUDE_PLUGIN_ROOT was unset. Asserting its absence prevents regression.
   assert.ok(
@@ -63,7 +63,7 @@ test('auto-update command probes for the script it runs, not just scripts/lib', 
   for (const docPath of autoUpdateDocs) {
     const doc = fs.readFileSync(docPath, 'utf8');
     assert.strictEqual(
-      (doc.match(/scripts','lib','resolve-ecc-root/g) || []).length, 1,
+      (doc.match(/scripts','lib','resolve-aiuby-root/g) || []).length, 1,
       `${docPath} should embed the shared inline resolver`
     );
     assert.ok(
@@ -74,7 +74,7 @@ test('auto-update command probes for the script it runs, not just scripts/lib', 
 });
 
 test('resolveEccRoot module covers current and legacy marketplace plugin roots', () => {
-  const { resolveEccRoot } = require('../../scripts/lib/resolve-ecc-root');
+  const { resolveEccRoot } = require('../../scripts/lib/resolve-aiuby-root');
   assert.ok(typeof resolveEccRoot === 'function');
 
   const legacyHomeDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecc-marketplace-legacy-'));
@@ -100,7 +100,7 @@ test('resolveEccRoot module covers current and legacy marketplace plugin roots',
   }
 
   assert.ok(!INLINE_RESOLVE.includes('\\"'), 'Inline resolver should not require escaped double quotes');
-  assert.ok(INLINE_RESOLVE.includes("scripts','lib','resolve-ecc-root"));
+  assert.ok(INLINE_RESOLVE.includes("scripts','lib','resolve-aiuby-root"));
 });
 
 console.log(`Passed: ${passed}`);

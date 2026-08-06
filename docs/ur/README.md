@@ -144,7 +144,7 @@ cp -R rules/typescript ~/.claude/rules/ecc/  # اپنی زبان منتخب کر
 ```bash
 npm run dashboard
 # یا
-python3 ./ecc_dashboard.py
+python3 ./aiuby_dashboard.py
 ```
 
 ---

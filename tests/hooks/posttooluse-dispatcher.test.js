@@ -89,7 +89,7 @@ function runTests() {
       assert.ok(entries[0].hooks[0].command.endsWith('" sync'));
       assert.ok(entries[1].hooks[0].command.includes('posttooluse-dispatcher.js'));
       assert.ok(entries[1].hooks[0].command.endsWith('" async'));
-      assert.ok(entries.every(entry => entry.hooks[0].command.includes('resolve-ecc-root')));
+      assert.ok(entries.every(entry => entry.hooks[0].command.includes('resolve-aiuby-root')));
       assert.ok(
         entries.every(entry => !entry.hooks[0].command.includes('plugin-hook-bootstrap.js')),
         'PostToolUse dispatchers should not spawn a second Node bootstrap process'

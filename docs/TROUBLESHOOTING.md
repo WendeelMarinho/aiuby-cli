@@ -69,7 +69,7 @@ exit 2
 
 ## ECC Dashboard Does Not Start
 
-**Symptoms:** `npm run dashboard` or `python3 ecc_dashboard.py` fails, often with `ModuleNotFoundError: No module named 'tkinter'`.
+**Symptoms:** `npm run dashboard` or `python3 aiuby_dashboard.py` fails, often with `ModuleNotFoundError: No module named 'tkinter'`.
 
 **What helps:**
 

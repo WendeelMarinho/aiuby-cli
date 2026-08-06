@@ -195,7 +195,7 @@ These lifecycle commands are also available through the `ecc` CLI.
 
 | Command | What it does |
 |---------|-------------|
-| `/ecc-guide` | Navigate ECC's current agents, skills, commands, hooks, install profiles, and docs from the live repository surface |
+| `/aiuby-guide` | Navigate ECC's current agents, skills, commands, hooks, install profiles, and docs from the live repository surface |
 | `/update-docs` | Sync documentation from source-of-truth files such as scripts, schemas, routes, and exports |
 | `/update-codemaps` | Regenerate codemaps for the codebase |
 

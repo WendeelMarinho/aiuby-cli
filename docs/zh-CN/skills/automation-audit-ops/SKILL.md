@@ -17,7 +17,7 @@ origin: ECC
 * `workspace-surface-audit` 用于连接器、MCP、钩子和应用清单
 * `knowledge-ops` 当审计需要将实时仓库的真实情况与持久上下文进行核对时
 * `github-ops` 当答案依赖于 CI、计划工作流、议题或 PR 自动化时
-* `ecc-tools-cost-audit` 当真正的问题是兄弟应用仓库中的 webhook 扇出、队列任务或计费消耗时
+* `aiuby-cost-audit` 当真正的问题是兄弟应用仓库中的 webhook 扇出、队列任务或计费消耗时
 * `research-ops` 当需要将本地清单与当前平台支持或公开文档进行比较时
 * `verification-loop` 用于证明修复后的状态，而不是依赖假设的恢复
 

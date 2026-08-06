@@ -139,7 +139,7 @@
 
 ### v1.4.0 — 多语言规则、安装向导 & PM2 (2026年2月)
 
-* **交互式安装向导** — 新的 `configure-ecc` 技能提供了带有合并/覆盖检测的引导式设置
+* **交互式安装向导** — 新的 `configure-aiuby` 技能提供了带有合并/覆盖检测的引导式设置
 * **PM2 & 多智能体编排** — 6 个新命令 (`/pm2`, `/multi-plan`, `/multi-execute`, `/multi-backend`, `/multi-frontend`, `/multi-workflow`) 用于管理复杂的多服务工作流
 * **多语言规则架构** — 规则从扁平文件重组为 `common/` + `typescript/` + `python/` + `golang/` 目录。仅安装您需要的语言
 * **中文 (zh-CN) 翻译** — 所有智能体、命令、技能和规则的完整翻译 (80+ 个文件)
@@ -388,7 +388,7 @@ everything-claude-code/
 |   |-- springboot-security/        # Spring Boot 安全（新增）
 |   |-- springboot-tdd/             # Spring Boot TDD（新增）
 |   |-- springboot-verification/    # Spring Boot 验证（新增）
-|   |-- configure-ecc/              # 交互式安装向导（新增）
+|   |-- configure-aiuby/              # 交互式安装向导（新增）
 |   |-- security-scan/              # AgentShield 安全审计集成（新增）
 |   |-- java-coding-standards/     # Java 编码规范（新增）
 |   |-- jpa-patterns/              # JPA/Hibernate 模式（新增）

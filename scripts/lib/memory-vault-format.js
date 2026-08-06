@@ -1,8 +1,9 @@
 'use strict';
 
 const { TextDecoder } = require('util');
+const { schemaMatches } = require('./legacy-compat');
 
-const MEMORY_SCHEMA_VERSION = 'ecc.memory.v1';
+const MEMORY_SCHEMA_VERSION = 'ecc.memory.v1'; // aiuby:compat — canonical becomes aiuby.memory.v1 in Phase 4
 const MEMORY_KINDS = Object.freeze([
   'context',
   'decision',
@@ -172,7 +173,9 @@ function normalizeMemory(memory) {
     throw new Error('target harnesses must contain at least one harness or "all".');
   }
 
-  if (memory.schema !== MEMORY_SCHEMA_VERSION) {
+  // Accepts both `ecc.memory.v1` and `aiuby.memory.v1` so a partially migrated
+  // vault stays readable. Legacy acceptance is removed at 1.0.0. aiuby:compat
+  if (!schemaMatches(memory.schema, MEMORY_SCHEMA_VERSION)) {
     throw new Error('Unsupported memory schema.');
   }
 

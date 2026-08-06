@@ -353,7 +353,7 @@ function renderControlPaneHtml() {
   <div class="shell">
     <header>
       <div class="brand">
-        <img src="/assets/ecc-icon.svg" alt="">
+        <img src="/assets/aiuby-icon.svg" alt="">
         <h1>ECC Control Pane</h1>
       </div>
       <form class="query" id="query-form">

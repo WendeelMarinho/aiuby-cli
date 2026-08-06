@@ -579,7 +579,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ecc-tui"
+name = "aiuby-tui"
 version = "0.1.0"
 dependencies = [
  "anyhow",

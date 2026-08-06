@@ -140,7 +140,7 @@ Recent examples already salvaged this way:
 - `messages-ops`
 - `research-ops`
 - `terminal-ops`
-- `ecc-tools-cost-audit`
+- `aiuby-cost-audit`
 
 ### 5. Tool / service layer
 

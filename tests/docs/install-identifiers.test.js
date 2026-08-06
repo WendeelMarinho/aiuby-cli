@@ -26,8 +26,8 @@ const publicInstallDocs = [
   'README.zh-CN.md',
   'docs/pt-BR/README.md',
   'docs/zh-CN/README.md',
-  'docs/ja-JP/skills/configure-ecc/SKILL.md',
-  'docs/zh-CN/skills/configure-ecc/SKILL.md',
+  'docs/ja-JP/skills/configure-aiuby/SKILL.md',
+  'docs/zh-CN/skills/configure-aiuby/SKILL.md',
 ];
 
 console.log('\n=== Testing public install identifiers ===\n');

@@ -1,6 +1,6 @@
 'use strict';
 /**
- * Tests for the proximity message sink (ecc-tui messages send) and the
+ * Tests for the proximity message sink (aiuby-tui messages send) and the
  * deduping dispatcher.
  */
 
@@ -34,19 +34,19 @@ test('buildSendArgs: maps trigger type to message kind and shapes the CLI argv',
 test('createEccMessageSink: delivers via the injected runner with the resolved binary', () => {
   const calls = [];
   const send = createEccMessageSink({
-    binPath: '/fake/ecc-tui',
+    binPath: '/fake/aiuby-tui',
     runCommand: (bin, args) => calls.push({ bin, args })
   });
   send({ fromSession: 'a', toSession: 'b', content: 'hello', msgType: 'proximity_transmit' });
   assert.strictEqual(calls.length, 1);
-  assert.strictEqual(calls[0].bin, '/fake/ecc-tui');
+  assert.strictEqual(calls[0].bin, '/fake/aiuby-tui');
   assert.deepStrictEqual(calls[0].args.slice(0, 2), ['messages', 'send']);
   assert.ok(calls[0].args.includes('query'), 'transmit maps to query kind');
 });
 
 test('createEccMessageSink: a failing command propagates (dispatcher will count it skipped)', () => {
   const send = createEccMessageSink({
-    binPath: 'ecc-tui',
+    binPath: 'aiuby-tui',
     runCommand: () => {
       throw new Error('ENOENT');
     }
@@ -55,7 +55,7 @@ test('createEccMessageSink: a failing command propagates (dispatcher will count 
 });
 
 test('resolveEccBin: honors explicit override', () => {
-  assert.strictEqual(resolveEccBin({ binPath: '/x/ecc-tui' }), '/x/ecc-tui');
+  assert.strictEqual(resolveEccBin({ binPath: '/x/aiuby-tui' }), '/x/aiuby-tui');
 });
 
 test('dispatcher: fires once then suppresses the same trigger within cooldown', () => {

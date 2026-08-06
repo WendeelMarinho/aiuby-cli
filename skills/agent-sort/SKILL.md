@@ -184,7 +184,7 @@ Return a compact report with:
 
 If the next step is interactive installation or repair, hand off to:
 
-- `configure-ecc`
+- `configure-aiuby`
 
 If the next step is overlap cleanup or catalog review, hand off to:
 
