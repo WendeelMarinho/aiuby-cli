@@ -1,6 +1,6 @@
 # Everything Claude Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -32,12 +32,12 @@
 <table>
 <tr>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="Everything Claude Code 簡明指南" />
 </a>
 </td>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="Everything Claude Code 完整指南" />
 </a>
 </td>
@@ -67,10 +67,10 @@
 
 ```bash
 # 新增市集
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # 安裝外掛程式
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### 第二步：安裝規則（必需）
@@ -79,7 +79,7 @@
 
 ```bash
 # 首先複製儲存庫
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # 複製規則（應用於所有專案）
 cp -r everything-claude-code/rules/* ~/.claude/rules/
@@ -89,13 +89,13 @@ cp -r everything-claude-code/rules/* ~/.claude/rules/
 
 ```bash
 # 嘗試一個指令（外掛安裝使用命名空間形式）
-/ecc:plan "新增使用者認證"
+/aiuby:plan "新增使用者認證"
 
 # 手動安裝（選項2）使用簡短形式：
 # /plan "新增使用者認證"
 
 # 查看可用指令
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **完成！** 您現在使用 15+ 代理程式、30+ 技能和 20+ 指令。
@@ -239,11 +239,11 @@ everything-claude-code/
 
 ## 生態系統工具
 
-### ecc.tools - 技能建立器
+### aiuby.com - 技能建立器
 
 從您的儲存庫自動生成 Claude Code 技能。
 
-[安裝 GitHub App](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[安裝 GitHub App](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 分析您的儲存庫並建立：
 - **SKILL.md 檔案** - 可直接用於 Claude Code 的技能
@@ -267,10 +267,10 @@ everything-claude-code/
 
 ```bash
 # 將此儲存庫新增為市集
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # 安裝外掛程式
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 或直接新增到您的 `~/.claude/settings.json`：
@@ -281,12 +281,12 @@ everything-claude-code/
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -301,7 +301,7 @@ everything-claude-code/
 
 ```bash
 # 複製儲存庫
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # 將代理程式複製到您的 Claude 設定
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -459,15 +459,15 @@ node tests/hooks/hooks.test.js
 
 ## Star 歷史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli&Date)
 
 ---
 
 ## 連結
 
-- **簡明指南（從這裡開始）：** [Everything Claude Code 簡明指南](https://x.com/affaanmustafa/status/2012378465664745795)
-- **完整指南（進階）：** [Everything Claude Code 完整指南](https://x.com/affaanmustafa/status/2014040193557471352)
-- **追蹤：** [@affaanmustafa](https://x.com/affaanmustafa)
+- **簡明指南（從這裡開始）：** [Everything Claude Code 簡明指南](https://instagram.com/aiuby.ai/status/2012378465664745795)
+- **完整指南（進階）：** [Everything Claude Code 完整指南](https://instagram.com/aiuby.ai/status/2014040193557471352)
+- **追蹤：** [@aiuby.ai](https://instagram.com/aiuby.ai)
 - **zenith.chat：** [zenith.chat](https://zenith.chat)
 - **技能目錄：** awesome-agent-skills（社區維護的智能體技能目錄）
 

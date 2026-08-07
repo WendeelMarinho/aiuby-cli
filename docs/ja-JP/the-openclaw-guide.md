@@ -468,4 +468,4 @@ Andrej Karpathy が何かを「惨事」と呼び、コンピューターでそ�
 
 ***
 
-*Affaan Mustafa ([@affaanmustafa](https://x.com/affaanmustafa)) は AI コーディングツールを構築し、AI インフラセキュリティについて執筆している。彼の everything-claude-code リポジトリは GitHub で 5 万以上のスターを持つ。AgentShield を作成し、Anthropic x Forum Ventures ハッカソンで [zenith.chat](https://zenith.chat) を構築して優勝した。*
+*Affaan Mustafa ([@aiuby.ai](https://instagram.com/aiuby.ai)) は AI コーディングツールを構築し、AI インフラセキュリティについて執筆している。彼の everything-claude-code リポジトリは GitHub で 5 万以上のスターを持つ。AgentShield を作成し、Anthropic x Forum Ventures ハッカソンで [zenith.chat](https://zenith.chat) を構築して優勝した。*

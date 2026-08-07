@@ -19,7 +19,7 @@ origin: ECC
 
 此技能必须在激活前对 Claude Code 可访问。有两种引导方式：
 
-1. **通过插件**: `/plugin install ecc@ecc` — 插件会自动加载此技能
+1. **通过插件**: `/plugin install aiuby@aiuby` — 插件会自动加载此技能
 2. **手动**: 仅将此技能复制到 `~/.claude/skills/configure-aiuby/SKILL.md`，然后通过说 "configure ecc" 激活
 
 ***
@@ -30,7 +30,7 @@ origin: ECC
 
 ```bash
 rm -rf /tmp/everything-claude-code
-git clone https://github.com/affaan-m/everything-claude-code.git /tmp/everything-claude-code
+git clone https://github.com/WendeelMarinho/aiuby-cli.git /tmp/everything-claude-code
 ```
 
 将 `ECC_ROOT=/tmp/everything-claude-code` 设置为所有后续复制操作的源。

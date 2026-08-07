@@ -4,12 +4,12 @@
 
 ![Everything Claude Code — система повышения эффективности сред агентного ИИ](../../assets/hero-aiuby.png)
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/graphs/contributors)
-[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
+[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
-[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
+[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -50,17 +50,17 @@ ECC v2.0.0-rc.1 добавляет публичную историю опера�
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="../../assets/images/guides/shorthand-guide.png" alt="Краткое руководство по Everything Claude Code" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="../../assets/images/guides/longform-guide.png" alt="Подробное руководство по Everything Claude Code" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://instagram.com/aiuby.ai/status/2033263813387223421">
 <img src="../../assets/images/security/security-guide-header.png" alt="Краткое руководство по безопасности агентных систем" />
 </a>
 </td>
@@ -136,7 +136,7 @@ ECC v2.0.0-rc.1 добавляет публичную историю опера�
 
 ### v1.4.1 — Исправление ошибки (февраль 2026)
 
-- **Исправлена потеря содержимого при импорте инстинктов** — `parse_instinct_file()` незаметно отбрасывал всё содержимое после frontmatter (разделы Action, Evidence, Examples) во время `/instinct-import`. ([#148](https://github.com/affaan-m/everything-claude-code/issues/148), [#161](https://github.com/affaan-m/everything-claude-code/pull/161))
+- **Исправлена потеря содержимого при импорте инстинктов** — `parse_instinct_file()` незаметно отбрасывал всё содержимое после frontmatter (разделы Action, Evidence, Examples) во время `/instinct-import`. ([#148](https://github.com/WendeelMarinho/aiuby-cli/issues/148), [#161](https://github.com/WendeelMarinho/aiuby-cli/pull/161))
 
 ### v1.4.0 — Многоязычные правила, мастер установки и PM2 (февраль 2026)
 
@@ -160,7 +160,7 @@ ECC v2.0.0-rc.1 добавляет публичную историю опера�
 - **Управление сессиями** — команда `/sessions` для истории сессий
 - **Непрерывное обучение v2** — обучение на основе инстинктов с оценкой уверенности, импортом/экспортом и эволюцией
 
-Полный журнал изменений смотрите в [Releases](https://github.com/affaan-m/everything-claude-code/releases).
+Полный журнал изменений смотрите в [Releases](https://github.com/WendeelMarinho/aiuby-cli/releases).
 
 ---
 
@@ -222,21 +222,21 @@ npx ecc consult "security reviews" --target claude
 
 ```bash
 # Добавьте marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Установите плагин
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### Примечание об именовании и миграции
 
 У ECC теперь три публичных идентификатора, и они не взаимозаменяемы:
 
-- исходный репозиторий GitHub: `affaan-m/everything-claude-code`
-- идентификатор Claude marketplace/plugin: `ecc@ecc`
-- npm-пакет: `ecc-universal`
+- исходный репозиторий GitHub: `WendeelMarinho/aiuby-cli`
+- идентификатор Claude marketplace/plugin: `aiuby@aiuby`
+- npm-пакет: `aiuby-cli`
 
-Это сделано намеренно. Установки Anthropic marketplace/plugin ключуются каноническим идентификатором плагина, поэтому ECC использует `ecc@ecc`, чтобы имена инструментов и пространства имен slash-команд оставались достаточно короткими для строгих валидаторов Desktop/API. Старые публикации могут всё ещё показывать прежний длинный marketplace-идентификатор; считайте его только устаревшим alias. Отдельно npm-пакет остался `ecc-universal`, поэтому npm-установки и marketplace-установки намеренно используют разные имена.
+Это сделано намеренно. Установки Anthropic marketplace/plugin ключуются каноническим идентификатором плагина, поэтому ECC использует `aiuby@aiuby`, чтобы имена инструментов и пространства имен slash-команд оставались достаточно короткими для строгих валидаторов Desktop/API. Старые публикации могут всё ещё показывать прежний длинный marketplace-идентификатор; считайте его только устаревшим alias. Отдельно npm-пакет остался `aiuby-cli`, поэтому npm-установки и marketplace-установки намеренно используют разные имена.
 
 ### Шаг 2: Установите правила (обязательно)
 
@@ -252,7 +252,7 @@ npx ecc consult "security reviews" --target claude
 
 ```bash
 # Сначала клонируйте репозиторий
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd everything-claude-code
 
 # Установите зависимости (выберите пакетный менеджер)
@@ -340,13 +340,13 @@ ECC удаляет только файлы, записанные в его insta
 # Существующие slash-style имена команд продолжают работать, пока ECC мигрирует с commands/.
 
 # Установка через плагин использует каноническую форму с namespace
-/ecc:plan "Добавить аутентификацию пользователей"
+/aiuby:plan "Добавить аутентификацию пользователей"
 
 # Ручная установка сохраняет более короткую slash-форму:
 # /plan "Добавить аутентификацию пользователей"
 
 # Проверить доступные команды
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **Готово.** Теперь у вас есть доступ к 50 агентам, 185 навыкам и 68 устаревшим совместимым заглушкам команд.
@@ -668,7 +668,7 @@ everything-claude-code/
 
 Для продвинутых возможностей (10k+ коммитов, auto-PR, командный обмен):
 
-[Установить GitHub App](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[Установить GitHub App](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 ```bash
 # Оставьте комментарий в любом issue:
@@ -751,7 +751,7 @@ Claude Code v2.1+ **автоматически загружает** `hooks/hooks
 Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded file
 ```
 
-**История:** это уже приводило к повторяющимся циклам fix/revert в репозитории ([#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103)). Поведение менялось между версиями Claude Code, что вызывало путаницу. Теперь есть регрессионный тест, который не даёт вернуть эту ошибку.
+**История:** это уже приводило к повторяющимся циклам fix/revert в репозитории ([#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103)). Поведение менялось между версиями Claude Code, что вызывало путаницу. Теперь есть регрессионный тест, который не даёт вернуть эту ошибку.
 
 ---
 
@@ -763,10 +763,10 @@ Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded fil
 
 ```bash
 # Добавить этот репозиторий как marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Установить плагин
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 Или добавьте напрямую в `~/.claude/settings.json`:
@@ -777,12 +777,12 @@ Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded fil
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -793,7 +793,7 @@ Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded fil
 >
 > ```bash
 > # Сначала клонируйте репозиторий
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/WendeelMarinho/aiuby-cli.git
 >
 > # Вариант A: правила user-level (применяются ко всем проектам)
 > mkdir -p ~/.claude/rules/ecc
@@ -817,7 +817,7 @@ Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded fil
 
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # Скопировать агентов в ваш конфиг Claude
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -962,8 +962,8 @@ rules/
 
 | Я хочу... | Использовать | Агент |
 |-----------|---------------|-------|
-| Спланировать новую функцию | `/ecc:plan "Добавить auth"` | planner |
-| Спроектировать архитектуру системы | `/ecc:plan` + агент architect | architect |
+| Спланировать новую функцию | `/aiuby:plan "Добавить auth"` | planner |
+| Спроектировать архитектуру системы | `/aiuby:plan` + агент architect | architect |
 | Писать код сначала через тесты | skill `tdd-workflow` | tdd-guide |
 | Проверить только что написанный код | `/code-review` | code-reviewer |
 | Исправить падающую сборку | `/build-fix` | build-error-resolver |
@@ -982,7 +982,7 @@ Slash-формы ниже показаны там, где они остаютс�
 
 **Начало новой функции:**
 ```
-/ecc:plan "Добавить OAuth-аутентификацию пользователей"
+/aiuby:plan "Добавить OAuth-аутентификацию пользователей"
                                               → planner создаёт blueprint реализации
 tdd-workflow skill                            → tdd-guide принуждает писать тесты сначала
 /code-review                                  → code-reviewer проверяет работу
@@ -1010,7 +1010,7 @@ e2e-testing skill                             → e2e-runner: тесты кри�
 <summary><b>Как проверить, какие агенты/команды установлены?</b></summary>
 
 ```bash
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 Показывает всех доступных агентов, команды и навыки из плагина.
@@ -1019,7 +1019,7 @@ e2e-testing skill                             → e2e-runner: тесты кри�
 <details>
 <summary><b>Хуки не работают / я вижу ошибки "Duplicate hooks file"</b></summary>
 
-Это самая частая проблема. **НЕ добавляйте поле `"hooks"` в `.claude-plugin/plugin.json`.** Claude Code v2.1+ автоматически загружает `hooks/hooks.json` из установленных плагинов. Явное объявление вызывает ошибки обнаружения дубликатов. См. [#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103).
+Это самая частая проблема. **НЕ добавляйте поле `"hooks"` в `.claude-plugin/plugin.json`.** Claude Code v2.1+ автоматически загружает `hooks/hooks.json` из установленных плагинов. Явное объявление вызывает ошибки обнаружения дубликатов. См. [#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103).
 </details>
 
 <details>
@@ -1081,7 +1081,7 @@ cp -r everything-claude-code/rules/common ~/.claude/rules/ecc/
 - **Cursor**: предварительно адаптированные конфиги в `.cursor/`. См. [Поддержка Cursor IDE](#поддержка-cursor-ide).
 - **Gemini CLI**: экспериментальная project-local поддержка через `.gemini/GEMINI.md` и общий plumbing установщика.
 - **OpenCode**: полная поддержка плагина в `.opencode/`. См. [Поддержка OpenCode](#поддержка-opencode).
-- **Codex**: первоклассная поддержка macOS app и CLI, с guards против adapter drift и SessionStart fallback. См. PR [#257](https://github.com/affaan-m/everything-claude-code/pull/257).
+- **Codex**: первоклассная поддержка macOS app и CLI, с guards против adapter drift и SessionStart fallback. См. PR [#257](https://github.com/WendeelMarinho/aiuby-cli/pull/257).
 - **Antigravity**: плотная настройка для workflows, skills и flattened rules в `.agent/`. См. [Antigravity Guide](../ANTIGRAVITY-GUIDE.md).
 - **Ненативные среды**: ручной fallback path для Grok и похожих интерфейсов. См. [Manual Adaptation Guide](../MANUAL-ADAPTATION-GUIDE.md).
 - **Claude Code**: нативно — это основная цель.
@@ -1410,13 +1410,13 @@ opencode
 
 **Вариант 2: установить как npm package**
 ```bash
-npm install ecc-universal
+npm install aiuby-cli
 ```
 
 Затем добавьте в `opencode.json`:
 ```json
 {
-  "plugin": ["ecc-universal"]
+  "plugin": ["aiuby-cli"]
 }
 ```
 
@@ -1587,22 +1587,22 @@ Agent Teams создаёт несколько context windows. Каждый уч
 
 Этот проект бесплатный и open source. Спонсоры помогают поддерживать и развивать его.
 
-[**Стать спонсором**](https://github.com/sponsors/affaan-m) | [Уровни спонсорства](../../SPONSORS.md) | [Программа спонсорства](../../SPONSORING.md)
+[**Стать спонсором**](https://github.com/sponsors/WendeelMarinho) | [Уровни спонсорства](../../SPONSORS.md) | [Программа спонсорства](../../SPONSORING.md)
 
 ---
 
 ## История звёзд
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli&Date)
 
 ---
 
 ## Ссылки
 
-- **Краткое руководство (начните здесь):** [The Shorthand Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2012378465664745795)
-- **Подробное руководство (продвинутый уровень):** [The Longform Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2014040193557471352)
-- **Руководство по безопасности:** [Security Guide](../../the-security-guide.md) | [Тред](https://x.com/affaanmustafa/status/2033263813387223421)
-- **Подписаться:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Краткое руководство (начните здесь):** [The Shorthand Guide to Everything Claude Code](https://instagram.com/aiuby.ai/status/2012378465664745795)
+- **Подробное руководство (продвинутый уровень):** [The Longform Guide to Everything Claude Code](https://instagram.com/aiuby.ai/status/2014040193557471352)
+- **Руководство по безопасности:** [Security Guide](../../the-security-guide.md) | [Тред](https://instagram.com/aiuby.ai/status/2033263813387223421)
+- **Подписаться:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 
 ---
 

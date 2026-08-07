@@ -1,11 +1,11 @@
 # Everything Claude Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/graphs/contributors)
-[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
+[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
-[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
+[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -45,17 +45,17 @@
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to Everything Claude Code" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to Everything Claude Code" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://instagram.com/aiuby.ai/status/2033263813387223421">
 <img src="./assets/images/security/security-guide-header.png" alt="The Shorthand Guide to Everything Agentic Security" />
 </a>
 </td>
@@ -111,7 +111,7 @@ Codex、Hermes 等 harness 之间传递上下文。常规搜索只召回 `projec
 `PATH`。请先单独安装 ECC npm 运行时：
 
 ```bash
-npm install -g ecc-universal
+npm install -g aiuby-cli
 ecc memory --help
 command -v ecc-memory-mcp
 ```
@@ -131,13 +131,13 @@ command -v ecc-memory-mcp
 
 ```bash
 # 添加市场
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # 安装插件
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
-> 安装名称说明：较早的帖子里可能还会出现较长的旧标识符。Anthropic 的 marketplace/plugin 安装是按规范化插件标识符寻址的，因此 ECC 现在统一为 `ecc@ecc`，让工具名和 slash command 命名空间保持简短。
+> 安装名称说明：较早的帖子里可能还会出现较长的旧标识符。Anthropic 的 marketplace/plugin 安装是按规范化插件标识符寻址的，因此 ECC 现在统一为 `aiuby@aiuby`，让工具名和 slash command 命名空间保持简短。
 
 ### 第二步：仅在需要时安装规则
 
@@ -149,7 +149,7 @@ command -v ecc-memory-mcp
 
 ```bash
 # 首先克隆仓库
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd everything-claude-code
 
 # 安装依赖（选择你常用的包管理器）
@@ -183,13 +183,13 @@ Copy-Item -Recurse rules/typescript "$HOME/.claude/rules/"
 
 ```bash
 # 尝试一个命令（插件安装使用命名空间形式）
-/ecc:plan "添加用户认证"
+/aiuby:plan "添加用户认证"
 
 # 手动安装（选项2）使用简短形式：
 # /plan "添加用户认证"
 
 # 查看可用命令
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **完成！** 你现在可以使用 67 个代理、281 个技能和 94 个命令。
@@ -486,7 +486,7 @@ everything-claude-code/
 
 用于高级功能（10k+ 提交、自动 PR、团队共享）：
 
-[安装 GitHub 应用](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[安装 GitHub 应用](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 ```bash
 # 在任何问题上评论：
@@ -567,7 +567,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 检测到重复的钩子文件：./hooks/hooks.json 指向已加载的文件
 ```
 
-**历史说明**：该问题曾在本仓库中引发多次「修复-回滚」循环（[#29](https://github.com/affaan-m/everything-claude-code/issues/29)、[#52](https://github.com/affaan-m/everything-claude-code/issues/52)、[#103](https://github.com/affaan-m/everything-claude-code/issues/103)）。因 Claude Code 版本间行为变更导致混淆，现已添加回归测试，防止该问题再次出现。
+**历史说明**：该问题曾在本仓库中引发多次「修复-回滚」循环（[#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29)、[#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52)、[#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103)）。因 Claude Code 版本间行为变更导致混淆，现已添加回归测试，防止该问题再次出现。
 
 ---
 
@@ -579,10 +579,10 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 
 ```bash
 # 将此仓库添加为市场
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # 安装插件
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 或直接添加到你的 `~/.claude/settings.json`：
@@ -593,12 +593,12 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -609,7 +609,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 >
 > ```bash
 > # 首先克隆仓库
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/WendeelMarinho/aiuby-cli.git
 >
 > # 方案 A：用户级规则（对所有项目生效）
 > mkdir -p ~/.claude/rules
@@ -633,7 +633,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 
 ```bash
 # 克隆仓库
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # 将智能体文件复制到 Claude 配置目录
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -828,22 +828,22 @@ node tests/hooks/hooks.test.js
 
 本项目免费开源。赞助支持项目持续维护与功能迭代。
 
-[成为赞助者](https://github.com/sponsors/affaan-m) | [赞助档位](SPONSORS.md) | [赞助计划](SPONSORING.md)
+[成为赞助者](https://github.com/sponsors/WendeelMarinho) | [赞助档位](SPONSORS.md) | [赞助计划](SPONSORING.md)
 
 ---
 
 ## Star 历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli&Date)
 
 ---
 
 ## 链接
 
-- **快速上手指南（入门首选）：** [Everything Claude Code 简明指南](https://x.com/affaanmustafa/status/2012378465664745795)
-- **长文指南（高阶进阶）：** [Everything Claude Code 完整版深度指南](https://x.com/affaanmustafa/status/2014040193557471352)
-- **安全指南：** [安全指南](./the-security-guide.md) | [推文详解](https://x.com/affaanmustafa/status/2033263813387223421)
-- **关注作者：** [@affaanmustafa](https://x.com/affaanmustafa)
+- **快速上手指南（入门首选）：** [Everything Claude Code 简明指南](https://instagram.com/aiuby.ai/status/2012378465664745795)
+- **长文指南（高阶进阶）：** [Everything Claude Code 完整版深度指南](https://instagram.com/aiuby.ai/status/2014040193557471352)
+- **安全指南：** [安全指南](./the-security-guide.md) | [推文详解](https://instagram.com/aiuby.ai/status/2033263813387223421)
+- **关注作者：** [@aiuby.ai](https://instagram.com/aiuby.ai)
 
 ---
 

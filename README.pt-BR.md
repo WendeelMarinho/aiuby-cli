@@ -789,7 +789,7 @@ A distribuição Aiuby introduz uma nova identidade de produto, filosofia de eng
 
 Projeto upstream:
 
-- [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
+- [github.com/WendeelMarinho/aiuby-cli](https://github.com/WendeelMarinho/aiuby-cli)
 
 Não remova avisos de copyright ou o texto original da licença quando sua preservação for obrigatória.
 

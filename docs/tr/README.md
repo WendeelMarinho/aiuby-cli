@@ -1,9 +1,9 @@
 # Everything Claude Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/graphs/contributors)
-[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20haftalık%20indirme&logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
+[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20haftalık%20indirme&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20haftalık%20indirme&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/badge/GitHub%20App-150%20kurulum-2ea44f?logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/lisans-MIT-blue.svg)](../../LICENSE)
@@ -44,17 +44,17 @@ Bu repository yalnızca ham kodu içerir. Rehberler her şeyi açıklıyor.
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="../../assets/images/guides/shorthand-guide.png" alt="Everything Claude Code Kısa Rehberi" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="../../assets/images/guides/longform-guide.png" alt="Everything Claude Code Uzun Rehberi" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://instagram.com/aiuby.ai/status/2033263813387223421">
 <img src="../../assets/images/security/security-guide-header.png" alt="Agentic Güvenlik Kısa Rehberi" />
 </a>
 </td>
@@ -114,7 +114,7 @@ Bu repository yalnızca ham kodu içerir. Rehberler her şeyi açıklıyor.
 - **Çapraz harness paritesi** — Claude Code, Cursor, OpenCode ve Codex app/CLI arasında davranış sıkılaştırıldı.
 - **997 internal test geçiyor** — Hook/runtime refactor ve uyumluluk güncellemelerinden sonra tam suite yeşil.
 
-[Tam değişiklik günlüğü için Releases bölümüne bakın](https://github.com/affaan-m/everything-claude-code/releases).
+[Tam değişiklik günlüğü için Releases bölümüne bakın](https://github.com/WendeelMarinho/aiuby-cli/releases).
 
 ---
 
@@ -126,10 +126,10 @@ Bu repository yalnızca ham kodu içerir. Rehberler her şeyi açıklıyor.
 
 ```bash
 # Marketplace ekle
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Plugin'i kur
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### Adım 2: Rule'ları Kurun (Gerekli)
@@ -138,7 +138,7 @@ Bu repository yalnızca ham kodu içerir. Rehberler her şeyi açıklıyor.
 
 ```bash
 # Önce repo'yu klonlayın
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd everything-claude-code
 
 # Bağımlılıkları kurun (paket yöneticinizi seçin)
@@ -168,13 +168,13 @@ Manuel kurulum talimatları için `rules/` klasöründeki README'ye bakın.
 
 ```bash
 # Bir command deneyin (plugin kurulumu namespace'li form kullanır)
-/ecc:plan "Kullanıcı kimlik doğrulaması ekle"
+/aiuby:plan "Kullanıcı kimlik doğrulaması ekle"
 
 # Manuel kurulum (Seçenek 2) daha kısa formu kullanır:
 # /plan "Kullanıcı kimlik doğrulaması ekle"
 
 # Mevcut command'ları kontrol edin
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **Bu kadar!** Artık 28 agent, 116 skill ve 59 command'a erişiminiz var.
@@ -312,8 +312,8 @@ Nereden başlayacağınızdan emin değil misiniz? Bu hızlı referansı kullan�
 
 | Yapmak istediğim... | Bu command'ı kullan | Kullanılan agent |
 |---------------------|---------------------|------------------|
-| Yeni bir feature planla | `/ecc:plan "Auth ekle"` | planner |
-| Sistem mimarisi tasarla | `/ecc:plan` + architect agent | architect |
+| Yeni bir feature planla | `/aiuby:plan "Auth ekle"` | planner |
+| Sistem mimarisi tasarla | `/aiuby:plan` + architect agent | architect |
 | Önce testlerle kod yaz | `/tdd` | tdd-guide |
 | Yazdığım kodu incele | `/code-review` | code-reviewer |
 | Başarısız bir build'i düzelt | `/build-fix` | build-error-resolver |
@@ -328,7 +328,7 @@ Nereden başlayacağınızdan emin değil misiniz? Bu hızlı referansı kullan�
 
 **Yeni bir feature başlatma:**
 ```
-/ecc:plan "OAuth ile kullanıcı kimlik doğrulaması ekle"
+/aiuby:plan "OAuth ile kullanıcı kimlik doğrulaması ekle"
                                               → planner implementasyon planı oluşturur
 /tdd                                          → tdd-guide önce-test-yaz'ı zorunlu kılar
 /code-review                                  → code-reviewer çalışmanızı kontrol eder
@@ -356,7 +356,7 @@ Nereden başlayacağınızdan emin değil misiniz? Bu hızlı referansı kullan�
 <summary><b>Hangi agent/command'ların kurulu olduğunu nasıl kontrol ederim?</b></summary>
 
 ```bash
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 Bu, plugin'den mevcut tüm agent'ları, command'ları ve skill'leri gösterir.
@@ -365,7 +365,7 @@ Bu, plugin'den mevcut tüm agent'ları, command'ları ve skill'leri gösterir.
 <details>
 <summary><b>Hook'larım çalışmıyor / "Duplicate hooks file" hatası alıyorum</b></summary>
 
-Bu en yaygın sorundur. `.claude-plugin/plugin.json`'a bir `"hooks"` alanı **EKLEMEYİN**. Claude Code v2.1+ kurulu plugin'lerden `hooks/hooks.json`'ı otomatik olarak yükler. Açıkça belirtmek duplicate algılama hatalarına neden olur. Bkz. [#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103).
+Bu en yaygın sorundur. `.claude-plugin/plugin.json`'a bir `"hooks"` alanı **EKLEMEYİN**. Claude Code v2.1+ kurulu plugin'lerden `hooks/hooks.json`'ı otomatik olarak yükler. Açıkça belirtmek duplicate algılama hatalarına neden olur. Bkz. [#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103).
 </details>
 
 <details>
@@ -406,7 +406,7 @@ Her component tamamen bağımsızdır.
 Evet. ECC çapraz platformdur:
 - **Cursor**: `.cursor/` içinde önceden çevrilmiş config'ler. [Cursor IDE Desteği](../../README.md#cursor-ide-support) bölümüne bakın.
 - **OpenCode**: `.opencode/` içinde tam plugin desteği. [OpenCode Desteği](../../README.md#opencode-support) bölümüne bakın.
-- **Codex**: macOS app ve CLI için birinci sınıf destek. PR [#257](https://github.com/affaan-m/everything-claude-code/pull/257)'ye bakın.
+- **Codex**: macOS app ve CLI için birinci sınıf destek. PR [#257](https://github.com/WendeelMarinho/aiuby-cli/pull/257)'ye bakın.
 - **Antigravity**: İş akışları, skill'ler ve `.agent/` içinde düzleştirilmiş rule'lar için sıkı entegre kurulum.
 - **Claude Code**: Native — bu birincil hedeftir.
 </details>

@@ -274,7 +274,7 @@ claude --version
 # Requiere Claude Code 2.0+
 
 # Instalación manual (si el marketplace falla)
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
@@ -406,7 +406,7 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
 Si sigues experimentando problemas:
 
-1. **Revisa los Issues de GitHub**: [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
+1. **Revisa los Issues de GitHub**: [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
 2. **Habilita el Registro de Depuración**:
    ```bash
    export CLAUDE_DEBUG=1

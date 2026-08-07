@@ -24,7 +24,7 @@ Estos son puntos de partida prácticos y pueden ajustarse según el alcance de l
 
 Las métricas compartidas mensualmente pueden incluir:
 
-- Descargas de npm (`ecc-universal`, `ecc-agentshield`)
+- Descargas de npm (`aiuby-cli`, `ecc-agentshield`)
 - Adopción del repositorio (estrellas, forks, contribuidores)
 - Tendencia de instalaciones de la GitHub App
 - Cadencia de lanzamientos e hitos de confiabilidad
@@ -39,5 +39,5 @@ Para comandos exactos y un proceso de extracción repetible, consulta [`docs/bus
 
 ## Patrocina Aquí
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
-- Sitio del proyecto: [https://ecc.tools](https://ecc.tools)
+- GitHub Sponsors: [https://github.com/sponsors/WendeelMarinho](https://github.com/sponsors/WendeelMarinho)
+- Sitio del proyecto: [https://aiuby.com](https://aiuby.com)

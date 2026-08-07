@@ -4,19 +4,19 @@
 
 ## エンタープライズスポンサー
 
-*[エンタープライズスポンサー](https://github.com/sponsors/affaan-m)になってここに掲載されましょう*
+*[エンタープライズスポンサー](https://github.com/sponsors/WendeelMarinho)になってここに掲載されましょう*
 
 ## ビジネススポンサー
 
-*[ビジネススポンサー](https://github.com/sponsors/affaan-m)になってここに掲載されましょう*
+*[ビジネススポンサー](https://github.com/sponsors/WendeelMarinho)になってここに掲載されましょう*
 
 ## チームスポンサー
 
-*[チームスポンサー](https://github.com/sponsors/affaan-m)になってここに掲載されましょう*
+*[チームスポンサー](https://github.com/sponsors/WendeelMarinho)になってここに掲載されましょう*
 
 ## 個人スポンサー
 
-*[スポンサー](https://github.com/sponsors/affaan-m)になってここに掲載されましょう*
+*[スポンサー](https://github.com/sponsors/WendeelMarinho)になってここに掲載されましょう*
 
 ---
 
@@ -33,7 +33,7 @@
 
 スポンサーの会話で以下の実績ポイントを使用してください：
 
-- `ecc-universal` と `ecc-agentshield` のライブnpmインストール/ダウンロードメトリクス
+- `aiuby-cli` と `ecc-agentshield` のライブnpmインストール/ダウンロードメトリクス
 - MarketplaceインストールによるGitHub Appの配布
 - 公開採用シグナル：スター、フォーク、コントリビューター、リリース頻度
 - クロスハーネスサポート：Claude Code、Cursor、OpenCode、Codex app/CLI
@@ -52,7 +52,7 @@
 | ビジネス | $500/月 | 25シート、コンサルティングクレジット |
 | エンタープライズ | $2K/月 | 無制限シート、カスタムツール |
 
-[**スポンサーになる →**](https://github.com/sponsors/affaan-m)
+[**スポンサーになる →**](https://github.com/sponsors/WendeelMarinho)
 
 ---
 

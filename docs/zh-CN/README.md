@@ -2,12 +2,12 @@
 
 # Everything Claude Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/graphs/contributors)
-[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads\&logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
+[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads\&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads\&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
-[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
+[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash\&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript\&logoColor=white)
@@ -46,17 +46,17 @@
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="../../assets/images/guides/shorthand-guide.png" alt="Claude代码简明指南/>
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="../../assets/images/guides/longform-guide.png" alt="Claude代码详细指南" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://instagram.com/aiuby.ai/status/2033263813387223421">
 <img src="../../assets/images/security/security-guide-header.png" alt="Agentic安全简明指南" />
 </a>
 </td>
@@ -135,7 +135,7 @@
 
 ### v1.4.1 — 错误修复 (2026年2月)
 
-* **修复了直觉导入内容丢失问题** — `parse_instinct_file()` 在 `/instinct-import` 期间会静默丢弃 frontmatter 之后的所有内容（Action, Evidence, Examples 部分）。已由社区贡献者 @ericcai0814 修复 ([#148](https://github.com/affaan-m/everything-claude-code/issues/148), [#161](https://github.com/affaan-m/everything-claude-code/pull/161))
+* **修复了直觉导入内容丢失问题** — `parse_instinct_file()` 在 `/instinct-import` 期间会静默丢弃 frontmatter 之后的所有内容（Action, Evidence, Examples 部分）。已由社区贡献者 @ericcai0814 修复 ([#148](https://github.com/WendeelMarinho/aiuby-cli/issues/148), [#161](https://github.com/WendeelMarinho/aiuby-cli/pull/161))
 
 ### v1.4.0 — 多语言规则、安装向导 & PM2 (2026年2月)
 
@@ -159,7 +159,7 @@
 * **会话管理** — `/sessions` 命令用于查看会话历史
 * **持续学习 v2** — 基于直觉的学习，带有置信度评分、导入/导出、进化
 
-完整的更新日志请参见 [Releases](https://github.com/affaan-m/everything-claude-code/releases)。
+完整的更新日志请参见 [Releases](https://github.com/WendeelMarinho/aiuby-cli/releases)。
 
 ***
 
@@ -181,7 +181,7 @@ Codex、Hermes 等 harness 之间传递上下文。常规搜索只召回 `projec
 `PATH`。请先单独安装 ECC npm 运行时：
 
 ```bash
-npm install -g ecc-universal
+npm install -g aiuby-cli
 ecc memory --help
 command -v ecc-memory-mcp
 ```
@@ -199,10 +199,10 @@ command -v ecc-memory-mcp
 
 ```bash
 # Add marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Install plugin
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### 步骤 2：安装规则（必需）
@@ -215,7 +215,7 @@ command -v ecc-memory-mcp
 
 ```bash
 # Clone the repo first
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd everything-claude-code
 
 # Install dependencies (pick your package manager)
@@ -247,13 +247,13 @@ Copy-Item -Recurse rules/typescript "$HOME/.claude/rules/"
 
 ```bash
 # Try a command (plugin install uses namespaced form)
-/ecc:plan "Add user authentication"
+/aiuby:plan "Add user authentication"
 
 # Manual install (Option 2) uses the shorter form:
 # /plan "Add user authentication"
 
 # Check available commands
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **搞定！** 你现在可以使用 67 个智能体、281 项技能和 94 个命令了。
@@ -535,7 +535,7 @@ everything-claude-code/
 
 适用于高级功能（10k+ 提交、自动 PR、团队共享）：
 
-[安装 GitHub 应用](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[安装 GitHub 应用](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 ```bash
 # Comment on any issue:
@@ -623,7 +623,7 @@ Claude Code v2.1+ **会自动加载** 任何已安装插件中的 `hooks/hooks.j
 重复的钩子文件检测到：./hooks/hooks.json 解析到已加载的文件
 ```
 
-**历史背景：** 这已导致此仓库中多次修复/还原循环（[#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103)）。Claude Code 版本之间的行为发生了变化，导致了混淆。我们现在有一个回归测试来防止这种情况再次发生。
+**历史背景：** 这已导致此仓库中多次修复/还原循环（[#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103)）。Claude Code 版本之间的行为发生了变化，导致了混淆。我们现在有一个回归测试来防止这种情况再次发生。
 
 ***
 
@@ -635,10 +635,10 @@ Claude Code v2.1+ **会自动加载** 任何已安装插件中的 `hooks/hooks.j
 
 ```bash
 # Add this repo as a marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Install the plugin
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 或者直接添加到您的 `~/.claude/settings.json`：
@@ -649,12 +649,12 @@ Claude Code v2.1+ **会自动加载** 任何已安装插件中的 `hooks/hooks.j
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -665,7 +665,7 @@ Claude Code v2.1+ **会自动加载** 任何已安装插件中的 `hooks/hooks.j
 >
 > ```bash
 > # 首先克隆仓库
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/WendeelMarinho/aiuby-cli.git
 >
 > # 选项 A：用户级规则（适用于所有项目）
 > mkdir -p ~/.claude/rules
@@ -689,7 +689,7 @@ Claude Code v2.1+ **会自动加载** 任何已安装插件中的 `hooks/hooks.j
 
 ```bash
 # Clone the repo
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # Copy agents to your Claude config
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -800,8 +800,8 @@ rules/
 
 | 我想要... | 使用此表面 | 使用的智能体 |
 |--------------|-----------------|------------|
-| 规划新功能 | `/ecc:plan "Add auth"` | planner |
-| 设计系统架构 | `/ecc:plan` + architect agent | architect |
+| 规划新功能 | `/aiuby:plan "Add auth"` | planner |
+| 设计系统架构 | `/aiuby:plan` + architect agent | architect |
 | 先写测试再写代码 | `tdd-workflow` 技能 | tdd-guide |
 | 评审我刚写的代码 | `/code-review` | code-reviewer |
 | 修复失败的构建 | `/build-fix` | build-error-resolver |
@@ -819,7 +819,7 @@ rules/
 **开始新功能：**
 
 ```
-/ecc:plan "使用 OAuth 添加用户身份验证"
+/aiuby:plan "使用 OAuth 添加用户身份验证"
                                               → 规划器创建实现蓝图
 tdd-workflow 技能                             → tdd-guide 强制执行先写测试
 /code-review                                  → 代码审查员检查你的工作
@@ -849,7 +849,7 @@ e2e-testing 技能                              → e2e-runner: 关键用户流�
 <summary><b>如何检查已安装的代理/命令？</b></summary>
 
 ```bash
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 这会显示插件中所有可用的代理、命令和技能。
@@ -859,7 +859,7 @@ e2e-testing 技能                              → e2e-runner: 关键用户流�
 <details>
 <summary><b>我的钩子不工作 / 我看到“重复钩子文件”错误</b></summary>
 
-这是最常见的问题。**不要在 `.claude-plugin/plugin.json` 中添加 `"hooks"` 字段。** Claude Code v2.1+ 会自动从已安装的插件加载 `hooks/hooks.json`。显式声明它会导致重复检测错误。参见 [#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103)。
+这是最常见的问题。**不要在 `.claude-plugin/plugin.json` 中添加 `"hooks"` 字段。** Claude Code v2.1+ 会自动从已安装的插件加载 `hooks/hooks.json`。显式声明它会导致重复检测错误。参见 [#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103)。
 
 </details>
 
@@ -931,7 +931,7 @@ cp -r everything-claude-code/rules/common ~/.claude/rules/common
 
 * **Cursor**: 预翻译的配置位于 `.cursor/`。参见 [Cursor IDE 支持](#cursor-ide-支持)。
 * **OpenCode**: `.opencode/` 中的完整插件支持。参见 [OpenCode 支持](#opencode-支持)。
-* **Codex**: 对 macOS 应用和 CLI 的一流支持，带有适配器漂移防护和 SessionStart 回退。参见 PR [#257](https://github.com/affaan-m/everything-claude-code/pull/257)。
+* **Codex**: 对 macOS 应用和 CLI 的一流支持，带有适配器漂移防护和 SessionStart 回退。参见 PR [#257](https://github.com/WendeelMarinho/aiuby-cli/pull/257)。
 * **Antigravity**: 为工作流、技能和扁平化规则紧密集成的设置，位于 `.agent/`。参见 [Antigravity 指南](../ANTIGRAVITY-GUIDE.md)。
 * **Claude Code**: 原生支持 — 这是主要目标。
 
@@ -1242,14 +1242,14 @@ opencode
 **选项 2：作为 npm 包安装**
 
 ```bash
-npm install ecc-universal
+npm install aiuby-cli
 ```
 
 然后添加到您的 `opencode.json`：
 
 ```json
 {
-  "plugin": ["ecc-universal"]
+  "plugin": ["aiuby-cli"]
 }
 ```
 
@@ -1418,21 +1418,21 @@ ECC 是**第一个最大化利用每个主要 AI 编码工具的插件**。以�
 
 这个项目是免费和开源的。赞助商帮助保持其维护和发展。
 
-[**成为赞助商**](https://github.com/sponsors/affaan-m) | [赞助层级](SPONSORS.md) | [赞助计划](SPONSORING.md)
+[**成为赞助商**](https://github.com/sponsors/WendeelMarinho) | [赞助层级](SPONSORS.md) | [赞助计划](SPONSORING.md)
 
 ***
 
 ## Star 历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code\&type=Date)](https://star-history.com/#affaan-m/everything-claude-code\&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli\&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli\&Date)
 
 ***
 
 ## 链接
 
-* **速查指南（从这里开始）：** [Claude Code 速查指南](https://x.com/affaanmustafa/status/2012378465664745795)
-* **详细指南（进阶）：** [Claude Code 详细指南](https://x.com/affaanmustafa/status/2014040193557471352)
-* **关注：** [@affaanmustafa](https://x.com/affaanmustafa)
+* **速查指南（从这里开始）：** [Claude Code 速查指南](https://instagram.com/aiuby.ai/status/2012378465664745795)
+* **详细指南（进阶）：** [Claude Code 详细指南](https://instagram.com/aiuby.ai/status/2014040193557471352)
+* **关注：** [@aiuby.ai](https://instagram.com/aiuby.ai)
 * **zenith.chat：** [zenith.chat](https://zenith.chat)
 * **技能目录：** awesome-agent-skills（社区维护的智能体技能目录）
 

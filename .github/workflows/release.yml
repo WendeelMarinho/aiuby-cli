@@ -98,7 +98,7 @@ jobs:
 
           ### Notes
           - npm package: \`ecc-universal\`
-          - Claude marketplace/plugin identifier: \`ecc@ecc\`
+          - Claude marketplace/plugin identifier: \`aiuby@aiuby\`
           - For migration tips and compatibility notes, see README and CHANGELOG.
           EOF
 

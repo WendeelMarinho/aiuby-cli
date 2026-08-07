@@ -24,7 +24,7 @@ ECCはClaude Code、Cursor、OpenCode、Codex app/CLIにまたがるオープン
 
 月次で共有されるメトリクスには以下が含まれます：
 
-- npmダウンロード数（`ecc-universal`、`ecc-agentshield`）
+- npmダウンロード数（`aiuby-cli`、`ecc-agentshield`）
 - リポジトリ採用状況（スター、フォーク、コントリビューター）
 - GitHub Appインストール推移
 - リリース頻度と信頼性マイルストーン
@@ -39,5 +39,5 @@ ECCはClaude Code、Cursor、OpenCode、Codex app/CLIにまたがるオープン
 
 ## スポンサーになる
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
-- プロジェクトサイト: [https://ecc.tools](https://ecc.tools)
+- GitHub Sponsors: [https://github.com/sponsors/WendeelMarinho](https://github.com/sponsors/WendeelMarinho)
+- プロジェクトサイト: [https://aiuby.com](https://aiuby.com)

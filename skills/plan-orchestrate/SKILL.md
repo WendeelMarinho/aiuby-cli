@@ -51,7 +51,7 @@ Let `<claude-home>` denote the Claude Code home directory: `~/.claude` on macOS/
 
 | Form | Detection | `{ORCH_CMD}` | Agent name format |
 |---|---|---|---|
-| Plugin install (2.0.0+) | `<claude-home>/plugins/marketplaces/aiuby/` exists | `/ecc:orchestrate` | `ecc:<name>` |
+| Plugin install (2.0.0+) | `<claude-home>/plugins/marketplaces/aiuby/` exists | `/aiuby:orchestrate` | `ecc:<name>` |
 | Legacy bare install | Above absent; agent files under `<claude-home>/agents/` | `/orchestrate` | `<name>` |
 
 Why this matters: under the plugin install, agents register as `ecc:tdd-guide`. Bare names force fuzzy matching, which fails intermittently under parallel calls. Under legacy, the prefixed forms are not registered and fail outright.
@@ -161,7 +161,7 @@ Emit Markdown using **the form determined by `ECC_MODE`**. The output uses one f
 
 Concrete rendering rules:
 
-- `{ORCH_CMD}` = `/ecc:orchestrate` under `plugin`, `/orchestrate` under `legacy`.
+- `{ORCH_CMD}` = `/aiuby:orchestrate` under `plugin`, `/orchestrate` under `legacy`.
 - `{AGENT(name)}` = `ecc:<name>` under `plugin`, `<name>` under `legacy`.
 - The overview-table "Chain" column uses the same `{AGENT(name)}` rendering.
 - Per-step bash blocks contain only the runnable command. **No `# plugin form` or `# legacy form` comments** — the form is implicit and uniform across the whole output.
@@ -242,7 +242,7 @@ Excerpt of expected output:
 **Chain rationale**: Security-sensitive write path, so `security-reviewer` closes the chain; `database-reviewer` validates the alembic migration; `python-reviewer` covers typing and PEP 8.
 
 ```bash
-/ecc:orchestrate custom "ecc:tdd-guide,ecc:database-reviewer,ecc:python-reviewer,ecc:security-reviewer" "[Plan: docs/plan/example-feature.md#step-2] Implement EncryptedString SQLAlchemy type and migrate UserProfile.birth_datetime/location columns; key from ENV APP_DB_KEY; Acceptance: encrypt/decrypt roundtrip tests pass; alembic upgrade/downgrade clean on empty DB; no plaintext in DB after migrate; Out of scope: cross-tenant profile sharing logic"
+/aiuby:orchestrate custom "ecc:tdd-guide,ecc:database-reviewer,ecc:python-reviewer,ecc:security-reviewer" "[Plan: docs/plan/example-feature.md#step-2] Implement EncryptedString SQLAlchemy type and migrate UserProfile.birth_datetime/location columns; key from ENV APP_DB_KEY; Acceptance: encrypt/decrypt roundtrip tests pass; alembic upgrade/downgrade clean on empty DB; no plaintext in DB after migrate; Out of scope: cross-tenant profile sharing logic"
 ```
 ````
 

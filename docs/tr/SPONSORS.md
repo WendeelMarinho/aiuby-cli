@@ -4,19 +4,19 @@ Bu projeye sponsor olan herkese teşekkürler! Desteğiniz ECC ekosisteminin bü
 
 ## Kurumsal Sponsorlar
 
-*Burada yer almak için [Kurumsal sponsor](https://github.com/sponsors/affaan-m) olun*
+*Burada yer almak için [Kurumsal sponsor](https://github.com/sponsors/WendeelMarinho) olun*
 
 ## İşletme Sponsorları
 
-*Burada yer almak için [İşletme sponsoru](https://github.com/sponsors/affaan-m) olun*
+*Burada yer almak için [İşletme sponsoru](https://github.com/sponsors/WendeelMarinho) olun*
 
 ## Takım Sponsorları
 
-*Burada yer almak için [Takım sponsoru](https://github.com/sponsors/affaan-m) olun*
+*Burada yer almak için [Takım sponsoru](https://github.com/sponsors/WendeelMarinho) olun*
 
 ## Bireysel Sponsorlar
 
-*Burada listelenmek için [sponsor](https://github.com/sponsors/affaan-m) olun*
+*Burada listelenmek için [sponsor](https://github.com/sponsors/WendeelMarinho) olun*
 
 ---
 
@@ -33,7 +33,7 @@ Sponsorluğunuz şunlara yardımcı olur:
 
 Sponsor konuşmalarında bu kanıt noktalarını kullanın:
 
-- `ecc-universal` ve `ecc-agentshield` için canlı npm kurulum/indirme metrikleri
+- `aiuby-cli` ve `ecc-agentshield` için canlı npm kurulum/indirme metrikleri
 - Marketplace kurulumları aracılığıyla GitHub App dağıtımı
 - Genel benimseme sinyalleri: yıldızlar, fork'lar, katkıda bulunanlar, sürüm ritmi
 - Harness'lar arası destek: Claude Code, Cursor, OpenCode, Codex app/CLI
@@ -52,7 +52,7 @@ Kopyala/yapıştır metrik çekme iş akışı için [`docs/business/metrics-and
 | Business | $500/ay | 25 koltuk, danışmanlık kredisi |
 | Enterprise | $2K/ay | Sınırsız koltuk, özel araçlar |
 
-[**Sponsor Olun →**](https://github.com/sponsors/affaan-m)
+[**Sponsor Olun →**](https://github.com/sponsors/WendeelMarinho)
 
 ---
 

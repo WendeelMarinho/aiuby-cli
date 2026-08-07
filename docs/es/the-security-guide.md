@@ -452,5 +452,5 @@ Si no has leído las guías anteriores, empieza aquí:
 > [La Guía Extendida de Everything Claude Code](./the-longform-guide.md)
 
 también guarda estos repositorios:
-- [github.com/affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)
+- [github.com/WendeelMarinho/aiuby-cli](https://github.com/WendeelMarinho/aiuby-cli)
 - [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)

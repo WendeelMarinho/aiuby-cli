@@ -24,7 +24,7 @@ Bunlar pratik başlangıç noktalarıdır ve ortaklık kapsamına göre ayarlana
 
 Aylık paylaşılan metrikler şunları içerebilir:
 
-- npm indirmeleri (`ecc-universal`, `ecc-agentshield`)
+- npm indirmeleri (`aiuby-cli`, `ecc-agentshield`)
 - Repository benimseme (yıldızlar, fork'lar, katkıda bulunanlar)
 - GitHub App kurulum trendi
 - Sürüm ritmi ve güvenilirlik kilometre taşları
@@ -39,5 +39,5 @@ Kesin komut parçacıkları ve tekrarlanabilir çekme süreci için [`docs/busin
 
 ## Buradan Sponsor Olun
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
-- Proje sitesi: [https://ecc.tools](https://ecc.tools)
+- GitHub Sponsors: [https://github.com/sponsors/WendeelMarinho](https://github.com/sponsors/WendeelMarinho)
+- Proje sitesi: [https://aiuby.com](https://aiuby.com)

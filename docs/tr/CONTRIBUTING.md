@@ -51,7 +51,7 @@ Faydalı workflow'ları çağıran slash command'lar:
 
 ```bash
 # 1. Fork ve clone
-gh repo fork affaan-m/everything-claude-code --clone
+gh repo fork WendeelMarinho/aiuby-cli --clone
 cd everything-claude-code
 
 # 2. Branch oluştur
@@ -453,8 +453,8 @@ Bunu nasıl test ettiniz.
 
 ## Sorularınız mı var?
 
-- **Issue'lar:** [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
-- **X/Twitter:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Issue'lar:** [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
+- **X/Twitter:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 
 ---
 

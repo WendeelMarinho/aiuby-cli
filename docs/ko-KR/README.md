@@ -2,12 +2,12 @@
 
 # Everything Claude Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/graphs/contributors)
-[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
+[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
-[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
+[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -45,12 +45,12 @@
 <table>
 <tr>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to Everything Claude Code" />
 </a>
 </td>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to Everything Claude Code" />
 </a>
 </td>
@@ -100,7 +100,7 @@
 - **30명 이상의 커뮤니티 기여** — 6개 언어에 걸친 30명의 기여자
 - **978개 내부 테스트** — 에이전트, 스킬, 커맨드, 훅, 룰 전반에 걸친 검증
 
-전체 변경 내역은 [Releases](https://github.com/affaan-m/everything-claude-code/releases)에서 확인하세요.
+전체 변경 내역은 [Releases](https://github.com/WendeelMarinho/aiuby-cli/releases)에서 확인하세요.
 
 ---
 
@@ -112,10 +112,10 @@
 
 ```bash
 # 마켓플레이스 추가
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # 플러그인 설치
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### 2단계: 룰 설치 (필수)
@@ -124,7 +124,7 @@
 
 ```bash
 # 먼저 저장소 클론
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd everything-claude-code
 
 # 권장: 설치 스크립트 사용 (common + 언어별 룰을 안전하게 처리)
@@ -141,13 +141,13 @@ cd everything-claude-code
 
 ```bash
 # 커맨드 실행 (플러그인 설치 시 네임스페이스 형태 사용)
-/ecc:plan "사용자 인증 추가"
+/aiuby:plan "사용자 인증 추가"
 
 # 수동 설치(옵션 2) 시에는 짧은 형태를 사용:
 # /plan "사용자 인증 추가"
 
 # 사용 가능한 커맨드 확인
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **끝!** 이제 16개 에이전트, 65개 스킬, 40개 커맨드를 사용할 수 있습니다.
@@ -284,7 +284,7 @@ git 히스토리를 로컬에서 분석하여 SKILL.md 파일을 생성합니다
 
 고급 기능(10k+ 커밋, 자동 PR, 팀 공유)이 필요한 경우:
 
-[GitHub 앱 설치](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[GitHub 앱 설치](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 ### AgentShield — 보안 감사 도구
 
@@ -356,10 +356,10 @@ Claude Code v2.1+는 설치된 플러그인의 `hooks/hooks.json`을 **자동으
 
 ```bash
 # 마켓플레이스 추가
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # 플러그인 설치
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 또는 `~/.claude/settings.json`에 직접 추가:
@@ -370,12 +370,12 @@ Claude Code v2.1+는 설치된 플러그인의 `hooks/hooks.json`을 **자동으
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -383,7 +383,7 @@ Claude Code v2.1+는 설치된 플러그인의 `hooks/hooks.json`을 **자동으
 > **참고:** Claude Code 플러그인 시스템은 `rules`를 플러그인으로 배포하는 것을 지원하지 않습니다. 룰은 수동으로 설치해야 합니다:
 >
 > ```bash
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/WendeelMarinho/aiuby-cli.git
 >
 > # 옵션 A: 사용자 레벨 룰 (모든 프로젝트에 적용)
 > mkdir -p ~/.claude/rules
@@ -403,7 +403,7 @@ Claude Code v2.1+는 설치된 플러그인의 `hooks/hooks.json`을 **자동으
 
 ```bash
 # 저장소 클론
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # 에이전트 복사
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -489,8 +489,8 @@ rules/
 
 | 하고 싶은 것 | 사용할 커맨드 | 사용되는 에이전트 |
 |-------------|-------------|-----------------|
-| 새 기능 계획하기 | `/ecc:plan "인증 추가"` | planner |
-| 시스템 아키텍처 설계 | `/ecc:plan` + architect 에이전트 | architect |
+| 새 기능 계획하기 | `/aiuby:plan "인증 추가"` | planner |
+| 시스템 아키텍처 설계 | `/aiuby:plan` + architect 에이전트 | architect |
 | 테스트를 먼저 작성하며 코딩 | `/tdd` | tdd-guide |
 | 방금 작성한 코드 리뷰 | `/code-review` | code-reviewer |
 | 빌드 실패 수정 | `/build-fix` | build-error-resolver |
@@ -507,7 +507,7 @@ rules/
 
 **새로운 기능 시작:**
 ```
-/ecc:plan "OAuth를 사용한 사용자 인증 추가"
+/aiuby:plan "OAuth를 사용한 사용자 인증 추가"
                                               → planner가 구현 청사진 작성
 /tdd                                          → tdd-guide가 테스트 먼저 작성 강제
 /code-review                                  → code-reviewer가 코드 검토
@@ -535,7 +535,7 @@ rules/
 <summary><b>설치된 에이전트/커맨드 확인은 어떻게 하나요?</b></summary>
 
 ```bash
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 플러그인에서 사용할 수 있는 모든 에이전트, 커맨드, 스킬을 보여줍니다.
@@ -703,21 +703,21 @@ Claude Code 사용 비용이 부담된다면 토큰 소비를 관리해야 합�
 
 이 프로젝트는 무료 오픈소스입니다. 스폰서의 지원으로 유지보수와 성장이 이루어집니다.
 
-[**스폰서 되기**](https://github.com/sponsors/affaan-m) | [스폰서 티어](../../SPONSORS.md) | [스폰서십 프로그램](../../SPONSORING.md)
+[**스폰서 되기**](https://github.com/sponsors/WendeelMarinho) | [스폰서 티어](../../SPONSORS.md) | [스폰서십 프로그램](../../SPONSORING.md)
 
 ---
 
 ## Star 히스토리
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli&Date)
 
 ---
 
 ## 링크
 
-- **요약 가이드 (여기서 시작):** [The Shorthand Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2012378465664745795)
-- **상세 가이드 (고급):** [The Longform Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2014040193557471352)
-- **팔로우:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **요약 가이드 (여기서 시작):** [The Shorthand Guide to Everything Claude Code](https://instagram.com/aiuby.ai/status/2012378465664745795)
+- **상세 가이드 (고급):** [The Longform Guide to Everything Claude Code](https://instagram.com/aiuby.ai/status/2014040193557471352)
+- **팔로우:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 - **zenith.chat:** [zenith.chat](https://zenith.chat)
 
 ---

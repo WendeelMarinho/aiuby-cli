@@ -27,7 +27,7 @@ bumps both.
 ## Current Codex plugin-mode status
 
 With this layout, `codex plugin marketplace add WendeelMarinho/aiuby-cli` discovers and
-installs `ecc@ecc`. Runtime skill loading from repo marketplaces is still
+installs `aiuby@aiuby`. Runtime skill loading from repo marketplaces is still
 unreliable upstream — Codex copies only the plugin folder into its install
 cache, and local/personal marketplace plugins are not always exposed at
 runtime (see [openai/codex#26037](https://github.com/openai/codex/issues/26037)

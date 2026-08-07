@@ -24,7 +24,7 @@ ECC 作为一个开源智能体性能测试系统，在 Claude Code、Cursor、O
 
 每月分享的指标可能包括：
 
-* npm 下载量（`ecc-universal`、`ecc-agentshield`）
+* npm 下载量（`aiuby-cli`、`ecc-agentshield`）
 * 仓库采用情况（星标、分叉、贡献者）
 * GitHub 应用安装趋势
 * 发布节奏和可靠性里程碑
@@ -39,5 +39,5 @@ ECC 作为一个开源智能体性能测试系统，在 Claude Code、Cursor、O
 
 ## 在此赞助
 
-* GitHub Sponsors: <https://github.com/sponsors/affaan-m>
-* 项目网站: <https://ecc.tools>
+* GitHub Sponsors: <https://github.com/sponsors/WendeelMarinho>
+* 项目网站: <https://aiuby.com>
