@@ -28,7 +28,7 @@ Answer from current files, not memory. ECC changes quickly, so hard-coded catalo
 When the ECC repository is available, inspect the relevant files before giving a concrete answer:
 
 ```bash
-node scripts/ci/catalog.js --json
+node scripts/dev/catalog.js --json
 find skills -maxdepth 2 -name SKILL.md | sort
 find commands -maxdepth 1 -name '*.md' | sort
 find agents -maxdepth 1 -name '*.md' | sort

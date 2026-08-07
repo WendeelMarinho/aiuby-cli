@@ -14,6 +14,9 @@ const os = require('os');
 const { execFileSync, spawnSync } = require('child_process');
 
 const validatorsDir = path.join(__dirname, '..', '..', 'scripts', 'ci');
+// catalog.js lives outside scripts/ci so npm does not publish it: listing any
+// nested file in package.json `files` pulls in the whole parent directory.
+const devScriptsDir = path.join(__dirname, '..', '..', 'scripts', 'dev');
 const repoRoot = path.join(__dirname, '..', '..');
 const modulesSchemaPath = path.join(repoRoot, 'schemas', 'install-modules.schema.json');
 const profilesSchemaPath = path.join(repoRoot, 'schemas', 'install-profiles.schema.json');
@@ -176,7 +179,7 @@ function runValidator(validatorName) {
 }
 
 function runCatalogValidator(overrides = {}) {
-  const validatorPath = path.join(validatorsDir, 'catalog.js');
+  const validatorPath = path.join(devScriptsDir, 'catalog.js');
   let source = fs.readFileSync(validatorPath, 'utf8');
   source = stripShebang(source);
   const argv = Array.isArray(overrides.argv) && overrides.argv.length > 0

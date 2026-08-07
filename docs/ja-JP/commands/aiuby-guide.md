@@ -39,7 +39,7 @@ description: ECCの現在のエージェント、スキル、コマンド、フ�
 - `agents/*.md` — 委任されたエージェントの役割
 - `hooks/README.md`と`hooks/hooks.json` — フックの動作
 - `manifests/install-*.json` — 選択的インストールモジュール、コンポーネント、プロファイル
-- `scripts/ci/catalog.js --json` — ECC内で実行時のライブカタログカウント
+- `scripts/dev/catalog.js --json` — ECC内で実行時のライブカタログカウント
 
 ## レスポンスパターン
 

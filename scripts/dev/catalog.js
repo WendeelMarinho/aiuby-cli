@@ -3,11 +3,11 @@
  * Verify repo catalog counts against tracked documentation files.
  *
  * Usage:
- *   node scripts/ci/catalog.js
- *   node scripts/ci/catalog.js --json
- *   node scripts/ci/catalog.js --md
- *   node scripts/ci/catalog.js --text
- *   node scripts/ci/catalog.js --write --text
+ *   node scripts/dev/catalog.js
+ *   node scripts/dev/catalog.js --json
+ *   node scripts/dev/catalog.js --md
+ *   node scripts/dev/catalog.js --text
+ *   node scripts/dev/catalog.js --write --text
  */
 
 'use strict';

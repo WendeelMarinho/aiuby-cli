@@ -27,7 +27,7 @@ origin: community
 当 ECC 仓库可用时，先检查相关文件再给出具体答案：
 
 ```bash
-node scripts/ci/catalog.js --json
+node scripts/dev/catalog.js --json
 find skills -maxdepth 2 -name SKILL.md | sort
 find commands -maxdepth 1 -name '*.md' | sort
 find agents -maxdepth 1 -name '*.md' | sort

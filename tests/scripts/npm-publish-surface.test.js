@@ -207,7 +207,7 @@ function main() {
         "examples/CLAUDE.md",
         // plugins/README.md is NOT listed: npm force-includes any README.md at
         // any depth, and neither `files` negation nor .npmignore overrides it.
-        "scripts/ci/catalog.js",
+        "scripts/dev/catalog.js",
         "skills/skill-comply/SKILL.md",
       ]) {
         assert.ok(
