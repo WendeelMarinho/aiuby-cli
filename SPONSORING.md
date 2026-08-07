@@ -41,5 +41,5 @@ For exact command snippets and a repeatable pull process, see [`docs/business/me
 
 ## Sponsor Here
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
-- Project site: [https://ecc.tools](https://ecc.tools)
+- GitHub Sponsors: [https://github.com/sponsors/WendeelMarinho](https://github.com/sponsors/WendeelMarinho)
+- Project site: [https://aiuby.com](https://aiuby.com)

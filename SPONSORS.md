@@ -4,7 +4,7 @@ Thank you to everyone funding ECC's open-source work. Your sponsorship is what l
 
 ## Strategic Sponsors — $3,700/mo
 
-*Become a [Strategic sponsor](https://github.com/sponsors/affaan-m) to be featured here.*
+*Become a [Strategic sponsor](https://github.com/sponsors/WendeelMarinho) to be featured here.*
 
 ## Business Sponsors
 
@@ -16,7 +16,7 @@ Thank you to everyone funding ECC's open-source work. Your sponsorship is what l
 | [**Moonshot AI (Kimi)**](https://www.moonshot.ai) | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/sponsors/moonshot-dark.png" /><img src="assets/images/sponsors/moonshot.png" width="100" alt="Moonshot AI Kimi logo" /></picture> | 2026 |
 | [**Itô**](https://compute.itomarkets.com) | <picture><source media="(prefers-color-scheme: light)" srcset="assets/images/sponsors/ito-transparent-light.png" /><img src="assets/images/sponsors/ito-transparent.png" width="88" alt="Itô Markets logo" /></picture> | 2026 |
 
-*[Become a Business sponsor](https://github.com/sponsors/affaan-m) to get README sponsor placement + SPONSORS.md listing. Current Business tier is $800/mo. No seats, SLA, custom development, or preferential technical placement is bundled unless separately agreed.*
+*[Become a Business sponsor](https://github.com/sponsors/WendeelMarinho) to get README sponsor placement + SPONSORS.md listing. Current Business tier is $800/mo. No seats, SLA, custom development, or preferential technical placement is bundled unless separately agreed.*
 
 Run or self-host any open-source model. Itô partners with ECC on compute, while ECC remains provider-agnostic and any GPU provider works. The [Itô dashboard](https://compute.itomarkets.com) sponsorship link is passive: it does not invoke an RFQ, reserve capacity, provision compute, or configure serving. Separately, the opt-in `ecc ito find` bridge invokes the explicitly configured canonical Itô CLI and submits a live authenticated RFQ; it does not reserve capacity. Managed inference through Itô is not live yet.
 
@@ -26,11 +26,11 @@ Run or self-host any open-source model. Itô partners with ECC on compute, while
 |---------|-------|
 | [Mike Morgan](https://github.com/mikejmorgan-ai) | 2026 |
 
-*[Become a Team sponsor](https://github.com/sponsors/affaan-m) to be listed in SPONSORS.md.*
+*[Become a Team sponsor](https://github.com/sponsors/WendeelMarinho) to be listed in SPONSORS.md.*
 
 ## Pro Sponsors — $50/mo
 
-*[Become a Pro sponsor](https://github.com/sponsors/affaan-m) to support the project and be listed here.*
+*[Become a Pro sponsor](https://github.com/sponsors/WendeelMarinho) to support the project and be listed here.*
 
 ## Builder Sponsors — $25/mo
 
@@ -39,11 +39,11 @@ Run or self-host any open-source model. Itô partners with ECC on compute, while
 - @massimotodaro (grandfathered at $10)
 - @meadmccabe (grandfathered at $10)
 
-*[Become a Builder sponsor](https://github.com/sponsors/affaan-m) to support the project and get your name in this list.*
+*[Become a Builder sponsor](https://github.com/sponsors/WendeelMarinho) to support the project and get your name in this list.*
 
 ## Supporters — $10/mo
 
-*[Become a Supporter](https://github.com/sponsors/affaan-m) to back the project with a profile badge and a thank-you in release notes.*
+*[Become a Supporter](https://github.com/sponsors/WendeelMarinho) to back the project with a profile badge and a thank-you in release notes.*
 
 ---
 
@@ -58,9 +58,9 @@ Run or self-host any open-source model. Itô partners with ECC on compute, while
 | Business Sponsor | $800 | README sponsor placement + SPONSORS.md listing |
 | Strategic Sponsor | $3,700 | Premium sponsor placement + sponsor placement call |
 
-[**Become a Sponsor →**](https://github.com/sponsors/affaan-m)
+[**Become a Sponsor →**](https://github.com/sponsors/WendeelMarinho)
 
-For corporate sponsorship inquiries, custom partnerships, or PR integrations, email **[affaan@ecc.tools](mailto:affaan@ecc.tools)** with your company name and intended tier.
+For corporate sponsorship inquiries, custom partnerships, or PR integrations, email **[wendeelmarinho@gmail.com](mailto:wendeelmarinho@gmail.com)** with your company name and intended tier.
 
 ---
 
