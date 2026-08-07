@@ -98,7 +98,6 @@ function buildExpectedPublishPaths(repoRoot) {
     "VERSION",
     "assets/aiuby-icon.svg",
     "assets/hero-aiuby.png",
-    "assets/images/community",
     "docs/CODEX-NAVIGATION-GUIDE.md",
     "docs/COMMAND-AGENT-MAP.md",
     "docs/design/aiuby-memory-vault.md",
@@ -189,8 +188,6 @@ function main() {
         "plugins/aiuby/.codex-plugin/plugin.json",
         "assets/aiuby-icon.svg",
         "assets/hero-aiuby.png",
-        "assets/images/community/discord.svg",
-        "assets/images/community/heart.svg",
         "docs/CODEX-NAVIGATION-GUIDE.md",
         "docs/COMMAND-AGENT-MAP.md",
         "docs/design/aiuby-memory-vault.md",
@@ -208,7 +205,8 @@ function main() {
       for (const excludedPath of [
         "contexts/dev.md",
         "examples/CLAUDE.md",
-        "plugins/README.md",
+        // plugins/README.md is NOT listed: npm force-includes any README.md at
+        // any depth, and neither `files` negation nor .npmignore overrides it.
         "scripts/ci/catalog.js",
         "skills/skill-comply/SKILL.md",
       ]) {

@@ -63,7 +63,6 @@
     "agent.yaml",
     "assets/aiuby-icon.svg",
     "assets/hero-aiuby.png",
-    "assets/images/community/",
     "assets/images/sponsors/",
     "agents/",
     "commands/",
@@ -438,7 +437,7 @@
     "ecc-plan-canvas": "scripts/legacy/ecc-plan-canvas.js"
   },
   "scripts": {
-    "welcome": "echo '\\n  ecc-universal installed!\\n  Run: ecc typescript\\n  Compat: ecc-install typescript\\n  Docs: https://github.com/affaan-m/ECC\\n  Run or self-host any open-source model.\\n  Compute: Itô is the preferred compute sponsor — https://compute.itomarkets.com\\n  Any GPU provider works. This sponsorship link is passive: it does not invoke an RFQ, reserve capacity, provision compute, or configure serving.\\n  Separately, the opt-in ecc ito find bridge invokes the explicitly configured canonical Itô CLI and submits a live authenticated RFQ; it does not reserve capacity.\\n  Managed inference through Itô is not live yet.\\n'",
+    "welcome": "echo '\\n  aiuby-cli installed!\\n  Run: aiuby typescript\\n  Compat: aiuby install typescript\\n  Docs: https://github.com/WendeelMarinho/aiuby-cli\\n  Run or self-host any open-source model.\\n  Compute: Itô is the preferred compute sponsor — https://compute.itomarkets.com\\n  Any GPU provider works. This sponsorship link is passive: it does not invoke an RFQ, reserve capacity, provision compute, or configure serving.\\n  Separately, the opt-in aiuby ito find bridge invokes the explicitly configured canonical Itô CLI and submits a live authenticated RFQ; it does not reserve capacity.\\n  Managed inference through Itô is not live yet.\\n'",
     "catalog:check": "node scripts/ci/catalog.js --text",
     "catalog:sync": "node scripts/ci/catalog.js --write --text",
     "command-registry:generate": "node scripts/ci/generate-command-registry.js",

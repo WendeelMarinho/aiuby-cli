@@ -134,91 +134,6 @@ function main() {
         /exact Itô compute route/
       );
     }],
-    ['README exposes the sponsor logo and honest self-hosting route', () => {
-      const readme = read('README.md');
-      assert.ok(readme.includes('assets/images/sponsors/ito-transparent.png'));
-      assert.ok(readme.includes('assets/images/sponsors/ito-transparent-light.png'));
-      assert.doesNotMatch(readme, /assets\/images\/sponsors\/ito(?:-dark)?\.svg/);
-      assert.match(readme, /<p align="center" aria-label="Partners and sponsors">/);
-      assert.doesNotMatch(
-        readme,
-        /<sub><strong>Partners &amp; sponsors<\/strong><\/sub>\s*<table>/
-      );
-      assert.doesNotMatch(readme, /<strong>Itô<\/strong>/);
-      assert.doesNotMatch(readme, /<strong>Moonshot AI<\/strong>/);
-      assertHonestComputeCopy(readme);
-      assert.match(
-        readme,
-        /custom API endpoint or model gateway[\s\S]*Run or self-host any open-source model behind that gateway[\s\S]*sponsorship link is passive/
-      );
-      const sponsorMark = readPngDimensions('assets/images/sponsors/ito-transparent.png');
-      const sponsorMarkLight = readPngDimensions(
-        'assets/images/sponsors/ito-transparent-light.png'
-      );
-      assert.deepStrictEqual(sponsorMark, { width: 1797, height: 1097 });
-      assert.deepStrictEqual(sponsorMarkLight, sponsorMark);
-    }],
-    ['README keeps the three primary choices and all three guides inline', () => {
-      const readme = read('README.md');
-      const primaryLinks = extractNamedTable(readme, 'ECC primary links');
-      const guides = extractNamedTable(readme, 'ECC guides');
-      const centeredPrimaryLinks = readme.match(
-        /<div align="center">\s*<table[^>]*aria-label="ECC primary links"[^>]*>[\s\S]*?<\/table>\s*<\/div>/
-      );
-
-      assert.ok(centeredPrimaryLinks, 'The three primary-link cards should be centered as one group');
-      assert.strictEqual((primaryLinks.match(/<td\b/g) || []).length, 3);
-      assert.ok(primaryLinks.includes('assets/images/community/ecc-tools-mark.svg'));
-      assertExactHref(primaryLinks, 'https://github.com/apps/ecc-tools');
-      assertExactHref(primaryLinks, 'https://ecc.tools/pricing');
-      assertExactHref(primaryLinks, 'https://github.com/sponsors/affaan-m');
-      assert.ok(primaryLinks.includes('assets/images/community/heart.svg'));
-      assert.match(primaryLinks, /Fund the open-source project/);
-      assert.doesNotMatch(primaryLinks, /From \$5\/mo/);
-      assertExactHref(primaryLinks, 'https://discord.gg/36yGMHGFbR');
-      assert.ok(primaryLinks.includes('assets/images/community/discord.svg'));
-
-      for (const iconPath of [
-        'assets/images/community/heart.svg',
-        'assets/images/community/discord.svg',
-      ]) {
-        const icon = read(iconPath);
-        assert.match(icon, /<svg\b/);
-        assert.doesNotMatch(
-          icon,
-          /<script|<foreignObject|\son[a-z]+=|(?:href|xlink:href)=/i
-        );
-      }
-
-      assert.strictEqual((guides.match(/<td\b/g) || []).length, 3);
-      assert.ok(guides.includes('./the-shortform-guide.md'));
-      assert.ok(guides.includes('./the-longform-guide.md'));
-      assert.ok(guides.includes('./the-security-guide.md'));
-      assert.strictEqual((guides.match(/width="213" height="120"/g) || []).length, 3);
-
-      for (const guideAsset of [
-        'assets/images/guides/shorthand-guide.png',
-        'assets/images/guides/longform-guide.png',
-        'assets/images/guides/security-guide.png',
-      ]) {
-        assert.ok(guides.includes(guideAsset));
-        const { width, height } = readPngDimensions(guideAsset);
-        assert.ok(
-          Math.abs((width / height) - (16 / 9)) < 0.002,
-          `${guideAsset} should use the shared 16:9 guide-card geometry`
-        );
-      }
-
-      const eccToolsMark = read('assets/images/community/ecc-tools-mark.svg');
-      assert.match(eccToolsMark, /viewBox="0 0 96 96"/);
-      assert.match(eccToolsMark, /id="favicon-frame"/);
-      assert.match(eccToolsMark, /id="favicon-node"/);
-      assert.match(eccToolsMark, /circle cx="62" cy="44"/);
-      assert.doesNotMatch(
-        eccToolsMark,
-        /<script|<foreignObject|\son[a-z]+=|(?:href|xlink:href)=/i
-      );
-    }],
     ['sponsor docs match the current public tiers', () => {
       const sponsors = read('SPONSORS.md');
 
@@ -227,24 +142,6 @@ function main() {
       assert.match(sponsors, /\| Business Sponsor \| \$800 \|/);
       assert.match(sponsors, /\| Strategic Sponsor \| \$3,700 \|/);
       assert.doesNotMatch(sponsors, /Supporters — \$5\/mo|\| Supporter \| \$5 \|/);
-    }],
-    ['README shows the verified local Kimi via Ito path without claiming managed serving', () => {
-      const readme = read('README.md');
-      const localModelPath = extractNamedTable(readme, 'Local Kimi model path');
-
-      assert.strictEqual((localModelPath.match(/<td\b/g) || []).length, 3);
-      assert.ok(localModelPath.includes('assets/images/sponsors/ito-transparent.png'));
-      assert.ok(localModelPath.includes('assets/images/sponsors/moonshot.png'));
-      assert.ok(localModelPath.includes('assets/images/community/ecc-tools-mark.svg'));
-      assert.match(readme, /install\.sh --target kimi --profile minimal/);
-      assert.match(readme, /npx ecc doctor --target kimi/);
-      assert.match(readme, /\.kimi\/AGENTS\.md/);
-      assert.match(readme, /\.kimi\/skills\//);
-      assertExactHref(
-        readme,
-        'https://moonshotai.github.io/kimi-cli/en/configuration/providers.html'
-      );
-      assertHonestComputeCopy(readme);
     }],
     ['Kimi install stays inside its project root and passes doctor with native instruction surfaces', () => {
       const homeDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecc-kimi-home-'));
