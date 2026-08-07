@@ -891,6 +891,48 @@ See `CONTRIBUTING.md` for the repository contribution process.
 
 ---
 
+## Operational reference
+
+### Harness guides
+
+| Harness | Guide |
+|---|---|
+| Codex | [docs/CODEX-NAVIGATION-GUIDE.md](docs/CODEX-NAVIGATION-GUIDE.md) |
+| Hermes | [docs/HERMES-SETUP.md](docs/HERMES-SETUP.md) |
+| Command/agent map | [docs/COMMAND-AGENT-MAP.md](docs/COMMAND-AGENT-MAP.md) |
+
+Release notes live under [docs/releases/](docs/releases/) — most recently [docs/releases/2.0.0/release-notes.md](docs/releases/2.0.0/release-notes.md).
+
+### Managing MCP servers
+
+Aiuby ships MCP server templates in `mcp-configs/mcp-servers.json`; it does not turn servers on or off for you.
+
+Use `/mcp` for Claude Code runtime disables; Claude Code persists those choices in `~/.claude.json`. Editing `settings.json` by hand to disable a server is not the supported path and drifts from what the client actually reads.
+
+`ECC_DISABLED_MCPS` is an Aiuby install/sync filter, not a live Claude Code toggle. It controls which servers get written during install; it cannot turn off a server that is already running. The variable keeps its legacy name because the code reads it directly rather than through the compatibility resolver — it is renamed at `1.0.0` with the rest.
+
+### GitHub Copilot
+
+Copilot reads reusable prompts from prompt files. Enable them with the `chat.promptFiles` setting in `.vscode/settings.json`; Aiuby installs them into `.github/prompts/`, which Copilot discovers by convention. There is no separate Copilot installer.
+
+### Itô compute (optional, opt-in)
+
+Aiuby never bundles the Itô CLI. The `ito-compute` module is opt-in and off by default; the bridge invokes a CLI you installed and configured yourself.
+
+Authentication and validation are separate steps:
+
+```bash
+aiuby ito login [--no-browser]   # device authorization; the token is stored in your OS Keychain
+aiuby ito auth                   # validates the stored credential, no browser, no network writes
+aiuby ito find --gpu h200 --count 8
+```
+
+`login` is the only command that opens a browser — `--no-browser` prints a device code instead. `auth` only validates what is already stored, so it never takes that flag.
+
+`ITO_API_KEY` is read by `auth`, `find`, and `status` when you prefer an explicit key over the stored credential. `ITO_AUTH_MODE=legacy` exists only for pre-device-authorization deployments and is not required for normal use.
+
+---
+
 ## Attribution and Upstream Foundation
 
 This repository is based on and adapted from the open-source **ECC — Agent Harness Operating System** project by Affaan Mustafa and its contributors.

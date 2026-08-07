@@ -96,7 +96,7 @@ function assertHonestComputeCopy(content) {
   assert.match(content, /run or self-host any open-source model/i);
   assert.match(content, /any GPU provider/i);
   assert.match(content, /sponsorship link is passive/i);
-  assert.match(content, /ecc ito find/i);
+  assert.match(content, /aiuby ito find/i);
   assert.match(content, /explicitly configured canonical Itô CLI/i);
   assert.match(content, /submits a live authenticated RFQ/i);
   assert.match(content, /does not reserve capacity/i);
@@ -312,7 +312,7 @@ function main() {
       assertExactComputeRoute(packageJson.scripts.welcome);
       assert.match(packageJson.scripts.welcome, /run or self-host any open-source model/i);
       assert.match(packageJson.scripts.welcome, /sponsorship link is passive/i);
-      assert.match(packageJson.scripts.welcome, /ecc ito find/i);
+      assert.match(packageJson.scripts.welcome, /aiuby ito find/i);
       assert.match(packageJson.scripts.welcome, /submits a live authenticated RFQ/i);
       assert.match(packageJson.scripts.welcome, /does not reserve capacity/i);
       assert.ok(

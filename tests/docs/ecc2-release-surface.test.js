@@ -173,7 +173,7 @@ test('preview pack manifest assembles release, Hermes, and publication gates', (
 
   for (const blocker of [
     'GitHub prerelease `v2.0.0-rc.1`',
-    'npm `aiuby-cli@2.0.0-rc.1`',
+    'npm `ecc-universal@2.0.0-rc.1`',
     'Claude plugin tag',
     'Codex repo-marketplace distribution evidence',
     'ECC Tools billing/product readiness'
@@ -462,7 +462,7 @@ test('release name and plugin publication checklist freezes rc.1 surfaces', () =
   for (const value of [
     'Ship `v2.0.0-rc.1` as **ECC**',
     '`affaan-m/ECC`',
-    '`aiuby-cli`',
+    '`ecc-universal`',
     '`ecc` on npm is occupied',
     '`@affaan-m/ecc` is unclaimed on npm',
     'Claude plugin',

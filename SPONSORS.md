@@ -18,7 +18,7 @@ Thank you to everyone funding ECC's open-source work. Your sponsorship is what l
 
 *[Become a Business sponsor](https://github.com/sponsors/WendeelMarinho) to get README sponsor placement + SPONSORS.md listing. Current Business tier is $800/mo. No seats, SLA, custom development, or preferential technical placement is bundled unless separately agreed.*
 
-Run or self-host any open-source model. Itô partners with ECC on compute, while ECC remains provider-agnostic and any GPU provider works. The [Itô dashboard](https://compute.itomarkets.com) sponsorship link is passive: it does not invoke an RFQ, reserve capacity, provision compute, or configure serving. Separately, the opt-in `ecc ito find` bridge invokes the explicitly configured canonical Itô CLI and submits a live authenticated RFQ; it does not reserve capacity. Managed inference through Itô is not live yet.
+Run or self-host any open-source model. Itô partners with ECC on compute, while ECC remains provider-agnostic and any GPU provider works. The [Itô dashboard](https://compute.itomarkets.com) sponsorship link is passive: it does not invoke an RFQ, reserve capacity, provision compute, or configure serving. Separately, the opt-in `aiuby ito find` bridge invokes the explicitly configured canonical Itô CLI and submits a live authenticated RFQ; it does not reserve capacity. Managed inference through Itô is not live yet.
 
 ## Team Sponsors — $200/mo
 
