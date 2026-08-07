@@ -82,7 +82,7 @@
     "install.sh",
     "manifests/",
     "mcp-configs/",
-    "plugins/ecc/",
+    "plugins/aiuby/",
     "rules/",
     "schemas/",
     "scripts/catalog.js",

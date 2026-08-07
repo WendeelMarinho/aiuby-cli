@@ -104,7 +104,7 @@ ecc memory search "research parser" --target-harness codex
 ecc memory read <memory-id>
 ```
 
-For MCP access, copy only the `ecc-memory-vault` entry from
+For MCP access, copy only the `aiuby-memory-vault` entry from
 `mcp-configs/mcp-servers.json` into each harness that needs it. ECC does not
 enable this server in the default `.mcp.json`. Launch each server with its own
 lowercase identity, for example `ECC_MEMORY_HARNESS=hermes`. The server binds

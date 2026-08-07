@@ -122,7 +122,7 @@ function runTests() {
     }
   })) passed++; else failed++;
 
-  if (test('finds current plugin install at ~/.claude/plugins/ecc', () => {
+  if (test('finds current plugin install at ~/.claude/plugins/aiuby', () => {
     const homeDir = createTempDir();
     try {
       const expected = setupLegacyPluginInstall(homeDir, ['ecc']);
@@ -133,7 +133,7 @@ function runTests() {
     }
   })) passed++; else failed++;
 
-  if (test('finds current plugin install at ~/.claude/plugins/ecc@ecc', () => {
+  if (test('finds current plugin install at ~/.claude/plugins/aiuby@ecc', () => {
     const homeDir = createTempDir();
     try {
       const expected = setupLegacyPluginInstall(homeDir, ['ecc@ecc']);
@@ -327,7 +327,7 @@ function runTests() {
   if (test('rejects a partial exact plugin root (scripts, no ECC skill) and prefers a complete root (#2544)', () => {
     const homeDir = createTempDir();
     try {
-      // An exact plugin root under ~/.claude/plugins/ecc ships ECC's scripts but
+      // An exact plugin root under ~/.claude/plugins/aiuby ships ECC's scripts but
       // not ECC's skills. The stricter predicate must reject it on the
       // exact-plugin branch too, not only for ~/.claude.
       const partialScripts = path.join(homeDir, '.claude', 'plugins', 'ecc', 'scripts', 'lib');

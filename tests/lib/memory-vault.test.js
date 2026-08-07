@@ -40,7 +40,7 @@ function test(name, fn) {
 }
 
 function createFixture() {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ecc-memory-vault-'));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'aiuby-memory-vault-'));
   const projectRoot = path.join(root, 'project');
   const nested = path.join(projectRoot, 'packages', 'app');
   const homeDir = path.join(root, 'home');

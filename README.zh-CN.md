@@ -117,7 +117,7 @@ command -v ecc-memory-mcp
 ```
 
 如需启用 MCP，请从 `mcp-configs/mcp-servers.json` 复制
-`ecc-memory-vault` 配置到对应 harness，并为每个 harness 分别启动一个服务
+`aiuby-memory-vault` 配置到对应 harness，并为每个 harness 分别启动一个服务
 进程，例如 `ECC_MEMORY_HARNESS=codex ecc-memory-mcp`。不同 harness 可以共享
 同一个二进制文件和记忆库目录，但不能共用同一个服务进程。
 

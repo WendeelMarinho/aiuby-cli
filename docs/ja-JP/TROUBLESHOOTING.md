@@ -276,7 +276,7 @@ claude --version
 
 # 手動インストール（Marketplaceが失敗する場合）
 git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### パッケージマネージャー検出の失敗
@@ -385,7 +385,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # または手動インストールの場合
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 

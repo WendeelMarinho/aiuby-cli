@@ -1,4 +1,4 @@
-# plugins/ecc — Codex Repo-Marketplace Plugin Target
+# plugins/aiuby — Codex Repo-Marketplace Plugin Target
 
 This directory is the plugin folder that `.agents/plugins/marketplace.json`
 points at. Codex does not discover plugins whose local marketplace

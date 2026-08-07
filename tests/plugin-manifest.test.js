@@ -415,29 +415,29 @@ test('marketplace local plugin path resolves to a concrete plugin subdirectory (
   }
 });
 
-// ── plugins/ecc marketplace plugin folder ─────────────────────────────────────
+// ── plugins/aiuby marketplace plugin folder ─────────────────────────────────────
 // Thin Codex plugin target for the repo marketplace. Content is single-sourced
 // at the repo root (no vendored skills/MCP copies) per the maintainer direction
 // on #2097; these tests pin the manifest sync and the parent-relative refs.
-console.log('\n=== plugins/ecc Codex marketplace plugin folder ===\n');
+console.log('\n=== plugins/aiuby Codex marketplace plugin folder ===\n');
 
-const marketplacePluginManifestPath = path.join(repoRoot, 'plugins', 'ecc', '.codex-plugin', 'plugin.json');
-const marketplacePluginManifest = loadJsonObject(marketplacePluginManifestPath, 'plugins/ecc/.codex-plugin/plugin.json');
+const marketplacePluginManifestPath = path.join(repoRoot, 'plugins', 'aiuby', '.codex-plugin', 'plugin.json');
+const marketplacePluginManifest = loadJsonObject(marketplacePluginManifestPath, 'plugins/aiuby/.codex-plugin/plugin.json');
 const rootCodexManifest = loadJsonObject(path.join(repoRoot, '.codex-plugin', 'plugin.json'), '.codex-plugin/plugin.json');
 
-test('plugins/ecc manifest name matches the root Codex manifest', () => {
+test('plugins/aiuby manifest name matches the root Codex manifest', () => {
   assert.strictEqual(marketplacePluginManifest.name, rootCodexManifest.name);
 });
 
-test('plugins/ecc manifest version matches package.json', () => {
+test('plugins/aiuby manifest version matches package.json', () => {
   assert.strictEqual(marketplacePluginManifest.version, expectedVersion);
 });
 
-test('plugins/ecc manifest version matches the root Codex manifest', () => {
+test('plugins/aiuby manifest version matches the root Codex manifest', () => {
   assert.strictEqual(marketplacePluginManifest.version, rootCodexManifest.version);
 });
 
-test('plugins/ecc manifest reuses root skills and MCP config without vendoring', () => {
+test('plugins/aiuby manifest reuses root skills and MCP config without vendoring', () => {
   const pluginDir = path.dirname(path.dirname(marketplacePluginManifestPath));
 
   const skillsTarget = path.resolve(pluginDir, marketplacePluginManifest.skills);
@@ -448,11 +448,11 @@ test('plugins/ecc manifest reuses root skills and MCP config without vendoring',
   assert.strictEqual(mcpTarget, path.join(repoRoot, '.mcp.json'), `mcpServers ref must resolve to the root .mcp.json, got: ${marketplacePluginManifest.mcpServers}`);
   assert.ok(fs.existsSync(mcpTarget), 'Root .mcp.json missing');
 
-  assert.ok(!fs.existsSync(path.join(pluginDir, 'skills')), 'plugins/ecc must not vendor a second skills/ copy (see #2097 review)');
-  assert.ok(!fs.existsSync(path.join(pluginDir, '.mcp.json')), 'plugins/ecc must not vendor a second .mcp.json (see #2097 review)');
+  assert.ok(!fs.existsSync(path.join(pluginDir, 'skills')), 'plugins/aiuby must not vendor a second skills/ copy (see #2097 review)');
+  assert.ok(!fs.existsSync(path.join(pluginDir, '.mcp.json')), 'plugins/aiuby must not vendor a second .mcp.json (see #2097 review)');
 });
 
-test('plugins/ecc manifest interface assets resolve to root assets', () => {
+test('plugins/aiuby manifest interface assets resolve to root assets', () => {
   const pluginDir = path.dirname(path.dirname(marketplacePluginManifestPath));
 
   for (const ref of [marketplacePluginManifest.interface.composerIcon, marketplacePluginManifest.interface.logo]) {
@@ -462,13 +462,13 @@ test('plugins/ecc manifest interface assets resolve to root assets', () => {
   }
 });
 
-test('plugins/ecc README documents the upstream Codex fragility', () => {
-  const readmePath = path.join(repoRoot, 'plugins', 'ecc', 'README.md');
-  assert.ok(fs.existsSync(readmePath), 'Expected plugins/ecc/README.md');
+test('plugins/aiuby README documents the upstream Codex fragility', () => {
+  const readmePath = path.join(repoRoot, 'plugins', 'aiuby', 'README.md');
+  assert.ok(fs.existsSync(readmePath), 'Expected plugins/aiuby/README.md');
   const source = fs.readFileSync(readmePath, 'utf8');
-  assert.ok(source.includes('openai/codex'), 'plugins/ecc README must link the upstream Codex discovery issue');
-  assert.ok(source.includes('check-plugin-cache.js'), 'plugins/ecc README must point at the cache health check');
-  assert.ok(source.includes('sync-aiuby-to-codex.sh'), 'plugins/ecc README must point at the supported manual sync flow');
+  assert.ok(source.includes('openai/codex'), 'plugins/aiuby README must link the upstream Codex discovery issue');
+  assert.ok(source.includes('check-plugin-cache.js'), 'plugins/aiuby README must point at the cache health check');
+  assert.ok(source.includes('sync-aiuby-to-codex.sh'), 'plugins/aiuby README must point at the supported manual sync flow');
 });
 
 test('.opencode/package.json version matches package.json', () => {

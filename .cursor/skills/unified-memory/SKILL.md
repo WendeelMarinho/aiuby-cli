@@ -143,7 +143,7 @@ Repair reported files manually. The doctor does not delete or rewrite memory.
 ## MCP Setup
 
 The stdio server is optional and is not enabled by ECC's default `.mcp.json`.
-After installing ECC, copy the `ecc-memory-vault` entry from
+After installing ECC, copy the `aiuby-memory-vault` entry from
 `mcp-configs/mcp-servers.json` into each harness where tool access is useful.
 Replace its placeholder with a lowercase server identity. The server command
 is:

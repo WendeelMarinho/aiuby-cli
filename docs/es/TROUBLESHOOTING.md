@@ -275,7 +275,7 @@ claude --version
 
 # Instalación manual (si el marketplace falla)
 git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### Falla la Detección del Gestor de Paquetes
@@ -384,7 +384,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # O para instalación manual
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 

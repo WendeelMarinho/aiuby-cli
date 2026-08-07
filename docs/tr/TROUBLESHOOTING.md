@@ -265,7 +265,7 @@ claude --version
 
 # Manuel kurulum (marketplace başarısız olursa)
 git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### Paket Yöneticisi Algılama Başarısız
@@ -374,7 +374,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # Veya manuel kurulum için
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 

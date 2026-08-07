@@ -71,8 +71,8 @@ function runTests() {
 
   if (test('normalizes Windows Git Bash POSIX drive roots', () => {
     assert.strictEqual(
-      normalizePluginRootForPlatform('/c/Users/x/.claude/plugins/ecc', 'win32'),
-      'C:/Users/x/.claude/plugins/ecc'
+      normalizePluginRootForPlatform('/c/Users/x/.claude/plugins/aiuby', 'win32'),
+      'C:/Users/x/.claude/plugins/aiuby'
     );
     assert.strictEqual(
       normalizePluginRootForPlatform('/z/Work/ECC/scripts/hooks/check-console-log.js', 'win32'),
@@ -82,8 +82,8 @@ function runTests() {
 
   if (test('leaves already-Windows roots unchanged', () => {
     assert.strictEqual(
-      normalizePluginRootForPlatform('C:/Users/x/.claude/plugins/ecc', 'win32'),
-      'C:/Users/x/.claude/plugins/ecc'
+      normalizePluginRootForPlatform('C:/Users/x/.claude/plugins/aiuby', 'win32'),
+      'C:/Users/x/.claude/plugins/aiuby'
     );
     assert.strictEqual(
       normalizePluginRootForPlatform('D:\\Users\\x\\.claude\\plugins\\ecc', 'win32'),
@@ -93,12 +93,12 @@ function runTests() {
 
   if (test('leaves POSIX-looking roots unchanged off Windows', () => {
     assert.strictEqual(
-      normalizePluginRootForPlatform('/c/Users/x/.claude/plugins/ecc', 'darwin'),
-      '/c/Users/x/.claude/plugins/ecc'
+      normalizePluginRootForPlatform('/c/Users/x/.claude/plugins/aiuby', 'darwin'),
+      '/c/Users/x/.claude/plugins/aiuby'
     );
     assert.strictEqual(
-      normalizePluginRootForPlatform('/c/Users/x/.claude/plugins/ecc', 'linux'),
-      '/c/Users/x/.claude/plugins/ecc'
+      normalizePluginRootForPlatform('/c/Users/x/.claude/plugins/aiuby', 'linux'),
+      '/c/Users/x/.claude/plugins/aiuby'
     );
   })) passed++; else failed++;
 

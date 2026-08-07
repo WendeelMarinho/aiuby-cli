@@ -30,7 +30,7 @@ codex plugin marketplace add WendeelMarinho/aiuby-cli
 codex plugin marketplace add /absolute/path/to/ECC
 ```
 
-The marketplace entry points at `plugins/ecc/` — Codex does not discover
+The marketplace entry points at `plugins/aiuby/` — Codex does not discover
 plugins whose local marketplace `source.path` is the marketplace root (`./`),
 so the entry must target a concrete plugin subdirectory (see
 [#2128](https://github.com/affaan-m/ECC/issues/2128)). That thin plugin folder
@@ -57,8 +57,8 @@ node scripts/codex/check-plugin-cache.js
 
 Official Plugin Directory publishing is coming soon. For official OpenAI
 plugin-directory review, package this repo under the `openai/plugins`
-repository shape: `plugins/ecc/.codex-plugin/plugin.json`,
-`plugins/ecc/skills/`, and the supporting README/assets. Until that listing is
+repository shape: `plugins/aiuby/.codex-plugin/plugin.json`,
+`plugins/aiuby/skills/`, and the supporting README/assets. Until that listing is
 accepted, treat the public repo marketplace as the supported Codex distribution
 path and keep release copy framed as repo-marketplace/manual installation.
 
