@@ -43,8 +43,8 @@ function makeRecord({ repoRoot, homeDir, projectRoot, adapter, request, resoluti
     ? path.join(projectRoot, `.${adapter.target}`)
     : path.join(homeDir, '.claude');
   const installStatePath = adapter.kind === 'project'
-    ? path.join(targetRoot, 'ecc-install-state.json')
-    : path.join(targetRoot, 'ecc', 'install-state.json');
+    ? path.join(targetRoot, 'aiuby-install-state.json')
+    : path.join(targetRoot, 'aiuby', 'install-state.json');
 
   const state = createInstallState({
     adapter,
@@ -354,7 +354,7 @@ function runTests() {
                 stdout: JSON.stringify({
                   dryRun: false,
                   result: {
-                    installStatePath: path.join(projectRoot, '.cursor', 'ecc-install-state.json'),
+                    installStatePath: path.join(projectRoot, '.cursor', 'aiuby-install-state.json'),
                   },
                 }),
                 stderr: '',

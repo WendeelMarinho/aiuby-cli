@@ -1,19 +1,19 @@
 {
   "$comment": "Actionable legacy-name budget. Ratchets down only. See docs/architecture/ADR-0001-aiuby-naming-and-namespaces.md",
-  "actionableBudget": 6177,
-  "total": 7016,
+  "actionableBudget": 6050,
+  "total": 6889,
   "byClassification": {
-    "rename": 4970,
+    "rename": 4953,
     "compat-temporary": 15,
     "upstream-attribution": 19,
     "historical-doc": 805,
-    "test-fixture": 1207
+    "test-fixture": 1097
   },
   "byPattern": {
-    "legacy-command": 4384,
+    "legacy-command": 4329,
     "upstream-contact": 264,
     "legacy-domain": 47,
-    "legacy-binary": 300,
+    "legacy-binary": 228,
     "env-var": 1107,
     "upstream-repo": 188,
     "legacy-state-dir": 61,

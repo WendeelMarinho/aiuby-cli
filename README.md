@@ -210,7 +210,7 @@ cp -r agents/code-reviewer.md ~/.claude/agents/
 
 Do not copy the raw repo `hooks/hooks.json` into `~/.claude/settings.json` or `~/.claude/hooks/hooks.json` — on Windows, `%USERPROFILE%\\.claude`. Hook entries need matchers and a resolvable plugin root; a raw copy will not run and can shadow a working config. Use the installer or the plugin.
 
-**Rules** are the one place to be selective. Start with `rules/common` plus one language or framework pack you actually use. Installed rules land under `~/.claude/rules/ecc/`, so they never collide with rules you wrote yourself.
+**Rules** are the one place to be selective. Start with `rules/common` plus one language or framework pack you actually use. Installed rules land under `~/.claude/rules/aiuby/`, so they never collide with rules you wrote yourself.
 
 **Cursor** agents install as `.cursor/agents/ecc-*.md` under a project-scoped namespace. Cursor-native loading behavior can vary by Cursor build. Restart Cursor if the agents do not appear. Aiuby does not install root `AGENTS.md` into `.cursor/`.
 

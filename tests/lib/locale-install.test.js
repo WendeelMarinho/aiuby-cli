@@ -209,7 +209,7 @@ function runTests() {
         'Locale-only install should not install English skills'
       );
 
-      const statePath = path.join(claudeRoot, 'ecc', 'install-state.json');
+      const statePath = path.join(claudeRoot, 'aiuby', 'install-state.json');
       const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
       assert.deepStrictEqual(state.request.includeComponents, ['locale:ja']);
       assert.deepStrictEqual(state.resolution.selectedModules, ['docs-ja-jp']);

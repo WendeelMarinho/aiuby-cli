@@ -5,6 +5,6 @@ module.exports = createInstallTargetAdapter({
   target: 'hermes',
   kind: 'home',
   rootSegments: ['.hermes'],
-  installStatePathSegments: ['ecc-install-state.json'],
+  installStatePathSegments: ['aiuby-install-state.json'],
   nativeRootRelativePath: '.hermes',
 });

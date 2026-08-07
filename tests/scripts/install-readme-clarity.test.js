@@ -135,27 +135,27 @@ function runTests() {
       'README should steer users away from copying every rules directory'
     );
     assert.ok(
-      readme.includes('~/.claude/rules/ecc/'),
-      'README should steer plugin-path rules into an ECC-owned namespace'
+      readme.includes('~/.claude/rules/aiuby/'),
+      'README should steer plugin-path rules into an Aiuby-owned namespace'
     );
   })) passed++; else failed++;
 
-  if (test('rules README mirrors ECC namespaced install path', () => {
+  if (test('rules README mirrors Aiuby namespaced install path', () => {
     assert.ok(
-      rulesReadme.includes('mkdir -p ~/.claude/rules/ecc'),
-      'rules README should create the ECC-owned user-level rules namespace'
+      rulesReadme.includes('mkdir -p ~/.claude/rules/aiuby'),
+      'rules README should create the Aiuby-owned user-level rules namespace'
     );
     assert.ok(
-      rulesReadme.includes('cp -r rules/common ~/.claude/rules/ecc/'),
-      'rules README should copy common rules under ~/.claude/rules/ecc/'
+      rulesReadme.includes('cp -r rules/common ~/.claude/rules/aiuby/'),
+      'rules README should copy common rules under ~/.claude/rules/aiuby/'
     );
     assert.ok(
-      rulesReadme.includes('cp -r rules/typescript ~/.claude/rules/ecc/'),
-      'rules README should copy language rules under ~/.claude/rules/ecc/'
+      rulesReadme.includes('cp -r rules/typescript ~/.claude/rules/aiuby/'),
+      'rules README should copy language rules under ~/.claude/rules/aiuby/'
     );
     assert.ok(
-      rulesReadme.includes('mkdir -p .claude/rules/ecc'),
-      'rules README should document the project-local ECC namespace'
+      rulesReadme.includes('mkdir -p .claude/rules/aiuby'),
+      'rules README should document the project-local Aiuby namespace'
     );
     assert.ok(
       !rulesReadme.includes('~/.claude/rules/typescript'),

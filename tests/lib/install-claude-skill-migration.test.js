@@ -39,7 +39,7 @@ function createFixture(options = {}) {
   const targetRoot = target === 'claude'
     ? path.join(homeDir, '.claude')
     : path.join(projectRoot, '.claude');
-  const installStatePath = path.join(targetRoot, 'ecc', 'install-state.json');
+  const installStatePath = path.join(targetRoot, 'aiuby', 'install-state.json');
   const skillFiles = options.skillFiles || {
     'SKILL.md': '# Current ECC skill\n',
     'references/guide.md': '# Current ECC guide\n',
