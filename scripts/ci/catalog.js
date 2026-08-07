@@ -85,33 +85,82 @@ function replaceOrThrow(content, regex, replacer, source) {
   return content.replace(regex, replacer);
 }
 
+// A document carrying the generated counts block is authoritative: the block is
+// written by scripts/ci/generate-counts.js from the tree and cannot drift.
+// Demanding hand-written duplicates in the same file would reintroduce exactly
+// the drift this validator exists to catch.
+function parseGeneratedBlockExpectations(readmeContent) {
+  // Inlined rather than imported: this file is executed as a relocated copy in
+  // tests, so a relative require would resolve outside the repository.
+  const BEGIN_MARKER = '<!-- aiuby:counts:begin -->';
+  const END_MARKER = '<!-- aiuby:counts:end -->';
+  if (!readmeContent.includes(BEGIN_MARKER) || !readmeContent.includes(END_MARKER)) {
+    return null;
+  }
+
+  const block = readmeContent.slice(
+    readmeContent.indexOf(BEGIN_MARKER),
+    readmeContent.indexOf(END_MARKER)
+  );
+
+  const rows = [
+    ['agents', /\|\s*Agents\s*\|\s*(\d+)\s*\|/i],
+    ['skills', /\|\s*Skills\s*\|\s*(\d+)\s*\|/i],
+    ['commands', /\|\s*Commands\s*\|\s*(\d+)\s*\|/i],
+  ];
+
+  const expectations = [];
+  for (const [category, regex] of rows) {
+    const match = block.match(regex);
+    if (!match) {
+      throw new Error(`README.md generated counts block is missing the ${category} row`);
+    }
+    expectations.push({
+      category,
+      mode: 'exact',
+      expected: Number(match[1]),
+      source: 'README.md generated counts block',
+    });
+  }
+
+  return expectations;
+}
+
 function parseReadmeExpectations(readmeContent) {
   const expectations = [];
 
-  const quickStartMatch = readmeContent.match(
-    /access to\s+(\d+)\s+agents,\s+(\d+)\s+skills,\s+and\s+(\d+)\s+(?:commands|legacy command shims?)/i
-  );
-  if (!quickStartMatch) {
-    throw new Error('README.md is missing the quick-start catalog summary');
+  // The generated block replaces the hand-written quick-start prose when present.
+  const generated = parseGeneratedBlockExpectations(readmeContent);
+  if (generated) {
+    expectations.push(...generated);
+  } else {
+    const quickStartMatch = readmeContent.match(
+      /access to\s+(\d+)\s+agents,\s+(\d+)\s+skills,\s+and\s+(\d+)\s+(?:commands|legacy command shims?)/i
+    );
+    if (!quickStartMatch) {
+      throw new Error('README.md is missing the quick-start catalog summary');
+    }
+
+    expectations.push(
+      { category: 'agents', mode: 'exact', expected: Number(quickStartMatch[1]), source: 'README.md quick-start summary' },
+      { category: 'skills', mode: 'exact', expected: Number(quickStartMatch[2]), source: 'README.md quick-start summary' },
+      { category: 'commands', mode: 'exact', expected: Number(quickStartMatch[3]), source: 'README.md quick-start summary' }
+    );
   }
 
-  expectations.push(
-    { category: 'agents', mode: 'exact', expected: Number(quickStartMatch[1]), source: 'README.md quick-start summary' },
-    { category: 'skills', mode: 'exact', expected: Number(quickStartMatch[2]), source: 'README.md quick-start summary' },
-    { category: 'commands', mode: 'exact', expected: Number(quickStartMatch[3]), source: 'README.md quick-start summary' }
-  );
-
   const projectTreeAgentsMatch = readmeContent.match(/^\|\s*--\s*agents\/\s*#\s*(\d+)\s+specialized subagents for delegation\s*$/im);
-  if (!projectTreeAgentsMatch) {
+  if (!projectTreeAgentsMatch && !generated) {
     throw new Error('README.md project tree is missing the agents count');
   }
 
-  expectations.push({
-    category: 'agents',
-    mode: 'exact',
-    expected: Number(projectTreeAgentsMatch[1]),
-    source: 'README.md project tree (agents)'
-  });
+  if (projectTreeAgentsMatch) {
+    expectations.push({
+      category: 'agents',
+      mode: 'exact',
+      expected: Number(projectTreeAgentsMatch[1]),
+      source: 'README.md project tree (agents)'
+    });
+  }
 
   const tablePatterns = [
     { category: 'agents', regex: /\|\s*(?:\*\*)?Agents(?:\*\*)?\s*\|\s*(?:(?:PASS:|\u2705)\s*)?(\d+)\s+agents\s*\|/i, source: 'README.md comparison table' },
@@ -122,6 +171,11 @@ function parseReadmeExpectations(readmeContent) {
   for (const pattern of tablePatterns) {
     const match = readmeContent.match(pattern.regex);
     if (!match) {
+      // Optional once the generated block owns the counts; still validated when
+      // an author chooses to restate them.
+      if (generated) {
+        continue;
+      }
       throw new Error(`${pattern.source} is missing the ${pattern.category} row`);
     }
 

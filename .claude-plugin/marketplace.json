@@ -11,7 +11,7 @@
     {
       "name": "aiuby",
       "source": "./",
-      "description": "Aiuby AI Engineering operator layer - agents, skills, command shims, reusable hooks, rules, selective install profiles, and production-ready workflows for Claude Code, Codex, OpenCode, Cursor, and related agent harnesses",
+      "description": "Aiuby AI Engineering operator layer - 67 agents, 281 skills, 94 legacy command shims, reusable hooks, rules, selective install profiles, and production-ready workflows for Claude Code, Codex, OpenCode, Cursor, and related agent harnesses",
       "version": "0.1.0",
       "author": {
         "name": "Wendeel Marinho",
