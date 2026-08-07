@@ -131,9 +131,13 @@ test('agent.yaml version matches package.json', () => {
   assert.strictEqual(match[1], expectedVersion);
 });
 
-test('agent.yaml uses canonical ECC identity', () => {
+test('agent.yaml uses canonical Aiuby identity', () => {
   const agentYamlSource = fs.readFileSync(agentYamlPath, 'utf8');
-  assert.ok(/^name:\s*ecc$/m.test(agentYamlSource), 'Expected agent.yaml to use the ecc name');
+  assert.ok(/^name:\s*aiuby$/m.test(agentYamlSource), 'Expected agent.yaml to use the aiuby name');
+  assert.ok(
+    !/^author:\s*affaan-m$/m.test(agentYamlSource),
+    'agent.yaml must not attribute the export surface to the upstream maintainer'
+  );
 });
 
 test('VERSION file matches package.json', () => {
@@ -197,7 +201,7 @@ test('claude plugin.json version matches package.json', () => {
 });
 
 test('claude plugin.json uses short plugin slug', () => {
-  assert.strictEqual(claudePlugin.name, 'ecc');
+  assert.strictEqual(claudePlugin.name, 'aiuby');
 });
 
 test('claude plugin.json does NOT have agents field (unsupported by Claude Code validator)', () => {
@@ -242,8 +246,8 @@ test('claude marketplace.json keeps only Claude-supported top-level keys', () =>
 
 test('claude marketplace.json has plugins array with the published plugin entry', () => {
   assert.ok(Array.isArray(claudeMarketplace.plugins) && claudeMarketplace.plugins.length > 0, 'Expected plugins array');
-  assert.strictEqual(claudeMarketplace.name, 'ecc');
-  assert.strictEqual(claudeMarketplace.plugins[0].name, 'ecc');
+  assert.strictEqual(claudeMarketplace.name, 'aiuby');
+  assert.strictEqual(claudeMarketplace.plugins[0].name, 'aiuby');
 });
 
 test('claude marketplace.json plugin version matches package.json', () => {
@@ -270,7 +274,7 @@ test('codex plugin.json has name field', () => {
 });
 
 test('codex plugin.json uses short plugin slug', () => {
-  assert.strictEqual(codexPlugin.name, 'ecc');
+  assert.strictEqual(codexPlugin.name, 'aiuby');
 });
 
 test('codex plugin.json has version field', () => {
@@ -300,8 +304,8 @@ test('codex plugin.json has interface.displayName', () => {
 });
 
 test('codex plugin.json uses canonical ECC repo and display name', () => {
-  assert.strictEqual(codexPlugin.repository, 'https://github.com/affaan-m/ECC');
-  assert.strictEqual(codexPlugin.interface.displayName, 'ECC');
+  assert.strictEqual(codexPlugin.repository, 'https://github.com/WendeelMarinho/aiuby-cli');
+  assert.strictEqual(codexPlugin.interface.displayName, 'Aiuby');
 });
 
 test('codex plugin presentation assets exist and ship in npm package', () => {
@@ -368,7 +372,7 @@ test('marketplace.json has name field', () => {
 });
 
 test('marketplace.json uses short marketplace slug', () => {
-  assert.strictEqual(marketplace.name, 'ecc');
+  assert.strictEqual(marketplace.name, 'aiuby');
 });
 
 test('marketplace.json has plugins array with at least one entry', () => {
@@ -386,7 +390,7 @@ test('marketplace.json plugin entries have required fields', () => {
 });
 
 test('marketplace.json plugin entry uses short plugin slug', () => {
-  assert.strictEqual(marketplace.plugins[0].name, 'ecc');
+  assert.strictEqual(marketplace.plugins[0].name, 'aiuby');
 });
 
 test('marketplace.json plugin version matches package.json', () => {
@@ -513,7 +517,7 @@ test('user-facing docs do not use the legacy non-URL marketplace add form', () =
 test('.codex-plugin README uses current marketplace add flow', () => {
   const readme = fs.readFileSync(path.join(repoRoot, '.codex-plugin', 'README.md'), 'utf8');
   assert.ok(readme.includes('codex plugin marketplace add'), 'Expected .codex-plugin README to document codex plugin marketplace add');
-  assert.ok(readme.includes('codex plugin marketplace add affaan-m/ECC'), 'Expected .codex-plugin README to document the canonical ECC repo marketplace source');
+  assert.ok(readme.includes('codex plugin marketplace add WendeelMarinho/aiuby-cli'), 'Expected .codex-plugin README to document the canonical Aiuby repo marketplace source');
   assert.ok(readme.includes('Official Plugin Directory publishing is coming soon'), 'Expected .codex-plugin README to document current official directory status');
   assert.ok(!/\bcodex plugin install\b/.test(readme), 'codex plugin install is not a current Codex CLI command');
 });

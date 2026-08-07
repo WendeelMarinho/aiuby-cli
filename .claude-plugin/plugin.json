@@ -1,7 +1,7 @@
 {
-  "name": "ecc",
+  "name": "aiuby",
   "version": "0.1.0",
-  "description": "Harness-native ECC plugin for engineering teams - 67 agents, 281 skills, 94 legacy command shims, reusable hooks, rules, MCP conventions, and operator workflows for Claude Code plus adjacent agent harnesses",
+  "description": "Aiuby AI Engineering plugin for engineering teams - agents, skills, command shims, reusable hooks, rules, MCP conventions, and operator workflows for Claude Code plus adjacent agent harnesses",
   "author": {
     "name": "Wendeel Marinho",
     "url": "https://github.com/WendeelMarinho"

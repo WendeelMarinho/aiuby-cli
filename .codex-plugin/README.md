@@ -24,7 +24,7 @@ marketplace source from the CLI:
 
 ```bash
 # Add the public repo marketplace
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add WendeelMarinho/aiuby-cli
 
 # Or add a local checkout while developing
 codex plugin marketplace add /absolute/path/to/ECC

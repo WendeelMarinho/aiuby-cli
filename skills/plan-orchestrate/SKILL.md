@@ -51,7 +51,7 @@ Let `<claude-home>` denote the Claude Code home directory: `~/.claude` on macOS/
 
 | Form | Detection | `{ORCH_CMD}` | Agent name format |
 |---|---|---|---|
-| Plugin install (2.0.0+) | `<claude-home>/plugins/marketplaces/ecc/` exists | `/ecc:orchestrate` | `ecc:<name>` |
+| Plugin install (2.0.0+) | `<claude-home>/plugins/marketplaces/aiuby/` exists | `/ecc:orchestrate` | `ecc:<name>` |
 | Legacy bare install | Above absent; agent files under `<claude-home>/agents/` | `/orchestrate` | `<name>` |
 
 Why this matters: under the plugin install, agents register as `ecc:tdd-guide`. Bare names force fuzzy matching, which fails intermittently under parallel calls. Under legacy, the prefixed forms are not registered and fail outright.
@@ -87,7 +87,7 @@ A misspelled agent name fails `/orchestrate`. Cross-check against this list befo
 
 1. Read `<plan-doc-path>`. If missing or empty, report and stop.
 2. Detect ECC install form once and freeze it into `ECC_MODE`. Algorithm (run in order, stop at the first match):
-   1. If `<claude-home>/plugins/marketplaces/ecc/` exists → `ECC_MODE=plugin`.
+   1. If `<claude-home>/plugins/marketplaces/aiuby/` exists → `ECC_MODE=plugin`.
    2. Else if `<claude-home>/agents/` exists and contains at least one ECC agent file (e.g. `tdd-guide.md`, `code-reviewer.md`) → `ECC_MODE=legacy`.
    3. Else → default to `ECC_MODE=legacy` and emit a one-line warning at the top of the output: `> Warning: could not detect ECC install; defaulting to legacy form. If you use the plugin install, edit the prefixes manually.`
    4. If both markers exist (mixed install), `plugin` wins — the plugin namespace is the only one that resolves agent names without fuzzy matching.

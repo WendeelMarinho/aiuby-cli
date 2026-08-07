@@ -1,24 +1,24 @@
 {
-  "name": "ecc",
+  "name": "aiuby",
   "owner": {
     "name": "Wendeel Marinho",
     "email": "wendeelmarinho@gmail.com"
   },
   "metadata": {
-    "description": "Harness-native ECC skills, hooks, rules, MCP conventions, and operator workflows"
+    "description": "Harness-native Aiuby skills, hooks, rules, MCP conventions, and operator workflows"
   },
   "plugins": [
     {
-      "name": "ecc",
+      "name": "aiuby",
       "source": "./",
-      "description": "Harness-native ECC operator layer - 67 agents, 281 skills, 94 legacy command shims, reusable hooks, rules, selective install profiles, and production-ready workflows for Claude Code, Codex, OpenCode, Cursor, and related agent harnesses",
+      "description": "Aiuby AI Engineering operator layer - agents, skills, command shims, reusable hooks, rules, selective install profiles, and production-ready workflows for Claude Code, Codex, OpenCode, Cursor, and related agent harnesses",
       "version": "0.1.0",
       "author": {
         "name": "Wendeel Marinho",
         "email": "wendeelmarinho@gmail.com"
       },
       "homepage": "https://aiuby.com",
-      "repository": "https://github.com/affaan-m/ECC",
+      "repository": "https://github.com/WendeelMarinho/aiuby-cli",
       "license": "MIT",
       "keywords": [
         "agents",

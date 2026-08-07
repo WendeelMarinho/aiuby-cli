@@ -26,7 +26,7 @@ bumps both.
 
 ## Current Codex plugin-mode status
 
-With this layout, `codex plugin marketplace add affaan-m/ECC` discovers and
+With this layout, `codex plugin marketplace add WendeelMarinho/aiuby-cli` discovers and
 installs `ecc@ecc`. Runtime skill loading from repo marketplaces is still
 unreliable upstream — Codex copies only the plugin folder into its install
 cache, and local/personal marketplace plugins are not always exposed at

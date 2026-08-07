@@ -103,6 +103,71 @@ test('resolveEccRoot module covers current and legacy marketplace plugin roots',
   assert.ok(INLINE_RESOLVE.includes("scripts','lib','resolve-aiuby-root"));
 });
 
+test('resolveEccRoot finds an aiuby-named plugin install', () => {
+  const { resolveEccRoot } = require('../../scripts/lib/resolve-aiuby-root');
+
+  for (const segments of [['aiuby'], ['aiuby@aiuby'], ['marketplaces', 'aiuby']]) {
+    const homeDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aiuby-plugin-root-'));
+    try {
+      const root = path.join(homeDir, '.claude', 'plugins', ...segments);
+      fs.mkdirSync(path.join(root, 'scripts', 'lib'), { recursive: true });
+      fs.writeFileSync(path.join(root, 'scripts', 'lib', 'utils.js'), '// stub');
+      fs.mkdirSync(path.join(root, ECC_SKILL_SENTINEL), { recursive: true });
+      assert.strictEqual(
+        resolveEccRoot({ envRoot: '', homeDir }),
+        root,
+        `plugins/${segments.join('/')} must resolve`
+      );
+    } finally {
+      fs.rmSync(homeDir, { recursive: true, force: true });
+    }
+  }
+
+  const cacheHomeDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aiuby-plugin-cache-'));
+  try {
+    const cacheRoot = path.join(cacheHomeDir, '.claude', 'plugins', 'cache', 'aiuby', 'WendeelMarinho', '0.1.0');
+    fs.mkdirSync(path.join(cacheRoot, 'scripts', 'lib'), { recursive: true });
+    fs.writeFileSync(path.join(cacheRoot, 'scripts', 'lib', 'utils.js'), '// stub');
+    fs.mkdirSync(path.join(cacheRoot, ECC_SKILL_SENTINEL), { recursive: true });
+    assert.strictEqual(resolveEccRoot({ envRoot: '', homeDir: cacheHomeDir }), cacheRoot);
+  } finally {
+    fs.rmSync(cacheHomeDir, { recursive: true, force: true });
+  }
+});
+
+test('an aiuby install wins over a stale ecc install in the same home', () => {
+  const { resolveEccRoot } = require('../../scripts/lib/resolve-aiuby-root');
+  const homeDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aiuby-precedence-'));
+
+  try {
+    const roots = {};
+    for (const slug of ['aiuby', 'ecc']) {
+      const root = path.join(homeDir, '.claude', 'plugins', slug);
+      fs.mkdirSync(path.join(root, 'scripts', 'lib'), { recursive: true });
+      fs.writeFileSync(path.join(root, 'scripts', 'lib', 'utils.js'), '// stub');
+      fs.mkdirSync(path.join(root, ECC_SKILL_SENTINEL), { recursive: true });
+      roots[slug] = root;
+    }
+    assert.strictEqual(resolveEccRoot({ envRoot: '', homeDir }), roots.aiuby);
+  } finally {
+    fs.rmSync(homeDir, { recursive: true, force: true });
+  }
+});
+
+test('the inline resolver searches aiuby before the deprecated slugs', () => {
+  for (const slug of ['aiuby', 'aiuby@aiuby', 'marketplaces/aiuby']) {
+    assert.ok(INLINE_RESOLVE.includes(`'${slug}'`), `inline resolver must search ${slug}`);
+  }
+  // Deprecated slugs stay so an operator who has not reinstalled keeps working.
+  for (const slug of ['ecc', 'everything-claude-code']) {
+    assert.ok(INLINE_RESOLVE.includes(`'${slug}'`), `inline resolver must still search ${slug}`);
+  }
+  assert.ok(
+    INLINE_RESOLVE.indexOf("'aiuby'") < INLINE_RESOLVE.indexOf("'ecc'"),
+    'aiuby must be searched before ecc'
+  );
+});
+
 console.log(`Passed: ${passed}`);
 console.log(`Failed: ${failed}`);
 
