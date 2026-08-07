@@ -171,16 +171,16 @@ function runTests() {
   if (test('marks unified-memory install surfaces as requiring the separate ECC runtime', () => {
     const component = getInstallComponent('skill:unified-memory');
     assert.deepStrictEqual(component.moduleIds, ['skill-unified-memory']);
-    assert.match(component.description, /ecc-universal/i);
+    assert.match(component.description, /aiuby-cli/i);
     assert.match(component.description, /separate|external/i);
 
     const modules = listInstallModules();
     const singleSkillModule = modules.find(module => module.id === 'skill-unified-memory');
     const workflowModule = modules.find(module => module.id === 'workflow-quality');
     assert.ok(singleSkillModule, 'Should define an explicit unified-memory module');
-    assert.match(singleSkillModule.description, /ecc-universal/i);
+    assert.match(singleSkillModule.description, /aiuby-cli/i);
     assert.match(singleSkillModule.description, /separate|external/i);
-    assert.match(workflowModule.description, /ecc-universal/i);
+    assert.match(workflowModule.description, /aiuby-cli/i);
 
     const plan = resolveInstallPlan({
       includeComponentIds: ['skill:unified-memory'],

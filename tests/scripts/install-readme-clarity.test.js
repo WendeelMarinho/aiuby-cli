@@ -51,7 +51,7 @@ function runTests() {
 
   if (test('README documents reset and uninstall flow', () => {
     assert.ok(
-      readme.includes('### Reset / Uninstall ECC'),
+      readme.includes('### Reset / Uninstall Aiuby'),
       'README should have a visible reset/uninstall section'
     );
     assert.ok(
@@ -67,7 +67,7 @@ function runTests() {
       'README should document doctor before reinstalling'
     );
     assert.ok(
-      readme.includes('ECC only removes files recorded in its install-state.'),
+      readme.includes('Aiuby only removes files recorded in its install-state.'),
       'README should explain uninstall safety boundaries'
     );
   })) passed++; else failed++;
@@ -82,7 +82,7 @@ function runTests() {
       'README should document the shell minimal profile command'
     );
     assert.ok(
-      readme.includes('npx ecc-install --profile minimal --target claude'),
+      readme.includes('npx aiuby-install --profile minimal --target claude'),
       'README should document the npx minimal profile command'
     );
     assert.ok(
@@ -101,7 +101,7 @@ function runTests() {
       'README should surface component discovery before install steps'
     );
     assert.ok(
-      readme.includes('npx ecc consult "security reviews" --target claude'),
+      readme.includes('npx aiuby consult "security reviews" --target claude'),
       'README should document the packaged consult command'
     );
     assert.ok(
@@ -120,7 +120,7 @@ function runTests() {
       'README should avoid overclaiming Cursor agent loading semantics'
     );
     assert.ok(
-      readme.includes('ECC does not install root `AGENTS.md` into `.cursor/`.'),
+      readme.includes('Aiuby does not install root `AGENTS.md` into `.cursor/`.'),
       'README should explain why root AGENTS.md is not copied into Cursor context'
     );
   })) passed++; else failed++;

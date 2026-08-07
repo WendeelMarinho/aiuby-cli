@@ -136,6 +136,104 @@ A **harness** is a distinct agent tool Aiuby installs into; an **install target*
 
 ---
 
+## Installation
+
+### Find the right components first
+
+Do not guess a profile. Describe the work and let the catalog answer:
+
+```bash
+npx aiuby consult "security reviews" --target claude
+```
+
+It returns matching components, related profiles, and preview/install commands.
+
+### Pick one path only
+
+**Recommended default:** install the Claude Code plugin (Path 1).
+
+**Do not stack install methods.** Two paths install two copies of the same content, and the copies then compete. This is the most common source of confusing behavior.
+
+### Path 1 — Claude Code plugin (recommended default)
+
+```text
+/plugin marketplace add WendeelMarinho/aiuby-cli
+/plugin install aiuby@aiuby
+```
+
+Commands then live under the plugin namespace — `/aiuby:plan`, `/aiuby:tdd`, `/aiuby:code-review`.
+
+If you choose this path, stop there. The plugin already ships agents, skills, commands, and hooks, so do not run the full installer on top of it.
+
+### Path 2 — CLI
+
+```bash
+npm install -g aiuby-cli
+
+aiuby install --profile full --target claude
+```
+
+Or without a global install:
+
+```bash
+npx aiuby-install --profile minimal --target claude
+./install.sh --profile minimal --target claude
+```
+
+If you choose this path, stop there. Do not also run `/plugin install`.
+
+### Low-context / no-hooks path
+
+Use this when the harness has a tight context budget, or you do not want automation running on every tool call:
+
+```bash
+aiuby install --profile core --without baseline:hooks --target claude
+```
+
+This profile intentionally excludes `hooks-runtime`. Nothing runs automatically; every workflow is invoked explicitly.
+
+Add hooks later, once you want them:
+
+```bash
+bash ./install.sh --target claude --modules hooks-runtime
+pwsh -File .\install.ps1 --target claude --modules hooks-runtime
+```
+
+### Path 3 — manual
+
+Copy only what you want. Skills must land as **direct children** of `~/.claude/skills/` — a nested `~/.claude/skills/aiuby/tdd-workflow/` is not discovered:
+
+```bash
+cp -r skills/tdd-workflow ~/.claude/skills/
+cp -r agents/code-reviewer.md ~/.claude/agents/
+```
+
+Do not copy the raw repo `hooks/hooks.json` into `~/.claude/settings.json` or `~/.claude/hooks/hooks.json` — on Windows, `%USERPROFILE%\\.claude`. Hook entries need matchers and a resolvable plugin root; a raw copy will not run and can shadow a working config. Use the installer or the plugin.
+
+**Rules** are the one place to be selective. Start with `rules/common` plus one language or framework pack you actually use. Installed rules land under `~/.claude/rules/ecc/`, so they never collide with rules you wrote yourself.
+
+**Cursor** agents install as `.cursor/agents/ecc-*.md` under a project-scoped namespace. Cursor-native loading behavior can vary by Cursor build. Restart Cursor if the agents do not appear. Aiuby does not install root `AGENTS.md` into `.cursor/`.
+
+### Optional: shared memory over MCP
+
+The `aiuby-memory-mcp` binary exposes the memory vault to any MCP-capable harness. It ships with the package and is registered from `mcp-configs/mcp-servers.json`.
+
+### Reset / Uninstall Aiuby
+
+```bash
+node scripts/aiuby.js doctor
+node scripts/aiuby.js list-installed
+node scripts/uninstall.js --dry-run
+```
+
+Aiuby only removes files recorded in its install-state. It never touches your memory vault, your configuration, or anything you authored. To reset, uninstall and reinstall the profile you want.
+
+If you installed the plugin, remove the plugin from Claude Code instead — that path is managed by the harness, not by install-state.
+
+Migrating from ECC? See [docs/migration/from-ecc-to-aiuby.md](docs/migration/from-ecc-to-aiuby.md).
+
+---
+
 ## Aiuby Engineering Loop
 
 A successful AI-native workflow should produce more than code.

@@ -58,9 +58,9 @@ that the agents share. Skill-only, minimal, manual, and Claude plugin installs
 do not add the Memory Vault runtime to `PATH`; install it separately first:
 
 ```bash
-npm install -g ecc-universal
+npm install -g aiuby-cli
 ecc memory --help
-command -v ecc-memory-mcp
+command -v aiuby-memory-mcp
 ```
 
 Then initialize the vault:
@@ -76,7 +76,7 @@ should follow the user across repositories. Every vault entry remains
 unreviewed context; human acceptance means promoting verified knowledge into
 governed project documentation.
 
-Hermes can call the CLI directly or use the opt-in `ecc-memory-mcp` stdio
+Hermes can call the CLI directly or use the opt-in `aiuby-memory-mcp` stdio
 server. Harnesses may share the same installed binary and vault storage, but
 each harness must launch its own server process with its own distinct lowercase
 `ECC_MEMORY_HARNESS` identity; they must not connect to one shared server
@@ -168,7 +168,7 @@ These stay local and should be configured per operator:
    - import sanitized workspace memory with `ecc migrate import-memory`
 1. Install ECC and verify the baseline harness setup with `node tests/run-all.js`; the expected result is a zero-failure test summary.
 2. Install Hermes and point it at ECC-imported skills.
-3. Initialize the shared ECC Memory Vault. Register `ecc-memory-mcp` only if
+3. Initialize the shared ECC Memory Vault. Register `aiuby-memory-mcp` only if
    Hermes needs tool access instead of the `ecc memory` CLI.
 4. Authenticate Google Drive first, then GitHub, then distribution channels.
 5. Start with a small cron surface: readiness check, content accountability, inbox triage, revenue monitor.

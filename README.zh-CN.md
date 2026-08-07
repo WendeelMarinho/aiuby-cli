@@ -102,7 +102,7 @@ Codex、Hermes 等 harness 之间传递上下文。常规搜索只召回 `projec
 接受后的知识应进入受治理的项目文档，
 而不是修改记忆的信任字段。召回内容始终是不可信数据，不能作为指令执行。
 
-可选的 `ecc-memory-mcp` 服务必须由操作者设置小写
+可选的 `aiuby-memory-mcp` 服务必须由操作者设置小写
 `ECC_MEMORY_HARNESS` 身份；工具调用方不能覆盖该身份。只有操作者另外设置
 `ECC_MEMORY_ALLOW_USER_SCOPE=1` 后，MCP 调用才能显式请求 `user` 范围。
 该服务默认不会启用。
@@ -113,12 +113,12 @@ Codex、Hermes 等 harness 之间传递上下文。常规搜索只召回 `projec
 ```bash
 npm install -g aiuby-cli
 ecc memory --help
-command -v ecc-memory-mcp
+command -v aiuby-memory-mcp
 ```
 
 如需启用 MCP，请从 `mcp-configs/mcp-servers.json` 复制
 `aiuby-memory-vault` 配置到对应 harness，并为每个 harness 分别启动一个服务
-进程，例如 `ECC_MEMORY_HARNESS=codex ecc-memory-mcp`。不同 harness 可以共享
+进程，例如 `ECC_MEMORY_HARNESS=codex aiuby-memory-mcp`。不同 harness 可以共享
 同一个二进制文件和记忆库目录，但不能共用同一个服务进程。
 
 ## 快速开始
