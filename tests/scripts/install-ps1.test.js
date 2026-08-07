@@ -84,9 +84,13 @@ function runTests() {
   let failed = 0;
   const powerShellCommand = resolvePowerShellCommand();
 
-  if (test('publishes ecc-install through the Node installer runtime for cross-platform npm usage', () => {
+  if (test('publishes aiuby-install through the Node installer runtime for cross-platform npm usage', () => {
     const packageJson = JSON.parse(fs.readFileSync(PACKAGE_JSON, 'utf8'));
-    assert.strictEqual(packageJson.bin['ecc-install'], 'scripts/install-apply.js');
+    assert.strictEqual(packageJson.bin['aiuby-install'], 'scripts/install-apply.js');
+
+    // The deprecated name routes through a shim that prints the replacement and
+    // spawns the same Node runtime, so cross-platform behavior is unchanged.
+    assert.strictEqual(packageJson.bin['ecc-install'], 'scripts/legacy/ecc-install.js'); // aiuby:compat
   })) passed++; else failed++;
 
   if (!powerShellCommand) {
