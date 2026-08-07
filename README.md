@@ -777,11 +777,18 @@ See `CONTRIBUTING.md` for the repository contribution process.
 
 This repository is based on and adapted from the open-source **ECC — Agent Harness Operating System** project by Affaan Mustafa and its contributors.
 
-The Aiuby distribution introduces a new product identity, engineering philosophy, ecosystem direction, documentation structure, and planned runtime migration while preserving the obligations of the original MIT license.
+The Aiuby distribution introduces a new product identity, engineering philosophy, ecosystem direction, documentation structure, and runtime migration while preserving the obligations of the original MIT license.
 
-Upstream project:
+| Document | What it records |
+|---|---|
+| [NOTICE](NOTICE) | Formal attribution notice, shipped with the package |
+| [UPSTREAM.md](UPSTREAM.md) | What the fork inherited, what diverged, and why `git blame` cannot reach upstream authors |
+| [LICENSE](LICENSE) | MIT, dual copyright |
+| [docs/migration/from-ecc-to-aiuby.md](docs/migration/from-ecc-to-aiuby.md) | Migrating an existing ECC installation |
 
-- [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
+Upstream project: [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
+
+Aiuby is **not affiliated with, endorsed by, or supported by** the ECC project. Send Aiuby issues to [this repository](https://github.com/WendeelMarinho/aiuby-cli/issues), never to the upstream maintainer.
 
 Do not remove copyright notices or the original license text where preservation is required.
 

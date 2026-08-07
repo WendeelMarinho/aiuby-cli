@@ -92,6 +92,8 @@ function buildExpectedPublishPaths(repoRoot) {
     ".github/PULL_REQUEST_TEMPLATE.md",
     "COMMANDS-QUICK-REF.md",
     "CONTRIBUTING.md",
+    "NOTICE",
+    "UPSTREAM.md",
     "VERSION",
     "assets/aiuby-icon.svg",
     "assets/hero-aiuby.png",
@@ -178,6 +180,11 @@ function main() {
         ".cursor/skills/unified-memory/SKILL.md",
         "COMMANDS-QUICK-REF.md",
         "CONTRIBUTING.md",
+        // Attribution must travel with the distribution: npm auto-includes
+        // LICENSE but NOT NOTICE.
+        "LICENSE",
+        "NOTICE",
+        "UPSTREAM.md",
         "plugins/aiuby/.codex-plugin/plugin.json",
         "assets/aiuby-icon.svg",
         "assets/hero-aiuby.png",

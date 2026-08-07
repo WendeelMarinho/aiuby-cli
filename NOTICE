@@ -1,0 +1,22 @@
+Aiuby AI Engineering
+Copyright (c) 2026 Wendeel Marinho
+
+This product includes software developed as part of the ECC project
+("Everything Claude Code"), Copyright (c) 2026 Affaan Mustafa.
+
+    Original work: ECC
+    Source:        https://github.com/affaan-m/ECC
+    License:       MIT
+
+Aiuby AI Engineering is a fork of that project. It is not affiliated with,
+endorsed by, or supported by the ECC project or its maintainers. Questions,
+bug reports, and support requests for Aiuby must go to the Aiuby repository,
+not to the upstream project.
+
+The MIT license text covering both the original and derivative work is in
+LICENSE. A record of what the fork kept, changed, and dropped is in
+UPSTREAM.md.
+
+Substantial portions of the agents, skills, commands, hooks, rules, install
+manifests, and harness adapters in this distribution originate from the
+upstream project and remain under the terms above.
