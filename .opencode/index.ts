@@ -35,7 +35,7 @@
  */
 
 // Export the main plugin
-export { ECCHooksPlugin, default } from "./plugins/index.js"
+export { AiubyHooksPlugin, default } from "./plugins/index.js"
 
 // Export individual components for selective use
 export * from "./plugins/index.js"

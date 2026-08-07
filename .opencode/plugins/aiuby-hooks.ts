@@ -64,9 +64,9 @@ function getECCVersion(): string {
   }
 }
 
-type ECCHooksPluginFn = (input: PluginInput) => Promise<Record<string, unknown>>
+type AiubyHooksPluginFn = (input: PluginInput) => Promise<Record<string, unknown>>
 
-export const ECCHooksPlugin: ECCHooksPluginFn = async ({
+export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
   client,
   $,
   directory,
@@ -621,4 +621,4 @@ export const ECCHooksPlugin: ECCHooksPluginFn = async ({
   }
 }
 
-export default ECCHooksPlugin
+export default AiubyHooksPlugin

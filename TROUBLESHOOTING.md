@@ -322,7 +322,7 @@ ResolveMessage: Cannot find module '../plugins/lib/changed-files-store.js' from 
   finished copying (an interrupted install, or a storage/permission hiccup
   that's more common on Android's filesystem). Both the `changed-files` tool
   and the `ecc-hooks` plugin depend on `plugins/lib/changed-files-store.js`;
-  since `ecc-hooks.ts` is OpenCode's plugin entry point (loaded once at
+  since `aiuby-hooks.ts` is OpenCode's plugin entry point (loaded once at
   session startup, before `tools/index.ts`'s barrel file), a missing
   dependency there used to crash the entire OpenCode session before any
   hooks could load — not just the one tool.

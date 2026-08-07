@@ -96,7 +96,7 @@ The `.opencode/` directory in this repository contains the translated configurat
 .opencode/
 ├── opencode.json              # Main configuration
 ├── plugins/                   # Hook plugins (translated from hooks.json)
-│   ├── ecc-hooks.ts           # All ECC hooks as plugins
+│   ├── aiuby-hooks.ts           # All ECC hooks as plugins
 │   └── index.ts               # Plugin exports
 ├── tools/                     # Custom tools
 │   ├── run-tests.ts           # Run test suite
