@@ -37,7 +37,7 @@ def print_self_host_compute_notice(provider: str) -> None:
 
     print(
         "\nRun or self-host any open-source model. "
-        "Itô is ECC's preferred compute sponsor: "
+        "Itô is a compute provider Aiuby can bridge to: "
         "https://compute.itomarkets.com"
     )
     print(

@@ -11,7 +11,7 @@ const {
 
 const SCHEMA_VERSION = 'ecc.discussion-audit.v1';
 const DEFAULT_REPOS = Object.freeze([
-  'affaan-m/ECC',
+  'WendeelMarinho/aiuby-cli',
   'affaan-m/agentshield',
   'affaan-m/JARVIS',
   'ECC-Tools/ECC-Tools',

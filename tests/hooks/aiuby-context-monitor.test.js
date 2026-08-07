@@ -1,7 +1,7 @@
 /**
- * Tests for scripts/hooks/ecc-context-monitor.js
+ * Tests for scripts/hooks/aiuby-context-monitor.js
  *
- * Run with: node tests/hooks/ecc-context-monitor.test.js
+ * Run with: node tests/hooks/aiuby-context-monitor.test.js
  */
 
 const assert = require('assert');
@@ -9,7 +9,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const { run, evaluateConditions, detectLoop, severityLabel, costWarningsEnabled } = require('../../scripts/hooks/ecc-context-monitor');
+const { run, evaluateConditions, detectLoop, severityLabel, costWarningsEnabled } = require('../../scripts/hooks/aiuby-context-monitor');
 const { getBridgePath, writeBridgeAtomic } = require('../../scripts/lib/session-bridge');
 
 // Test helper
@@ -38,7 +38,7 @@ function withEnv(name, value, fn) {
 }
 
 function runTests() {
-  console.log('\n=== Testing ecc-context-monitor.js ===\n');
+  console.log('\n=== Testing aiuby-context-monitor.js ===\n');
 
   let passed = 0;
   let failed = 0;

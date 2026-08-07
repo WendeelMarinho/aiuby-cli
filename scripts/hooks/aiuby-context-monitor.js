@@ -2,7 +2,7 @@
 /**
  * ECC Context Monitor — PostToolUse hook
  *
- * Reads bridge file from ecc-metrics-bridge.js and injects agent-facing
+ * Reads bridge file from aiuby-metrics-bridge.js and injects agent-facing
  * warnings when thresholds are crossed: context exhaustion, high cost,
  * scope creep, or tool loops.
  */
@@ -70,7 +70,7 @@ function readWarnState(sessionId) {
  * either a corrupted payload or an ENOENT throw on the second rename.
  *
  * Same pattern as `writeBridgeAtomic` in `scripts/lib/session-bridge.js`
- * and `writeCostWarningIfChanged` in `scripts/hooks/ecc-metrics-bridge.js`.
+ * and `writeCostWarningIfChanged` in `scripts/hooks/aiuby-metrics-bridge.js`.
  *
  * @param {string} sessionId
  * @param {object} state

@@ -15,7 +15,7 @@ The distribution chain remains provider-neutral:
       -> model harness
       -> ECC meta-harness
 
-Itô is ECC's preferred compute sponsor, never an exclusive provider. Owned
+Itô is a compute provider Aiuby can bridge to, never an exclusive provider. Owned
 hardware, existing clusters, and other providers remain valid.
 
 ## Implemented boundary

@@ -111,24 +111,24 @@ function runTests() {
             'post:edit:console-warn',
             'post:governance-capture',
             'post:session-activity-tracker',
-            'post:ecc-metrics-bridge',
-            'post:ecc-context-monitor'
+            'post:aiuby-metrics-bridge',
+            'post:aiuby-context-monitor'
           ],
           async: ['post:quality-gate', 'post:observe:continuous-learning']
         },
         {
           tool: 'Write',
-          sync: ['post:edit:design-quality-check', 'post:edit:accumulator', 'post:governance-capture', 'post:session-activity-tracker', 'post:ecc-metrics-bridge', 'post:ecc-context-monitor'],
+          sync: ['post:edit:design-quality-check', 'post:edit:accumulator', 'post:governance-capture', 'post:session-activity-tracker', 'post:aiuby-metrics-bridge', 'post:aiuby-context-monitor'],
           async: ['post:quality-gate', 'post:observe:continuous-learning']
         },
         {
           tool: 'Bash',
-          sync: ['post:governance-capture', 'post:session-activity-tracker', 'post:ecc-metrics-bridge', 'post:ecc-context-monitor'],
+          sync: ['post:governance-capture', 'post:session-activity-tracker', 'post:aiuby-metrics-bridge', 'post:aiuby-context-monitor'],
           async: ['post:bash:dispatcher', 'post:observe:continuous-learning']
         },
         {
           tool: 'Read',
-          sync: ['post:session-activity-tracker', 'post:ecc-metrics-bridge', 'post:ecc-context-monitor'],
+          sync: ['post:session-activity-tracker', 'post:aiuby-metrics-bridge', 'post:aiuby-context-monitor'],
           async: ['post:observe:continuous-learning']
         }
       ];
@@ -170,8 +170,8 @@ function runTests() {
         'post:edit:console-warn',
         'post:governance-capture',
         'post:session-activity-tracker',
-        'post:ecc-metrics-bridge',
-        'post:ecc-context-monitor',
+        'post:aiuby-metrics-bridge',
+        'post:aiuby-context-monitor',
         'post:quality-gate',
         'post:observe:continuous-learning'
       ]);
@@ -213,7 +213,7 @@ function runTests() {
         ECC_HOOK_PROFILE: 'minimal'
       });
       assert.strictEqual(minimalSync.status, 0, minimalSync.stderr);
-      assert.deepStrictEqual(previewedIds(minimalSync.stderr), ['post:ecc-metrics-bridge']);
+      assert.deepStrictEqual(previewedIds(minimalSync.stderr), ['post:aiuby-metrics-bridge']);
 
       const minimalAsync = runDispatcher('async', 'Bash', {
         ECC_DRY_RUN: '1',
@@ -230,7 +230,7 @@ function runTests() {
       const ids = previewedIds(disabled.stderr);
       assert.ok(!ids.includes('post:edit:accumulator'));
       assert.ok(ids.includes('post:edit:design-quality-check'));
-      assert.ok(ids.includes('post:ecc-context-monitor'));
+      assert.ok(ids.includes('post:aiuby-context-monitor'));
     })
   )
     passed++;

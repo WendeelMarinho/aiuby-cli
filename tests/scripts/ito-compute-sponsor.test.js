@@ -92,10 +92,10 @@ function assertExactHref(content, expectedHref) {
 
 function assertHonestComputeCopy(content) {
   assertExactComputeRoute(content);
-  assert.match(content, /preferred compute sponsor/i);
+  assert.match(content, /compute provider Aiuby can bridge to/i);
   assert.match(content, /run or self-host any open-source model/i);
   assert.match(content, /any GPU provider/i);
-  assert.match(content, /sponsorship link is passive/i);
+  assert.match(content, /does not reserve capacity/i);
   assert.match(content, /aiuby ito find/i);
   assert.match(content, /explicitly configured canonical Itô CLI/i);
   assert.match(content, /submits a live authenticated RFQ/i);
@@ -123,7 +123,7 @@ function main() {
   const tests = [
     ['compute route validation rejects deceptive lookalike hosts', () => {
       const deceptiveCopy = [
-        'Itô is the preferred compute sponsor:',
+        'Itô is a compute provider Aiuby can bridge to:',
         'https://compute.itomarkets.com.attacker.example',
         'Any GPU provider works.',
         'Managed inference through Itô is not live.',

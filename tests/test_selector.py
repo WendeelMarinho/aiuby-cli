@@ -48,7 +48,7 @@ def test_ollama_notice_routes_to_ito_without_claiming_serving(capsys):
 
     output = capsys.readouterr().out
     assert_exact_compute_route(output)
-    assert "preferred compute sponsor" in output
+    assert "compute provider Aiuby can bridge to" in output
     assert "Any GPU provider works" in output
     assert "sponsorship link is passive" in output
     assert "aiuby ito find" in output

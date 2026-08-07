@@ -73,7 +73,7 @@ handoffs.
   and attention signals for long-running loops.
 - `ecc session-inspect <target> --write <path>` emits canonical session
   snapshots from dmux and Claude-history adapters.
-- `scripts/hooks/ecc-statusline.js` renders compact model, task, cost, tool,
+- `scripts/hooks/aiuby-statusline.js` renders compact model, task, cost, tool,
   file, duration, directory, and context pressure signals inside Claude Code.
 
 The `ecc.hud-status.v1` payload is the common outer contract these surfaces can

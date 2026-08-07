@@ -110,6 +110,12 @@ function listFilesRecursive(dirPath) {
 
 function isGeneratedRuntimeSourcePath(sourceRelativePath) {
   const normalizedPath = String(sourceRelativePath || '').replace(/\\/g, '/');
+  // Python bytecode caches are build byproducts of whoever ran the tooling last,
+  // not installable content. They also carry pre-rename module names, which is
+  // how ecc_dashboard_runtime.pyc kept landing in fresh installs.
+  if (normalizedPath.includes('/__pycache__/') || /\.py[cod]$/.test(normalizedPath)) {
+    return true;
+  }
   return EXCLUDED_GENERATED_SOURCE_SUFFIXES.some(suffix => normalizedPath.endsWith(suffix));
 }
 

@@ -731,7 +731,7 @@ test('loadHooks exposes consolidated PostToolUse child IDs', () => {
   assert.ok(hooks.some(hook => hook.id === 'post:dispatcher:async'));
   assert.ok(hooks.some(hook => hook.id === 'post:quality-gate'));
   assert.ok(hooks.some(hook => hook.id === 'post:edit:accumulator'));
-  assert.ok(hooks.some(hook => hook.id === 'post:ecc-context-monitor'));
+  assert.ok(hooks.some(hook => hook.id === 'post:aiuby-context-monitor'));
 });
 
 test('loadHooks handles malformed JSON gracefully', () => {
@@ -838,7 +838,7 @@ test('renderHTML includes the dashboard title and footer', () => {
   const data = { agents: [], skills: [], commands: [], rules: [], mcps: [], hooks: [] };
   const html = renderHTML(data);
   assert.ok(html.includes('ECC Capabilities'));
-  assert.ok(html.includes('github.com/affaan-m/ECC'));
+  assert.ok(html.includes('github.com/WendeelMarinho/aiuby-cli'));
 });
 
 // ===================== Server / HTTP =====================

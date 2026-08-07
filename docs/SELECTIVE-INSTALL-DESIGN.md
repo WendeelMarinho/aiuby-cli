@@ -299,7 +299,7 @@ Optional future support:
 
 ```json
 {
-  "$schema": "./schemas/ecc-install-config.schema.json",
+  "$schema": "./schemas/aiuby-install-config.schema.json",
   "version": 1,
   "target": "cursor",
   "profile": "developer",

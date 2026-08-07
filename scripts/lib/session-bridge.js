@@ -55,8 +55,8 @@ function readBridge(sessionId) {
  * Write bridge data atomically (write unique-suffix tmp then rename).
  *
  * The tmp path includes `process.pid` plus a random nonce so concurrent
- * writers (e.g. PostToolUse `ecc-metrics-bridge` and the background
- * `ecc-statusline`, both writing to the same session bridge) do not
+ * writers (e.g. PostToolUse `aiuby-metrics-bridge` and the background
+ * `aiuby-statusline`, both writing to the same session bridge) do not
  * clobber each other's tmp file mid-write. With a fixed `.tmp` suffix
  * two writers could both call `writeFileSync` against the same path
  * before either reaches `renameSync`, causing one writer's payload to
@@ -64,7 +64,7 @@ function readBridge(sessionId) {
  * ENOENT once the rename consumes the file.
  *
  * Same pattern already used by `writeCostWarningIfChanged` in
- * `scripts/hooks/ecc-metrics-bridge.js` (commit 9b1d8918) for the
+ * `scripts/hooks/aiuby-metrics-bridge.js` (commit 9b1d8918) for the
  * cost-warning cache; this commit applies it to the session-bridge
  * primitive too.
  *
