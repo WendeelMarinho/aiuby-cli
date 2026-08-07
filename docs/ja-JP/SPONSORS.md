@@ -42,18 +42,15 @@
 
 ## スポンサーティア
 
-| ティア | 価格 | 特典 |
-|--------|------|------|
-| サポーター | $5/月 | READMEに名前掲載、早期アクセス |
-| ビルダー | $10/月 | プレミアムツールへのアクセス |
-| プロ | $25/月 | 優先サポート、オフィスアワー |
-| チーム | $100/月 | 5シート、チーム設定 |
-| ハーネスパートナー | $200/月 | 月次ロードマップ同期、優先メンテナーフィードバック、リリースノート掲載 |
-| ビジネス | $500/月 | 25シート、コンサルティングクレジット |
-| エンタープライズ | $2K/月 | 無制限シート、カスタムツール |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
+
 
 [**スポンサーになる →**](https://github.com/sponsors/WendeelMarinho)
 
 ---
 
 *自動更新。最終同期：2026年2月*
+
+## Tiers
+
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.

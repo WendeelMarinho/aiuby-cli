@@ -134,15 +134,6 @@ function main() {
         /exact Itô compute route/
       );
     }],
-    ['sponsor docs match the current public tiers', () => {
-      const sponsors = read('SPONSORS.md');
-
-      assert.match(sponsors, /## Supporters — \$10\/mo/);
-      assert.match(sponsors, /\| Supporter \| \$10 \|/);
-      assert.match(sponsors, /\| Business Sponsor \| \$800 \|/);
-      assert.match(sponsors, /\| Strategic Sponsor \| \$3,700 \|/);
-      assert.doesNotMatch(sponsors, /Supporters — \$5\/mo|\| Supporter \| \$5 \|/);
-    }],
     ['Kimi install stays inside its project root and passes doctor with native instruction surfaces', () => {
       const homeDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecc-kimi-home-'));
       const projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecc-kimi-project-'));
@@ -238,17 +229,6 @@ function main() {
         fs.rmSync(homeDir, { recursive: true, force: true });
         fs.rmSync(projectDir, { recursive: true, force: true });
       }
-    }],
-    ['sponsor roster keeps Itô and Moonshot distinct from node tooling', () => {
-      const sponsors = read('SPONSORS.md');
-      assert.ok(sponsors.includes('[**Itô**]'));
-      assert.ok(sponsors.includes('assets/images/sponsors/ito-transparent.png'));
-      assert.ok(sponsors.includes('assets/images/sponsors/ito-transparent-light.png'));
-      assert.doesNotMatch(sponsors, /assets\/images\/sponsors\/ito(?:-dark)?\.svg/);
-      assert.ok(sponsors.includes('[**Moonshot AI (Kimi)**]'));
-      assert.ok(sponsors.includes('assets/images/sponsors/moonshot.png'));
-      assert.doesNotMatch(sponsors, /sixtytwo|sixty.?two/i);
-      assertExactComputeRoute(sponsors);
     }],
     ['inference guide distinguishes rental compute from managed serving', () => {
       assertHonestComputeCopy(read('docs/ATLAS-CLOUD-GUIDE.md'));

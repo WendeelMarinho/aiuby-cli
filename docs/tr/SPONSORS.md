@@ -42,18 +42,15 @@ Kopyala/yapıştır metrik çekme iş akışı için [`docs/business/metrics-and
 
 ## Sponsor Seviyeleri
 
-| Seviye | Fiyat | Avantajlar |
-|------|-------|----------|
-| Supporter | $5/ay | README'de isim, erken erişim |
-| Builder | $10/ay | Premium araç erişimi |
-| Pro | $25/ay | Öncelikli destek, ofis saatleri |
-| Team | $100/ay | 5 koltuk, takım yapılandırmaları |
-| Harness Partner | $200/ay | Aylık yol haritası senkronizasyonu, öncelikli bakımcı geri bildirimi, sürüm notlarında bahis |
-| Business | $500/ay | 25 koltuk, danışmanlık kredisi |
-| Enterprise | $2K/ay | Sınırsız koltuk, özel araçlar |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
+
 
 [**Sponsor Olun →**](https://github.com/sponsors/WendeelMarinho)
 
 ---
 
 *Otomatik güncellenir. Son senkronizasyon: Şubat 2026*
+
+## Tiers
+
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.

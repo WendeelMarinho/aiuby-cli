@@ -14,11 +14,8 @@ El patrocinio financia directamente:
 
 Estos son puntos de partida prácticos y pueden ajustarse según el alcance de la colaboración.
 
-| Nivel | Precio | Mejor Para | Incluye |
-|-------|-------|----------|---------|
-| Pilot Partner | $200/mes | Primera colaboración como patrocinador | Actualización mensual de métricas, vista previa del roadmap, retroalimentación prioritaria del mantenedor |
-| Growth Partner | $500/mes | Equipos adoptando activamente ECC | Beneficios de Pilot + sincronización mensual de office hours + orientación de integración de flujos de trabajo |
-| Strategic Partner | $1,000+/mes | Colaboraciones de plataforma/ecosistema | Beneficios de Growth + soporte coordinado de lanzamiento + colaboración más profunda con el mantenedor |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
+
 
 ## Informes de Patrocinio
 

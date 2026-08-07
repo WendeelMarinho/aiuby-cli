@@ -10,7 +10,6 @@
 
 <p align="center">
   <a href="https://aiuby.com"><img src="https://img.shields.io/badge/Website-aiuby.com-111827?logo=googlechrome&logoColor=white" alt="Aiuby website" /></a>
-  <a href="https://cortex.aiuby.com"><img src="https://img.shields.io/badge/Cortex-AI%20Engineering-2563EB" alt="Aiuby Cortex" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" /></a>
 </p>
 
@@ -743,12 +742,6 @@ The company and engineering organization responsible for developing AI-native sy
 
 - Website: [aiuby.com](https://aiuby.com)
 
-### Cortex
-
-The operational intelligence surface for engineering context, analysis, workflows, agents, evaluations, and organizational knowledge.
-
-- Platform: [cortex.aiuby.com](https://cortex.aiuby.com)
-
 ### Aiuby CLI
 
 The command-line control surface for installing, configuring, inspecting, and operating Aiuby engineering capabilities across projects and harnesses.
@@ -815,7 +808,6 @@ The objective is to give engineering teams a more capable operating model.
 - connect repositories, Jira, documentation, CI/CD, infrastructure, and observability;
 - represent projects, architecture, decisions, risks, requirements, and engineering evidence;
 - improve cross-session and cross-harness handoffs;
-- integrate with Cortex.
 
 ### Phase 4 — Evaluation and governance
 
@@ -968,6 +960,5 @@ See [`LICENSE`](LICENSE) for the complete license text and preserved copyright n
 </p>
 
 <p align="center">
-  <a href="https://aiuby.com">Aiuby</a> ·
-  <a href="https://cortex.aiuby.com">Cortex</a>
+  <a href="https://aiuby.com">Aiuby</a>
 </p>

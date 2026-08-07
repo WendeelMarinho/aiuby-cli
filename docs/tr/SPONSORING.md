@@ -14,11 +14,8 @@ Sponsorluk doğrudan şunları destekler:
 
 Bunlar pratik başlangıç noktalarıdır ve ortaklık kapsamına göre ayarlanabilir.
 
-| Seviye | Fiyat | En Uygun Olduğu | İçerikler |
-|------|-------|----------|----------|
-| Pilot Partner | $200/ay | İlk sponsor katılımı | Aylık metrik güncelleme, yol haritası önizlemesi, öncelikli bakımcı geri bildirimi |
-| Growth Partner | $500/ay | ECC'yi aktif olarak benimseyen ekipler | Pilot avantajları + aylık ofis saatleri senkronizasyonu + iş akışı entegrasyon rehberliği |
-| Strategic Partner | $1,000+/ay | Platform/ekosistem ortaklıkları | Growth avantajları + koordineli başlatma desteği + daha derin bakımcı işbirliği |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
+
 
 ## Sponsor Raporlaması
 

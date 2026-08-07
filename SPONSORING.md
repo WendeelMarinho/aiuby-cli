@@ -12,21 +12,22 @@ Sponsorship directly funds:
 
 ## Sponsorship Tiers
 
-These are practical public starting points. Sponsorship funds the public OSS layer and sponsor visibility, not private implementation work.
+Tiers, amounts, and benefits live on
+[GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) and are not
+duplicated here. A copy in the repository drifts from the real offer, and a
+stale price is worse than no price.
 
-| Tier | Price | Best For | Includes |
-|------|-------|----------|----------|
-| Team Sponsor | $200/mo | Teams that want visible OSS support without README placement | Company name/logo/link in SPONSORS.md |
-| Business Sponsor | $800/mo | Companies that want README sponsor visibility | Featured README sponsor area + SPONSORS.md listing + one sponsor-placement review |
-| Strategic Sponsor | $3,700/mo | Ecosystem partners that want top placement and tighter coordination | Top README sponsor placement + SPONSORS.md listing + one 30-minute placement call + optional launch mention if the integration is genuinely useful |
+Sponsorship funds the public OSS layer and sponsor visibility, not private
+implementation work.
 
-No public tier includes seats, support SLA, custom development, a dedicated channel, or guaranteed case study unless separately agreed in writing.
+No public tier includes seats, a support SLA, custom development, a dedicated
+channel, or a guaranteed case study unless separately agreed in writing.
 
 ## Sponsor Reporting
 
 Metrics shared monthly can include:
 
-- npm downloads (`aiuby-cli`, `ecc-agentshield`)
+- npm downloads (`aiuby-cli`)
 - Repository adoption (stars, forks, contributors)
 - GitHub App install trend
 - Release cadence and reliability milestones

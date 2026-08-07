@@ -42,18 +42,15 @@
 
 ## 赞助等级
 
-| 层级 | 价格 | 权益 |
-|------|-------|----------|
-| 支持者 | 每月 $5 | 名字出现在 README 中，早期访问 |
-| 构建者 | 每月 $10 | 高级工具访问权限 |
-| 专业版 | 每月 $25 | 优先支持，办公时间 |
-| 团队版 | 每月 $100 | 5 个席位，团队配置 |
-| 平台合作伙伴 | 每月 $200 | 月度路线图同步，优先维护者反馈，发布说明提及 |
-| 商业版 | 每月 $500 | 25 个席位，咨询积分 |
-| 企业版 | 每月 $2K | 无限制席位，自定义工具 |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
+
 
 [**Become a Sponsor →**](https://github.com/sponsors/WendeelMarinho)
 
 ***
 
 *自动更新。最后同步：2026年2月*
+
+## Tiers
+
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.

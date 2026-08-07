@@ -10,7 +10,6 @@
 
 <p align="center">
   <a href="https://aiuby.com"><img src="https://img.shields.io/badge/Website-aiuby.com-111827?logo=googlechrome&logoColor=white" alt="Site da Aiuby" /></a>
-  <a href="https://cortex.aiuby.com"><img src="https://img.shields.io/badge/Cortex-AI%20Engineering-2563EB" alt="Aiuby Cortex" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT" /></a>
 </p>
 
@@ -641,12 +640,6 @@ Empresa e organização de engenharia responsável por desenvolver sistemas AI-n
 
 - Site: [aiuby.com](https://aiuby.com)
 
-### Cortex
-
-Superfície operacional de inteligência para contexto de engenharia, análises, workflows, agentes, avaliações e conhecimento organizacional.
-
-- Plataforma: [cortex.aiuby.com](https://cortex.aiuby.com)
-
 ### Aiuby CLI
 
 Futura superfície de controle por linha de comando para instalar, configurar, inspecionar, avaliar e operar as capacidades de engenharia da Aiuby em diferentes projetos e harnesses.
@@ -704,7 +697,6 @@ O objetivo é fornecer a elas um modelo operacional mais capaz.
 - conectar repositórios, Jira, documentação, CI/CD, infraestrutura e observabilidade;
 - representar projetos, arquitetura, decisões, riscos, requisitos e evidências;
 - melhorar handoffs entre sessões e harnesses;
-- integrar com Cortex.
 
 ### Fase 4 — Avaliação e governança
 
@@ -809,6 +801,5 @@ Consulte [`LICENSE`](LICENSE) para o texto completo e os avisos de copyright pre
 </p>
 
 <p align="center">
-  <a href="https://aiuby.com">Aiuby</a> ·
-  <a href="https://cortex.aiuby.com">Cortex</a>
+  <a href="https://aiuby.com">Aiuby</a>
 </p>
