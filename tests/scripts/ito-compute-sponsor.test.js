@@ -286,31 +286,6 @@ function main() {
         fs.rmSync(projectDir, { recursive: true, force: true });
       }
     }],
-    ['npm package publishes the Ito mark and welcome route', () => {
-      const packageJson = JSON.parse(read('package.json'));
-      assert.ok(packageJson.files.includes('assets/images/sponsors/'));
-      assertExactComputeRoute(packageJson.scripts.welcome);
-      assert.match(packageJson.scripts.welcome, /run or self-host any open-source model/i);
-      assert.match(packageJson.scripts.welcome, /sponsorship link is passive/i);
-      assert.match(packageJson.scripts.welcome, /aiuby ito find/i);
-      assert.match(packageJson.scripts.welcome, /submits a live authenticated RFQ/i);
-      assert.match(packageJson.scripts.welcome, /does not reserve capacity/i);
-      assert.ok(
-        fs.existsSync(path.join(REPO_ROOT, 'assets', 'images', 'sponsors', 'ito-transparent.png'))
-      );
-      assert.ok(
-        fs.existsSync(
-          path.join(REPO_ROOT, 'assets', 'images', 'sponsors', 'ito-transparent-light.png')
-        )
-      );
-      assert.ok(
-        !fs.existsSync(path.join(REPO_ROOT, 'assets', 'images', 'sponsors', 'ito.svg'))
-      );
-      assert.ok(
-        !fs.existsSync(path.join(REPO_ROOT, 'assets', 'images', 'sponsors', 'ito-dark.svg'))
-      );
-      assert.ok(fs.existsSync(path.join(REPO_ROOT, 'assets', 'images', 'sponsors', 'moonshot.png')));
-    }],
   ];
 
   for (const [name, fn] of tests) {

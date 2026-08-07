@@ -101,7 +101,6 @@ function buildExpectedPublishPaths(repoRoot) {
     "docs/CODEX-NAVIGATION-GUIDE.md",
     "docs/COMMAND-AGENT-MAP.md",
     "docs/design/aiuby-memory-vault.md",
-    "assets/images/sponsors",
   ]
   const exclusionPaths = [
     "!**/__pycache__/**",

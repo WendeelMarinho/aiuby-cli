@@ -7,7 +7,12 @@ security review, and release work.
 
 ## Current sponsors
 
-Aiuby has no sponsors yet. This page lists them once it does.
+- **RemédiosJÁ**
+- **Scalegrid**
+
+<!-- Logos and links are pending: add the files under assets/images/sponsors/
+     and link each name once the canonical URL is confirmed. Do not guess a
+     sponsor's domain. -->
 
 ## Tiers
 

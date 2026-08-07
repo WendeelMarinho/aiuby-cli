@@ -57,7 +57,7 @@ use std::path::{Path, PathBuf};
 use tracing_subscriber::EnvFilter;
 
 #[derive(Parser, Debug)]
-#[command(name = "ecc", version, about = "ECC 2.0 — Agentic IDE control plane")]
+#[command(name = "ecc", version, about = "Aiuby — Agentic IDE control plane")]
 struct Cli {
     #[command(subcommand)]
     command: Option<Commands>,
@@ -390,7 +390,7 @@ enum Commands {
         #[command(subcommand)]
         command: GraphCommands,
     },
-    /// Audit Hermes/OpenClaw-style workspaces and map them onto ECC2
+    /// Audit Hermes/OpenClaw-style workspaces and map them onto Aiuby
     Migrate {
         #[command(subcommand)]
         command: MigrationCommands,
@@ -573,7 +573,7 @@ enum RemoteCommands {
         /// Task priority
         #[arg(long, value_enum, default_value_t = TaskPriorityArg::Normal)]
         priority: TaskPriorityArg,
-        /// Agent type (defaults to ECC default agent)
+        /// Agent type (defaults to Aiuby default agent)
         #[arg(short, long)]
         agent: Option<String>,
         /// Agent profile defined in ecc2.toml
@@ -608,10 +608,10 @@ enum RemoteCommands {
         /// Task priority
         #[arg(long, value_enum, default_value_t = TaskPriorityArg::Normal)]
         priority: TaskPriorityArg,
-        /// Agent type override (defaults to [computer_use_dispatch] or ECC default agent)
+        /// Agent type override (defaults to [computer_use_dispatch] or Aiuby default agent)
         #[arg(short, long)]
         agent: Option<String>,
-        /// Agent profile override (defaults to [computer_use_dispatch] or ECC default profile)
+        /// Agent profile override (defaults to [computer_use_dispatch] or Aiuby default profile)
         #[arg(long)]
         profile: Option<String>,
         #[command(flatten)]
@@ -660,7 +660,7 @@ enum RemoteCommands {
 
 #[derive(clap::Subcommand, Debug)]
 enum MigrationCommands {
-    /// Audit a Hermes/OpenClaw-style workspace and map it onto ECC2 features
+    /// Audit a Hermes/OpenClaw-style workspace and map it onto Aiuby features
     Audit {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
@@ -669,7 +669,7 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Generate an actionable ECC2 migration plan from a legacy workspace audit
+    /// Generate an actionable Aiuby migration plan from a legacy workspace audit
     Plan {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
@@ -693,19 +693,19 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Import recurring jobs from a legacy cron/jobs.json into ECC2 schedules
+    /// Import recurring jobs from a legacy cron/jobs.json into Aiuby schedules
     ImportSchedules {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Preview detected jobs without creating ECC2 schedules
+        /// Preview detected jobs without creating Aiuby schedules
         #[arg(long)]
         dry_run: bool,
         /// Emit machine-readable JSON instead of the human summary
         #[arg(long)]
         json: bool,
     },
-    /// Import legacy workspace memory into the ECC2 context graph
+    /// Import legacy workspace memory into the Aiuby context graph
     ImportMemory {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
@@ -717,12 +717,12 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Import safe legacy env/service config context into the ECC2 context graph
+    /// Import safe legacy env/service config context into the Aiuby context graph
     ImportEnv {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Preview detected importable sources without writing to the ECC2 graph
+        /// Preview detected importable sources without writing to the Aiuby graph
         #[arg(long)]
         dry_run: bool,
         /// Maximum imported records across all synthesized connectors
@@ -732,48 +732,48 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Scaffold ECC-native orchestration templates from legacy skill markdown
+    /// Scaffold Aiuby-native orchestration templates from legacy skill markdown
     ImportSkills {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Directory where imported ECC2 skill artifacts should be written
+        /// Directory where imported Aiuby skill artifacts should be written
         #[arg(long)]
         output_dir: PathBuf,
         /// Emit machine-readable JSON instead of the human summary
         #[arg(long)]
         json: bool,
     },
-    /// Scaffold ECC-native templates from legacy tool scripts
+    /// Scaffold Aiuby-native templates from legacy tool scripts
     ImportTools {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Directory where imported ECC2 tool artifacts should be written
+        /// Directory where imported Aiuby tool artifacts should be written
         #[arg(long)]
         output_dir: PathBuf,
         /// Emit machine-readable JSON instead of the human summary
         #[arg(long)]
         json: bool,
     },
-    /// Scaffold ECC-native templates from legacy bridge plugins
+    /// Scaffold Aiuby-native templates from legacy bridge plugins
     ImportPlugins {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Directory where imported ECC2 plugin artifacts should be written
+        /// Directory where imported Aiuby plugin artifacts should be written
         #[arg(long)]
         output_dir: PathBuf,
         /// Emit machine-readable JSON instead of the human summary
         #[arg(long)]
         json: bool,
     },
-    /// Import legacy gateway/dispatch tasks into the ECC2 remote queue
+    /// Import legacy gateway/dispatch tasks into the Aiuby remote queue
     ImportRemote {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Preview detected requests without creating ECC2 remote queue entries
+        /// Preview detected requests without creating Aiuby remote queue entries
         #[arg(long)]
         dry_run: bool,
         /// Emit machine-readable JSON instead of the human summary
@@ -2889,7 +2889,7 @@ async fn main() -> Result<()> {
             }
         },
         Some(Commands::Daemon) => {
-            println!("Starting ECC daemon...");
+            println!("Starting Aiuby daemon...");
             session::daemon::run(db, cfg).await?;
         }
         Some(Commands::RunSession {
@@ -5154,9 +5154,9 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "ecc daemon".to_string(),
             ],
             notes: vec![
-                "Recurring jobs can be recreated directly in ECC2's persistent scheduler."
+                "Recurring jobs can be recreated directly in Aiuby's persistent scheduler."
                     .to_string(),
-                "Translate each legacy cron prompt into an explicit ECC task body before enabling it."
+                "Translate each legacy cron prompt into an explicit Aiuby task body before enabling it."
                     .to_string(),
             ],
         });
@@ -5176,9 +5176,9 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "ecc remote run".to_string(),
             ],
             notes: vec![
-                "ECC2 already ships a token-authenticated remote dispatch queue and HTTP intake."
+                "Aiuby already ships a token-authenticated remote dispatch queue and HTTP intake."
                     .to_string(),
-                "Remote handlers should be translated to ECC task bodies instead of copied verbatim."
+                "Remote handlers should be translated to Aiuby task bodies instead of copied verbatim."
                     .to_string(),
             ],
         });
@@ -5198,7 +5198,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "ecc graph connectors".to_string(),
             ],
             notes: vec![
-                "ECC2 deep memory now supports persistent observations, recall, compaction, and external connectors."
+                "Aiuby deep memory now supports persistent observations, recall, compaction, and external connectors."
                     .to_string(),
             ],
         });
@@ -5238,7 +5238,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "configure-aiuby".to_string(),
             ],
             notes: vec![
-                "Reusable skills should be ported one by one into ECC-native skills or orchestration templates."
+                "Reusable skills should be ported one by one into Aiuby-native skills or orchestration templates."
                     .to_string(),
                 "Do not bulk-copy legacy private skills without auditing for secrets and operator-only assumptions."
                     .to_string(),
@@ -5260,7 +5260,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "harness_runners.<name>".to_string(),
             ],
             notes: vec![
-                "Legacy tool wrappers should be rebuilt as ECC agents, commands, hooks, or configured harness runners."
+                "Legacy tool wrappers should be rebuilt as Aiuby agents, commands, hooks, or configured harness runners."
                     .to_string(),
                 "Only the reusable workflow surface should move across; opaque runtime glue should be reimplemented minimally."
                     .to_string(),
@@ -5281,7 +5281,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "skills/".to_string(),
             ],
             notes: vec![
-                "Bridge plugins normally translate into ECC hooks, commands, or skills instead of one-for-one plugin copies."
+                "Bridge plugins normally translate into Aiuby hooks, commands, or skills instead of one-for-one plugin copies."
                     .to_string(),
             ],
         });
@@ -5300,7 +5300,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "local API key setup".to_string(),
             ],
             notes: vec![
-                "Secret material should not be imported into ECC2."
+                "Secret material should not be imported into Aiuby."
                     .to_string(),
                 "Re-enter credentials locally through connectors, OAuth, MCP servers, or local env configuration."
                     .to_string(),
@@ -5434,19 +5434,19 @@ fn build_legacy_migration_next_steps(artifacts: &[LegacyMigrationArtifact]) -> V
     }
     if categories.contains("skills") {
         steps.push(
-            "Scaffold translated legacy skills with `ecc migrate import-skills --source <legacy-workspace> --output-dir <dir>`, then promote the reusable ones into ECC skills or orchestration templates one lane at a time instead of bulk-copying them."
+            "Scaffold translated legacy skills with `ecc migrate import-skills --source <legacy-workspace> --output-dir <dir>`, then promote the reusable ones into Aiuby skills or orchestration templates one lane at a time instead of bulk-copying them."
                 .to_string(),
         );
     }
     if categories.contains("tools") {
         steps.push(
-            "Scaffold translated legacy tools with `ecc migrate import-tools --source <legacy-workspace> --output-dir <dir>`, then rebuild the valuable ones as ECC-native commands, hooks, or harness runners instead of shelling back out to the old stack."
+            "Scaffold translated legacy tools with `ecc migrate import-tools --source <legacy-workspace> --output-dir <dir>`, then rebuild the valuable ones as Aiuby-native commands, hooks, or harness runners instead of shelling back out to the old stack."
                 .to_string(),
         );
     }
     if categories.contains("plugins") {
         steps.push(
-            "Scaffold translated bridge plugins with `ecc migrate import-plugins --source <legacy-workspace> --output-dir <dir>`, then port the valuable ones into ECC-native hooks, commands, or skills."
+            "Scaffold translated bridge plugins with `ecc migrate import-plugins --source <legacy-workspace> --output-dir <dir>`, then port the valuable ones into Aiuby-native hooks, commands, or skills."
                 .to_string(),
         );
     }
@@ -6592,7 +6592,7 @@ fn import_legacy_tools(source: &Path, output_dir: &Path) -> Result<LegacyToolImp
                 steps: vec![config::OrchestrationTemplateStepConfig {
                     name: Some("operator".to_string()),
                     task: format!(
-                        "Use the migrated legacy tool context from {}.\nSuggested ECC target surface: {}\nLegacy tool title: {}\nLegacy summary: {}\nLegacy excerpt:\n{}\nRebuild or wrap that behavior as an ECC-native {} for {{{{task}}}}.",
+                        "Use the migrated legacy tool context from {}.\nSuggested Aiuby target surface: {}\nLegacy tool title: {}\nLegacy summary: {}\nLegacy excerpt:\n{}\nRebuild or wrap that behavior as an Aiuby-native {} for {{{{task}}}}.",
                         draft.source_path,
                         draft.suggested_surface,
                         draft.title,
@@ -6878,7 +6878,7 @@ fn import_legacy_plugins(source: &Path, output_dir: &Path) -> Result<LegacyPlugi
                 steps: vec![config::OrchestrationTemplateStepConfig {
                     name: Some("operator".to_string()),
                     task: format!(
-                        "Use the migrated legacy plugin context from {}.\nSuggested ECC target surface: {}\nLegacy plugin title: {}\nLegacy summary: {}\nLegacy excerpt:\n{}\nPort that behavior into an ECC-native {} for {{{{task}}}}.",
+                        "Use the migrated legacy plugin context from {}.\nSuggested Aiuby target surface: {}\nLegacy plugin title: {}\nLegacy summary: {}\nLegacy excerpt:\n{}\nPort that behavior into an Aiuby-native {} for {{{{task}}}}.",
                         draft.source_path,
                         draft.suggested_surface,
                         draft.title,
@@ -7313,8 +7313,8 @@ fn build_legacy_migration_plan_report(
             "scheduler" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Recreate Hermes/OpenClaw recurring jobs in ECC2 scheduler".to_string(),
-                target_surface: "ECC2 scheduler".to_string(),
+                title: "Recreate Hermes/OpenClaw recurring jobs in Aiuby scheduler".to_string(),
+                target_surface: "Aiuby scheduler".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: if schedule_commands.is_empty() {
                     vec![
@@ -7339,7 +7339,7 @@ fn build_legacy_migration_plan_report(
                     }
                     if disabled_schedule_jobs > 0 {
                         notes.push(format!(
-                            "{disabled_schedule_jobs} legacy recurring job(s) are disabled and were left out of generated ECC2 commands."
+                            "{disabled_schedule_jobs} legacy recurring job(s) are disabled and were left out of generated Aiuby commands."
                         ));
                     }
                     if invalid_schedule_jobs > 0 {
@@ -7353,8 +7353,8 @@ fn build_legacy_migration_plan_report(
             "gateway_dispatch" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Replace legacy gateway intake with ECC2 remote dispatch".to_string(),
-                target_surface: "ECC2 remote dispatch".to_string(),
+                title: "Replace legacy gateway intake with Aiuby remote dispatch".to_string(),
+                target_surface: "Aiuby remote dispatch".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: if remote_commands.is_empty() {
                     vec![
@@ -7382,7 +7382,7 @@ fn build_legacy_migration_plan_report(
                     }
                     if disabled_remote_requests > 0 {
                         notes.push(format!(
-                            "{disabled_remote_requests} legacy remote dispatch request(s) are disabled and were left out of generated ECC2 commands."
+                            "{disabled_remote_requests} legacy remote dispatch request(s) are disabled and were left out of generated Aiuby commands."
                         ));
                     }
                     if invalid_remote_requests > 0 {
@@ -7396,8 +7396,8 @@ fn build_legacy_migration_plan_report(
             "memory_tool" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Port legacy memory tool usage to ECC2 deep memory".to_string(),
-                target_surface: "ECC2 context graph".to_string(),
+                title: "Port legacy memory tool usage to Aiuby deep memory".to_string(),
+                target_surface: "Aiuby context graph".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     "ecc graph add-observation --entity-id <id> --type migration_note --summary \"Imported legacy memory pattern\"".to_string(),
@@ -7410,8 +7410,8 @@ fn build_legacy_migration_plan_report(
             "workspace_memory" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Import sanitized workspace memory through ECC2 connectors".to_string(),
-                target_surface: "ECC2 memory connectors".to_string(),
+                title: "Import sanitized workspace memory through Aiuby connectors".to_string(),
+                target_surface: "Aiuby memory connectors".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     "ecc graph connector-sync hermes_workspace".to_string(),
@@ -7426,8 +7426,8 @@ fn build_legacy_migration_plan_report(
             "skills" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Translate reusable legacy skills into ECC-native surfaces".to_string(),
-                target_surface: "ECC skills / orchestration templates".to_string(),
+                title: "Translate reusable legacy skills into Aiuby-native surfaces".to_string(),
+                target_surface: "Aiuby skills / orchestration templates".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     format!(
@@ -7444,15 +7444,15 @@ fn build_legacy_migration_plan_report(
             "tools" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Rebuild valuable legacy tools as ECC agents, hooks, commands, or harness runners".to_string(),
-                target_surface: "ECC agents / hooks / commands / harness runners".to_string(),
+                title: "Rebuild valuable legacy tools as Aiuby agents, hooks, commands, or harness runners".to_string(),
+                target_surface: "Aiuby agents / hooks / commands / harness runners".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     format!(
                         "ecc migrate import-tools --source {} --output-dir migration-artifacts/tools",
                         shell_quote_double(&audit.source)
                     ),
-                    "ecc template <template-name> --task \"Rebuild one legacy tool as an ECC-native command, hook, or harness runner\"".to_string(),
+                    "ecc template <template-name> --task \"Rebuild one legacy tool as an Aiuby-native command, hook, or harness runner\"".to_string(),
                 ],
                 config_snippets: vec![
                     "[harness_runners.legacy-runner]\nprogram = \"<runner-binary>\"\nbase_args = []\nproject_markers = [\".legacy-runner\"]".to_string(),
@@ -7462,15 +7462,15 @@ fn build_legacy_migration_plan_report(
             "plugins" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Translate legacy bridge plugins into ECC-native automation".to_string(),
-                target_surface: "ECC hooks / commands / skills".to_string(),
+                title: "Translate legacy bridge plugins into Aiuby-native automation".to_string(),
+                target_surface: "Aiuby hooks / commands / skills".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     format!(
                         "ecc migrate import-plugins --source {} --output-dir migration-artifacts/plugins",
                         shell_quote_double(&audit.source)
                     ),
-                    "ecc template <template-name> --task \"Port one bridge plugin behavior into an ECC hook, command, or skill\"".to_string(),
+                    "ecc template <template-name> --task \"Port one bridge plugin behavior into an Aiuby hook, command, or skill\"".to_string(),
                 ],
                 config_snippets: Vec::new(),
                 notes: artifact.notes.clone(),
@@ -7493,7 +7493,7 @@ fn build_legacy_migration_plan_report(
                     "ecc graph recall \"<service or env key>\"".to_string(),
                 ],
                 config_snippets: vec![
-                    "# Re-enter connector auth locally; do not copy legacy secrets into ECC2.\n# Typical targets: Google Drive OAuth, GitHub, Stripe, Linear, browser creds.".to_string(),
+                    "# Re-enter connector auth locally; do not copy legacy secrets into Aiuby.\n# Typical targets: Google Drive OAuth, GitHub, Stripe, Linear, browser creds.".to_string(),
                 ],
                 notes: artifact.notes.clone(),
             },
@@ -7501,7 +7501,7 @@ fn build_legacy_migration_plan_report(
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
                 title: format!("Review legacy {} surface", artifact.category),
-                target_surface: "Manual ECC2 translation".to_string(),
+                target_surface: "Manual Aiuby translation".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: Vec::new(),
                 config_snippets: Vec::new(),
@@ -7552,7 +7552,7 @@ fn write_legacy_migration_scaffold(
 fn render_legacy_migration_config_scaffold(plan: &LegacyMigrationPlanReport) -> String {
     let mut sections = vec![
         format!(
-            "# ECC2 migration scaffold generated from {}\n# Review every section before merging it into a real ecc2.toml.",
+            "# Aiuby migration scaffold generated from {}\n# Review every section before merging it into a real ecc2.toml.",
             plan.source
         ),
     ];
@@ -10980,7 +10980,7 @@ mod tests {
 
         let rendered = format_legacy_migration_plan_human(&plan);
         assert!(rendered.contains("Legacy migration plan"));
-        assert!(rendered.contains("Import sanitized workspace memory through ECC2 connectors"));
+        assert!(rendered.contains("Import sanitized workspace memory through Aiuby connectors"));
         let env_step = plan
             .steps
             .iter()
@@ -11541,7 +11541,7 @@ Route existing installs to portal first before checkout.
         let config_text = fs::read_to_string(output_dir.join("ecc2.imported-tools.toml"))?;
         assert!(config_text.contains("[orchestration_templates.tool_browser_check_portal_py]"));
         assert!(config_text.contains("[orchestration_templates.tool_hooks_preflight_sh]"));
-        assert!(config_text.contains("Rebuild or wrap that behavior as an ECC-native"));
+        assert!(config_text.contains("Rebuild or wrap that behavior as an Aiuby-native"));
 
         let summary_text = fs::read_to_string(output_dir.join("imported-tools.md"))?;
         assert!(summary_text.contains("tools/browser/check_portal.py"));
@@ -11592,7 +11592,7 @@ Route existing installs to portal first before checkout.
         let config_text = fs::read_to_string(output_dir.join("ecc2.imported-plugins.toml"))?;
         assert!(config_text.contains("[orchestration_templates.plugin_hooks_review_py]"));
         assert!(config_text.contains("[orchestration_templates.plugin_skills_recovery_py]"));
-        assert!(config_text.contains("Port that behavior into an ECC-native"));
+        assert!(config_text.contains("Port that behavior into an Aiuby-native"));
 
         let summary_text = fs::read_to_string(output_dir.join("imported-plugins.md"))?;
         assert!(summary_text.contains("plugins/hooks/review.py"));

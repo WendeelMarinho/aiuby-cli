@@ -504,7 +504,7 @@ impl Config {
         project_override_paths: &[PathBuf],
     ) -> Result<Self> {
         let mut merged = toml::Value::try_from(Self::default())
-            .context("serialize default ECC 2.0 config for layered merge")?;
+            .context("serialize default Aiuby config for layered merge")?;
 
         for path in global_paths.iter().chain(project_override_paths.iter()) {
             if path.exists() {
@@ -514,7 +514,7 @@ impl Config {
 
         merged
             .try_into()
-            .context("deserialize merged ECC 2.0 config")
+            .context("deserialize merged Aiuby config")
     }
 
     fn config_root() -> PathBuf {
@@ -570,9 +570,9 @@ impl Config {
 
     fn merge_config_file(base: &mut toml::Value, path: &std::path::Path) -> Result<()> {
         let content = std::fs::read_to_string(path)
-            .with_context(|| format!("read ECC 2.0 config from {}", path.display()))?;
+            .with_context(|| format!("read Aiuby config from {}", path.display()))?;
         let overlay: toml::Value = toml::from_str(&content)
-            .with_context(|| format!("parse ECC 2.0 config from {}", path.display()))?;
+            .with_context(|| format!("parse Aiuby config from {}", path.display()))?;
         Self::merge_toml_values(base, overlay);
         Ok(())
     }

@@ -379,9 +379,9 @@ struct TeamSummary {
 impl SessionCompletionSummary {
     fn title(&self) -> String {
         match self.state {
-            SessionState::Completed => "ECC 2.0: Session completed".to_string(),
-            SessionState::Failed => "ECC 2.0: Session failed".to_string(),
-            _ => "ECC 2.0: Session summary".to_string(),
+            SessionState::Completed => "Aiuby: Session completed".to_string(),
+            SessionState::Failed => "Aiuby: Session failed".to_string(),
+            _ => "Aiuby: Session summary".to_string(),
         }
     }
 
@@ -679,7 +679,7 @@ impl Dashboard {
         let palette = self.theme_palette();
 
         let title = format!(
-            " ECC 2.0 | {running} running / {total} total | {} {}% | {} ",
+            " Aiuby | {running} running / {total} total | {} {}% | {} ",
             self.layout_label(),
             self.pane_size_percent,
             self.theme_label()
@@ -3601,7 +3601,7 @@ impl Dashboard {
         ));
         lines.push(String::new());
         lines.push("## Testing".to_string());
-        lines.push("- Verified in ECC 2.0 dashboard workflow".to_string());
+        lines.push("- Verified in Aiuby dashboard workflow".to_string());
         lines.join("\n")
     }
 
@@ -4173,7 +4173,7 @@ impl Dashboard {
         ));
         self.notify_desktop(
             NotificationEvent::BudgetAlert,
-            "ECC 2.0: Budget alert",
+            "Aiuby: Budget alert",
             &format!("{summary_suffix} | tokens {token_budget} | cost {cost_budget}"),
         );
         self.notify_webhook(
@@ -4218,7 +4218,7 @@ impl Dashboard {
                             } else if self.cfg.desktop_notifications.session_completed {
                                 self.notify_desktop(
                                     NotificationEvent::SessionCompleted,
-                                    "ECC 2.0: Session completed",
+                                    "Aiuby: Session completed",
                                     &format!(
                                         "{} | {}",
                                         format_session_id(&session.id),
@@ -4240,7 +4240,7 @@ impl Dashboard {
                                 "failure_summary",
                             );
                             failed_notifications.push((
-                                "ECC 2.0: Session failed".to_string(),
+                                "Aiuby: Session failed".to_string(),
                                 format!(
                                     "{} | {}",
                                     format_session_id(&session.id),
@@ -4351,7 +4351,7 @@ impl Dashboard {
             truncate_for_dashboard(&comms::preview(&message.msg_type, &message.content), 96);
         self.notify_desktop(
             NotificationEvent::ApprovalRequest,
-            "ECC 2.0: Approval needed",
+            "Aiuby: Approval needed",
             &format!(
                 "{} from {} | {}",
                 format_session_id(&message.to_session),
@@ -6912,7 +6912,7 @@ impl Dashboard {
                     truncate_for_dashboard(&session.task, 96)
                 )
             })
-            .unwrap_or_else(|| "New ECC 2.0 session".to_string())
+            .unwrap_or_else(|| "New Aiuby session".to_string())
     }
 
     fn spawn_prompt_seed(&self) -> String {
@@ -8996,7 +8996,7 @@ fn completion_summary_observation_details(
 
 fn session_started_webhook_body(session: &Session, compare_url: Option<&str>) -> String {
     let mut lines = vec![
-        "*ECC 2.0: Session started*".to_string(),
+        "*Aiuby: Session started*".to_string(),
         format!(
             "`{}` {}",
             format_session_id(&session.id),
@@ -9083,7 +9083,7 @@ fn budget_alert_webhook_body(
     active_sessions: usize,
 ) -> String {
     [
-        "*ECC 2.0: Budget alert*".to_string(),
+        "*Aiuby: Budget alert*".to_string(),
         summary_suffix.to_string(),
         format!("Tokens `{token_budget}`"),
         format!("Cost `{cost_budget}`"),
@@ -9094,7 +9094,7 @@ fn budget_alert_webhook_body(
 
 fn approval_request_webhook_body(message: &SessionMessage, preview: &str) -> String {
     [
-        "*ECC 2.0: Approval needed*".to_string(),
+        "*Aiuby: Approval needed*".to_string(),
         format!(
             "To `{}` from `{}`",
             format_session_id(&message.to_session),
@@ -10410,7 +10410,7 @@ diff --git a/src/lib.rs b/src/lib.rs\n\
             &metrics_path,
             concat!(
                 "{\"id\":\"evt-1\",\"session_id\":\"focus-12345678\",\"tool_name\":\"Read\",\"input_summary\":\"Read src/lib.rs\",\"output_summary\":\"ok\",\"file_paths\":[\"src/lib.rs\"],\"timestamp\":\"2026-04-09T00:00:00Z\"}\n",
-                "{\"id\":\"evt-2\",\"session_id\":\"focus-12345678\",\"tool_name\":\"Write\",\"input_summary\":\"Write README.md\",\"output_summary\":\"updated readme\",\"file_paths\":[\"README.md\"],\"file_events\":[{\"path\":\"README.md\",\"action\":\"create\",\"diff_preview\":\"+ # ECC 2.0\",\"patch_preview\":\"+ # ECC 2.0\\n+ \\n+ A richer dashboard\"}],\"timestamp\":\"2026-04-09T00:01:00Z\"}\n"
+                "{\"id\":\"evt-2\",\"session_id\":\"focus-12345678\",\"tool_name\":\"Write\",\"input_summary\":\"Write README.md\",\"output_summary\":\"updated readme\",\"file_paths\":[\"README.md\"],\"file_events\":[{\"path\":\"README.md\",\"action\":\"create\",\"diff_preview\":\"+ # Aiuby\",\"patch_preview\":\"+ # Aiuby\\n+ \\n+ A richer dashboard\"}],\"timestamp\":\"2026-04-09T00:01:00Z\"}\n"
             ),
         )?;
         dashboard.db.sync_tool_activity_metrics(&metrics_path)?;
@@ -10420,14 +10420,14 @@ diff --git a/src/lib.rs b/src/lib.rs\n\
         let rendered = dashboard.rendered_output_text(180, 30);
         assert!(rendered.contains("read src/lib.rs"));
         assert!(rendered.contains("create README.md"));
-        assert!(rendered.contains("+ # ECC 2.0"));
+        assert!(rendered.contains("+ # Aiuby"));
         assert!(rendered.contains("+ A richer dashboard"));
         assert!(!rendered.contains("files touched 2"));
 
         let metrics_text = dashboard.selected_session_metrics_text();
         assert!(metrics_text.contains("Recent file activity"));
         assert!(metrics_text.contains("create README.md"));
-        assert!(metrics_text.contains("+ # ECC 2.0"));
+        assert!(metrics_text.contains("+ # Aiuby"));
         assert!(metrics_text.contains("+ A richer dashboard"));
         assert!(metrics_text.contains("read src/lib.rs"));
 
@@ -11938,7 +11938,7 @@ diff --git a/src/lib.rs b/src/lib.rs
             128,
             12,
         );
-        child.task = "Implement delegate metrics board for ECC 2.0".to_string();
+        child.task = "Implement delegate metrics board for Aiuby".to_string();
 
         let mut dashboard = test_dashboard(vec![lead.clone(), child.clone()], 0);
         dashboard.db.insert_session(&lead).unwrap();
@@ -15045,7 +15045,7 @@ diff --git a/src/lib.rs b/src/lib.rs
     fn init_git_repo(path: &Path) -> Result<()> {
         fs::create_dir_all(path)?;
         run_git(path, &["init", "-q"])?;
-        run_git(path, &["config", "user.name", "ECC Tests"])?;
+        run_git(path, &["config", "user.name", "Aiuby Tests"])?;
         run_git(path, &["config", "user.email", "ecc-tests@example.com"])?;
         // Keep fixtures hermetic: a global core.hooksPath (e.g. identity-checking
         // pre-push hooks) must not run inside test repos.

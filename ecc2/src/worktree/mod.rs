@@ -1662,7 +1662,7 @@ mod tests {
 
         run_git(&repo, &["init", "-b", "main"])?;
         run_git(&repo, &["config", "user.email", "ecc@example.com"])?;
-        run_git(&repo, &["config", "user.name", "ECC"])?;
+        run_git(&repo, &["config", "user.name", "Aiuby"])?;
         fs::write(repo.join("README.md"), "hello\n")?;
         run_git(&repo, &["add", "README.md"])?;
         run_git(&repo, &["commit", "-m", "init"])?;
