@@ -45,6 +45,7 @@ function buildExpectedPublishPaths(repoRoot) {
     "scripts/feedback.js",
     "scripts/catalog.js",
     "scripts/ci/audit-legacy-names.js",
+    "scripts/ci/generate-counts.js",
     "scripts/ci/scan-supply-chain-iocs.js",
     "scripts/ci/supply-chain-advisory-sources.js",
     // Deprecated `ecc*` entrypoints. Removed at 1.0.0. aiuby:compat

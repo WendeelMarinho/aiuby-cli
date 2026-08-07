@@ -112,16 +112,27 @@ Aiuby combines multiple engineering surfaces into one coordinated foundation.
 
 The current foundation includes the inherited technical catalog below:
 
-| Included | Current surface | Purpose |
-|---|---:|---|
-| Agents | 67 | Planning, architecture, review, build repair, security, language, data, ML, and domain work |
-| Skills | 281 | TDD, research, security, documentation, frontend, backend, data, ML, operations, and business workflows |
-| Commands | 94 | Maintained compatibility entry points for command-oriented workflows |
+<!-- aiuby:counts:begin -->
+| Surface | Count |
+|---|---:|
+| Agents | 67 |
+| Skills | 281 |
+| Commands | 94 |
+| Catalog total | 442 |
+| Harnesses | 13 |
+| Install targets | 14 |
+<!-- aiuby:counts:end -->
+
+The table above is generated from the tree by `npm run counts:write` and
+verified in CI by `npm run counts:check`. It is never edited by hand.
+
+| Also included | Scope | Purpose |
+|---|---|---|
 | Hooks and memory | Runtime | Enforcement, session summaries, continuous learning, context controls, and handoffs |
 | Rules | Selective | Common, language-specific, framework-specific, and project-level standards |
 | Security scanning | Included | Analysis of agent configuration, secrets, permissions, prompts, hooks, and MCP surfaces |
 
-Counts describe the current repository and may change as the Aiuby catalog is consolidated.
+A **harness** is a distinct agent tool Aiuby installs into; an **install target** is one harness-and-scope adapter. Claude Code has both a home and a project target, which is why the two numbers differ. See [ADR-0001 §3](docs/architecture/ADR-0001-aiuby-naming-and-namespaces.md).
 
 ---
 
@@ -642,9 +653,18 @@ The operational intelligence surface for engineering context, analysis, workflow
 
 ### Aiuby CLI
 
-The future command-line control surface for installing, configuring, inspecting, evaluating, and operating Aiuby engineering capabilities across projects and harnesses.
+The command-line control surface for installing, configuring, inspecting, and operating Aiuby engineering capabilities across projects and harnesses.
 
-The current repository may continue to expose legacy `ecc` commands during the migration period.
+```bash
+aiuby install --profile developer --target claude
+aiuby doctor
+aiuby migrate          # move an existing ECC installation; dry run by default
+aiuby --help           # full command list
+```
+
+The deprecated `ecc*` binaries still work through the whole `0.x` series and <!-- aiuby:compat -->
+print the Aiuby replacement on `stderr`. They are removed at `1.0.0`. See
+[docs/migration/from-ecc-to-aiuby.md](docs/migration/from-ecc-to-aiuby.md).
 
 ---
 
