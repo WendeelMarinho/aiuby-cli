@@ -203,13 +203,21 @@ function createControlPaneServer(options = {}) {
         return;
       }
 
-      if (req.method === 'GET' && requestUrl.pathname === '/assets/aiuby-icon.svg') {
-        const iconPath = path.join(repoRoot, 'assets', 'aiuby-icon.svg');
+      if (req.method === 'GET' && requestUrl.pathname === '/assets/aiuby-icon.png') {
+        const iconPath = path.join(repoRoot, 'assets', 'aiuby-icon.png');
         if (!fs.existsSync(iconPath)) {
           sendText(res, 404, 'not found');
           return;
         }
-        sendText(res, 200, fs.readFileSync(iconPath, 'utf8'), 'image/svg+xml; charset=utf-8');
+        // Binary read: the icon is a PNG. Reading it as utf8 and labelling it
+        // image/svg+xml corrupted the bytes and mislabelled the type.
+        const iconBytes = fs.readFileSync(iconPath);
+        res.writeHead(200, {
+          'Content-Type': 'image/png',
+          'Content-Length': iconBytes.length,
+          'Cache-Control': 'no-store',
+        });
+        res.end(iconBytes);
         return;
       }
 

@@ -265,7 +265,7 @@ Três shims, sem comportamento novo — apenas tradução e aviso:
 ### Fase 9 — Identidade visual definitiva
 
 - [ ] Logo oficial: SVG, PNG transparente, variantes dark e light
-- [ ] `assets/ecc-icon.svg` → `assets/aiuby-icon.svg` (referenciado em `.codex-plugin/plugin.json`)
+- [ ] `assets/ecc-icon.svg` → `assets/aiuby-icon.png` (referenciado em `.codex-plugin/plugin.json`)
 - [ ] Favicon e ícone da CLI
 - [ ] Hero **determinístico** em SVG/HTML — não depender de imagem gerada por IA, para que cada palavra, logo e número fique exato
 - [ ] Social preview do GitHub, imagem Open Graph

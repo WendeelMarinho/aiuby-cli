@@ -297,14 +297,17 @@ async function runTests() {
           });
           await realAssetApp.listen();
           try {
-            const realAsset = await fetchLocal(`${realAssetApp.url}/assets/aiuby-icon.svg`);
+            const realAsset = await fetchLocal(`${realAssetApp.url}/assets/aiuby-icon.png`);
             assert.strictEqual(realAsset.status, 200);
-            assert.match(await realAsset.text(), /<svg/);
+            assert.strictEqual(realAsset.headers.get('content-type'), 'image/png');
+            const bytes = Buffer.from(await realAsset.arrayBuffer());
+            assert.ok(bytes.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])),
+              'expected a valid PNG signature, not a re-encoded body');
           } finally {
             await realAssetApp.close();
           }
 
-          const missingAsset = await fetchLocal(`${app.url}/assets/aiuby-icon.svg`);
+          const missingAsset = await fetchLocal(`${app.url}/assets/aiuby-icon.png`);
           assert.strictEqual(missingAsset.status, 404);
           assert.strictEqual(await missingAsset.text(), 'not found');
 

@@ -7,12 +7,22 @@ security review, and release work.
 
 ## Current sponsors
 
-- **RemédiosJÁ**
-- **Scalegrid**
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="50%">
+        <img src="assets/images/sponsors/remediosja.jpg" alt="RemédiosJÁ" height="90" /><br/>
+        <strong>RemédiosJÁ</strong>
+      </td>
+      <td align="center" width="50%">
+        <img src="assets/images/sponsors/scalegrid.png" alt="Scalegrid" height="46" /><br/>
+        <strong>Scalegrid</strong>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<!-- Logos and links are pending: add the files under assets/images/sponsors/
-     and link each name once the canonical URL is confirmed. Do not guess a
-     sponsor's domain. -->
+<!-- Links pending: add each sponsor's canonical URL when confirmed. Not guessed. -->
 
 ## Tiers
 
