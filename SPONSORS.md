@@ -11,18 +11,20 @@ security review, and release work.
   <table>
     <tr>
       <td align="center" width="50%">
-        <img src="assets/images/sponsors/remediosja.jpg" alt="RemédiosJÁ" height="90" /><br/>
-        <strong>RemédiosJÁ</strong>
+        <a href="https://remediosja.com.br">
+          <img src="assets/images/sponsors/remediosja.jpg" alt="RemédiosJÁ" height="90" />
+        </a><br/>
+        <a href="https://remediosja.com.br"><strong>RemédiosJÁ</strong></a>
       </td>
       <td align="center" width="50%">
-        <img src="assets/images/sponsors/scalegrid.png" alt="Scalegrid" height="46" /><br/>
-        <strong>Scalegrid</strong>
+        <a href="https://scalegrid.com.br">
+          <img src="assets/images/sponsors/scalegrid.png" alt="Scalegrid" height="46" />
+        </a><br/>
+        <a href="https://scalegrid.com.br"><strong>Scalegrid</strong></a>
       </td>
     </tr>
   </table>
 </div>
-
-<!-- Links pending: add each sponsor's canonical URL when confirmed. Not guessed. -->
 
 ## Tiers
 

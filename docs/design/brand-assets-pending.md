@@ -16,14 +16,10 @@ from what was delivered, or still need a design decision.
 | CLI icon | derivable | Same source. |
 | GitHub social preview | missing | |
 | Open Graph image | missing | |
-| Sponsor URLs | missing | Not guessed — a wrong domain on a sponsor's own listing is worse than a blank. |
 
 ## When the real assets arrive
 
 1. Replace `assets/aiuby-icon.png`; the consumers above need no path change.
 2. Set `interface.brandColor` in `.codex-plugin/plugin.json` and
    `plugins/aiuby/.codex-plugin/plugin.json`.
-3. Add sponsor logos under `assets/images/sponsors/` and link the names in
-   `SPONSORS.md`. That directory is currently empty and was removed from
-   `package.json` `files`; add it back when it has content.
 4. Define type, colour, spacing, and usage rules so this file can be deleted.
