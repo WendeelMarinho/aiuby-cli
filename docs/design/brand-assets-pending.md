@@ -3,6 +3,8 @@
 The rebrand removed the upstream project's visual identity. It did not
 create Aiuby's, because that is a design decision, not a migration step.
 
+`assets/hero-aiuby.png` is final — confirmed by the maintainer.
+
 Everything below currently ships a **deliberate placeholder**. Each one is
 neutral on purpose: no letterform, no brand colour, nothing that quietly
 decides what Aiuby looks like.
@@ -11,7 +13,6 @@ decides what Aiuby looks like.
 |---|---|---|
 | `assets/aiuby-icon.svg` | placeholder | Previously drew the upstream project's three-letter mark. Consumed as `composerIcon` by both Codex plugin manifests and by the control pane. |
 | `interface.brandColor` | neutral `#111827` | Was `#E07856`, the upstream project's brand colour. |
-| `assets/hero-aiuby.png` | AI-generated | Works as direction, but every word, number, and logo in it is unverifiable. Build the final hero deterministically in SVG or HTML/CSS so the catalog figures can be generated from the tree like the README table is. |
 | Favicon | missing | |
 | CLI icon | missing | |
 | GitHub social preview | missing | |
