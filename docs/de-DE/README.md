@@ -128,7 +128,7 @@ Dieses Repo enthält ausschließlich den rohen Code. Die Leitfäden erklären al
 - **Medien- und Launch-Tooling** — `manim-video`, `remotion-video-creation` und verbesserte Social-Publishing-Oberflächen machen technische Erklärinhalte und Launch-Content zum Teil desselben Systems.
 - **Wachstum der Framework- und Produktoberfläche** — `nestjs-patterns`, reichhaltigere Codex/OpenCode-Install-Oberflächen und erweitertes Cross-Harness-Packaging halten das Repo auch über Claude Code allein hinaus nutzbar.
 - **ECC 2.0 Alpha ist im Tree** — der Rust-Control-Plane-Prototyp in `ecc2/` baut jetzt lokal und stellt die Befehle `dashboard`, `start`, `sessions`, `status`, `stop`, `resume` und `daemon` bereit. Er ist als Alpha nutzbar, aber noch kein allgemeines Release.
-- **Operator-Status-Snapshots** — `ecc status --markdown --write status.md` verwandelt den lokalen State Store in eine portable Übergabe, die Bereitschaft, aktive Sessions, Skill-Run-Gesundheit, Install-Gesundheit, ausstehende Governance-Events und verknüpfte Arbeitselemente aus Linear/GitHub/Handovers abdeckt. Nutze `ecc work-items upsert ...` für manuelle Einträge, `ecc work-items sync-github --repo owner/repo` für den Queue-Status von PRs/Issues und `ecc status --exit-code`, um Automatisierung scheitern zu lassen, wenn die Bereitschaft Aufmerksamkeit erfordert.
+- **Operator-Status-Snapshots** — `aiuby status --markdown --write status.md` verwandelt den lokalen State Store in eine portable Übergabe, die Bereitschaft, aktive Sessions, Skill-Run-Gesundheit, Install-Gesundheit, ausstehende Governance-Events und verknüpfte Arbeitselemente aus Linear/GitHub/Handovers abdeckt. Nutze `aiuby work-items upsert ...` für manuelle Einträge, `aiuby work-items sync-github --repo owner/repo` für den Queue-Status von PRs/Issues und `aiuby status --exit-code`, um Automatisierung scheitern zu lassen, wenn die Bereitschaft Aufmerksamkeit erfordert.
 - **Ökosystem-Härtung** — AgentShield, ECC-Tools-Kostenkontrollen, Arbeiten am Billing-Portal und Website-Refreshes werden weiterhin rund um das Kern-Plugin ausgeliefert, statt in separate Silos abzudriften.
 
 ### v1.9.0 — Selektive Installation & Spracherweiterung (März 2026)
@@ -247,7 +247,7 @@ Füge Hooks später nur hinzu, wenn du Laufzeit-Durchsetzung willst:
 Falls du nicht sicher bist, welches ECC-Profil oder welche Komponente du installieren sollst, frage den mitgelieferten Advisor aus jedem beliebigen Projekt:
 
 ```bash
-npx ecc consult "security reviews" --target claude
+npx aiuby consult "security reviews" --target claude
 ```
 
 Er liefert passende Komponenten, verwandte Profile sowie Preview-/Install-Befehle zurück. Verwende den Preview-Befehl vor der Installation, falls du den exakten Dateiplan inspizieren willst.
@@ -255,8 +255,8 @@ Er liefert passende Komponenten, verwandte Profile sowie Preview-/Install-Befehl
 Halte die Installation für produktive ML-/MLOps-Workflows opt-in und komponentenbezogen:
 
 ```bash
-npx ecc consult "mlops training model deployment" --target claude
-npx ecc install --profile minimal --target claude --with capability:machine-learning
+npx aiuby consult "mlops training model deployment" --target claude
+npx aiuby install --profile minimal --target claude --with capability:machine-learning
 ```
 
 ### Schritt 1: Plugin installieren (empfohlen)

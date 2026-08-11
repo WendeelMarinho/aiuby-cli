@@ -211,7 +211,7 @@ npx ecc-install --profile minimal --target claude
 Если вы не уверены, какой профиль ECC или компонент установить, спросите упакованный advisor из любого проекта:
 
 ```bash
-npx ecc consult "security reviews" --target claude
+npx aiuby consult "security reviews" --target claude
 ```
 
 Он вернёт подходящие компоненты, связанные профили и команды предпросмотра/установки. Используйте команду предпросмотра перед установкой, если хотите посмотреть точный план файлов.

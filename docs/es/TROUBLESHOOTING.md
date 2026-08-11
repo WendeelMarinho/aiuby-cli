@@ -250,9 +250,9 @@ tmux attach -t dev
 **Soluciones:**
 ```bash
 # Primero inspecciona qué sabe ECC sobre esta máquina
-ecc list-installed
-ecc doctor
-ecc repair
+aiuby list-installed
+aiuby doctor
+aiuby repair
 
 # Solo reinstala si doctor/repair no puede restaurar los archivos faltantes
 

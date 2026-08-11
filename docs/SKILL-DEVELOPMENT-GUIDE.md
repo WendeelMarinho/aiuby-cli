@@ -1,6 +1,6 @@
 # Skill Development Guide
 
-A comprehensive guide to creating effective skills for Everything Claude Code (ECC).
+A comprehensive guide to creating effective skills for Aiuby AI Engineering.
 
 ## Table of Contents
 
@@ -69,7 +69,7 @@ skills/
 ---
 name: skill-name
 description: Brief description shown in skill list and used for auto-activation
-origin: ECC
+origin: Aiuby
 ---
 
 # Skill Title
@@ -712,7 +712,7 @@ How I tested this skill locally.
 ---
 name: rust-patterns
 description: Rust idioms, ownership patterns, and best practices for safe, idiomatic code.
-origin: ECC
+origin: Aiuby
 ---
 
 # Rust Patterns
@@ -773,7 +773,7 @@ pub type AppResult<T> = Result<T, AppError>;
 ---
 name: fastapi-patterns
 description: FastAPI patterns for routing, dependency injection, validation, and async operations.
-origin: ECC
+origin: Aiuby
 ---
 
 # FastAPI Patterns
@@ -834,7 +834,7 @@ async def get_user(
 ---
 name: refactoring-workflow
 description: Systematic refactoring workflow for improving code quality without changing behavior.
-origin: ECC
+origin: Aiuby
 ---
 
 # Refactoring Workflow

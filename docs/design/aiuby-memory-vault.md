@@ -6,7 +6,7 @@ An operator can save, inspect, search, and hand off durable context through one
 human-readable vault that Claude Code, Codex, Hermes, OpenCode, and other
 harnesses can share. Project and team memories live under `.ecc/memory/`; user
 memories live under `~/.ecc/memory/`. The same `ecc.memory.v1` documents are
-available through the `ecc memory` CLI and an opt-in local stdio MCP server, so
+available through the `aiuby memory` CLI and an opt-in local stdio MCP server, so
 knowledge transfer does not depend on email, one vendor's transcript format, or
 one harness's hook support.
 
@@ -142,12 +142,12 @@ approval boundary.
 CLI:
 
 ```text
-ecc memory init [--scope project|team|user]
-ecc memory save --title <text> [--body-file <path>|--stdin] [metadata flags]
-ecc memory handoff --from <harness> --target <harness> --title <text> ...
-ecc memory search <query> [--scope ...] [--target-harness ...] [--json]
-ecc memory read <id> [--scope ...] [--json]
-ecc memory doctor [--json]
+aiuby memory init [--scope project|team|user]
+aiuby memory save --title <text> [--body-file <path>|--stdin] [metadata flags]
+aiuby memory handoff --from <harness> --target <harness> --title <text> ...
+aiuby memory search <query> [--scope ...] [--target-harness ...] [--json]
+aiuby memory read <id> [--scope ...] [--json]
+aiuby memory doctor [--json]
 ```
 
 MCP tools:

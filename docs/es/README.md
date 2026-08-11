@@ -130,7 +130,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 - **Pack de skills de mercados de predicción Itô** — `ito-market-intelligence`, `ito-basket-compare`, `ito-trade-planner`, `ito-data-atlas-agent`, `prediction-market-oracle-research` y `prediction-market-risk-review` añaden flujos de trabajo públicos de mercado/cartera no asesorados, manteniendo el acceso a la API de Itô separado de la facturación de ECC Tools.
 - **Pack de skills de optimización** — `parallel-execution-optimizer`, `benchmark-optimization-loop`, `data-throughput-accelerator`, `latency-critical-systems` y `recursive-decision-ledger` convierten los prompts de velocidad/recursión repetidos en flujos de trabajo acotados de benchmark, rendimiento y decisiones.
 - **ECC 2.0 alpha incluido en el árbol** — el prototipo del plano de control en Rust en `ecc2/` ya compila localmente y expone los comandos `dashboard`, `start`, `sessions`, `status`, `stop`, `resume` y `daemon`. Está disponible como alpha, aún no como versión general.
-- **Instantáneas de estado del operador** — `ecc status --markdown --write status.md` convierte el almacén de estado local en un informe portátil de transferencia que cubre disponibilidad, sesiones activas, estado de ejecución de skills, estado de la instalación, eventos de gobernanza pendientes y elementos de trabajo vinculados de Linear/GitHub/transferencias. Usa `ecc work-items upsert ...` para entradas manuales, `ecc work-items sync-github --repo owner/repo` para el estado de la cola de PRs/issues, y `ecc status --exit-code` para hacer fallar la automatización cuando la disponibilidad requiere atención.
+- **Instantáneas de estado del operador** — `aiuby status --markdown --write status.md` convierte el almacén de estado local en un informe portátil de transferencia que cubre disponibilidad, sesiones activas, estado de ejecución de skills, estado de la instalación, eventos de gobernanza pendientes y elementos de trabajo vinculados de Linear/GitHub/transferencias. Usa `aiuby work-items upsert ...` para entradas manuales, `aiuby work-items sync-github --repo owner/repo` para el estado de la cola de PRs/issues, y `aiuby status --exit-code` para hacer fallar la automatización cuando la disponibilidad requiere atención.
 - **Hardening del ecosistema** — AgentShield, controles de costos de ECC Tools, trabajo en el portal de facturación y actualizaciones del sitio web continúan publicándose junto al plugin principal en lugar de desviarse hacia silos separados.
 
 ### v1.9.0 — Instalación Selectiva y Expansión de Lenguajes (Mar 2026)
@@ -249,7 +249,7 @@ Añade hooks después solo si quieres aplicación en tiempo de ejecución:
 Si no estás seguro de qué perfil o componente de ECC instalar, consulta al asesor empaquetado desde cualquier proyecto:
 
 ```bash
-npx ecc consult "security reviews" --target claude
+npx aiuby consult "security reviews" --target claude
 ```
 
 Devuelve los componentes coincidentes, los perfiles relacionados y los comandos de vista previa/instalación. Usa el comando de vista previa antes de instalar si quieres inspeccionar el plan de archivos exacto.
@@ -257,8 +257,8 @@ Devuelve los componentes coincidentes, los perfiles relacionados y los comandos 
 Para flujos de trabajo de ML/MLOps en producción, mantén la instalación opt-in y con alcance de componentes:
 
 ```bash
-npx ecc consult "mlops training model deployment" --target claude
-npx ecc install --profile minimal --target claude --with capability:machine-learning
+npx aiuby consult "mlops training model deployment" --target claude
+npx aiuby install --profile minimal --target claude --with capability:machine-learning
 ```
 
 ### Paso 1: Instalar el Plugin (Recomendado)
