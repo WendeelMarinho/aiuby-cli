@@ -574,9 +574,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ecc-universal@workspace:.":
+"aiuby-cli@workspace:.":
   version: 0.0.0-use.local
-  resolution: "ecc-universal@workspace:."
+  resolution: "aiuby-cli@workspace:."
   dependencies:
     "@eslint/js": "npm:9.39.2"
     "@iarna/toml": "npm:2.2.5"

@@ -25,15 +25,6 @@ function read(relativePath) {
   return fs.readFileSync(path.join(REPO_ROOT, relativePath), 'utf8');
 }
 
-function readPngDimensions(relativePath) {
-  const image = fs.readFileSync(path.join(REPO_ROOT, relativePath));
-  assert.strictEqual(image.subarray(1, 4).toString('ascii'), 'PNG');
-  return {
-    width: image.readUInt32BE(16),
-    height: image.readUInt32BE(20),
-  };
-}
-
 function runTest(name, fn) {
   try {
     fn();
@@ -65,31 +56,6 @@ function assertExactComputeRoute(content) {
   );
 }
 
-function assertExactHref(content, expectedHref) {
-  const expected = new URL(expectedHref);
-  const hrefs = [...content.matchAll(/\bhref="([^"]+)"/g)].map(match => match[1]);
-  const properties = [
-    'protocol',
-    'hostname',
-    'port',
-    'username',
-    'password',
-    'pathname',
-    'search',
-    'hash',
-  ];
-  const hasExactHref = hrefs.some((href) => {
-    try {
-      const candidate = new URL(href);
-      return properties.every(property => candidate[property] === expected[property]);
-    } catch {
-      return false;
-    }
-  });
-
-  assert.ok(hasExactHref, `Should include the exact href ${expectedHref}`);
-}
-
 function assertHonestComputeCopy(content) {
   assertExactComputeRoute(content);
   assert.match(content, /compute provider Aiuby can bridge to/i);
@@ -102,16 +68,6 @@ function assertHonestComputeCopy(content) {
   assert.match(content, /does not reserve capacity/i);
   assert.match(content, /managed inference[^\n.]*not live/i);
   assert.doesNotMatch(content, /ECC only (?:links|provides this link)/i);
-}
-
-function extractNamedTable(content, ariaLabel) {
-  const escapedLabel = ariaLabel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const match = content.match(
-    new RegExp(`<table[^>]*aria-label="${escapedLabel}"[^>]*>([\\s\\S]*?)<\\/table>`)
-  );
-
-  assert.ok(match, `Should include the "${ariaLabel}" table`);
-  return match[1];
 }
 
 function main() {

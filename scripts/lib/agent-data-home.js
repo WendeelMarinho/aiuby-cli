@@ -1,5 +1,5 @@
 /**
- * Resolve ECC agent data home (memory persistence root) across harnesses.
+ * Resolve the Aiuby agent data home (memory persistence root) across harnesses.
  *
  * Docstring policy: public entry points here are documented; small internal
  * helpers (e.g. `expandHomePath`, `readProjectConfigAt`) are left undocumented on
@@ -15,10 +15,9 @@
 const fs = require('fs');
 const path = require('path');
 const { assertWithinTrustedRoot } = require('./path-safety');
-const { getEnv, applyEnv, toLegacyEnvName } = require('./legacy-compat');
+const { getEnv, applyEnv } = require('./legacy-compat');
 
 const AGENT_DATA_HOME_ENV = 'AIUBY_AGENT_DATA_HOME';
-const LEGACY_AGENT_DATA_HOME_ENV = toLegacyEnvName(AGENT_DATA_HOME_ENV); // aiuby:compat
 const DEFAULT_CLAUDE_DIR_NAME = '.claude';
 const DEFAULT_CURSOR_ECC_DIR_SEGMENTS = ['.cursor', 'ecc'];
 const PROJECT_CONFIG_RELATIVE = path.join('.cursor', 'ecc-agent-data.json');
@@ -188,7 +187,7 @@ function resolveProjectDir() {
  * Resolve agent data home without mutating process.env.
  */
 function resolveAgentDataHome(options = {}) {
-  // ECC_AGENT_DATA_HOME wins; ECC_AGENT_DATA_HOME still resolves during 0.x. aiuby:compat
+  // AIUBY_AGENT_DATA_HOME wins; ECC_AGENT_DATA_HOME still resolves during 0.x. aiuby:compat
   const fromEnv = expandHomePath(getEnv(AGENT_DATA_HOME_ENV));
   if (fromEnv) return fromEnv;
 
@@ -206,7 +205,7 @@ function resolveAgentDataHome(options = {}) {
 /**
  * Set the agent data home on the current process when unset (hook subprocess safety net).
  *
- * Both ECC_AGENT_DATA_HOME and ECC_AGENT_DATA_HOME are written so hooks that
+ * Both AIUBY_AGENT_DATA_HOME and ECC_AGENT_DATA_HOME are written so hooks that
  * have not migrated yet still observe the value. The legacy write goes away at 1.0.0.
  * @returns {string} Resolved agent data home
  */
