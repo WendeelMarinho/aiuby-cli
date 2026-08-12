@@ -537,7 +537,7 @@ Feature parity must not be assumed. Each harness has different context, hook, ag
 
 ---
 
-## Installation
+## Installing into a harness
 
 > [!IMPORTANT]
 > This README establishes the **Aiuby AI Engineering** product identity. Some internal package names, scripts, command namespaces, directories, and compatibility shims may still use the legacy `ecc` identifier while the technical migration is completed.

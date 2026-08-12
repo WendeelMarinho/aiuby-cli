@@ -44,7 +44,6 @@
 
 See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-
 [**Become a Sponsor →**](https://github.com/sponsors/WendeelMarinho)
 
 ***

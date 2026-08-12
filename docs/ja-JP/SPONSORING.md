@@ -16,7 +16,6 @@ ECCはClaude Code、Cursor、OpenCode、Codex app/CLIにまたがるオープン
 
 See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-
 ## スポンサーレポート
 
 月次で共有されるメトリクスには以下が含まれます：

@@ -44,7 +44,6 @@ Kopyala/yapıştır metrik çekme iş akışı için [`docs/business/metrics-and
 
 See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-
 [**Sponsor Olun →**](https://github.com/sponsors/WendeelMarinho)
 
 ---

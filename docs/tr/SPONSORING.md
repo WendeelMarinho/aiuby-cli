@@ -16,7 +16,6 @@ Bunlar pratik başlangıç noktalarıdır ve ortaklık kapsamına göre ayarlana
 
 See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-
 ## Sponsor Raporlaması
 
 Aylık paylaşılan metrikler şunları içerebilir:

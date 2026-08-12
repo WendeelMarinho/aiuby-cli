@@ -16,7 +16,6 @@ ECC 作为一个开源智能体性能测试系统，在 Claude Code、Cursor、O
 
 See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-
 ## 赞助报告
 
 每月分享的指标可能包括：

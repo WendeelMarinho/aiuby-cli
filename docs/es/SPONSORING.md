@@ -16,7 +16,6 @@ Estos son puntos de partida prácticos y pueden ajustarse según el alcance de l
 
 See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-
 ## Informes de Patrocinio
 
 Las métricas compartidas mensualmente pueden incluir:
