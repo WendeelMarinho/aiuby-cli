@@ -590,11 +590,16 @@ __metadata:
     sql.js: "npm:1.14.1"
     typescript: "npm:6.0.3"
   bin:
-    ecc: scripts/ecc.js
-    ecc-control-pane: scripts/control-pane.js
-    ecc-install: scripts/install-apply.js
-    ecc-memory-mcp: scripts/memory-mcp.mjs
-    ecc-plan-canvas: scripts/plan-canvas.js
+    aiuby: scripts/aiuby.js
+    aiuby-control-pane: scripts/control-pane.js
+    aiuby-install: scripts/install-apply.js
+    aiuby-memory-mcp: scripts/memory-mcp.mjs
+    aiuby-plan-canvas: scripts/plan-canvas.js
+    ecc: scripts/legacy/ecc.js
+    ecc-control-pane: scripts/legacy/ecc-control-pane.js
+    ecc-install: scripts/legacy/ecc-install.js
+    ecc-memory-mcp: scripts/legacy/ecc-memory-mcp.js
+    ecc-plan-canvas: scripts/legacy/ecc-plan-canvas.js
   languageName: unknown
   linkType: soft
 
