@@ -9,21 +9,21 @@
 
 | Fase | Status | Nota |
 |---|---|---|
-| 0 — ADR de nomes | ✅ | `docs/architecture/ADR-0001-aiuby-naming-and-namespaces.md` |
-| 1 — Auditoria em CI | ✅ | `npm run audit:legacy-names`; baseline 7007, ratchet unidirecional |
-| 2 — Camada de compatibilidade | ✅ | env vars, paths, schemas, 5 shims de binário |
-| 3 — `aiuby migrate` | ✅ | dry-run default, backup, rollback, proteção contra duplicata |
-| 4a — Entrypoint da CLI | ✅ | `scripts/aiuby.js`; comando é `aiuby <cmd>` |
-| 4b — Rename de env vars | ⛔ **revertida** | Quebra compat em entrypoints diretos. Regra em ADR §5a |
-| 4c — Renames de arquivo | ✅ | icon, memory-vault doc, sync script, dashboard, resolve-root |
-| 4d — Skills | ✅ | 4 diretórios + cópias traduzidas zh-CN/ja-JP + comando |
-| 4e — Crate Rust | ⚠️ parcial | Metadata e consumidores JS. **Build não verificado — `cargo` ausente** |
-| 5 — Pacotes e distribuição | ⬜ | + ponte para o nome do servidor MCP `ecc-memory-vault` |
-| 6 — Upstream e migração docs | ⬜ | |
-| 7 — Docs e 12 traduções | ⬜ | Resolve as 23 falhas pré-existentes de asserção sobre README |
-| 8 — Contagens automatizadas | ⬜ | |
-| 9 — Identidade visual | ⬜ | `assets/images/community/` está vazio; quebra `npm pack` hoje |
-| 10 — Validação e release | ⬜ | |
+| 0 — ADR de nomes | [x] | `docs/architecture/ADR-0001-aiuby-naming-and-namespaces.md` |
+| 1 — Auditoria em CI | [x] | `npm run audit:legacy-names`; baseline 7007, ratchet unidirecional |
+| 2 — Camada de compatibilidade | [x] | env vars, paths, schemas, 5 shims de binário |
+| 3 — `aiuby migrate` | [x] | dry-run default, backup, rollback, proteção contra duplicata |
+| 4a — Entrypoint da CLI | [x] | `scripts/aiuby.js`; comando é `aiuby <cmd>` |
+| 4b — Rename de env vars | [!] **revertida** | Quebra compat em entrypoints diretos. Regra em ADR §5a |
+| 4c — Renames de arquivo | [x] | icon, memory-vault doc, sync script, dashboard, resolve-root |
+| 4d — Skills | [x] | 4 diretórios + cópias traduzidas zh-CN/ja-JP + comando |
+| 4e — Crate Rust | [!] parcial | Metadata e consumidores JS. **Build não verificado — `cargo` ausente** |
+| 5 — Pacotes e distribuição | [ ] | + ponte para o nome do servidor MCP `ecc-memory-vault` |
+| 6 — Upstream e migração docs | [ ] | |
+| 7 — Docs e 12 traduções | [ ] | Resolve as 23 falhas pré-existentes de asserção sobre README |
+| 8 — Contagens automatizadas | [ ] | |
+| 9 — Identidade visual | [ ] | `assets/images/community/` está vazio; quebra `npm pack` hoje |
+| 10 — Validação e release | [ ] | |
 
 **Suíte**: 3457/3480. As 23 falhas são pré-existentes (asserções sobre o README
 reescrito na etapa editorial), confirmadas contra o `HEAD` anterior.
@@ -265,7 +265,7 @@ Três shims, sem comportamento novo — apenas tradução e aviso:
 ### Fase 9 — Identidade visual definitiva
 
 - [ ] Logo oficial: SVG, PNG transparente, variantes dark e light
-- [ ] `assets/ecc-icon.svg` → `assets/aiuby-icon.svg` (referenciado em `.codex-plugin/plugin.json`)
+- [ ] `assets/ecc-icon.svg` → `assets/aiuby-icon.png` (referenciado em `.codex-plugin/plugin.json`)
 - [ ] Favicon e ícone da CLI
 - [ ] Hero **determinístico** em SVG/HTML — não depender de imagem gerada por IA, para que cada palavra, logo e número fique exato
 - [ ] Social preview do GitHub, imagem Open Graph

@@ -35,12 +35,13 @@ console.log('\n=== Testing public install identifiers ===\n');
 for (const relativePath of publicInstallDocs) {
   const content = fs.readFileSync(path.join(repoRoot, relativePath), 'utf8');
 
-  test(`${relativePath} does not use the overlong legacy marketplace plugin identifier`, () => {
+  test(`${relativePath} does not use the overlong or deprecated marketplace plugin identifier`, () => {
     assert.ok(!content.includes('everything-claude-code@everything-claude-code'));
+    assert.ok(!content.includes('ecc@ecc'), 'deprecated ecc@ecc slug must not appear in install docs');
   });
 
   test(`${relativePath} documents the short marketplace plugin identifier`, () => {
-    assert.ok(content.includes('ecc@ecc'));
+    assert.ok(content.includes('aiuby@aiuby'));
   });
 }
 
@@ -92,11 +93,11 @@ for (const relativePath of publicCommandNamespaceDocs) {
 
   test(`${relativePath} uses the canonical plugin command namespace`, () => {
     assert.ok(
-      !content.includes('/everything-claude-code:'),
+      !content.includes('/everything-claude-code:') && !content.includes('/ecc:'),
       'Expected docs not to advertise the overlong legacy plugin command namespace'
     );
     assert.ok(
-      content.includes('/ecc:plan'),
+      content.includes('/aiuby:plan'),
       'Expected docs to show the short plugin command namespace'
     );
   });

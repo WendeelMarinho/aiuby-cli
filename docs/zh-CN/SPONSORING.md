@@ -14,17 +14,13 @@ ECC 作为一个开源智能体性能测试系统，在 Claude Code、Cursor、O
 
 这些是实用的起点，可以根据合作范围进行调整。
 
-| 层级 | 价格 | 最适合 | 包含内容 |
-|------|-------|----------|----------|
-| 试点合作伙伴 | $200/月 | 首次赞助合作 | 月度指标更新、路线图预览、优先维护者反馈 |
-| 成长合作伙伴 | $500/月 | 积极采用 ECC 的团队 | 试点权益 + 月度办公时间同步 + 工作流集成指导 |
-| 战略合作伙伴 | $1,000+/月 | 平台/生态系统合作伙伴 | 成长权益 + 协调发布支持 + 更深入的维护者协作 |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
 ## 赞助报告
 
 每月分享的指标可能包括：
 
-* npm 下载量（`ecc-universal`、`ecc-agentshield`）
+* npm 下载量（`aiuby-cli`、`ecc-agentshield`）
 * 仓库采用情况（星标、分叉、贡献者）
 * GitHub 应用安装趋势
 * 发布节奏和可靠性里程碑
@@ -39,5 +35,5 @@ ECC 作为一个开源智能体性能测试系统，在 Claude Code、Cursor、O
 
 ## 在此赞助
 
-* GitHub Sponsors: <https://github.com/sponsors/affaan-m>
-* 项目网站: <https://ecc.tools>
+* GitHub Sponsors: <https://github.com/sponsors/WendeelMarinho>
+* 项目网站: <https://aiuby.com>

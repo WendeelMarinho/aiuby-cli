@@ -1,8 +1,8 @@
 spec_version: "0.1.0"
-name: ecc
+name: aiuby
 version: 0.1.0
-description: "Initial gitagent export surface for ECC's shared skill catalog, governance, and identity. Native agents, commands, and hooks remain authoritative in the repository while manifest coverage expands."
-author: affaan-m
+description: "Initial gitagent export surface for Aiuby's shared skill catalog, governance, and identity. Native agents, commands, and hooks remain authoritative in the repository while manifest coverage expands."
+author: WendeelMarinho
 license: MIT
 model:
   preferred: claude-opus-4-6

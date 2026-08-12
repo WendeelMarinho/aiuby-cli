@@ -41,7 +41,7 @@
       "args": ["-y", "@supabase/mcp-server-supabase@latest", "--project-ref=YOUR_PROJECT_REF"],
       "description": "Supabase database operations"
     },
-    "ecc-memory-vault": {
+    "aiuby-memory-vault": {
       "command": "ecc-memory-mcp",
       "env": {
         "ECC_MEMORY_HARNESS": "YOUR_LOWERCASE_HARNESS_SLUG_HERE"

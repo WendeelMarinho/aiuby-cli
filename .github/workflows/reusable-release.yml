@@ -116,8 +116,8 @@ jobs:
           - Better workflow and operator ergonomics
 
           ### Package Notes
-          - npm package: \`ecc-universal\`
-          - Claude marketplace/plugin identifier: \`ecc@ecc\`
+          - npm package: \`aiuby-cli\`
+          - Claude marketplace/plugin identifier: \`aiuby@aiuby\`
           EOF
 
       - name: Pack npm artifact

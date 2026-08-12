@@ -4,12 +4,12 @@
 
 ![ECC - el sistema operativo nativo del harness para trabajo agentivo](../../assets/hero-aiuby.png)
 
-[![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&style=flat)](https://github.com/affaan-m/ECC/stargazers)
-[![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&style=flat)](https://github.com/affaan-m/ECC/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
-[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Fstars&style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Fforks&style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
+[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
-[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
+[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -47,19 +47,19 @@ ECC v2.0.0-rc.1 añade la historia pública del operador Hermes sobre esa capa r
 <table>
 <tr>
 <td width="25%" align="center">
-  <a href="https://ecc.tools/pricing">
+  <a href="https://aiuby.com/pricing">
     <strong> ECC Pro</strong><br />
     <sub>Repos privados · GitHub App · $19/asiento/mes</sub>
   </a>
 </td>
 <td width="25%" align="center">
-  <a href="https://github.com/sponsors/affaan-m">
+  <a href="https://github.com/sponsors/WendeelMarinho">
     <strong> Patrocinar</strong><br />
     <sub>Financia el OSS · Desde $5/mes</sub>
   </a>
 </td>
 <td width="25%" align="center">
-  <a href="https://github.com/affaan-m/ECC/discussions">
+  <a href="https://github.com/WendeelMarinho/aiuby-cli/discussions">
     <strong>Comunidad</strong>
     <br />
     <sub>Discusiones · Preguntas · Showcase</sub>
@@ -74,7 +74,7 @@ ECC v2.0.0-rc.1 añade la historia pública del operador Hermes sobre esa capa r
 </tr>
 </table>
 
-<sub>**El OSS es gratis para siempre.** Este repositorio tiene licencia MIT permanente. ECC Pro es la GitHub App alojada para repositorios privados. Los <a href="https://github.com/sponsors/affaan-m">patrocinadores</a> y los <a href="https://ecc.tools/pricing">suscriptores Pro</a> financian el trabajo — por eso un solo mantenedor publica semanalmente en 7 harnesses.</sub>
+<sub>**El OSS es gratis para siempre.** Este repositorio tiene licencia MIT permanente. ECC Pro es la GitHub App alojada para repositorios privados. Los <a href="https://github.com/sponsors/WendeelMarinho">patrocinadores</a> y los <a href="https://aiuby.com/pricing">suscriptores Pro</a> financian el trabajo — por eso un solo mantenedor publica semanalmente en 7 harnesses.</sub>
 
 ---
 
@@ -85,17 +85,17 @@ Este repositorio contiene solo el código. Las guías explican todo.
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="../../assets/images/guides/shorthand-guide.png" alt="La Guía Resumida de ECC" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="../../assets/images/guides/longform-guide.png" alt="La Guía Extensa de ECC" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://instagram.com/aiuby.ai/status/2033263813387223421">
 <img src="../../assets/images/security/security-guide-header.png" alt="La Guía de Seguridad Agentiva" />
 </a>
 </td>
@@ -130,7 +130,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 - **Pack de skills de mercados de predicción Itô** — `ito-market-intelligence`, `ito-basket-compare`, `ito-trade-planner`, `ito-data-atlas-agent`, `prediction-market-oracle-research` y `prediction-market-risk-review` añaden flujos de trabajo públicos de mercado/cartera no asesorados, manteniendo el acceso a la API de Itô separado de la facturación de ECC Tools.
 - **Pack de skills de optimización** — `parallel-execution-optimizer`, `benchmark-optimization-loop`, `data-throughput-accelerator`, `latency-critical-systems` y `recursive-decision-ledger` convierten los prompts de velocidad/recursión repetidos en flujos de trabajo acotados de benchmark, rendimiento y decisiones.
 - **ECC 2.0 alpha incluido en el árbol** — el prototipo del plano de control en Rust en `ecc2/` ya compila localmente y expone los comandos `dashboard`, `start`, `sessions`, `status`, `stop`, `resume` y `daemon`. Está disponible como alpha, aún no como versión general.
-- **Instantáneas de estado del operador** — `ecc status --markdown --write status.md` convierte el almacén de estado local en un informe portátil de transferencia que cubre disponibilidad, sesiones activas, estado de ejecución de skills, estado de la instalación, eventos de gobernanza pendientes y elementos de trabajo vinculados de Linear/GitHub/transferencias. Usa `ecc work-items upsert ...` para entradas manuales, `ecc work-items sync-github --repo owner/repo` para el estado de la cola de PRs/issues, y `ecc status --exit-code` para hacer fallar la automatización cuando la disponibilidad requiere atención.
+- **Instantáneas de estado del operador** — `aiuby status --markdown --write status.md` convierte el almacén de estado local en un informe portátil de transferencia que cubre disponibilidad, sesiones activas, estado de ejecución de skills, estado de la instalación, eventos de gobernanza pendientes y elementos de trabajo vinculados de Linear/GitHub/transferencias. Usa `aiuby work-items upsert ...` para entradas manuales, `aiuby work-items sync-github --repo owner/repo` para el estado de la cola de PRs/issues, y `aiuby status --exit-code` para hacer fallar la automatización cuando la disponibilidad requiere atención.
 - **Hardening del ecosistema** — AgentShield, controles de costos de ECC Tools, trabajo en el portal de facturación y actualizaciones del sitio web continúan publicándose junto al plugin principal en lugar de desviarse hacia silos separados.
 
 ### v1.9.0 — Instalación Selectiva y Expansión de Lenguajes (Mar 2026)
@@ -174,7 +174,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 
 ### v1.4.1 — Corrección de Errores (Feb 2026)
 
-- **Corrección de pérdida de contenido en importación de instintos** — `parse_instinct_file()` descartaba silenciosamente todo el contenido tras el frontmatter (secciones Action, Evidence, Examples) durante `/instinct-import`. ([#148](https://github.com/affaan-m/ECC/issues/148), [#161](https://github.com/affaan-m/ECC/pull/161))
+- **Corrección de pérdida de contenido en importación de instintos** — `parse_instinct_file()` descartaba silenciosamente todo el contenido tras el frontmatter (secciones Action, Evidence, Examples) durante `/instinct-import`. ([#148](https://github.com/WendeelMarinho/aiuby-cli/issues/148), [#161](https://github.com/WendeelMarinho/aiuby-cli/pull/161))
 
 ### v1.4.0 — Reglas Multi-Lenguaje, Asistente de Instalación y PM2 (Feb 2026)
 
@@ -198,7 +198,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 - **Gestión de sesiones** — Comando `/sessions` para historial de sesiones
 - **Aprendizaje continuo v2** — Aprendizaje basado en instintos con puntuación de confianza, importación/exportación y evolución
 
-Consulta el changelog completo en [Releases](https://github.com/affaan-m/ECC/releases).
+Consulta el changelog completo en [Releases](https://github.com/WendeelMarinho/aiuby-cli/releases).
 
 ---
 
@@ -249,7 +249,7 @@ Añade hooks después solo si quieres aplicación en tiempo de ejecución:
 Si no estás seguro de qué perfil o componente de ECC instalar, consulta al asesor empaquetado desde cualquier proyecto:
 
 ```bash
-npx ecc consult "security reviews" --target claude
+npx aiuby consult "security reviews" --target claude
 ```
 
 Devuelve los componentes coincidentes, los perfiles relacionados y los comandos de vista previa/instalación. Usa el comando de vista previa antes de instalar si quieres inspeccionar el plan de archivos exacto.
@@ -257,8 +257,8 @@ Devuelve los componentes coincidentes, los perfiles relacionados y los comandos 
 Para flujos de trabajo de ML/MLOps en producción, mantén la instalación opt-in y con alcance de componentes:
 
 ```bash
-npx ecc consult "mlops training model deployment" --target claude
-npx ecc install --profile minimal --target claude --with capability:machine-learning
+npx aiuby consult "mlops training model deployment" --target claude
+npx aiuby install --profile minimal --target claude --with capability:machine-learning
 ```
 
 ### Paso 1: Instalar el Plugin (Recomendado)
@@ -267,21 +267,21 @@ npx ecc install --profile minimal --target claude --with capability:machine-lear
 
 ```bash
 # Agregar marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Instalar plugin
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### Nota de Nombres y Migración
 
 ECC tiene tres identificadores públicos que no son intercambiables:
 
-- Repositorio fuente de GitHub: `affaan-m/ECC`
-- Identificador de marketplace/plugin de Claude: `ecc@ecc`
-- Paquete npm: `ecc-universal`
+- Repositorio fuente de GitHub: `WendeelMarinho/aiuby-cli`
+- Identificador de marketplace/plugin de Claude: `aiuby@aiuby`
+- Paquete npm: `aiuby-cli`
 
-Esto es intencional. Las instalaciones del marketplace/plugin de Anthropic se identifican por un identificador de plugin canónico, por lo que ECC usa `ecc@ecc` para mantener los nombres de herramientas y los espacios de nombres de comandos slash lo suficientemente cortos para los validadores estrictos de Desktop/API. Las publicaciones antiguas pueden mostrar el anterior identificador largo del marketplace; trátalo solo como un alias heredado. Por su parte, el paquete npm se mantuvo en `ecc-universal`, por lo que las instalaciones de npm y las del marketplace usan intencionalmente nombres diferentes.
+Esto es intencional. Las instalaciones del marketplace/plugin de Anthropic se identifican por un identificador de plugin canónico, por lo que ECC usa `aiuby@aiuby` para mantener los nombres de herramientas y los espacios de nombres de comandos slash lo suficientemente cortos para los validadores estrictos de Desktop/API. Las publicaciones antiguas pueden mostrar el anterior identificador largo del marketplace; trátalo solo como un alias heredado. Por su parte, el paquete npm se mantuvo en `aiuby-cli`, por lo que las instalaciones de npm y las del marketplace usan intencionalmente nombres diferentes.
 
 ### Paso 2: Instalar Reglas Solo Si Las Necesitas
 
@@ -297,7 +297,7 @@ Esto es intencional. Las instalaciones del marketplace/plugin de Anthropic se id
 
 ```bash
 # Clonar el repo primero
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd ECC
 
 # Instalar dependencias (elige tu gestor de paquetes)
@@ -385,13 +385,13 @@ Si combinaste métodos, limpia en este orden:
 # Los nombres de comandos estilo slash existentes siguen funcionando mientras ECC migra fuera de commands/.
 
 # La instalación por plugin usa la forma canónica con espacio de nombres
-/ecc:plan "Añadir autenticación de usuario"
+/aiuby:plan "Añadir autenticación de usuario"
 
 # La instalación manual mantiene la forma slash más corta:
 # /plan "Añadir autenticación de usuario"
 
 # Ver comandos disponibles
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **¡Listo!** Ahora tienes acceso a 63 agentes, 249 skills y 79 shims de comandos legados.
@@ -592,7 +592,7 @@ Esto analiza tu historial de git localmente y genera archivos SKILL.md.
 
 Para características avanzadas (más de 10k commits, PRs automáticos, compartir en equipo):
 
-[Instalar GitHub App](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[Instalar GitHub App](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 ```bash
 # Comenta en cualquier issue:
@@ -675,7 +675,7 @@ Claude Code v2.1+ **carga automáticamente** `hooks/hooks.json` de cualquier plu
 Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded file
 ```
 
-**Historial:** Esto ha causado ciclos repetidos de corrección/reversión en este repo ([#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103)). El comportamiento cambió entre versiones de Claude Code, generando confusión. Ahora tenemos una prueba de regresión para prevenir que se reintroduzca.
+**Historial:** Esto ha causado ciclos repetidos de corrección/reversión en este repo ([#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103)). El comportamiento cambió entre versiones de Claude Code, generando confusión. Ahora tenemos una prueba de regresión para prevenir que se reintroduzca.
 
 ---
 
@@ -687,10 +687,10 @@ La forma más fácil de usar este repo — instálalo como plugin de Claude Code
 
 ```bash
 # Añadir este repo como marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # Instalar el plugin
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 O añade directamente a tu `~/.claude/settings.json`:
@@ -701,12 +701,12 @@ O añade directamente a tu `~/.claude/settings.json`:
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/ECC"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -717,7 +717,7 @@ Esto te da acceso instantáneo a todos los comandos, agentes, skills y hooks.
 >
 > ```bash
 > # Clonar el repo primero
-> git clone https://github.com/affaan-m/ECC.git
+> git clone https://github.com/WendeelMarinho/aiuby-cli.git
 > cd ECC
 >
 > # Opción A: Reglas a nivel de usuario (se aplican a todos los proyectos)
@@ -742,7 +742,7 @@ Si prefieres control manual sobre lo que se instala:
 
 ```bash
 # Clonar el repo
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 cd ECC
 
 # Copiar agentes a tu configuración de Claude
@@ -885,8 +885,8 @@ Consulta [`rules/README.md`](../../rules/README.md) para detalles de instalació
 
 | Quiero... | Usar esta superficie | Agente usado |
 |-----------|---------------------|--------------|
-| Planificar una nueva feature | `/ecc:plan "Añadir auth"` | planner |
-| Diseñar arquitectura del sistema | `/ecc:plan` + agente architect | architect |
+| Planificar una nueva feature | `/aiuby:plan "Añadir auth"` | planner |
+| Diseñar arquitectura del sistema | `/aiuby:plan` + agente architect | architect |
 | Escribir código con pruebas primero | skill `tdd-workflow` | tdd-guide |
 | Revisar código que acabo de escribir | `/code-review` | code-reviewer |
 | Corregir un build fallido | `/build-fix` | build-error-resolver |
@@ -908,7 +908,7 @@ Las formas slash a continuación se muestran donde siguen siendo parte de la sup
 
 **Empezando una nueva feature:**
 ```
-/ecc:plan "Añadir autenticación de usuario con OAuth"
+/aiuby:plan "Añadir autenticación de usuario con OAuth"
                                               → planner crea el blueprint de implementación
 skill tdd-workflow                            → tdd-guide refuerza escribir pruebas primero
 /code-review                                  → code-reviewer verifica tu trabajo
@@ -936,7 +936,7 @@ skill e2e-testing                             → e2e-runner: pruebas de flujos 
 <summary><b>¿Cómo veo qué agentes/comandos están instalados?</b></summary>
 
 ```bash
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 Muestra todos los agentes, comandos y skills disponibles del plugin.
@@ -945,7 +945,7 @@ Muestra todos los agentes, comandos y skills disponibles del plugin.
 <details>
 <summary><b>Mis hooks no funcionan / Veo errores de "Duplicate hooks file"</b></summary>
 
-Este es el problema más común. **NO añadas un campo `"hooks"` a `.claude-plugin/plugin.json`.** Claude Code v2.1+ carga automáticamente `hooks/hooks.json` de los plugins instalados. Declararlo explícitamente provoca errores de detección de duplicados. Consulta [#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103).
+Este es el problema más común. **NO añadas un campo `"hooks"` a `.claude-plugin/plugin.json`.** Claude Code v2.1+ carga automáticamente `hooks/hooks.json` de los plugins instalados. Declararlo explícitamente provoca errores de detección de duplicados. Consulta [#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103).
 </details>
 
 <details>
@@ -1007,7 +1007,7 @@ Sí. ECC es multiplataforma:
 - **Cursor**: Configuraciones pre-traducidas en `.cursor/`. Consulta [Soporte para Cursor IDE](#soporte-para-cursor-ide).
 - **Gemini CLI**: Soporte experimental local al proyecto mediante `.gemini/GEMINI.md` y conexiones compartidas del instalador.
 - **OpenCode**: Soporte completo del plugin en `.opencode/`. Consulta [Soporte para OpenCode](#soporte-para-opencode).
-- **Codex**: Soporte de primera clase para la app macOS y CLI, con guardias de deriva del adaptador y fallback de SessionStart. Consulta PR [#257](https://github.com/affaan-m/ECC/pull/257).
+- **Codex**: Soporte de primera clase para la app macOS y CLI, con guardias de deriva del adaptador y fallback de SessionStart. Consulta PR [#257](https://github.com/WendeelMarinho/aiuby-cli/pull/257).
 - **GitHub Copilot (VS Code)**: Capa de instrucciones y prompts mediante `.github/copilot-instructions.md`, `.vscode/settings.json` y `.github/prompts/`. Consulta [Soporte para GitHub Copilot](#soporte-para-github-copilot).
 - **Antigravity**: Configuración estrechamente integrada para flujos de trabajo, skills y reglas aplanadas en `.agent/`. Consulta la [Guía de Antigravity](../ANTIGRAVITY-GUIDE.md).
 - **JoyCode / CodeBuddy**: Adaptadores de instalación selectiva locales al proyecto para comandos, agentes, skills y reglas aplanadas. Consulta la [Guía del Adaptador JoyCode](../JOYCODE-GUIDE.md).
@@ -1360,22 +1360,22 @@ Proyectos construidos sobre o inspirados en ECC:
 
 Este proyecto es gratuito y de código abierto. Los patrocinadores ayudan a mantenerlo y hacerlo crecer.
 
-[**Conviértete en Patrocinador**](https://github.com/sponsors/affaan-m) | [Niveles de Patrocinio](SPONSORS.md) | [Programa de Patrocinio](SPONSORING.md)
+[**Conviértete en Patrocinador**](https://github.com/sponsors/WendeelMarinho) | [Niveles de Patrocinio](SPONSORS.md) | [Programa de Patrocinio](SPONSORING.md)
 
 ---
 
 ## Historial de Estrellas
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/ECC&type=Date)](https://star-history.com/#affaan-m/ECC&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli&Date)
 
 ---
 
 ## Enlaces
 
-- **Guía Resumida (Empieza aquí):** [La Guía Resumida de Everything Claude Code](https://x.com/affaanmustafa/status/2012378465664745795)
-- **Guía Extensa (Avanzado):** [La Guía Extensa de Everything Claude Code](https://x.com/affaanmustafa/status/2014040193557471352)
-- **Guía de Seguridad:** [Guía de Seguridad](../../the-security-guide.md) | [Hilo](https://x.com/affaanmustafa/status/2033263813387223421)
-- **Seguir:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Guía Resumida (Empieza aquí):** [La Guía Resumida de Everything Claude Code](https://instagram.com/aiuby.ai/status/2012378465664745795)
+- **Guía Extensa (Avanzado):** [La Guía Extensa de Everything Claude Code](https://instagram.com/aiuby.ai/status/2014040193557471352)
+- **Guía de Seguridad:** [Guía de Seguridad](../../the-security-guide.md) | [Hilo](https://instagram.com/aiuby.ai/status/2033263813387223421)
+- **Seguir:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 
 ---
 

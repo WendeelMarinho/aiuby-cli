@@ -31,7 +31,7 @@ async function loadPlugin() {
   })
   assert.strictEqual(buildResult.status, 0, buildResult.stderr || buildResult.stdout)
   const pluginUrl = pathToFileURL(
-    path.join(repoRoot, ".opencode", "dist", "plugins", "ecc-hooks.js")
+    path.join(repoRoot, ".opencode", "dist", "plugins", "aiuby-hooks.js")
   ).href
   return import(pluginUrl)
 }
@@ -82,7 +82,7 @@ async function withTempProject(files, fn) {
 async function main() {
   console.log("\n=== Testing OpenCode plugin hooks ===\n")
 
-  const { ECCHooksPlugin } = await loadPlugin()
+  const { AiubyHooksPlugin } = await loadPlugin()
   const tests = [
     [
       "plugin initializes and hooks stay usable when plugins/lib is missing",
@@ -103,7 +103,7 @@ async function main() {
 
           // Plugin initialization must resolve even though changed-files-store.js
           // cannot be found -- it must not throw and crash session startup (#2530).
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           const disabledWarnings = client.logs.filter(
             (entry) =>
@@ -132,7 +132,7 @@ async function main() {
         const client = createClient()
         const $ = createFailingShell()
 
-        const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+        const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
         assert.ok(
           !client.logs.some(
@@ -177,7 +177,7 @@ async function main() {
         async (projectDir) => {
           const client = createClient()
           const $ = createFailingShell()
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           const env = await hooks["shell.env"]()
 
@@ -197,7 +197,7 @@ async function main() {
       async () => withTempProject(["CLAUDE.md"], async (projectDir) => {
         const client = createClient()
         const $ = createFailingShell()
-        const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+        const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
         await hooks["session.created"]()
 
@@ -217,7 +217,7 @@ async function main() {
 
           const client = createClient()
           const $ = createFailingShell()
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           await hooks["session.created"]()
 
@@ -241,7 +241,7 @@ async function main() {
 
           const client = createClient()
           const $ = createFailingShell()
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           const env = await hooks["shell.env"]()
 
@@ -261,7 +261,7 @@ async function main() {
         async (projectDir) => {
           const client = createClient()
           const $ = createFailingShell()
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           // Test read-only tools
           const readResult = await hooks["permission.ask"]({ tool: "read", args: {} })
@@ -285,7 +285,7 @@ async function main() {
         async (projectDir) => {
           const client = createClient()
           const $ = createFailingShell()
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           // Test formatter tools - note: args should be the command string, not object
           const prettierResult = await hooks["permission.ask"]({ 
@@ -313,7 +313,7 @@ async function main() {
         async (projectDir) => {
           const client = createClient()
           const $ = createFailingShell()
-          const hooks = await ECCHooksPlugin({ client, $, directory: projectDir })
+          const hooks = await AiubyHooksPlugin({ client, $, directory: projectDir })
 
           // Test test execution tools
           const npmTestResult = await hooks["permission.ask"]({ 

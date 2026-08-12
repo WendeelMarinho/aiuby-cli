@@ -2,9 +2,9 @@
 
 # Everything Claude Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
+[![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
+[![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -40,12 +40,12 @@
 <table>
 <tr>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://instagram.com/aiuby.ai/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to Everything Claude Code" />
 </a>
 </td>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://instagram.com/aiuby.ai/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to Everything Claude Code" />
 </a>
 </td>
@@ -71,7 +71,7 @@
 
 ### v1.4.1 — バグ修正（2026年2月）
 
-- **instinctインポート時のコンテンツ喪失を修正** — `/instinct-import`実行時に`parse_instinct_file()`がfrontmatter後のすべてのコンテンツ（Action、Evidence、Examplesセクション）を暗黙的に削除していた問題を修正。コミュニティ貢献者@ericcai0814により解決されました（[#148](https://github.com/affaan-m/everything-claude-code/issues/148), [#161](https://github.com/affaan-m/everything-claude-code/pull/161)）
+- **instinctインポート時のコンテンツ喪失を修正** — `/instinct-import`実行時に`parse_instinct_file()`がfrontmatter後のすべてのコンテンツ（Action、Evidence、Examplesセクション）を暗黙的に削除していた問題を修正。コミュニティ貢献者@ericcai0814により解決されました（[#148](https://github.com/WendeelMarinho/aiuby-cli/issues/148), [#161](https://github.com/WendeelMarinho/aiuby-cli/pull/161)）
 
 ### v1.4.0 — マルチ言語ルール、インストールウィザード & PM2（2026年2月）
 
@@ -95,7 +95,7 @@
 - **セッション管理** — セッション履歴用の`/sessions`コマンド
 - **継続的学習 v2** — 信頼度スコアリング、インポート/エクスポート、進化を伴うinstinctベースの学習
 
-完全なチェンジログは[Releases](https://github.com/affaan-m/everything-claude-code/releases)を参照してください。
+完全なチェンジログは[Releases](https://github.com/WendeelMarinho/aiuby-cli/releases)を参照してください。
 
 ---
 
@@ -107,10 +107,10 @@
 
 ```bash
 # マーケットプレイスを追加
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # プラグインをインストール
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 ### ステップ2：ルールをインストール（必須）
@@ -119,7 +119,7 @@
 
 ```bash
 # まずリポジトリをクローン
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # 共通ルールをインストール（必須）
 cp -r everything-claude-code/rules/common ~/.claude/rules/common
@@ -134,13 +134,13 @@ cp -r everything-claude-code/rules/golang ~/.claude/rules/golang
 
 ```bash
 # コマンドを試す（プラグインはネームスペース形式）
-/ecc:plan "ユーザー認証を追加"
+/aiuby:plan "ユーザー認証を追加"
 
 # 手動インストール（オプション2）は短縮形式：
 # /plan "ユーザー認証を追加"
 
 # 利用可能なコマンドを確認
-/plugin list ecc@ecc
+/plugin list aiuby@aiuby
 ```
 
 **完了です！** これで13のエージェント、43のスキル、31のコマンドにアクセスできます。
@@ -340,7 +340,7 @@ everything-claude-code/
 
 高度な機能用（10k+ コミット、自動 PR、チーム共有）：
 
-[GitHub アプリをインストール](https://github.com/apps/skill-creator) | [ecc.tools](https://ecc.tools)
+[GitHub アプリをインストール](https://github.com/apps/skill-creator) | [aiuby.com](https://aiuby.com)
 
 ```bash
 # 任意の Issue にコメント：
@@ -416,7 +416,7 @@ Claude Code v2.1+は、インストール済みプラグインの`hooks/hooks.js
 Duplicate hook file detected: ./hooks/hooks.json is already resolved to a loaded file
 ```
 
-**背景:** これは本リポジトリで複数の修正/リバート循環を引き起こしました（[#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103)）。Claude Codeバージョン間で動作が変わったため混乱がありました。今後を防ぐため回帰テストがあります。
+**背景:** これは本リポジトリで複数の修正/リバート循環を引き起こしました（[#29](https://github.com/WendeelMarinho/aiuby-cli/issues/29), [#52](https://github.com/WendeelMarinho/aiuby-cli/issues/52), [#103](https://github.com/WendeelMarinho/aiuby-cli/issues/103)）。Claude Codeバージョン間で動作が変わったため混乱がありました。今後を防ぐため回帰テストがあります。
 
 ---
 
@@ -428,10 +428,10 @@ Duplicate hook file detected: ./hooks/hooks.json is already resolved to a loaded
 
 ```bash
 # このリポジトリをマーケットプレイスとして追加
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 
 # プラグインをインストール
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 または、`~/.claude/settings.json` に直接追加：
@@ -442,12 +442,12 @@ Duplicate hook file detected: ./hooks/hooks.json is already resolved to a loaded
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "WendeelMarinho/aiuby-cli"
       }
     }
   },
   "enabledPlugins": {
-    "ecc@ecc": true
+    "aiuby@aiuby": true
   }
 }
 ```
@@ -458,7 +458,7 @@ Duplicate hook file detected: ./hooks/hooks.json is already resolved to a loaded
 >
 > ```bash
 > # まずリポジトリをクローン
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/WendeelMarinho/aiuby-cli.git
 >
 > # オプション A：ユーザーレベルルール（すべてのプロジェクトに適用）
 > mkdir -p ~/.claude/rules
@@ -481,7 +481,7 @@ Duplicate hook file detected: ./hooks/hooks.json is already resolved to a loaded
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
 
 # エージェントを Claude 設定にコピー
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -615,13 +615,13 @@ node tests/hooks/hooks.test.js
 
 ## Cursor IDE サポート
 
-ecc-universal は [Cursor IDE](https://cursor.com) の事前翻訳設定を含みます。`.cursor/` ディレクトリには、Cursor フォーマット向けに適応されたルール、エージェント、スキル、コマンド、MCP 設定が含まれています。
+aiuby-cli は [Cursor IDE](https://cursor.com) の事前翻訳設定を含みます。`.cursor/` ディレクトリには、Cursor フォーマット向けに適応されたルール、エージェント、スキル、コマンド、MCP 設定が含まれています。
 
 ### クイックスタート (Cursor)
 
 ```bash
 # パッケージをインストール
-npm install ecc-universal
+npm install aiuby-cli
 
 # 言語をインストール
 ./install.sh --target cursor typescript
@@ -724,13 +724,13 @@ opencode
 
 **オプション2：npmパッケージとしてインストール**
 ```bash
-npm install ecc-universal
+npm install aiuby-cli
 ```
 
 その後`opencode.json`に追加：
 ```json
 {
-  "plugin": ["ecc-universal"]
+  "plugin": ["aiuby-cli"]
 }
 ```
 
@@ -776,15 +776,15 @@ npm install ecc-universal
 
 ## Star 履歴
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=WendeelMarinho/aiuby-cli&type=Date)](https://star-history.com/#WendeelMarinho/aiuby-cli&Date)
 
 ---
 
 ## リンク
 
-- **簡潔ガイド（まずはこれ）:** [Everything Claude Code 簡潔ガイド](https://x.com/affaanmustafa/status/2012378465664745795)
-- **詳細ガイド（高度）:** [Everything Claude Code 詳細ガイド](https://x.com/affaanmustafa/status/2014040193557471352)
-- **フォロー:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **簡潔ガイド（まずはこれ）:** [Everything Claude Code 簡潔ガイド](https://instagram.com/aiuby.ai/status/2012378465664745795)
+- **詳細ガイド（高度）:** [Everything Claude Code 詳細ガイド](https://instagram.com/aiuby.ai/status/2014040193557471352)
+- **フォロー:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 - **zenith.chat:** [zenith.chat](https://zenith.chat)
 - **スキル ディレクトリ:** awesome-agent-skills（コミュニティ管理のエージェントスキル ディレクトリ）
 

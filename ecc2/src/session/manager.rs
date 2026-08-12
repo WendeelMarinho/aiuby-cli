@@ -456,7 +456,7 @@ pub async fn run_due_schedules(
     limit: usize,
 ) -> Result<Vec<ScheduledRunOutcome>> {
     let runner_program =
-        std::env::current_exe().context("Failed to resolve ECC executable path")?;
+        std::env::current_exe().context("Failed to resolve Aiuby executable path")?;
     run_due_schedules_with_runner_program(db, cfg, limit, &runner_program).await
 }
 
@@ -467,7 +467,7 @@ pub async fn run_remote_dispatch_requests(
 ) -> Result<Vec<RemoteDispatchOutcome>> {
     let requests = db.list_pending_remote_dispatch_requests(limit)?;
     let runner_program =
-        std::env::current_exe().context("Failed to resolve ECC executable path")?;
+        std::env::current_exe().context("Failed to resolve Aiuby executable path")?;
     run_remote_dispatch_requests_with_runner_program(db, cfg, requests, &runner_program).await
 }
 
@@ -613,7 +613,7 @@ pub async fn launch_orchestration_template(
     let repo_root =
         std::env::current_dir().context("Failed to resolve current working directory")?;
     let runner_program =
-        std::env::current_exe().context("Failed to resolve ECC executable path")?;
+        std::env::current_exe().context("Failed to resolve Aiuby executable path")?;
     let source_session = source_session_id
         .map(|id| resolve_session(db, id))
         .transpose()?;
@@ -893,7 +893,7 @@ pub async fn assign_session_with_profile_and_grouping(
         agent_type,
         use_worktree,
         &repo_root,
-        &std::env::current_exe().context("Failed to resolve ECC executable path")?,
+        &std::env::current_exe().context("Failed to resolve Aiuby executable path")?,
         profile_name,
         grouping,
     )
@@ -909,7 +909,7 @@ pub async fn drain_inbox(
     limit: usize,
 ) -> Result<Vec<InboxDrainOutcome>> {
     let runner_program =
-        std::env::current_exe().context("Failed to resolve ECC executable path")?;
+        std::env::current_exe().context("Failed to resolve Aiuby executable path")?;
     let lead = resolve_session(db, lead_id)?;
     let repo_root = lead.working_dir.clone();
     let messages = db.unread_task_handoffs_for_session(&lead.id, limit)?;
@@ -1057,7 +1057,7 @@ pub async fn rebalance_team_backlog(
     limit: usize,
 ) -> Result<Vec<RebalanceOutcome>> {
     let runner_program =
-        std::env::current_exe().context("Failed to resolve ECC executable path")?;
+        std::env::current_exe().context("Failed to resolve Aiuby executable path")?;
     let lead = resolve_session(db, lead_id)?;
     let repo_root = lead.working_dir.clone();
     let mut outcomes = Vec::new();
@@ -1531,7 +1531,7 @@ async fn resume_session_with_program(
     }
     let runner_executable = match runner_executable_override {
         Some(program) => program.to_path_buf(),
-        None => std::env::current_exe().context("Failed to resolve ECC executable path")?,
+        None => std::env::current_exe().context("Failed to resolve Aiuby executable path")?,
     };
     spawn_session_runner_for_program(
         &session.task,
@@ -2549,7 +2549,7 @@ async fn queue_session_in_dir(
         agent_type,
         use_worktree,
         repo_root,
-        &std::env::current_exe().context("Failed to resolve ECC executable path")?,
+        &std::env::current_exe().context("Failed to resolve Aiuby executable path")?,
         profile_name,
         inherited_profile_session_id,
         grouping,
@@ -2801,7 +2801,7 @@ async fn spawn_session_runner(
         session_id,
         agent_type,
         working_dir,
-        &std::env::current_exe().context("Failed to resolve ECC executable path")?,
+        &std::env::current_exe().context("Failed to resolve Aiuby executable path")?,
     )
     .await
 }
@@ -2986,7 +2986,7 @@ async fn spawn_session_runner_for_program(
     if let Some(parent) = stderr_log_path.parent() {
         std::fs::create_dir_all(parent).with_context(|| {
             format!(
-                "Failed to create ECC runner log directory {}",
+                "Failed to create Aiuby runner log directory {}",
                 parent.display()
             )
         })?;
@@ -2997,7 +2997,7 @@ async fn spawn_session_runner_for_program(
         .open(&stderr_log_path)
         .with_context(|| {
             format!(
-                "Failed to open ECC runner stderr log {}",
+                "Failed to open Aiuby runner stderr log {}",
                 stderr_log_path.display()
             )
         })?;
@@ -3020,11 +3020,11 @@ async fn spawn_session_runner_for_program(
 
     let child = command
         .spawn()
-        .with_context(|| format!("Failed to spawn ECC runner from {}", current_exe.display()))?;
+        .with_context(|| format!("Failed to spawn Aiuby runner from {}", current_exe.display()))?;
 
     child
         .id()
-        .ok_or_else(|| anyhow::anyhow!("ECC runner did not expose a process id"))?;
+        .ok_or_else(|| anyhow::anyhow!("Aiuby runner did not expose a process id"))?;
     Ok(())
 }
 
@@ -3526,7 +3526,7 @@ fn render_task_with_profile_projection(
 
     if !directives.is_empty() {
         sections.push(format!(
-            "ECC execution profile:\n- {}",
+            "Aiuby execution profile:\n- {}",
             directives.join("\n- ")
         ));
     }
@@ -4409,7 +4409,7 @@ mod tests {
                 "docs",
                 "--add-dir",
                 "specs",
-                "System instructions:\nReview thoroughly.\n\nECC execution profile:\n- Allowed tools: Read\n- Disallowed tools: Bash\n- Permission mode: plan\n- Max budget USD: 1.25\n- Token budget: 750\n\nTask:\nreview this change",
+                "System instructions:\nReview thoroughly.\n\nAiuby execution profile:\n- Allowed tools: Read\n- Disallowed tools: Bash\n- Permission mode: plan\n- Max budget USD: 1.25\n- Token budget: 750\n\nTask:\nreview this change",
             ]
         );
 
@@ -4428,7 +4428,7 @@ mod tests {
         assert_eq!(envs.get("CLAUDE_MODEL"), Some(&"gpt-5.4".to_string()));
         assert!(
             envs.contains_key("CLAUDE_PLUGIN_ROOT"),
-            "shared compatibility env should expose the ECC plugin root"
+            "shared compatibility env should expose the Aiuby plugin root"
         );
     }
 
@@ -4473,7 +4473,7 @@ mod tests {
                 "ecc-sess-9999",
                 "--model",
                 "anthropic/claude-sonnet-4",
-                "System instructions:\nBuild carefully.\n\nECC execution profile:\n- Additional context dirs: docs\n\nTask:\nstabilize callback flow",
+                "System instructions:\nBuild carefully.\n\nAiuby execution profile:\n- Additional context dirs: docs\n\nTask:\nstabilize callback flow",
             ]
         );
     }
@@ -4517,7 +4517,7 @@ mod tests {
                 "gemini-2.5-pro",
                 "--include-directories",
                 "docs,../shared",
-                "System instructions:\nUse repo context carefully.\n\nECC execution profile:\n- Allowed tools: Read\n- Disallowed tools: Bash\n- Permission mode: plan\n- Max budget USD: 1\n- Token budget: 500\n\nTask:\ninvestigate auth regression",
+                "System instructions:\nUse repo context carefully.\n\nAiuby execution profile:\n- Allowed tools: Read\n- Disallowed tools: Bash\n- Permission mode: plan\n- Max budget USD: 1\n- Token budget: 500\n\nTask:\ninvestigate auth regression",
             ]
         );
     }
@@ -4689,7 +4689,7 @@ mod tests {
                 "--model",
                 "gpt-5.4",
                 "--task",
-                "System instructions:\nUse repo context carefully.\n\nECC execution profile:\n- Additional context dirs: docs, specs\n- Allowed tools: Read\n- Disallowed tools: Bash\n- Permission mode: plan\n- Max budget USD: 2.5\n- Token budget: 900\n\nTask:\nfix callback regression",
+                "System instructions:\nUse repo context carefully.\n\nAiuby execution profile:\n- Additional context dirs: docs, specs\n- Allowed tools: Read\n- Disallowed tools: Bash\n- Permission mode: plan\n- Max budget USD: 2.5\n- Token budget: 900\n\nTask:\nfix callback regression",
             ]
         );
     }
@@ -5023,7 +5023,7 @@ mod tests {
     fn init_git_repo(path: &Path) -> Result<()> {
         fs::create_dir_all(path)?;
         run_git(path, ["init", "-q"])?;
-        run_git(path, ["config", "user.name", "ECC Tests"])?;
+        run_git(path, ["config", "user.name", "Aiuby Tests"])?;
         run_git(path, ["config", "user.email", "ecc-tests@example.com"])?;
         // Keep fixtures hermetic: a global core.hooksPath (e.g. identity-checking
         // pre-push hooks) must not run inside test repos.

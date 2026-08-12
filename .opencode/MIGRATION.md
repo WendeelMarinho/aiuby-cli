@@ -96,7 +96,7 @@ The `.opencode/` directory in this repository contains the translated configurat
 .opencode/
 ├── opencode.json              # Main configuration
 ├── plugins/                   # Hook plugins (translated from hooks.json)
-│   ├── ecc-hooks.ts           # All ECC hooks as plugins
+│   ├── aiuby-hooks.ts           # All ECC hooks as plugins
 │   └── index.ts               # Plugin exports
 ├── tools/                     # Custom tools
 │   ├── run-tests.ts           # Run test suite
@@ -287,13 +287,13 @@ The `.opencode/` directory contains everything pre-configured.
 ### Option 2: Install as npm Package
 
 ```bash
-npm install ecc-universal
+npm install aiuby-cli
 ```
 
 Then in your `opencode.json`:
 ```json
 {
-  "plugin": ["ecc-universal"]
+  "plugin": ["aiuby-cli"]
 }
 ```
 
@@ -331,7 +331,7 @@ If you want the full ECC OpenCode workflow surface, use the repository's bundled
 1. Verify the command is defined in `opencode.json` or as `.md` file in `.opencode/commands/`
 2. Check the referenced agent exists
 3. Ensure the template uses `$ARGUMENTS` for user input
-4. If you installed only `plugin: ["ecc-universal"]`, note that npm plugin install does not auto-add ECC commands or agents to your project config
+4. If you installed only `plugin: ["aiuby-cli"]`, note that npm plugin install does not auto-add ECC commands or agents to your project config
 
 ## Best Practices
 

@@ -250,9 +250,9 @@ tmux attach -t dev
 **解決策：**
 ```bash
 # まずECCがこのマシンについて認識している情報を確認
-ecc list-installed
-ecc doctor
-ecc repair
+aiuby list-installed
+aiuby doctor
+aiuby repair
 
 # doctor/repairで不足ファイルを復元できない場合のみ再インストール
 
@@ -275,8 +275,8 @@ claude --version
 # Claude Code 2.0+が必要
 
 # 手動インストール（Marketplaceが失敗する場合）
-git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### パッケージマネージャー検出の失敗
@@ -385,7 +385,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # または手動インストールの場合
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 
@@ -407,7 +407,7 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
 問題が解決しない場合：
 
-1. **GitHub Issuesを確認**: [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
+1. **GitHub Issuesを確認**: [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
 2. **デバッグログを有効化**:
    ```bash
    export CLAUDE_DEBUG=1

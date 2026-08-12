@@ -55,7 +55,7 @@ The catalog now stands at **67 agents, 281 skills, and 94 command shims** (2.0.0
 
 ```text
 /plugin marketplace add https://github.com/affaan-m/ECC
-/plugin install ecc@ecc
+/plugin install aiuby@aiuby
 ```
 
 Existing installs: `/plugin update ecc`

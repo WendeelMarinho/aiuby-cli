@@ -826,8 +826,8 @@ function buildRequirements(rootDir, platformReport) {
       includesAll(namingMatrix, ['Claude plugin', 'Codex plugin', 'npm package', 'Publication Paths'])
         && includesAll(releasePublicationChecklist, [
           'Ship `v2.0.0-rc.1` as **ECC**',
-          'affaan-m/ECC',
-          'ecc-universal',
+          'WendeelMarinho/aiuby-cli',
+          'aiuby-cli',
           'claude plugin tag .claude-plugin --dry-run',
           'codex plugin marketplace add',
           'Do not rename the npm package until rc.1 is published'

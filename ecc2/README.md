@@ -1,8 +1,8 @@
-# ECC 2.0 Alpha
+# Aiuby 2.0 Alpha
 
-`ecc2/` is the current Rust-based ECC 2.0 control-plane scaffold.
+`ecc2/` is the current Rust-based Aiuby 2.0 control-plane scaffold.
 
-It is usable as an alpha for local experimentation, but it is **not** the finished ECC 2.0 product yet.
+It is usable as an alpha for local experimentation, but it is **not** the finished Aiuby 2.0 product yet.
 
 ## What Exists Today
 
@@ -16,7 +16,7 @@ It is usable as an alpha for local experimentation, but it is **not** the finish
 
 ## What This Is For
 
-ECC 2.0 is the layer above individual harness installs.
+Aiuby 2.0 is the layer above individual harness installs.
 
 The goal is:
 
@@ -94,7 +94,7 @@ cargo test
 
 ## What Is Still Missing
 
-The alpha is missing the higher-level operator surface that defines ECC 2.0:
+The alpha is missing the higher-level operator surface that defines Aiuby 2.0:
 
 - richer multi-agent orchestration
 - explicit agent-to-agent delegation and summaries
@@ -109,6 +109,6 @@ Do not market `ecc2/` as done just because the scaffold builds.
 
 The right framing is:
 
-- ECC 2.0 alpha exists
+- Aiuby 2.0 alpha exists
 - it is usable for internal/operator testing
 - it is not the complete release yet

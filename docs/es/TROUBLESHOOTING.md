@@ -250,9 +250,9 @@ tmux attach -t dev
 **Soluciones:**
 ```bash
 # Primero inspecciona qué sabe ECC sobre esta máquina
-ecc list-installed
-ecc doctor
-ecc repair
+aiuby list-installed
+aiuby doctor
+aiuby repair
 
 # Solo reinstala si doctor/repair no puede restaurar los archivos faltantes
 
@@ -274,8 +274,8 @@ claude --version
 # Requiere Claude Code 2.0+
 
 # Instalación manual (si el marketplace falla)
-git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### Falla la Detección del Gestor de Paquetes
@@ -384,7 +384,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # O para instalación manual
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 
@@ -406,7 +406,7 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
 Si sigues experimentando problemas:
 
-1. **Revisa los Issues de GitHub**: [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
+1. **Revisa los Issues de GitHub**: [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
 2. **Habilita el Registro de Depuración**:
    ```bash
    export CLAUDE_DEBUG=1

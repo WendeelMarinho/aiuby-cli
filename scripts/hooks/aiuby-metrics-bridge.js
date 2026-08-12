@@ -3,7 +3,7 @@
  * ECC Metrics Bridge — PostToolUse hook
  *
  * Maintains a running session aggregate in /tmp/ecc-metrics-{session}.json.
- * This bridge file is read by ecc-statusline.js and ecc-context-monitor.js,
+ * This bridge file is read by aiuby-statusline.js and aiuby-context-monitor.js,
  * avoiding the need to scan large JSONL logs on every invocation.
  */
 
@@ -180,7 +180,7 @@ function readSessionCost(sessionId) {
         'malformed',
         costsPath,
         `${malformed}:${malformedHasher.digest('hex').slice(0, 16)}`,
-        `[ecc-metrics-bridge] skipped ${malformed} malformed line(s) in ${costsPath}\n`
+        `[aiuby-metrics-bridge] skipped ${malformed} malformed line(s) in ${costsPath}\n`
       );
     }
     return { totalCost, totalIn, totalOut };
@@ -194,7 +194,7 @@ function readSessionCost(sessionId) {
         'read-error',
         costsPath,
         `${err.code || err.name || 'error'}:${err.message || String(err)}`,
-        `[ecc-metrics-bridge] failing open after ${err.name || 'error'} reading ${costsPath}: ${err.message || String(err)}\n`
+        `[aiuby-metrics-bridge] failing open after ${err.name || 'error'} reading ${costsPath}: ${err.message || String(err)}\n`
       );
     }
     return { totalCost: 0, totalIn: 0, totalOut: 0 };

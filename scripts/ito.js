@@ -28,20 +28,20 @@ function showHelp() {
 ECC × Itô local CLI bridge
 
 Usage:
-  ecc ito login [--no-browser]
-  ecc ito auth
-  ecc ito find <all required RFQ options>
-  ecc ito status
-  ecc ito evals --cluster <id> --live-sixtytwo --nodes <list> --config-dir <dir>
-  ecc ito <login|auth|find|status|evals> --json
+  aiuby ito login [--no-browser]
+  aiuby ito auth
+  aiuby ito find <all required RFQ options>
+  aiuby ito status
+  aiuby ito evals --cluster <id> --live-sixtytwo --nodes <list> --config-dir <dir>
+  aiuby ito <login|auth|find|status|evals> --json
 
 The bridge invokes the separately installed canonical Itô CLI and returns its
-real stdout, stderr, and exit code unchanged. "ecc ito login" delegates to the
+real stdout, stderr, and exit code unchanged. "aiuby ito login" delegates to the
 canonical CLI's device authorization. It opens the Itô verification page by default
 and persists its device token in macOS Keychain. Pass --no-browser to
 suppress that handoff. ECC itself performs no browser automation and adds no
 lock, workload, inference, or purchase path.
-"ecc ito auth" is validation-only and never starts device login.
+"aiuby ito auth" is validation-only and never starts device login.
 
 Important:
   - "find" reads live inventory and submits an authenticated RFQ.
@@ -165,7 +165,7 @@ function parseArgs(argv, environment = process.env) {
     );
   }
   if (command === "auth" && withoutJson.includes("--no-browser")) {
-    throw new Error("--no-browser is valid only for ecc ito login; auth is validation-only.");
+    throw new Error("--no-browser is valid only for aiuby ito login; auth is validation-only.");
   }
   if (command === "evals") {
     validateNodeQualificationArgs(withoutJson, environment);

@@ -4,19 +4,18 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const CURRENT_PLUGIN_SLUG = 'ecc';
-const LEGACY_PLUGIN_SLUG = 'everything-claude-code';
-const CURRENT_PLUGIN_HANDLE = `${CURRENT_PLUGIN_SLUG}@${CURRENT_PLUGIN_SLUG}`;
-const LEGACY_PLUGIN_HANDLE = `${LEGACY_PLUGIN_SLUG}@${LEGACY_PLUGIN_SLUG}`;
-const PLUGIN_CACHE_SLUGS = [CURRENT_PLUGIN_SLUG, LEGACY_PLUGIN_SLUG];
-const PLUGIN_ROOT_SEGMENTS = [
-  [CURRENT_PLUGIN_SLUG],
-  [CURRENT_PLUGIN_HANDLE],
-  ['marketplaces', CURRENT_PLUGIN_SLUG],
-  [LEGACY_PLUGIN_SLUG],
-  [LEGACY_PLUGIN_HANDLE],
-  ['marketplaces', LEGACY_PLUGIN_SLUG],
-];
+// A plugin rename cannot be shimmed: the slug is a directory name the harness
+// creates at install time. The established pattern here is to PREPEND the new
+// slug and keep the old ones, so an operator who has not reinstalled still
+// resolves. `everything-claude-code` was handled this way when it became `ecc`;
+// `ecc` now joins it as deprecated. Both go away at 1.0.0. aiuby:compat
+const CURRENT_PLUGIN_SLUG = 'aiuby';
+const DEPRECATED_PLUGIN_SLUGS = ['ecc', 'everything-claude-code'];
+const handleFor = slug => `${slug}@${slug}`;
+const rootSegmentsFor = slug => [[slug], [handleFor(slug)], ['marketplaces', slug]];
+
+const PLUGIN_CACHE_SLUGS = [CURRENT_PLUGIN_SLUG, ...DEPRECATED_PLUGIN_SLUGS];
+const PLUGIN_ROOT_SEGMENTS = PLUGIN_CACHE_SLUGS.flatMap(rootSegmentsFor);
 
 // Artifacts that identify a COMPLETE ECC root when the caller gives no explicit
 // probe. A real ECC root ships both the script tree AND ECC's skills; a partial
@@ -97,7 +96,16 @@ function resolveEccRoot(options = {}) {
   try {
     for (const slug of PLUGIN_CACHE_SLUGS) {
       const cacheBase = path.join(claudeDir, 'plugins', 'cache', slug);
-      const orgDirs = fs.readdirSync(cacheBase, { withFileTypes: true });
+
+      // Guard per slug: a missing cache directory for one slug must not abort
+      // the scan for the others. Before `aiuby` led this list the first entry
+      // always existed, so the outer catch masked this.
+      let orgDirs;
+      try {
+        orgDirs = fs.readdirSync(cacheBase, { withFileTypes: true });
+      } catch {
+        continue;
+      }
 
       for (const orgEntry of orgDirs) {
         if (!orgEntry.isDirectory()) continue;
@@ -147,7 +155,14 @@ function resolveEccRoot(options = {}) {
  *   const _r = <paste INLINE_RESOLVE>;
  *   const sm = require(_r + '/scripts/lib/session-manager');
  */
-const INLINE_RESOLVE = `(function(){var p=require('path'),f=require('fs'),o=require('os');var e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim())return e.trim();var d=p.join(o.homedir(),'.claude');function L(x){try{return require(p.join(x,'scripts','lib','resolve-aiuby-root')).resolveEccRoot()}catch(_){return null}}var r=L(d);if(r)return r;var s=['ecc','ecc@ecc','marketplaces/ecc','everything-claude-code','everything-claude-code@everything-claude-code','marketplaces/everything-claude-code'];for(var i=0;i<s.length;i++){r=L(p.join(d,'plugins',s[i]));if(r)return r}try{var g=['ecc','everything-claude-code'];for(var j=0;j<g.length;j++){var c=p.join(d,'plugins','cache',g[j]);var O=f.readdirSync(c);for(var k=0;k<O.length;k++){var q=p.join(c,O[k]);var V=f.readdirSync(q);for(var m=0;m<V.length;m++){r=L(p.join(q,V[m]));if(r)return r}}}}catch(_){}return d})()`;
+// Search order and cache slugs are derived from the constants above so the
+// inline copy can never drift from the module's own resolution order.
+const INLINE_SEARCH_LIST = PLUGIN_ROOT_SEGMENTS
+  .map(segments => `'${segments.join('/')}'`)
+  .join(',');
+const INLINE_CACHE_LIST = PLUGIN_CACHE_SLUGS.map(slug => `'${slug}'`).join(',');
+
+const INLINE_RESOLVE = `(function(){var p=require('path'),f=require('fs'),o=require('os');var e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim())return e.trim();var d=p.join(o.homedir(),'.claude');function L(x){try{return require(p.join(x,'scripts','lib','resolve-aiuby-root')).resolveEccRoot()}catch(_){return null}}var r=L(d);if(r)return r;var s=[${INLINE_SEARCH_LIST}];for(var i=0;i<s.length;i++){r=L(p.join(d,'plugins',s[i]));if(r)return r}var g=[${INLINE_CACHE_LIST}];for(var j=0;j<g.length;j++){try{var c=p.join(d,'plugins','cache',g[j]);var O=f.readdirSync(c);for(var k=0;k<O.length;k++){var q=p.join(c,O[k]);var V=f.readdirSync(q);for(var m=0;m<V.length;m++){r=L(p.join(q,V[m]));if(r)return r}}}catch(_){}}return d})()`;
 
 module.exports = {
   resolveEccRoot,

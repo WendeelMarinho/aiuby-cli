@@ -46,7 +46,7 @@ Resolve the commands directory (first that exists), then list names:
 
 ```bash
 for D in \
-  "$HOME"/.claude/plugins/marketplaces/ecc/commands \
+  "$HOME"/.claude/plugins/marketplaces/aiuby/commands \
   "$HOME"/.claude/plugins/cache/ecc/ecc/*/commands \
   ./commands \
   ./.claude/commands \

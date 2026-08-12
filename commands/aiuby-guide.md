@@ -39,7 +39,7 @@ Use these files as the canonical map:
 - `agents/*.md` for delegated agent roles
 - `hooks/README.md` and `hooks/hooks.json` for hook behavior
 - `manifests/install-*.json` for selective install modules, components, and profiles
-- `scripts/ci/catalog.js --json` for live catalog counts when running inside ECC
+- `scripts/dev/catalog.js --json` for live catalog counts when running inside ECC
 
 ## Response Patterns
 

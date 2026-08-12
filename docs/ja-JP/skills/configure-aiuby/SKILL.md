@@ -17,7 +17,7 @@ Everything Claude Code プロジェクトのインタラクティブなステッ
 ## 前提条件
 
 このスキルは起動前に Claude Code からアクセス可能である必要があります。ブートストラップには2つの方法があります：
-1. **プラグイン経由**: `/plugin install ecc@ecc` — プラグインがこのスキルを自動的にロードします
+1. **プラグイン経由**: `/plugin install aiuby@aiuby` — プラグインがこのスキルを自動的にロードします
 2. **手動**: このスキルのみを `~/.claude/skills/configure-aiuby/SKILL.md` にコピーし、"configure ecc" と言って起動します
 
 ---
@@ -28,7 +28,7 @@ Everything Claude Code プロジェクトのインタラクティブなステッ
 
 ```bash
 rm -rf /tmp/everything-claude-code
-git clone https://github.com/affaan-m/everything-claude-code.git /tmp/everything-claude-code
+git clone https://github.com/WendeelMarinho/aiuby-cli.git /tmp/everything-claude-code
 ```
 
 以降のすべてのコピー操作のソースとして `ECC_ROOT=/tmp/everything-claude-code` を設定します。

@@ -57,7 +57,7 @@ function writeState(filePath, options) {
 
 function createCursorStateOptions(projectRoot, overrides = {}) {
   const targetRoot = overrides.targetRoot || path.join(projectRoot, '.cursor');
-  const installStatePath = overrides.installStatePath || path.join(targetRoot, 'ecc-install-state.json');
+  const installStatePath = overrides.installStatePath || path.join(targetRoot, 'aiuby-install-state.json');
 
   return {
     adapter: { id: 'cursor-project', target: 'cursor', kind: 'project' },
@@ -99,7 +99,7 @@ function writeCursorState(projectRoot, overrides = {}) {
 
 function createOpencodeStateOptions(homeDir, overrides = {}) {
   const targetRoot = overrides.targetRoot || path.join(homeDir, '.opencode');
-  const installStatePath = overrides.installStatePath || path.join(targetRoot, 'ecc-install-state.json');
+  const installStatePath = overrides.installStatePath || path.join(targetRoot, 'aiuby-install-state.json');
 
   return {
     adapter: { id: 'opencode-home', target: 'opencode', kind: 'home' },
@@ -201,8 +201,8 @@ function runTests() {
     const projectRoot = createTempDir('install-lifecycle-project-');
 
     try {
-      const claudeStatePath = path.join(homeDir, '.claude', 'ecc', 'install-state.json');
-      const cursorStatePath = path.join(projectRoot, '.cursor', 'ecc-install-state.json');
+      const claudeStatePath = path.join(homeDir, '.claude', 'aiuby', 'install-state.json');
+      const cursorStatePath = path.join(projectRoot, '.cursor', 'aiuby-install-state.json');
 
       writeState(claudeStatePath, {
         adapter: { id: 'claude-home', target: 'claude', kind: 'home' },
@@ -282,7 +282,7 @@ function runTests() {
       assert.strictEqual(records[0].error, null);
 
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       fs.mkdirSync(targetRoot, { recursive: true });
       fs.writeFileSync(statePath, '{not-json', 'utf8');
 
@@ -307,7 +307,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       fs.mkdirSync(targetRoot, { recursive: true });
 
       writeState(statePath, {
@@ -364,7 +364,7 @@ function runTests() {
 
     try {
       const actualTargetRoot = path.join(projectRoot, '.cursor');
-      const actualStatePath = path.join(actualTargetRoot, 'ecc-install-state.json');
+      const actualStatePath = path.join(actualTargetRoot, 'aiuby-install-state.json');
       const recordedTargetRoot = path.join(projectRoot, '.old-cursor');
       const recordedStatePath = path.join(recordedTargetRoot, 'state.json');
       const copyDestination = path.join(actualTargetRoot, 'rules', 'missing-source.md');
@@ -522,7 +522,7 @@ function runTests() {
     const projectRoot = createTempDir('install-lifecycle-project-');
 
     try {
-      const statePath = path.join(projectRoot, '.cursor', 'ecc-install-state.json');
+      const statePath = path.join(projectRoot, '.cursor', 'aiuby-install-state.json');
       fs.mkdirSync(path.dirname(statePath), { recursive: true });
       fs.writeFileSync(statePath, '{"schemaVersion":"wrong"}\n');
 
@@ -547,7 +547,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(homeDir, '.claude');
-      const statePath = path.join(targetRoot, 'ecc', 'install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby', 'install-state.json');
       const managedFile = path.join(targetRoot, 'rules', 'common', 'coding-style.md');
       const sourceContent = fs.readFileSync(path.join(REPO_ROOT, 'rules', 'common', 'coding-style.md'), 'utf8');
       fs.mkdirSync(path.dirname(managedFile), { recursive: true });
@@ -641,7 +641,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(homeDir, '.claude');
-      const installStatePath = path.join(targetRoot, 'ecc', 'install-state.json');
+      const installStatePath = path.join(targetRoot, 'aiuby', 'install-state.json');
       const flatSkillPath = path.join(targetRoot, 'skills', 'tdd-workflow', 'SKILL.md');
       const legacySkillPath = path.join(
         targetRoot,
@@ -739,7 +739,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(homeDir, '.claude');
-      const adapterStatePath = path.join(targetRoot, 'ecc', 'install-state.json');
+      const adapterStatePath = path.join(targetRoot, 'aiuby', 'install-state.json');
       const recordedStatePath = path.join(outsideRoot, 'recorded-state.json');
       const flatSkillPath = path.join(targetRoot, 'skills', 'tdd-workflow', 'SKILL.md');
       const legacySkillPath = path.join(
@@ -900,7 +900,7 @@ function runTests() {
     const okProjectRoot = createTempDir('install-lifecycle-ok-');
 
     try {
-      const invalidStatePath = path.join(invalidProjectRoot, '.cursor', 'ecc-install-state.json');
+      const invalidStatePath = path.join(invalidProjectRoot, '.cursor', 'aiuby-install-state.json');
       fs.mkdirSync(path.dirname(invalidStatePath), { recursive: true });
       fs.writeFileSync(invalidStatePath, '{"schemaVersion":"wrong"}\n');
 
@@ -1142,7 +1142,7 @@ function runTests() {
     try {
       withTemporarilyMovedPath(path.join(REPO_ROOT, '.opencode', 'dist'), () => {
         const cursorTargetRoot = path.join(projectRoot, '.cursor');
-        const cursorStatePath = path.join(cursorTargetRoot, 'ecc-install-state.json');
+        const cursorStatePath = path.join(cursorTargetRoot, 'aiuby-install-state.json');
         const cursorDestinationPath = path.join(cursorTargetRoot, 'rules', 'coding-style.md');
         fs.mkdirSync(path.dirname(cursorDestinationPath), { recursive: true });
 
@@ -1405,7 +1405,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       const sourcePath = path.join(REPO_ROOT, '.cursor', 'hooks.json');
       const destinationPath = path.join(targetRoot, 'hooks.json');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
@@ -1466,7 +1466,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       fs.mkdirSync(targetRoot, { recursive: true });
 
       writeState(statePath, {
@@ -1513,7 +1513,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(homeDir, '.claude');
-      const statePath = path.join(targetRoot, 'ecc', 'install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby', 'install-state.json');
       const destinationPath = path.join(targetRoot, 'plugin.json');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
       fs.writeFileSync(destinationPath, '{"drifted":true}\n');
@@ -1572,7 +1572,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       const destinationPath = path.join(targetRoot, 'hooks.json');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
       fs.writeFileSync(destinationPath, JSON.stringify({
@@ -1647,7 +1647,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       const destinationPath = path.join(targetRoot, 'legacy-note.txt');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
       fs.writeFileSync(destinationPath, 'stale');
@@ -1955,7 +1955,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const adapterStatePath = path.join(targetRoot, 'ecc-install-state.json');
+      const adapterStatePath = path.join(targetRoot, 'aiuby-install-state.json');
       const recordedStatePath = path.join(outsideRoot, 'recorded-state.json');
       const stateOptions = createCursorStateOptions(projectRoot, {
         installStatePath: recordedStatePath,
@@ -1992,7 +1992,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       const destinationPath = path.join(targetRoot, 'hooks.json');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
       fs.writeFileSync(destinationPath, JSON.stringify({
@@ -2060,7 +2060,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(tempDir, '.claude');
-      const statePath = path.join(targetRoot, 'ecc', 'install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby', 'install-state.json');
       const destinationPath = path.join(targetRoot, 'plugin.json');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
       fs.writeFileSync(destinationPath, '{"generated":true}\n');
@@ -2121,7 +2121,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const statePath = path.join(targetRoot, 'ecc-install-state.json');
+      const statePath = path.join(targetRoot, 'aiuby-install-state.json');
       const destinationPath = path.join(targetRoot, 'legacy-note.txt');
       fs.mkdirSync(targetRoot, { recursive: true });
 
@@ -2215,7 +2215,7 @@ function runTests() {
     const projectRoot = createTempDir('install-lifecycle-project-');
 
     try {
-      const statePath = path.join(projectRoot, '.cursor', 'ecc-install-state.json');
+      const statePath = path.join(projectRoot, '.cursor', 'aiuby-install-state.json');
       fs.mkdirSync(path.dirname(statePath), { recursive: true });
       fs.writeFileSync(statePath, '{not-json', 'utf8');
 
@@ -2241,7 +2241,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const adapterStatePath = path.join(targetRoot, 'ecc-install-state.json');
+      const adapterStatePath = path.join(targetRoot, 'aiuby-install-state.json');
       const recordedStatePath = path.join(outsideRoot, 'recorded-state.json');
       const stateOptions = createCursorStateOptions(projectRoot, {
         installStatePath: recordedStatePath,
@@ -2307,7 +2307,7 @@ function runTests() {
 
     try {
       const targetRoot = path.join(projectRoot, '.cursor');
-      const adapterStatePath = path.join(targetRoot, 'ecc-install-state.json');
+      const adapterStatePath = path.join(targetRoot, 'aiuby-install-state.json');
       const destinationPath = path.join(targetRoot, 'rules', 'nested', 'managed.md');
       fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
       fs.writeFileSync(destinationPath, 'managed\n');

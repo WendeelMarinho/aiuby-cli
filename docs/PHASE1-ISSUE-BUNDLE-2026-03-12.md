@@ -113,10 +113,10 @@ Without install-state, lifecycle commands are guesswork.
 
 Introduce a durable install-state contract and the first lifecycle commands:
 
-- `ecc list-installed`
-- `ecc uninstall`
-- `ecc doctor`
-- `ecc repair`
+- `aiuby list-installed`
+- `aiuby uninstall`
+- `aiuby doctor`
+- `aiuby repair`
 
 Suggested state locations:
 

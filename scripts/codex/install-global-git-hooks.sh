@@ -19,7 +19,7 @@ STAMP="$(date +%Y%m%d-%H%M%S)"
 BACKUP_DIR="$HOME/.codex/backups/git-hooks-$STAMP"
 
 log() {
-  printf '[ecc-hooks] %s\n' "$*"
+  printf '[aiuby-hooks] %s\n' "$*"
 }
 
 run_or_echo() {
@@ -61,5 +61,5 @@ fi
 run_or_echo git config --global core.hooksPath "$DEST_DIR"
 
 log "Installed ECC global git hooks."
-log "Disable per repo by creating .ecc-hooks-disable in project root."
+log "Disable per repo by creating .aiuby-hooks-disable in project root."
 log "Temporary bypass: ECC_SKIP_PRECOMMIT=1 or ECC_SKIP_PREPUSH=1"

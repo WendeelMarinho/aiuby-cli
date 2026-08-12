@@ -4,20 +4,22 @@
 
 | Version | Supported |
 | --- | --- |
-| 2.x / rc builds | :white_check_mark: |
-| 1.10.x | :white_check_mark: |
-| 1.9.x | Critical fixes only |
-| < 1.9 | :x: |
+| 0.1.x | :white_check_mark: |
 
-Security fixes land on `main` first. Backports are best-effort and only for currently supported release lines.
+Aiuby is pre-1.0. Security fixes land on `main` and ship in the next release;
+there are no backport branches yet.
+
+Reports about **ECC**, the upstream project Aiuby forked from, belong to
+[that project's security policy](https://github.com/affaan-m/ECC/security),
+not here. See [UPSTREAM.md](UPSTREAM.md).
 
 ## Reporting a Vulnerability
 
-Use GitHub private vulnerability reporting whenever possible — it reaches the maintainer directly:
+Use GitHub private vulnerability reporting — it reaches the maintainer directly:
 
-- <https://github.com/affaan-m/ECC/security/advisories/new>
+- <https://github.com/WendeelMarinho/aiuby-cli/security/advisories/new>
 
-You can also email **<affaan@ecc.tools>** (the `security@ecc.tools` alias is not monitored — use `affaan@ecc.tools`).
+You can also email **<wendeelmarinho@gmail.com>**.
 
 Do **not** open a public GitHub issue for security vulnerabilities.
 
@@ -42,57 +44,55 @@ If a report is declined, we will explain whether it is not reproducible, out of 
 
 This policy covers:
 
-- the `affaan-m/ECC` repository
-- the `ecc-universal` npm package
-- ECC plugin, install, repair, dashboard, hook, rule, skill, MCP, and command surfaces shipped from this repository
+- the `WendeelMarinho/aiuby-cli` repository
+- the `aiuby-cli` npm package
+- Aiuby plugin, install, repair, dashboard, hook, rule, skill, MCP, and command surfaces shipped from this repository
 - GitHub Actions workflows and release automation in this repository
-- the ECC Tools GitHub App integration points documented by this repository
-- AgentShield usage docs when they are embedded here. AgentShield code issues belong in <https://github.com/affaan-m/agentshield>
+- the compatibility layer and state migrator (`aiuby migrate`), including backup and rollback behavior
 
 ## Official Distribution Surfaces
 
-Official ECC surfaces are:
+Official Aiuby surfaces are:
 
-- GitHub repo: <https://github.com/affaan-m/ECC>
-- npm package: `ecc-universal`
-- GitHub App: <https://github.com/apps/ecc-tools>
-- marketplace/plugin slug: `ecc@ecc`
-- website: <https://ecc.tools>
+- GitHub repo: <https://github.com/WendeelMarinho/aiuby-cli>
+- npm package: `aiuby-cli`
+- CLI binary: `aiuby`
+- marketplace/plugin slug: `aiuby@aiuby`
+- website: <https://aiuby.com>
 
-Official AgentShield surface:
+The deprecated `ecc`, `ecc-install`, `ecc-control-pane`, `ecc-memory-mcp`, and
+`ecc-plan-canvas` binaries ship from the same `aiuby-cli` package during `0.x`
+and are removed at `1.0.0`. They are official; anything else bearing the ECC
+name is not ours.
 
-- npm package: `ecc-agentshield`
-- GitHub repo: <https://github.com/affaan-m/agentshield>
+Treat any package not listed above as unofficial until verified. Aiuby is not
+distributed on npm under any other name, is not published as a Go module, and
+does not operate a GitHub App.
 
-The following packages have been observed using ECC repository metadata but are **not maintained by ECC**:
-
-- `@chil_ntl/ecc-cli`
-- `ecc-100xprompt-plugin`
-
-Treat any package not listed under official surfaces as unofficial until verified. Do not install packages named `opencode-ecc`, `everything-claude-code`, or other ECC-like aliases unless this repository explicitly documents them as official.
-
-GitHub dependency graph may also show Go module aliases such as `github.com/affaan-m/ecc` or historical repository paths. ECC is not currently distributed as a supported Go module.
+Packages and surfaces carrying the **ECC** name belong to the upstream project
+and are outside this policy. For their official distribution list, see
+[the upstream repository](https://github.com/affaan-m/ECC).
 
 ## Out of Scope
 
 Reports are usually out of scope when they only show:
 
 - local command execution where the user already controls the local shell and no higher-privilege trust boundary is crossed
-- screenshots, stale line numbers, or reports against `affaan-m/everything-claude-code` that do not reproduce on current `affaan-m/ECC`
+- screenshots, stale line numbers, or reports against the upstream ECC repository that do not reproduce on current `WendeelMarinho/aiuby-cli`
 - self-XSS or social engineering with no repository-controlled exploit path
-- dependency graph/package metadata confusion without an install path to an official ECC package
-- vulnerabilities in third-party packages unless ECC pins, installs, or executes them in a way that creates extra impact
+- dependency graph/package metadata confusion without an install path to an official Aiuby package
+- vulnerabilities in third-party packages unless Aiuby pins, installs, or executes them in a way that creates extra impact
 
 Local developer tools can still be valid security issues when untrusted repository content, package installation, generated hooks, or CI automation can trigger execution without clear user intent. Show that trust boundary in the report.
 
 ## Supply-Chain Rules
 
-ECC treats supply-chain exposure as a first-class security surface.
+Aiuby treats supply-chain exposure as a first-class security surface.
 
 - GitHub Actions must use pinned commit SHAs for third-party actions.
 - Workflows must avoid shelling untrusted GitHub context directly into `run:` blocks.
 - Release and install docs must point only to official packages.
-- Package metadata should point at `affaan-m/ECC`, not historical repo paths.
+- Package metadata should point at `WendeelMarinho/aiuby-cli`, not historical repo paths.
 - Private vulnerability reports are triaged privately before public disclosure.
 - Security advisories are published only when a supported release is affected and coordinated disclosure is appropriate.
 
@@ -132,7 +132,7 @@ Compare the PID against the expected binary. Any other process on that port can 
 
 ## Triage: suspicious `<system-reminder>` blocks
 
-ECC runs inside agent harnesses that may inject ephemeral client-side system reminders into the model input on every turn. These blocks are not automatically repository-carried payloads.
+Aiuby runs inside agent harnesses that may inject ephemeral client-side system reminders into the model input on every turn. These blocks are not automatically repository-carried payloads.
 
 Before treating one as an attack, verify:
 
@@ -149,7 +149,9 @@ Escalate upstream only when the block is present inside a tool result or reposit
 
 ## Security Resources
 
-- **AgentShield:** `npx ecc-agentshield scan`
+- **Security scan:** `/security-scan` (see `skills/security-scan/`)
+- **Supply-chain IOC scan:** `aiuby security-ioc-scan`
+- **AgentShield:** maintained by the upstream ECC project, not by Aiuby
 - **Security Guide:** [The Shorthand Guide to Everything Agentic Security](./the-security-guide.md)
 - **Supply-chain incident response:** [npm/GitHub Actions package-registry playbook](./docs/security/supply-chain-incident-response.md)
 - **OWASP MCP Top 10:** <https://owasp.org/www-project-mcp-top-10/>

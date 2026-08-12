@@ -45,6 +45,7 @@ function buildExpectedPublishPaths(repoRoot) {
     "scripts/feedback.js",
     "scripts/catalog.js",
     "scripts/ci/audit-legacy-names.js",
+    "scripts/ci/generate-counts.js",
     "scripts/ci/scan-supply-chain-iocs.js",
     "scripts/ci/supply-chain-advisory-sources.js",
     // Deprecated `ecc*` entrypoints. Removed at 1.0.0. aiuby:compat
@@ -83,7 +84,7 @@ function buildExpectedPublishPaths(repoRoot) {
     "scripts/codex/merge-codex-config.js",
     "scripts/codex/merge-mcp-config.js",
     ".codex-plugin",
-    "plugins/ecc",
+    "plugins/aiuby",
     ".mcp.json",
     "install.sh",
     "install.ps1",
@@ -92,14 +93,16 @@ function buildExpectedPublishPaths(repoRoot) {
     ".github/PULL_REQUEST_TEMPLATE.md",
     "COMMANDS-QUICK-REF.md",
     "CONTRIBUTING.md",
+    "NOTICE",
+    "UPSTREAM.md",
     "VERSION",
-    "assets/aiuby-icon.svg",
+    "assets/aiuby-icon.png",
+    "assets/aiuby-logo.png",
     "assets/hero-aiuby.png",
-    "assets/images/community",
+    "assets/images/sponsors",
     "docs/CODEX-NAVIGATION-GUIDE.md",
     "docs/COMMAND-AGENT-MAP.md",
     "docs/design/aiuby-memory-vault.md",
-    "assets/images/sponsors",
   ]
   const exclusionPaths = [
     "!**/__pycache__/**",
@@ -178,11 +181,17 @@ function main() {
         ".cursor/skills/unified-memory/SKILL.md",
         "COMMANDS-QUICK-REF.md",
         "CONTRIBUTING.md",
-        "plugins/ecc/.codex-plugin/plugin.json",
-        "assets/aiuby-icon.svg",
+        // Attribution must travel with the distribution: npm auto-includes
+        // LICENSE but NOT NOTICE.
+        "LICENSE",
+        "NOTICE",
+        "UPSTREAM.md",
+        "plugins/aiuby/.codex-plugin/plugin.json",
+        "assets/aiuby-icon.png",
+        "assets/aiuby-logo.png",
         "assets/hero-aiuby.png",
-        "assets/images/community/discord.svg",
-        "assets/images/community/heart.svg",
+        "assets/images/sponsors/scalegrid.png",
+        "assets/images/sponsors/remediosja.jpg",
         "docs/CODEX-NAVIGATION-GUIDE.md",
         "docs/COMMAND-AGENT-MAP.md",
         "docs/design/aiuby-memory-vault.md",
@@ -200,8 +209,9 @@ function main() {
       for (const excludedPath of [
         "contexts/dev.md",
         "examples/CLAUDE.md",
-        "plugins/README.md",
-        "scripts/ci/catalog.js",
+        // plugins/README.md is NOT listed: npm force-includes any README.md at
+        // any depth, and neither `files` negation nor .npmignore overrides it.
+        "scripts/dev/catalog.js",
         "skills/skill-comply/SKILL.md",
       ]) {
         assert.ok(

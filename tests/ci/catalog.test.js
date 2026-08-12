@@ -1,5 +1,5 @@
 /**
- * Direct coverage for scripts/ci/catalog.js.
+ * Direct coverage for scripts/dev/catalog.js.
  */
 
 'use strict';
@@ -13,7 +13,7 @@ const {
   buildCatalog,
   formatExpectation,
   runCatalogCheck,
-} = require('../../scripts/ci/catalog');
+} = require('../../scripts/dev/catalog');
 
 function createTestDir() {
   return fs.mkdtempSync(path.join(os.tmpdir(), 'ecc-ci-catalog-'));

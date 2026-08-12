@@ -1,4 +1,4 @@
-# plugins/ecc — Codex Repo-Marketplace Plugin Target
+# plugins/aiuby — Codex Repo-Marketplace Plugin Target
 
 This directory is the plugin folder that `.agents/plugins/marketplace.json`
 points at. Codex does not discover plugins whose local marketplace
@@ -26,8 +26,8 @@ bumps both.
 
 ## Current Codex plugin-mode status
 
-With this layout, `codex plugin marketplace add affaan-m/ECC` discovers and
-installs `ecc@ecc`. Runtime skill loading from repo marketplaces is still
+With this layout, `codex plugin marketplace add WendeelMarinho/aiuby-cli` discovers and
+installs `aiuby@aiuby`. Runtime skill loading from repo marketplaces is still
 unreliable upstream — Codex copies only the plugin folder into its install
 cache, and local/personal marketplace plugins are not always exposed at
 runtime (see [openai/codex#26037](https://github.com/openai/codex/issues/26037)

@@ -88,7 +88,7 @@ what matters to users.
 | `scripts/lib/ecc_dashboard_runtime.py` | `scripts/lib/aiuby_dashboard_runtime.py` |
 | `ecc_dashboard.py` | `aiuby_dashboard.py` |
 | `plugins/ecc/` | `plugins/aiuby/` |
-| `assets/ecc-icon.svg` | `assets/aiuby-icon.svg` |
+| `assets/ecc-icon.svg` | `assets/aiuby-icon.png` |
 | `docs/design/ecc-memory-vault.md` | `docs/design/aiuby-memory-vault.md` |
 
 ### 3. Harness vs. install target

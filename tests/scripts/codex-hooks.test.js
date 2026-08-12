@@ -108,7 +108,7 @@ const cacheManifestWithLocalRefs = {
   skills: './skills/',
   mcpServers: './.mcp.json',
   interface: {
-    composerIcon: './assets/aiuby-icon.svg',
+    composerIcon: './assets/aiuby-icon.png',
     logo: './assets/hero.png',
   },
 };
@@ -173,7 +173,7 @@ if (
     try {
       const cacheDir = seedPluginCache(codexDir, cacheManifestWithLocalRefs, [
         ['.mcp.json', '{"mcpServers":{}}\n'],
-        ['assets/aiuby-icon.svg', '<svg />\n'],
+        ['assets/aiuby-icon.png', '<svg />\n'],
         ['assets/hero.png', 'png\n'],
       ]);
       fs.mkdirSync(path.join(cacheDir, 'skills'), { recursive: true });
@@ -202,7 +202,7 @@ if (
 
       assert.strictEqual(result.status, 1, `${result.stdout}\n${result.stderr}`);
       assert.match(result.stdout, /Cached plugin manifest missing/);
-      assert.match(result.stdout, /codex plugin marketplace add affaan-m\/ECC/);
+      assert.match(result.stdout, /codex plugin marketplace add WendeelMarinho\/aiuby-cli/);
     } finally {
       cleanup(homeDir);
     }

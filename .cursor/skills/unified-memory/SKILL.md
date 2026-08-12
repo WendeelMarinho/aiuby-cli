@@ -14,18 +14,18 @@ harness-specific transcripts or inboxes.
 
 This skill is guidance, not the Memory Vault executable. Skill-only, minimal,
 manual, and Claude plugin installs do not create the required commands on
-`PATH`. Install the `ecc-universal` npm runtime separately before using the CLI
+`PATH`. Install the `aiuby-cli` npm runtime separately before using the CLI
 or MCP examples:
 
 ```bash
-npm install -g ecc-universal
+npm install -g aiuby-cli
 ecc memory --help
-command -v ecc-memory-mcp
+command -v aiuby-memory-mcp
 ```
 
 A repository checkout may instead run the CLI as
 `node scripts/ecc.js memory ...`, but MCP configurations that name
-`ecc-memory-mcp` still require that binary on `PATH`.
+`aiuby-memory-mcp` still require that binary on `PATH`.
 
 ## When To Use
 
@@ -143,13 +143,13 @@ Repair reported files manually. The doctor does not delete or rewrite memory.
 ## MCP Setup
 
 The stdio server is optional and is not enabled by ECC's default `.mcp.json`.
-After installing ECC, copy the `ecc-memory-vault` entry from
+After installing ECC, copy the `aiuby-memory-vault` entry from
 `mcp-configs/mcp-servers.json` into each harness where tool access is useful.
 Replace its placeholder with a lowercase server identity. The server command
 is:
 
 ```text
-ECC_MEMORY_HARNESS=codex ecc-memory-mcp
+ECC_MEMORY_HARNESS=codex aiuby-memory-mcp
 ```
 
 The MCP process binds writes and target filtering to

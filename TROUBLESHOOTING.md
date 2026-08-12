@@ -274,8 +274,8 @@ claude --version
 # Requires Claude Code 2.0+
 
 # Manual install (if marketplace fails)
-git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### Package Manager Detection Fails
@@ -322,7 +322,7 @@ ResolveMessage: Cannot find module '../plugins/lib/changed-files-store.js' from 
   finished copying (an interrupted install, or a storage/permission hiccup
   that's more common on Android's filesystem). Both the `changed-files` tool
   and the `ecc-hooks` plugin depend on `plugins/lib/changed-files-store.js`;
-  since `ecc-hooks.ts` is OpenCode's plugin entry point (loaded once at
+  since `aiuby-hooks.ts` is OpenCode's plugin entry point (loaded once at
   session startup, before `tools/index.ts`'s barrel file), a missing
   dependency there used to crash the entire OpenCode session before any
   hooks could load — not just the one tool.
@@ -422,7 +422,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # Or for manual install
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 
@@ -444,7 +444,7 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
  If you're still experiencing issues:
 
-1. **Check GitHub Issues**: [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
+1. **Check GitHub Issues**: [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
 2. **Enable Debug Logging**:
    ```bash
    export CLAUDE_DEBUG=1

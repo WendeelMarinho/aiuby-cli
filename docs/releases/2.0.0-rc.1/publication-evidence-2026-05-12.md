@@ -78,10 +78,10 @@ plugin config.
 | `claude plugin validate .claude-plugin/marketplace.json` | Passed |
 | `claude plugin tag .claude-plugin --dry-run` | Passed without `--force`; would create `ecc--v2.0.0-rc.1` at HEAD and push `refs/tags/ecc--v2.0.0-rc.1` |
 | `claude plugin marketplace add /tmp/ecc-clean-plugin-evidence --scope local` with temp `HOME` | Added marketplace `ecc` in local settings |
-| `claude plugin list --available --json` with temp `HOME` | Listed `ecc@ecc`, version `2.0.0-rc.1`, source `./` |
-| `claude plugin install ecc@ecc --scope local` with temp `HOME` | Installed `ecc@ecc` in local scope |
-| `claude plugin list --json` with temp `HOME` | Listed `ecc@ecc`, version `2.0.0-rc.1`, enabled, local scope, install path under `/tmp/ecc-clean-plugin-home/.claude/plugins/cache/ecc/ecc/2.0.0-rc.1` |
-| `claude plugin uninstall ecc@ecc --scope local` with temp `HOME` | Uninstalled successfully; final plugin list was `[]` |
+| `claude plugin list --available --json` with temp `HOME` | Listed `aiuby@aiuby`, version `2.0.0-rc.1`, source `./` |
+| `claude plugin install aiuby@aiuby --scope local` with temp `HOME` | Installed `aiuby@aiuby` in local scope |
+| `claude plugin list --json` with temp `HOME` | Listed `aiuby@aiuby`, version `2.0.0-rc.1`, enabled, local scope, install path under `/tmp/ecc-clean-plugin-home/.claude/plugins/cache/ecc/ecc/2.0.0-rc.1` |
+| `claude plugin uninstall aiuby@aiuby --scope local` with temp `HOME` | Uninstalled successfully; final plugin list was `[]` |
 
 ## Announcement Placeholder Check
 

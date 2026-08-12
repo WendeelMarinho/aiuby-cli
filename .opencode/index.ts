@@ -10,13 +10,13 @@
  *
  * Option 1: Install via npm
  * ```bash
- * npm install ecc-universal
+ * npm install aiuby-cli
  * ```
  *
  * Then add to your opencode.json:
  * ```json
  * {
- *   "plugin": ["ecc-universal"]
+ *   "plugin": ["aiuby-cli"]
  * }
  * ```
  *
@@ -35,7 +35,7 @@
  */
 
 // Export the main plugin
-export { ECCHooksPlugin, default } from "./plugins/index.js"
+export { AiubyHooksPlugin, default } from "./plugins/index.js"
 
 // Export individual components for selective use
 export * from "./plugins/index.js"
@@ -45,7 +45,7 @@ export const VERSION = "1.6.0"
 
 // Plugin metadata
 export const metadata = {
-  name: "ecc-universal",
+  name: "aiuby-cli",
   version: VERSION,
   description: "ECC plugin for OpenCode",
   author: "affaan-m",

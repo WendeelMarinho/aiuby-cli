@@ -4,19 +4,19 @@
 
 ## 企业赞助者
 
-*成为 [企业赞助者](https://github.com/sponsors/affaan-m)，将您的名字展示在此处*
+*成为 [企业赞助者](https://github.com/sponsors/WendeelMarinho)，将您的名字展示在此处*
 
 ## 商业赞助者
 
-*成为 [商业赞助者](https://github.com/sponsors/affaan-m)，将您的名字展示在此处*
+*成为 [商业赞助者](https://github.com/sponsors/WendeelMarinho)，将您的名字展示在此处*
 
 ## 团队赞助者
 
-*成为 [团队赞助者](https://github.com/sponsors/affaan-m)，将您的名字展示在此处*
+*成为 [团队赞助者](https://github.com/sponsors/WendeelMarinho)，将您的名字展示在此处*
 
 ## 个人赞助者
 
-*成为 [赞助者](https://github.com/sponsors/affaan-m)，将您的名字列在此处*
+*成为 [赞助者](https://github.com/sponsors/WendeelMarinho)，将您的名字列在此处*
 
 ***
 
@@ -33,7 +33,7 @@
 
 在赞助者对话中使用这些证明点：
 
-* `ecc-universal` 和 `ecc-agentshield` 的实时 npm 安装/下载指标
+* `aiuby-cli` 和 `ecc-agentshield` 的实时 npm 安装/下载指标
 * 通过 Marketplace 安装的 GitHub App 分发
 * 公开采用信号：星标、分叉、贡献者、发布节奏
 * 跨平台支持：Claude Code、Cursor、OpenCode、Codex 应用/CLI
@@ -42,18 +42,14 @@
 
 ## 赞助等级
 
-| 层级 | 价格 | 权益 |
-|------|-------|----------|
-| 支持者 | 每月 $5 | 名字出现在 README 中，早期访问 |
-| 构建者 | 每月 $10 | 高级工具访问权限 |
-| 专业版 | 每月 $25 | 优先支持，办公时间 |
-| 团队版 | 每月 $100 | 5 个席位，团队配置 |
-| 平台合作伙伴 | 每月 $200 | 月度路线图同步，优先维护者反馈，发布说明提及 |
-| 商业版 | 每月 $500 | 25 个席位，咨询积分 |
-| 企业版 | 每月 $2K | 无限制席位，自定义工具 |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
-[**Become a Sponsor →**](https://github.com/sponsors/affaan-m)
+[**Become a Sponsor →**](https://github.com/sponsors/WendeelMarinho)
 
 ***
 
 *自动更新。最后同步：2026年2月*
+
+## Tiers
+
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.

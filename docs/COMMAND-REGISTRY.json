@@ -3,6 +3,18 @@
   "totalCommands": 94,
   "commands": [
     {
+      "command": "aiuby-guide",
+      "description": "Navigate ECC's current agents, skills, commands, hooks, install profiles, and docs from the live repository surface.",
+      "type": "review",
+      "primaryAgents": [],
+      "allAgents": [],
+      "skills": [
+        "aiuby-guide",
+        "security-scan"
+      ],
+      "path": "commands/aiuby-guide.md"
+    },
+    {
       "command": "aside",
       "description": "Answer a quick side question without interrupting or losing context from the current task. Resume work automatically after answering.",
       "type": "testing",
@@ -98,18 +110,6 @@
         "tdd-workflow"
       ],
       "path": "commands/cpp-test.md"
-    },
-    {
-      "command": "aiuby-guide",
-      "description": "Navigate ECC's current agents, skills, commands, hooks, install profiles, and docs from the live repository surface.",
-      "type": "review",
-      "primaryAgents": [],
-      "allAgents": [],
-      "skills": [
-        "aiuby-guide",
-        "security-scan"
-      ],
-      "path": "commands/aiuby-guide.md"
     },
     {
       "command": "epic-claim",
@@ -1112,11 +1112,11 @@
         "count": 3
       },
       {
-        "skill": "cpp-coding-standards",
+        "skill": "aiuby-guide",
         "count": 2
       },
       {
-        "skill": "cpp-testing",
+        "skill": "cpp-coding-standards",
         "count": 2
       }
     ]

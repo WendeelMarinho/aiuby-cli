@@ -8,7 +8,10 @@ if [[ "${ECC_SKIP_GIT_HOOKS:-0}" == "1" || "${ECC_SKIP_PREPUSH:-0}" == "1" ]]; t
   exit 0
 fi
 
-if [[ -f ".ecc-hooks-disable" || -f ".git/ecc-hooks-disable" ]]; then
+# Accepts the deprecated sentinel too: silently ignoring an existing opt-out
+# would re-enable hooks a user had deliberately turned off. aiuby:compat
+if [[ -f ".aiuby-hooks-disable" || -f ".git/aiuby-hooks-disable" \
+   || -f ".ecc-hooks-disable" || -f ".git/ecc-hooks-disable" ]]; then
   exit 0
 fi
 

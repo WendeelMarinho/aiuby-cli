@@ -14,17 +14,13 @@ ECCはClaude Code、Cursor、OpenCode、Codex app/CLIにまたがるオープン
 
 これらは実用的な出発点であり、パートナーシップの範囲に応じて調整可能です。
 
-| ティア | 価格 | 最適な対象 | 含まれるもの |
-|--------|------|-----------|-------------|
-| パイロットパートナー | $200/月 | 初回スポンサーエンゲージメント | 月次メトリクスアップデート、ロードマッププレビュー、優先的なメンテナーフィードバック |
-| グロースパートナー | $500/月 | ECCを積極的に導入するチーム | パイロット特典 + 月次オフィスアワー同期 + ワークフロー統合ガイダンス |
-| ストラテジックパートナー | $1,000+/月 | プラットフォーム/エコシステムパートナーシップ | グロース特典 + 協調的なローンチサポート + より深いメンテナーコラボレーション |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
 ## スポンサーレポート
 
 月次で共有されるメトリクスには以下が含まれます：
 
-- npmダウンロード数（`ecc-universal`、`ecc-agentshield`）
+- npmダウンロード数（`aiuby-cli`、`ecc-agentshield`）
 - リポジトリ採用状況（スター、フォーク、コントリビューター）
 - GitHub Appインストール推移
 - リリース頻度と信頼性マイルストーン
@@ -39,5 +35,5 @@ ECCはClaude Code、Cursor、OpenCode、Codex app/CLIにまたがるオープン
 
 ## スポンサーになる
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
-- プロジェクトサイト: [https://ecc.tools](https://ecc.tools)
+- GitHub Sponsors: [https://github.com/sponsors/WendeelMarinho](https://github.com/sponsors/WendeelMarinho)
+- プロジェクトサイト: [https://aiuby.com](https://aiuby.com)

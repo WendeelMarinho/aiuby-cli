@@ -5,7 +5,7 @@
  * Displays: model | task | $cost Nt Nf Nm | dir ██░░ N%
  *
  * Registered in settings.json under "statusLine", not in hooks.json.
- * Reads bridge file from ecc-metrics-bridge.js and stdin from Claude Code runtime.
+ * Reads bridge file from aiuby-metrics-bridge.js and stdin from Claude Code runtime.
  */
 
 'use strict';

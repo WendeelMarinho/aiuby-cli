@@ -359,7 +359,7 @@ fn notification_command(platform: &str, title: &str, body: &str) -> Option<(Stri
             "notify-send".to_string(),
             vec![
                 "--app-name".to_string(),
-                "ECC 2.0".to_string(),
+                "Aiuby".to_string(),
                 title.trim().to_string(),
                 body.trim().to_string(),
             ],
@@ -491,7 +491,7 @@ mod tests {
         assert!(!notifier
             .try_notify(
                 NotificationEvent::ApprovalRequest,
-                "ECC 2.0: Approval needed",
+                "Aiuby: Approval needed",
                 "worker-123 needs review",
                 Local.with_ymd_and_hms(2026, 4, 9, 23, 0, 0).unwrap(),
             )
@@ -501,23 +501,23 @@ mod tests {
     #[test]
     fn macos_notifications_use_osascript() {
         let (program, args) =
-            notification_command("macos", "ECC 2.0: Completed", "Task finished").unwrap();
+            notification_command("macos", "Aiuby: Completed", "Task finished").unwrap();
 
         assert_eq!(program, "osascript");
         assert_eq!(args[0], "-e");
         assert!(args[1].contains("display notification"));
-        assert!(args[1].contains("ECC 2.0: Completed"));
+        assert!(args[1].contains("Aiuby: Completed"));
     }
 
     #[test]
     fn linux_notifications_use_notify_send() {
         let (program, args) =
-            notification_command("linux", "ECC 2.0: Approval needed", "worker-123").unwrap();
+            notification_command("linux", "Aiuby: Approval needed", "worker-123").unwrap();
 
         assert_eq!(program, "notify-send");
         assert_eq!(args[0], "--app-name");
-        assert_eq!(args[1], "ECC 2.0");
-        assert_eq!(args[2], "ECC 2.0: Approval needed");
+        assert_eq!(args[1], "Aiuby");
+        assert_eq!(args[2], "Aiuby: Approval needed");
         assert_eq!(args[3], "worker-123");
     }
 
@@ -566,10 +566,10 @@ mod tests {
                 provider: WebhookProvider::Slack,
                 url: "https://hooks.slack.test/services/abc".to_string(),
             },
-            "*ECC 2.0* hello",
+            "*Aiuby* hello",
         );
 
-        assert_eq!(payload, json!({ "text": "*ECC 2.0* hello" }));
+        assert_eq!(payload, json!({ "text": "*Aiuby* hello" }));
     }
 
     #[test]

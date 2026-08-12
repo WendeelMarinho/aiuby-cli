@@ -51,12 +51,12 @@ This document lists each slash command and the primary agent(s) or skills it inv
 
 | CLI surface | Primary skill/runtime | Notes |
 |-------------|-----------------------|-------|
-| `ecc memory init` | unified-memory / `scripts/memory.js` | Initialize project, team, or user Markdown vault scopes |
-| `ecc memory save` | unified-memory / `scripts/memory.js` | Create unreviewed memory; body must come from stdin or a regular file |
-| `ecc memory handoff` | unified-memory / `scripts/memory.js` | Create a targeted, cross-harness handoff |
-| `ecc memory search` | unified-memory / `scripts/memory.js` | Bounded lexical search over selected vault scopes |
-| `ecc memory read` | unified-memory / `scripts/memory.js` | Read one memory plus derived backlinks |
-| `ecc memory doctor` | unified-memory / `scripts/memory.js` | Audit malformed files, duplicate IDs, broken links, and symlinks |
+| `aiuby memory init` | unified-memory / `scripts/memory.js` | Initialize project, team, or user Markdown vault scopes |
+| `aiuby memory save` | unified-memory / `scripts/memory.js` | Create unreviewed memory; body must come from stdin or a regular file |
+| `aiuby memory handoff` | unified-memory / `scripts/memory.js` | Create a targeted, cross-harness handoff |
+| `aiuby memory search` | unified-memory / `scripts/memory.js` | Bounded lexical search over selected vault scopes |
+| `aiuby memory read` | unified-memory / `scripts/memory.js` | Read one memory plus derived backlinks |
+| `aiuby memory doctor` | unified-memory / `scripts/memory.js` | Audit malformed files, duplicate IDs, broken links, and symlinks |
 | `ecc-memory-mcp` | unified-memory / `scripts/memory-mcp.mjs` | Optional stdio MCP adapter; exposes save/search/read/doctor only |
 
 ## Direct-Use Agents
@@ -72,10 +72,10 @@ This document lists each slash command and the primary agent(s) or skills it inv
 - **eval-harness**: `/eval`
 - **security-scan**: `/security-scan` (runs AgentShield)
 - **strategic-compact**: suggested at compaction points (hooks)
-- **unified-memory**: `ecc memory ...` and the opt-in `ecc-memory-mcp` server
+- **unified-memory**: `aiuby memory ...` and the opt-in `ecc-memory-mcp` server
 
 ## How to use this map
 
 - **Discoverability:** Find which command triggers which agent (e.g. “use `/code-review` for code-reviewer”).
 - **Refactoring:** When renaming or removing an agent, search this doc and the command files for references.
-- **CI/docs:** The catalog script (`node scripts/ci/catalog.js`) outputs agent/command/skill counts; this map complements it with command–agent relationships.
+- **CI/docs:** The catalog script (`node scripts/dev/catalog.js`) outputs agent/command/skill counts; this map complements it with command–agent relationships.

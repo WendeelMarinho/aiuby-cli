@@ -5,6 +5,6 @@ module.exports = createInstallTargetAdapter({
   target: 'kimi',
   kind: 'project',
   rootSegments: ['.kimi'],
-  installStatePathSegments: ['ecc-install-state.json'],
+  installStatePathSegments: ['aiuby-install-state.json'],
   nativeRootRelativePath: '.kimi',
 });

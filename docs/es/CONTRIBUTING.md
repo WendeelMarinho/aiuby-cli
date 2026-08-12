@@ -52,7 +52,7 @@ Comandos slash que invocan flujos de trabajo útiles:
 
 ```bash
 # 1. Hacer fork y clonar
-gh repo fork affaan-m/everything-claude-code --clone
+gh repo fork WendeelMarinho/aiuby-cli --clone
 cd everything-claude-code
 
 # 2. Crear una rama
@@ -465,8 +465,8 @@ Cómo lo probaste.
 
 ## ¿Preguntas?
 
-- **Issues:** [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
-- **X/Twitter:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Issues:** [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
+- **X/Twitter:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 
 ---
 

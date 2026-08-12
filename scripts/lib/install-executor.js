@@ -9,8 +9,8 @@ const { SUPPORTED_INSTALL_TARGETS, listLegacyCompatibilityLanguages, resolveLega
 const { getInstallTargetAdapter } = require('./install-targets/registry');
 
 const LANGUAGE_NAME_PATTERN = /^[a-zA-Z0-9_-]+$/;
-const CLAUDE_ECC_NAMESPACE = 'ecc';
-const EXCLUDED_GENERATED_SOURCE_SUFFIXES = ['/ecc-install-state.json', '/ecc/install-state.json'];
+const CLAUDE_AIUBY_NAMESPACE = 'aiuby';
+const EXCLUDED_GENERATED_SOURCE_SUFFIXES = ['/aiuby-install-state.json', '/aiuby/install-state.json', '/ecc-install-state.json', '/ecc/install-state.json'];
 
 function getSourceRoot() {
   return path.join(__dirname, '../..');
@@ -110,6 +110,12 @@ function listFilesRecursive(dirPath) {
 
 function isGeneratedRuntimeSourcePath(sourceRelativePath) {
   const normalizedPath = String(sourceRelativePath || '').replace(/\\/g, '/');
+  // Python bytecode caches are build byproducts of whoever ran the tooling last,
+  // not installable content. They also carry pre-rename module names, which is
+  // how ecc_dashboard_runtime.pyc kept landing in fresh installs.
+  if (normalizedPath.includes('/__pycache__/') || /\.py[cod]$/.test(normalizedPath)) {
+    return true;
+  }
   return EXCLUDED_GENERATED_SOURCE_SUFFIXES.some(suffix => normalizedPath.endsWith(suffix));
 }
 
@@ -305,7 +311,7 @@ function isDirectoryNonEmpty(dirPath) {
 function planClaudeStyleLegacyInstall(context, { adapterId, adapterRootInput, rulesDir: rulesDirOverride }) {
   const adapter = getInstallTargetAdapter(adapterId);
   const targetRoot = adapter.resolveRoot(adapterRootInput);
-  const rulesDir = rulesDirOverride || path.join(targetRoot, 'rules', CLAUDE_ECC_NAMESPACE);
+  const rulesDir = rulesDirOverride || path.join(targetRoot, 'rules', CLAUDE_AIUBY_NAMESPACE);
   const installStatePath = adapter.getInstallStatePath(adapterRootInput);
   const operations = [];
   const warnings = [];

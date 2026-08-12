@@ -33,7 +33,7 @@ const zhCnReadmePath = path.join(repoRoot, 'docs', 'zh-CN', 'README.md');
 const selectiveInstallArchitecturePath = path.join(repoRoot, 'docs', 'SELECTIVE-INSTALL-ARCHITECTURE.md');
 const opencodePackageJsonPath = path.join(repoRoot, '.opencode', 'package.json');
 const opencodePackageLockPath = path.join(repoRoot, '.opencode', 'package-lock.json');
-const opencodeHooksPluginPath = path.join(repoRoot, '.opencode', 'plugins', 'ecc-hooks.ts');
+const opencodeHooksPluginPath = path.join(repoRoot, '.opencode', 'plugins', 'aiuby-hooks.ts');
 const semverPattern = '[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?';
 
 let passed = 0;
@@ -131,9 +131,13 @@ test('agent.yaml version matches package.json', () => {
   assert.strictEqual(match[1], expectedVersion);
 });
 
-test('agent.yaml uses canonical ECC identity', () => {
+test('agent.yaml uses canonical Aiuby identity', () => {
   const agentYamlSource = fs.readFileSync(agentYamlPath, 'utf8');
-  assert.ok(/^name:\s*ecc$/m.test(agentYamlSource), 'Expected agent.yaml to use the ecc name');
+  assert.ok(/^name:\s*aiuby$/m.test(agentYamlSource), 'Expected agent.yaml to use the aiuby name');
+  assert.ok(
+    !/^author:\s*affaan-m$/m.test(agentYamlSource),
+    'agent.yaml must not attribute the export surface to the upstream maintainer'
+  );
 });
 
 test('VERSION file matches package.json', () => {
@@ -149,10 +153,10 @@ test('docs/SELECTIVE-INSTALL-ARCHITECTURE.md repoVersion example matches package
   assert.strictEqual(match[1], expectedVersion);
 });
 
-test('.opencode/plugins/ecc-hooks.ts active plugin banner matches package.json', () => {
+test('.opencode/plugins/aiuby-hooks.ts active plugin banner matches package.json', () => {
   const source = fs.readFileSync(opencodeHooksPluginPath, 'utf8');
   const match = source.match(new RegExp(`## Active Plugin: ECC v(${semverPattern})`));
-  assert.ok(match, 'Expected .opencode/plugins/ecc-hooks.ts to declare an active plugin banner');
+  assert.ok(match, 'Expected .opencode/plugins/aiuby-hooks.ts to declare an active plugin banner');
   assert.strictEqual(match[1], expectedVersion);
 });
 
@@ -197,7 +201,7 @@ test('claude plugin.json version matches package.json', () => {
 });
 
 test('claude plugin.json uses short plugin slug', () => {
-  assert.strictEqual(claudePlugin.name, 'ecc');
+  assert.strictEqual(claudePlugin.name, 'aiuby');
 });
 
 test('claude plugin.json does NOT have agents field (unsupported by Claude Code validator)', () => {
@@ -242,8 +246,8 @@ test('claude marketplace.json keeps only Claude-supported top-level keys', () =>
 
 test('claude marketplace.json has plugins array with the published plugin entry', () => {
   assert.ok(Array.isArray(claudeMarketplace.plugins) && claudeMarketplace.plugins.length > 0, 'Expected plugins array');
-  assert.strictEqual(claudeMarketplace.name, 'ecc');
-  assert.strictEqual(claudeMarketplace.plugins[0].name, 'ecc');
+  assert.strictEqual(claudeMarketplace.name, 'aiuby');
+  assert.strictEqual(claudeMarketplace.plugins[0].name, 'aiuby');
 });
 
 test('claude marketplace.json plugin version matches package.json', () => {
@@ -270,7 +274,7 @@ test('codex plugin.json has name field', () => {
 });
 
 test('codex plugin.json uses short plugin slug', () => {
-  assert.strictEqual(codexPlugin.name, 'ecc');
+  assert.strictEqual(codexPlugin.name, 'aiuby');
 });
 
 test('codex plugin.json has version field', () => {
@@ -300,8 +304,8 @@ test('codex plugin.json has interface.displayName', () => {
 });
 
 test('codex plugin.json uses canonical ECC repo and display name', () => {
-  assert.strictEqual(codexPlugin.repository, 'https://github.com/affaan-m/ECC');
-  assert.strictEqual(codexPlugin.interface.displayName, 'ECC');
+  assert.strictEqual(codexPlugin.repository, 'https://github.com/WendeelMarinho/aiuby-cli');
+  assert.strictEqual(codexPlugin.interface.displayName, 'Aiuby');
 });
 
 test('codex plugin presentation assets exist and ship in npm package', () => {
@@ -368,7 +372,7 @@ test('marketplace.json has name field', () => {
 });
 
 test('marketplace.json uses short marketplace slug', () => {
-  assert.strictEqual(marketplace.name, 'ecc');
+  assert.strictEqual(marketplace.name, 'aiuby');
 });
 
 test('marketplace.json has plugins array with at least one entry', () => {
@@ -386,7 +390,7 @@ test('marketplace.json plugin entries have required fields', () => {
 });
 
 test('marketplace.json plugin entry uses short plugin slug', () => {
-  assert.strictEqual(marketplace.plugins[0].name, 'ecc');
+  assert.strictEqual(marketplace.plugins[0].name, 'aiuby');
 });
 
 test('marketplace.json plugin version matches package.json', () => {
@@ -411,29 +415,29 @@ test('marketplace local plugin path resolves to a concrete plugin subdirectory (
   }
 });
 
-// ── plugins/ecc marketplace plugin folder ─────────────────────────────────────
+// ── plugins/aiuby marketplace plugin folder ─────────────────────────────────────
 // Thin Codex plugin target for the repo marketplace. Content is single-sourced
 // at the repo root (no vendored skills/MCP copies) per the maintainer direction
 // on #2097; these tests pin the manifest sync and the parent-relative refs.
-console.log('\n=== plugins/ecc Codex marketplace plugin folder ===\n');
+console.log('\n=== plugins/aiuby Codex marketplace plugin folder ===\n');
 
-const marketplacePluginManifestPath = path.join(repoRoot, 'plugins', 'ecc', '.codex-plugin', 'plugin.json');
-const marketplacePluginManifest = loadJsonObject(marketplacePluginManifestPath, 'plugins/ecc/.codex-plugin/plugin.json');
+const marketplacePluginManifestPath = path.join(repoRoot, 'plugins', 'aiuby', '.codex-plugin', 'plugin.json');
+const marketplacePluginManifest = loadJsonObject(marketplacePluginManifestPath, 'plugins/aiuby/.codex-plugin/plugin.json');
 const rootCodexManifest = loadJsonObject(path.join(repoRoot, '.codex-plugin', 'plugin.json'), '.codex-plugin/plugin.json');
 
-test('plugins/ecc manifest name matches the root Codex manifest', () => {
+test('plugins/aiuby manifest name matches the root Codex manifest', () => {
   assert.strictEqual(marketplacePluginManifest.name, rootCodexManifest.name);
 });
 
-test('plugins/ecc manifest version matches package.json', () => {
+test('plugins/aiuby manifest version matches package.json', () => {
   assert.strictEqual(marketplacePluginManifest.version, expectedVersion);
 });
 
-test('plugins/ecc manifest version matches the root Codex manifest', () => {
+test('plugins/aiuby manifest version matches the root Codex manifest', () => {
   assert.strictEqual(marketplacePluginManifest.version, rootCodexManifest.version);
 });
 
-test('plugins/ecc manifest reuses root skills and MCP config without vendoring', () => {
+test('plugins/aiuby manifest reuses root skills and MCP config without vendoring', () => {
   const pluginDir = path.dirname(path.dirname(marketplacePluginManifestPath));
 
   const skillsTarget = path.resolve(pluginDir, marketplacePluginManifest.skills);
@@ -444,11 +448,11 @@ test('plugins/ecc manifest reuses root skills and MCP config without vendoring',
   assert.strictEqual(mcpTarget, path.join(repoRoot, '.mcp.json'), `mcpServers ref must resolve to the root .mcp.json, got: ${marketplacePluginManifest.mcpServers}`);
   assert.ok(fs.existsSync(mcpTarget), 'Root .mcp.json missing');
 
-  assert.ok(!fs.existsSync(path.join(pluginDir, 'skills')), 'plugins/ecc must not vendor a second skills/ copy (see #2097 review)');
-  assert.ok(!fs.existsSync(path.join(pluginDir, '.mcp.json')), 'plugins/ecc must not vendor a second .mcp.json (see #2097 review)');
+  assert.ok(!fs.existsSync(path.join(pluginDir, 'skills')), 'plugins/aiuby must not vendor a second skills/ copy (see #2097 review)');
+  assert.ok(!fs.existsSync(path.join(pluginDir, '.mcp.json')), 'plugins/aiuby must not vendor a second .mcp.json (see #2097 review)');
 });
 
-test('plugins/ecc manifest interface assets resolve to root assets', () => {
+test('plugins/aiuby manifest interface assets resolve to root assets', () => {
   const pluginDir = path.dirname(path.dirname(marketplacePluginManifestPath));
 
   for (const ref of [marketplacePluginManifest.interface.composerIcon, marketplacePluginManifest.interface.logo]) {
@@ -458,13 +462,13 @@ test('plugins/ecc manifest interface assets resolve to root assets', () => {
   }
 });
 
-test('plugins/ecc README documents the upstream Codex fragility', () => {
-  const readmePath = path.join(repoRoot, 'plugins', 'ecc', 'README.md');
-  assert.ok(fs.existsSync(readmePath), 'Expected plugins/ecc/README.md');
+test('plugins/aiuby README documents the upstream Codex fragility', () => {
+  const readmePath = path.join(repoRoot, 'plugins', 'aiuby', 'README.md');
+  assert.ok(fs.existsSync(readmePath), 'Expected plugins/aiuby/README.md');
   const source = fs.readFileSync(readmePath, 'utf8');
-  assert.ok(source.includes('openai/codex'), 'plugins/ecc README must link the upstream Codex discovery issue');
-  assert.ok(source.includes('check-plugin-cache.js'), 'plugins/ecc README must point at the cache health check');
-  assert.ok(source.includes('sync-aiuby-to-codex.sh'), 'plugins/ecc README must point at the supported manual sync flow');
+  assert.ok(source.includes('openai/codex'), 'plugins/aiuby README must link the upstream Codex discovery issue');
+  assert.ok(source.includes('check-plugin-cache.js'), 'plugins/aiuby README must point at the cache health check');
+  assert.ok(source.includes('sync-aiuby-to-codex.sh'), 'plugins/aiuby README must point at the supported manual sync flow');
 });
 
 test('.opencode/package.json version matches package.json', () => {
@@ -513,7 +517,7 @@ test('user-facing docs do not use the legacy non-URL marketplace add form', () =
 test('.codex-plugin README uses current marketplace add flow', () => {
   const readme = fs.readFileSync(path.join(repoRoot, '.codex-plugin', 'README.md'), 'utf8');
   assert.ok(readme.includes('codex plugin marketplace add'), 'Expected .codex-plugin README to document codex plugin marketplace add');
-  assert.ok(readme.includes('codex plugin marketplace add affaan-m/ECC'), 'Expected .codex-plugin README to document the canonical ECC repo marketplace source');
+  assert.ok(readme.includes('codex plugin marketplace add WendeelMarinho/aiuby-cli'), 'Expected .codex-plugin README to document the canonical Aiuby repo marketplace source');
   assert.ok(readme.includes('Official Plugin Directory publishing is coming soon'), 'Expected .codex-plugin README to document current official directory status');
   assert.ok(!/\bcodex plugin install\b/.test(readme), 'codex plugin install is not a current Codex CLI command');
 });

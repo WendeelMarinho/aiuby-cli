@@ -18,7 +18,7 @@ struct DispatchPassSummary {
 /// Background daemon that monitors sessions, handles heartbeats,
 /// and cleans up stale resources.
 pub async fn run(db: StateStore, cfg: Config) -> Result<()> {
-    tracing::info!("ECC daemon started");
+    tracing::info!("Aiuby daemon started");
     resume_crashed_sessions(&db)?;
 
     let heartbeat_interval = Duration::from_secs(cfg.heartbeat_interval_secs);

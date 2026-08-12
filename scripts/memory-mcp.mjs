@@ -403,7 +403,7 @@ function createMemoryMcpService(options = {}) {
             tools: { listChanged: false },
           },
           serverInfo: {
-            name: 'ecc-memory-vault',
+            name: 'aiuby-memory-vault',
             version: '1.0.0',
           },
           instructions: [

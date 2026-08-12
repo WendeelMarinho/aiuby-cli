@@ -10,7 +10,6 @@
 
 <p align="center">
   <a href="https://aiuby.com"><img src="https://img.shields.io/badge/Website-aiuby.com-111827?logo=googlechrome&logoColor=white" alt="Aiuby website" /></a>
-  <a href="https://cortex.aiuby.com"><img src="https://img.shields.io/badge/Cortex-AI%20Engineering-2563EB" alt="Aiuby Cortex" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" /></a>
 </p>
 
@@ -112,16 +111,125 @@ Aiuby combines multiple engineering surfaces into one coordinated foundation.
 
 The current foundation includes the inherited technical catalog below:
 
-| Included | Current surface | Purpose |
-|---|---:|---|
-| Agents | 67 | Planning, architecture, review, build repair, security, language, data, ML, and domain work |
-| Skills | 281 | TDD, research, security, documentation, frontend, backend, data, ML, operations, and business workflows |
-| Commands | 94 | Maintained compatibility entry points for command-oriented workflows |
+<!-- aiuby:counts:begin -->
+| Surface | Count |
+|---|---:|
+| Agents | 67 |
+| Skills | 281 |
+| Commands | 94 |
+| Catalog total | 442 |
+| Harnesses | 13 |
+| Install targets | 14 |
+<!-- aiuby:counts:end -->
+
+The table above is generated from the tree by `npm run counts:write` and
+verified in CI by `npm run counts:check`. It is never edited by hand.
+
+| Also included | Scope | Purpose |
+|---|---|---|
 | Hooks and memory | Runtime | Enforcement, session summaries, continuous learning, context controls, and handoffs |
 | Rules | Selective | Common, language-specific, framework-specific, and project-level standards |
 | Security scanning | Included | Analysis of agent configuration, secrets, permissions, prompts, hooks, and MCP surfaces |
 
-Counts describe the current repository and may change as the Aiuby catalog is consolidated.
+A **harness** is a distinct agent tool Aiuby installs into; an **install target** is one harness-and-scope adapter. Claude Code has both a home and a project target, which is why the two numbers differ. See [ADR-0001 §3](docs/architecture/ADR-0001-aiuby-naming-and-namespaces.md).
+
+---
+
+## Installation
+
+### Find the right components first
+
+Do not guess a profile. Describe the work and let the catalog answer:
+
+```bash
+npx aiuby consult "security reviews" --target claude
+```
+
+It returns matching components, related profiles, and preview/install commands.
+
+### Pick one path only
+
+**Recommended default:** install the Claude Code plugin (Path 1).
+
+**Do not stack install methods.** Two paths install two copies of the same content, and the copies then compete. This is the most common source of confusing behavior.
+
+### Path 1 — Claude Code plugin (recommended default)
+
+```text
+/plugin marketplace add WendeelMarinho/aiuby-cli
+/plugin install aiuby@aiuby
+```
+
+Commands then live under the plugin namespace — `/aiuby:plan`, `/aiuby:tdd`, `/aiuby:code-review`.
+
+If you choose this path, stop there. The plugin already ships agents, skills, commands, and hooks, so do not run the full installer on top of it.
+
+### Path 2 — CLI
+
+```bash
+npm install -g aiuby-cli
+
+aiuby install --profile full --target claude
+```
+
+Or without a global install:
+
+```bash
+npx aiuby-install --profile minimal --target claude
+./install.sh --profile minimal --target claude
+```
+
+If you choose this path, stop there. Do not also run `/plugin install`.
+
+### Low-context / no-hooks path
+
+Use this when the harness has a tight context budget, or you do not want automation running on every tool call:
+
+```bash
+aiuby install --profile core --without baseline:hooks --target claude
+```
+
+This profile intentionally excludes `hooks-runtime`. Nothing runs automatically; every workflow is invoked explicitly.
+
+Add hooks later, once you want them:
+
+```bash
+bash ./install.sh --target claude --modules hooks-runtime
+pwsh -File .\install.ps1 --target claude --modules hooks-runtime
+```
+
+### Path 3 — manual
+
+Copy only what you want. Skills must land as **direct children** of `~/.claude/skills/` — a nested `~/.claude/skills/aiuby/tdd-workflow/` is not discovered:
+
+```bash
+cp -r skills/tdd-workflow ~/.claude/skills/
+cp -r agents/code-reviewer.md ~/.claude/agents/
+```
+
+Do not copy the raw repo `hooks/hooks.json` into `~/.claude/settings.json` or `~/.claude/hooks/hooks.json` — on Windows, `%USERPROFILE%\\.claude`. Hook entries need matchers and a resolvable plugin root; a raw copy will not run and can shadow a working config. Use the installer or the plugin.
+
+**Rules** are the one place to be selective. Start with `rules/common` plus one language or framework pack you actually use. Installed rules land under `~/.claude/rules/aiuby/`, so they never collide with rules you wrote yourself.
+
+**Cursor** agents install as `.cursor/agents/ecc-*.md` under a project-scoped namespace. Cursor-native loading behavior can vary by Cursor build. Restart Cursor if the agents do not appear. Aiuby does not install root `AGENTS.md` into `.cursor/`.
+
+### Optional: shared memory over MCP
+
+The `aiuby-memory-mcp` binary exposes the memory vault to any MCP-capable harness. It ships with the package and is registered from `mcp-configs/mcp-servers.json`.
+
+### Reset / Uninstall Aiuby
+
+```bash
+node scripts/aiuby.js doctor
+node scripts/aiuby.js list-installed
+node scripts/uninstall.js --dry-run
+```
+
+Aiuby only removes files recorded in its install-state. It never touches your memory vault, your configuration, or anything you authored. To reset, uninstall and reinstall the profile you want.
+
+If you installed the plugin, remove the plugin from Claude Code instead — that path is managed by the harness, not by install-state.
+
+Migrating from ECC? See [docs/migration/from-ecc-to-aiuby.md](docs/migration/from-ecc-to-aiuby.md).
 
 ---
 
@@ -429,7 +537,7 @@ Feature parity must not be assumed. Each harness has different context, hook, ag
 
 ---
 
-## Installation
+## Installing into a harness
 
 > [!IMPORTANT]
 > This README establishes the **Aiuby AI Engineering** product identity. Some internal package names, scripts, command namespaces, directories, and compatibility shims may still use the legacy `ecc` identifier while the technical migration is completed.
@@ -634,17 +742,20 @@ The company and engineering organization responsible for developing AI-native sy
 
 - Website: [aiuby.com](https://aiuby.com)
 
-### Cortex
-
-The operational intelligence surface for engineering context, analysis, workflows, agents, evaluations, and organizational knowledge.
-
-- Platform: [cortex.aiuby.com](https://cortex.aiuby.com)
-
 ### Aiuby CLI
 
-The future command-line control surface for installing, configuring, inspecting, evaluating, and operating Aiuby engineering capabilities across projects and harnesses.
+The command-line control surface for installing, configuring, inspecting, and operating Aiuby engineering capabilities across projects and harnesses.
 
-The current repository may continue to expose legacy `ecc` commands during the migration period.
+```bash
+aiuby install --profile developer --target claude
+aiuby doctor
+aiuby migrate          # move an existing ECC installation; dry run by default
+aiuby --help           # full command list
+```
+
+The deprecated `ecc*` binaries still work through the whole `0.x` series and <!-- aiuby:compat -->
+print the Aiuby replacement on `stderr`. They are removed at `1.0.0`. See
+[docs/migration/from-ecc-to-aiuby.md](docs/migration/from-ecc-to-aiuby.md).
 
 ---
 
@@ -697,7 +808,6 @@ The objective is to give engineering teams a more capable operating model.
 - connect repositories, Jira, documentation, CI/CD, infrastructure, and observability;
 - represent projects, architecture, decisions, risks, requirements, and engineering evidence;
 - improve cross-session and cross-harness handoffs;
-- integrate with Cortex.
 
 ### Phase 4 — Evaluation and governance
 
@@ -773,15 +883,64 @@ See `CONTRIBUTING.md` for the repository contribution process.
 
 ---
 
+## Operational reference
+
+### Harness guides
+
+| Harness | Guide |
+|---|---|
+| Codex | [docs/CODEX-NAVIGATION-GUIDE.md](docs/CODEX-NAVIGATION-GUIDE.md) |
+| Hermes | [docs/HERMES-SETUP.md](docs/HERMES-SETUP.md) |
+| Command/agent map | [docs/COMMAND-AGENT-MAP.md](docs/COMMAND-AGENT-MAP.md) |
+
+Release notes live under [docs/releases/](docs/releases/) — most recently [docs/releases/2.0.0/release-notes.md](docs/releases/2.0.0/release-notes.md).
+
+### Managing MCP servers
+
+Aiuby ships MCP server templates in `mcp-configs/mcp-servers.json`; it does not turn servers on or off for you.
+
+Use `/mcp` for Claude Code runtime disables; Claude Code persists those choices in `~/.claude.json`. Editing `settings.json` by hand to disable a server is not the supported path and drifts from what the client actually reads.
+
+`ECC_DISABLED_MCPS` is an Aiuby install/sync filter, not a live Claude Code toggle. It controls which servers get written during install; it cannot turn off a server that is already running. The variable keeps its legacy name because the code reads it directly rather than through the compatibility resolver — it is renamed at `1.0.0` with the rest.
+
+### GitHub Copilot
+
+Copilot reads reusable prompts from prompt files. Enable them with the `chat.promptFiles` setting in `.vscode/settings.json`; Aiuby installs them into `.github/prompts/`, which Copilot discovers by convention. There is no separate Copilot installer.
+
+### Itô compute (optional, opt-in)
+
+Aiuby never bundles the Itô CLI. The `ito-compute` module is opt-in and off by default; the bridge invokes a CLI you installed and configured yourself.
+
+Authentication and validation are separate steps:
+
+```bash
+aiuby ito login [--no-browser]   # device authorization; the token is stored in your OS Keychain
+aiuby ito auth                   # validates the stored credential, no browser, no network writes
+aiuby ito find --gpu h200 --count 8
+```
+
+`login` is the only command that opens a browser — `--no-browser` prints a device code instead. `auth` only validates what is already stored, so it never takes that flag.
+
+`ITO_API_KEY` is read by `auth`, `find`, and `status` when you prefer an explicit key over the stored credential. `ITO_AUTH_MODE=legacy` exists only for pre-device-authorization deployments and is not required for normal use.
+
+---
+
 ## Attribution and Upstream Foundation
 
 This repository is based on and adapted from the open-source **ECC — Agent Harness Operating System** project by Affaan Mustafa and its contributors.
 
-The Aiuby distribution introduces a new product identity, engineering philosophy, ecosystem direction, documentation structure, and planned runtime migration while preserving the obligations of the original MIT license.
+The Aiuby distribution introduces a new product identity, engineering philosophy, ecosystem direction, documentation structure, and runtime migration while preserving the obligations of the original MIT license.
 
-Upstream project:
+| Document | What it records |
+|---|---|
+| [NOTICE](NOTICE) | Formal attribution notice, shipped with the package |
+| [UPSTREAM.md](UPSTREAM.md) | What the fork inherited, what diverged, and why `git blame` cannot reach upstream authors |
+| [LICENSE](LICENSE) | MIT, dual copyright |
+| [docs/migration/from-ecc-to-aiuby.md](docs/migration/from-ecc-to-aiuby.md) | Migrating an existing ECC installation |
 
-- [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
+Upstream project: [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
+
+Aiuby is **not affiliated with, endorsed by, or supported by** the ECC project. Send Aiuby issues to [this repository](https://github.com/WendeelMarinho/aiuby-cli/issues), never to the upstream maintainer.
 
 Do not remove copyright notices or the original license text where preservation is required.
 
@@ -801,6 +960,5 @@ See [`LICENSE`](LICENSE) for the complete license text and preserved copyright n
 </p>
 
 <p align="center">
-  <a href="https://aiuby.com">Aiuby</a> ·
-  <a href="https://cortex.aiuby.com">Cortex</a>
+  <a href="https://aiuby.com">Aiuby</a>
 </p>

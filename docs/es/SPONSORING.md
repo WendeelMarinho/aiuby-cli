@@ -14,17 +14,13 @@ El patrocinio financia directamente:
 
 Estos son puntos de partida prácticos y pueden ajustarse según el alcance de la colaboración.
 
-| Nivel | Precio | Mejor Para | Incluye |
-|-------|-------|----------|---------|
-| Pilot Partner | $200/mes | Primera colaboración como patrocinador | Actualización mensual de métricas, vista previa del roadmap, retroalimentación prioritaria del mantenedor |
-| Growth Partner | $500/mes | Equipos adoptando activamente ECC | Beneficios de Pilot + sincronización mensual de office hours + orientación de integración de flujos de trabajo |
-| Strategic Partner | $1,000+/mes | Colaboraciones de plataforma/ecosistema | Beneficios de Growth + soporte coordinado de lanzamiento + colaboración más profunda con el mantenedor |
+See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current tiers, amounts, and benefits.
 
 ## Informes de Patrocinio
 
 Las métricas compartidas mensualmente pueden incluir:
 
-- Descargas de npm (`ecc-universal`, `ecc-agentshield`)
+- Descargas de npm (`aiuby-cli`, `ecc-agentshield`)
 - Adopción del repositorio (estrellas, forks, contribuidores)
 - Tendencia de instalaciones de la GitHub App
 - Cadencia de lanzamientos e hitos de confiabilidad
@@ -39,5 +35,5 @@ Para comandos exactos y un proceso de extracción repetible, consulta [`docs/bus
 
 ## Patrocina Aquí
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
-- Sitio del proyecto: [https://ecc.tools](https://ecc.tools)
+- GitHub Sponsors: [https://github.com/sponsors/WendeelMarinho](https://github.com/sponsors/WendeelMarinho)
+- Sitio del proyecto: [https://aiuby.com](https://aiuby.com)

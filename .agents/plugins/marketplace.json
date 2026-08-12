@@ -1,15 +1,15 @@
 {
-  "name": "ecc",
+  "name": "aiuby",
   "interface": {
-    "displayName": "ECC"
+    "displayName": "Aiuby"
   },
   "plugins": [
     {
-      "name": "ecc",
+      "name": "aiuby",
       "version": "0.1.0",
       "source": {
         "source": "local",
-        "path": "./plugins/ecc"
+        "path": "./plugins/aiuby"
       },
       "policy": {
         "installation": "AVAILABLE",

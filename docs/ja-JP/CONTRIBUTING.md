@@ -53,7 +53,7 @@
 
 ```bash
 # 1. Fork とクローン
-gh repo fork affaan-m/everything-claude-code --clone
+gh repo fork WendeelMarinho/aiuby-cli --clone
 cd everything-claude-code
 
 # 2. ブランチを作成
@@ -422,8 +422,8 @@ docs: improve contributing guide
 
 ## 質問がありますか？
 
-- **Issues:** [github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
-- **X/Twitter:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Issues:** [github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
+- **X/Twitter:** [@aiuby.ai](https://instagram.com/aiuby.ai)
 
 ---
 

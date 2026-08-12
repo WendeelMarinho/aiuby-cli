@@ -51,7 +51,7 @@ function runTests() {
 
   if (test('README documents reset and uninstall flow', () => {
     assert.ok(
-      readme.includes('### Reset / Uninstall ECC'),
+      readme.includes('### Reset / Uninstall Aiuby'),
       'README should have a visible reset/uninstall section'
     );
     assert.ok(
@@ -67,7 +67,7 @@ function runTests() {
       'README should document doctor before reinstalling'
     );
     assert.ok(
-      readme.includes('ECC only removes files recorded in its install-state.'),
+      readme.includes('Aiuby only removes files recorded in its install-state.'),
       'README should explain uninstall safety boundaries'
     );
   })) passed++; else failed++;
@@ -82,7 +82,7 @@ function runTests() {
       'README should document the shell minimal profile command'
     );
     assert.ok(
-      readme.includes('npx ecc-install --profile minimal --target claude'),
+      readme.includes('npx aiuby-install --profile minimal --target claude'),
       'README should document the npx minimal profile command'
     );
     assert.ok(
@@ -101,7 +101,7 @@ function runTests() {
       'README should surface component discovery before install steps'
     );
     assert.ok(
-      readme.includes('npx ecc consult "security reviews" --target claude'),
+      readme.includes('npx aiuby consult "security reviews" --target claude'),
       'README should document the packaged consult command'
     );
     assert.ok(
@@ -120,7 +120,7 @@ function runTests() {
       'README should avoid overclaiming Cursor agent loading semantics'
     );
     assert.ok(
-      readme.includes('ECC does not install root `AGENTS.md` into `.cursor/`.'),
+      readme.includes('Aiuby does not install root `AGENTS.md` into `.cursor/`.'),
       'README should explain why root AGENTS.md is not copied into Cursor context'
     );
   })) passed++; else failed++;
@@ -135,27 +135,27 @@ function runTests() {
       'README should steer users away from copying every rules directory'
     );
     assert.ok(
-      readme.includes('~/.claude/rules/ecc/'),
-      'README should steer plugin-path rules into an ECC-owned namespace'
+      readme.includes('~/.claude/rules/aiuby/'),
+      'README should steer plugin-path rules into an Aiuby-owned namespace'
     );
   })) passed++; else failed++;
 
-  if (test('rules README mirrors ECC namespaced install path', () => {
+  if (test('rules README mirrors Aiuby namespaced install path', () => {
     assert.ok(
-      rulesReadme.includes('mkdir -p ~/.claude/rules/ecc'),
-      'rules README should create the ECC-owned user-level rules namespace'
+      rulesReadme.includes('mkdir -p ~/.claude/rules/aiuby'),
+      'rules README should create the Aiuby-owned user-level rules namespace'
     );
     assert.ok(
-      rulesReadme.includes('cp -r rules/common ~/.claude/rules/ecc/'),
-      'rules README should copy common rules under ~/.claude/rules/ecc/'
+      rulesReadme.includes('cp -r rules/common ~/.claude/rules/aiuby/'),
+      'rules README should copy common rules under ~/.claude/rules/aiuby/'
     );
     assert.ok(
-      rulesReadme.includes('cp -r rules/typescript ~/.claude/rules/ecc/'),
-      'rules README should copy language rules under ~/.claude/rules/ecc/'
+      rulesReadme.includes('cp -r rules/typescript ~/.claude/rules/aiuby/'),
+      'rules README should copy language rules under ~/.claude/rules/aiuby/'
     );
     assert.ok(
-      rulesReadme.includes('mkdir -p .claude/rules/ecc'),
-      'rules README should document the project-local ECC namespace'
+      rulesReadme.includes('mkdir -p .claude/rules/aiuby'),
+      'rules README should document the project-local Aiuby namespace'
     );
     assert.ok(
       !rulesReadme.includes('~/.claude/rules/typescript'),

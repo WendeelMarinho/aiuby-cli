@@ -48,22 +48,22 @@ const REQUIRED_URL_SURFACES = [
   {
     id: 'github-prerelease-url',
     label: 'GitHub prerelease URL',
-    exampleUrl: 'https://github.com/affaan-m/ECC/releases/tag/v2.0.0-rc.1',
+    exampleUrl: 'https://github.com/WendeelMarinho/aiuby-cli/releases/tag/v2.0.0-rc.1',
   },
   {
     id: 'npm-rc-package-url',
     label: 'npm rc package URL',
-    exampleUrl: 'https://www.npmjs.com/package/ecc-universal/v/2.0.0-rc.1',
+    exampleUrl: 'https://www.npmjs.com/package/aiuby-cli/v/2.0.0-rc.1',
   },
   {
     id: 'claude-plugin-tag-url',
     label: 'Claude plugin tag URL',
-    exampleUrl: 'https://github.com/affaan-m/ECC/releases/tag/ecc--v2.0.0-rc.1',
+    exampleUrl: 'https://github.com/WendeelMarinho/aiuby-cli/releases/tag/ecc--v2.0.0-rc.1',
   },
   {
     id: 'codex-repo-marketplace-evidence',
     label: 'Codex repo-marketplace evidence',
-    exampleUrl: 'https://github.com/affaan-m/ECC/tree/v2.0.0-rc.1/.codex-plugin',
+    exampleUrl: 'https://github.com/WendeelMarinho/aiuby-cli/tree/v2.0.0-rc.1/.codex-plugin',
   },
   {
     id: 'primary-launch-video-url',

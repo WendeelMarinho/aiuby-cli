@@ -282,8 +282,8 @@ claude --version
 # Requires Claude Code 2.0+
 
 # Manual install (if marketplace fails)
-git clone https://github.com/affaan-m/everything-claude-code.git
-cp -r everything-claude-code ~/.claude/plugins/ecc
+git clone https://github.com/WendeelMarinho/aiuby-cli.git
+cp -r everything-claude-code ~/.claude/plugins/aiuby
 ```
 
 ### 包管理器检测失败
@@ -398,7 +398,7 @@ cd ~/.claude/plugins/cache/ecc
 npm install
 
 # Or for manual install
-cd ~/.claude/plugins/ecc
+cd ~/.claude/plugins/aiuby
 npm install
 ```
 
@@ -420,7 +420,7 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
 如果您仍然遇到问题：
 
-1. **检查 GitHub Issues**：[github.com/affaan-m/everything-claude-code/issues](https://github.com/affaan-m/everything-claude-code/issues)
+1. **检查 GitHub Issues**：[github.com/WendeelMarinho/aiuby-cli/issues](https://github.com/WendeelMarinho/aiuby-cli/issues)
 2. **启用调试日志记录**：
    ```bash
    export CLAUDE_DEBUG=1

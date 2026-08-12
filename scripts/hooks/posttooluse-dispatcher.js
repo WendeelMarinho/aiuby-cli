@@ -17,8 +17,8 @@ const { run: runConsoleWarn } = require('./post-edit-console-warn');
 const { run: runGovernanceCapture } = require('./governance-capture');
 const { run: runSessionActivityTracker } = require('./session-activity-tracker');
 const { run: runObserve } = require('./observe-runner');
-const { run: runMetricsBridge } = require('./ecc-metrics-bridge');
-const { run: runContextMonitor } = require('./ecc-context-monitor');
+const { run: runMetricsBridge } = require('./aiuby-metrics-bridge');
+const { run: runContextMonitor } = require('./aiuby-context-monitor');
 
 const MAX_STDIN = 1024 * 1024;
 
@@ -28,8 +28,8 @@ const SYNC_HOOKS = [
   { id: 'post:edit:console-warn', matcher: 'Edit', profiles: 'standard,strict', script: 'scripts/hooks/post-edit-console-warn.js', run: runConsoleWarn },
   { id: 'post:governance-capture', matcher: 'Bash|Write|Edit|MultiEdit', profiles: 'standard,strict', script: 'scripts/hooks/governance-capture.js', run: runGovernanceCapture },
   { id: 'post:session-activity-tracker', matcher: '*', profiles: 'standard,strict', script: 'scripts/hooks/session-activity-tracker.js', run: runSessionActivityTracker },
-  { id: 'post:ecc-metrics-bridge', matcher: '*', profiles: 'minimal,standard,strict', script: 'scripts/hooks/ecc-metrics-bridge.js', run: runMetricsBridge },
-  { id: 'post:ecc-context-monitor', matcher: '*', profiles: 'standard,strict', script: 'scripts/hooks/ecc-context-monitor.js', run: runContextMonitor }
+  { id: 'post:aiuby-metrics-bridge', matcher: '*', profiles: 'minimal,standard,strict', script: 'scripts/hooks/aiuby-metrics-bridge.js', run: runMetricsBridge },
+  { id: 'post:aiuby-context-monitor', matcher: '*', profiles: 'standard,strict', script: 'scripts/hooks/aiuby-context-monitor.js', run: runContextMonitor }
 ];
 
 const ASYNC_HOOKS = [

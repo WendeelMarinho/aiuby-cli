@@ -58,7 +58,7 @@ function runTests() {
     const statePath = adapter.getInstallStatePath({ projectRoot });
 
     assert.strictEqual(root, path.join(projectRoot, '.cursor'));
-    assert.strictEqual(statePath, path.join(projectRoot, '.cursor', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(projectRoot, '.cursor', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('resolves claude adapter root and install-state path from home dir', () => {
@@ -68,7 +68,7 @@ function runTests() {
     const statePath = adapter.getInstallStatePath({ homeDir, repoRoot: '/repo/ecc' });
 
     assert.strictEqual(root, path.join(homeDir, '.claude'));
-    assert.strictEqual(statePath, path.join(homeDir, '.claude', 'ecc', 'install-state.json'));
+    assert.strictEqual(statePath, path.join(homeDir, '.claude', 'aiuby', 'install-state.json'));
   })) passed++; else failed++;
 
   if (test('plans namespaced Claude rules and flat discoverable skills', () => {
@@ -94,9 +94,9 @@ function runTests() {
     assert.ok(
       plan.operations.some(operation => (
         normalizedRelativePath(operation.sourceRelativePath) === 'rules'
-        && operation.destinationPath === path.join(homeDir, '.claude', 'rules', 'ecc')
+        && operation.destinationPath === path.join(homeDir, '.claude', 'rules', 'aiuby')
       )),
-      'Should install bundled Claude rules under rules/ecc'
+      'Should install bundled Claude rules under rules/aiuby'
     );
     assert.ok(
       plan.operations.some(operation => (
@@ -130,7 +130,7 @@ function runTests() {
 
     assert.strictEqual(plan.adapter.id, 'cursor-project');
     assert.strictEqual(plan.targetRoot, path.join(projectRoot, '.cursor'));
-    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.cursor', 'ecc-install-state.json'));
+    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.cursor', 'aiuby-install-state.json'));
 
     const hooksJson = plan.operations.find(operation => (
       normalizedRelativePath(operation.sourceRelativePath) === '.cursor/hooks.json'
@@ -238,7 +238,7 @@ function runTests() {
     );
   })) passed++; else failed++;
 
-  if (test('plans cursor agents with ecc-prefixed filenames to avoid agent collisions', () => {
+  if (test('plans cursor agents with aiuby-prefixed filenames to avoid agent collisions', () => {
     const repoRoot = path.join(__dirname, '..', '..');
     const projectRoot = '/workspace/app';
 
@@ -257,9 +257,9 @@ function runTests() {
     assert.ok(
       plan.operations.some(operation => (
         normalizedRelativePath(operation.sourceRelativePath) === 'agents/architect.md'
-        && operation.destinationPath === path.join(projectRoot, '.cursor', 'agents', 'ecc-architect.md')
+        && operation.destinationPath === path.join(projectRoot, '.cursor', 'agents', 'aiuby-architect.md')
       )),
-      'Should prefix Cursor agent files with ecc-'
+      'Should prefix Cursor agent files with aiuby-'
     );
     assert.ok(
       !plan.operations.some(operation => (
@@ -475,7 +475,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'codebuddy');
     assert.strictEqual(adapter.kind, 'project');
     assert.strictEqual(root, path.join(projectRoot, '.codebuddy'));
-    assert.strictEqual(statePath, path.join(projectRoot, '.codebuddy', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(projectRoot, '.codebuddy', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('resolves gemini adapter root and install-state path from project root', () => {
@@ -488,7 +488,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'gemini');
     assert.strictEqual(adapter.kind, 'project');
     assert.strictEqual(root, path.join(projectRoot, '.gemini'));
-    assert.strictEqual(statePath, path.join(projectRoot, '.gemini', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(projectRoot, '.gemini', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('codebuddy adapter supports lookup by target and adapter id', () => {
@@ -511,7 +511,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'joycode');
     assert.strictEqual(adapter.kind, 'project');
     assert.strictEqual(root, path.join(projectRoot, '.joycode'));
-    assert.strictEqual(statePath, path.join(projectRoot, '.joycode', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(projectRoot, '.joycode', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('joycode adapter supports lookup by target and adapter id', () => {
@@ -534,7 +534,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'qwen');
     assert.strictEqual(adapter.kind, 'home');
     assert.strictEqual(root, path.join(homeDir, '.qwen'));
-    assert.strictEqual(statePath, path.join(homeDir, '.qwen', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(homeDir, '.qwen', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('qwen adapter supports lookup by target and adapter id', () => {
@@ -557,7 +557,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'zed');
     assert.strictEqual(adapter.kind, 'project');
     assert.strictEqual(root, path.join(projectRoot, '.zed'));
-    assert.strictEqual(statePath, path.join(projectRoot, '.zed', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(projectRoot, '.zed', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('zed adapter supports lookup by target and adapter id', () => {
@@ -588,7 +588,7 @@ function runTests() {
 
     assert.strictEqual(plan.adapter.id, 'codebuddy-project');
     assert.strictEqual(plan.targetRoot, path.join(projectRoot, '.codebuddy'));
-    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.codebuddy', 'ecc-install-state.json'));
+    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.codebuddy', 'aiuby-install-state.json'));
 
     assert.ok(
       plan.operations.some(operation => (
@@ -635,7 +635,7 @@ function runTests() {
 
     assert.strictEqual(plan.adapter.id, 'joycode-project');
     assert.strictEqual(plan.targetRoot, path.join(projectRoot, '.joycode'));
-    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.joycode', 'ecc-install-state.json'));
+    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.joycode', 'aiuby-install-state.json'));
 
     assert.ok(
       plan.operations.some(operation => (
@@ -701,7 +701,7 @@ function runTests() {
 
     assert.strictEqual(plan.adapter.id, 'qwen-home');
     assert.strictEqual(plan.targetRoot, path.join(homeDir, '.qwen'));
-    assert.strictEqual(plan.installStatePath, path.join(homeDir, '.qwen', 'ecc-install-state.json'));
+    assert.strictEqual(plan.installStatePath, path.join(homeDir, '.qwen', 'aiuby-install-state.json'));
     assert.ok(
       plan.operations.some(operation => (
         normalizedRelativePath(operation.sourceRelativePath) === 'rules'
@@ -764,7 +764,7 @@ function runTests() {
 
     assert.strictEqual(plan.adapter.id, 'zed-project');
     assert.strictEqual(plan.targetRoot, path.join(projectRoot, '.zed'));
-    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.zed', 'ecc-install-state.json'));
+    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.zed', 'aiuby-install-state.json'));
     assert.ok(
       plan.operations.some(operation => (
         normalizedRelativePath(operation.sourceRelativePath) === '.zed'
@@ -819,7 +819,7 @@ function runTests() {
   })) passed++; else failed++;
 
   if (test('every schema target enum value has a matching adapter (regression guard)', () => {
-    const schemaPath = path.join(__dirname, '..', '..', 'schemas', 'ecc-install-config.schema.json');
+    const schemaPath = path.join(__dirname, '..', '..', 'schemas', 'aiuby-install-config.schema.json');
     const schema = JSON.parse(require('fs').readFileSync(schemaPath, 'utf8'));
     const schemaTargets = schema.properties.target.enum;
     const adapters = listInstallTargetAdapters();
@@ -835,7 +835,7 @@ function runTests() {
   })) passed++; else failed++;
 
   if (test('every adapter target is listed in the schema enum (regression guard)', () => {
-    const schemaPath = path.join(__dirname, '..', '..', 'schemas', 'ecc-install-config.schema.json');
+    const schemaPath = path.join(__dirname, '..', '..', 'schemas', 'aiuby-install-config.schema.json');
     const schema = JSON.parse(require('fs').readFileSync(schemaPath, 'utf8'));
     const schemaTargets = schema.properties.target.enum;
     const adapters = listInstallTargetAdapters();
@@ -872,7 +872,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'claude-project');
     assert.strictEqual(adapter.kind, 'project');
     assert.strictEqual(root, path.join(projectRoot, '.claude'));
-    assert.strictEqual(statePath, path.join(projectRoot, '.claude', 'ecc', 'install-state.json'));
+    assert.strictEqual(statePath, path.join(projectRoot, '.claude', 'aiuby', 'install-state.json'));
   })) passed++; else failed++;
 
   if (test('claude-project adapter supports lookup by target and adapter id', () => {
@@ -906,13 +906,13 @@ function runTests() {
 
     assert.strictEqual(plan.adapter.id, 'claude-project');
     assert.strictEqual(plan.targetRoot, path.join(projectRoot, '.claude'));
-    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.claude', 'ecc', 'install-state.json'));
+    assert.strictEqual(plan.installStatePath, path.join(projectRoot, '.claude', 'aiuby', 'install-state.json'));
     assert.ok(
       plan.operations.some(operation => (
         normalizedRelativePath(operation.sourceRelativePath) === 'rules'
-        && operation.destinationPath === path.join(projectRoot, '.claude', 'rules', 'ecc')
+        && operation.destinationPath === path.join(projectRoot, '.claude', 'rules', 'aiuby')
       )),
-      'Should install bundled rules under project-scope rules/ecc'
+      'Should install bundled rules under project-scope rules/aiuby'
     );
     assert.ok(
       plan.operations.some(operation => (
@@ -942,7 +942,7 @@ function runTests() {
     assert.ok(
       plan.operations.some(operation => (
         normalizedRelativePath(operation.sourceRelativePath) === 'rules'
-        && operation.destinationPath === path.join(projectRoot, '.claude', 'rules', 'ecc')
+        && operation.destinationPath === path.join(projectRoot, '.claude', 'rules', 'aiuby')
       )),
       'Should still include non-foreign rules path (guards against empty-plan regression)'
     );
@@ -972,7 +972,7 @@ function runTests() {
     assert.strictEqual(adapter.target, 'opencode');
     assert.strictEqual(adapter.kind, 'home');
     assert.strictEqual(root, path.join(homeDir, '.opencode'));
-    assert.strictEqual(statePath, path.join(homeDir, '.opencode', 'ecc-install-state.json'));
+    assert.strictEqual(statePath, path.join(homeDir, '.opencode', 'aiuby-install-state.json'));
   })) passed++; else failed++;
 
   if (test('opencode adapter validate reports an error when compiled plugin is missing', () => {
@@ -1108,7 +1108,7 @@ function runTests() {
           kind: 'home',
           supports: target => target === 'opencode',
           resolveRoot: input => path.join((input.homeDir || '/Users/example'), '.opencode'),
-          getInstallStatePath: input => path.join((input.homeDir || '/Users/example'), '.opencode', 'ecc-install-state.json'),
+          getInstallStatePath: input => path.join((input.homeDir || '/Users/example'), '.opencode', 'aiuby-install-state.json'),
           validate: () => ([
             { severity: 'error', code: 'opencode-plugin-not-built', message: 'missing payload' },
             { severity: 'error', code: 'opencode-other-blocker', message: 'still blocked' },
