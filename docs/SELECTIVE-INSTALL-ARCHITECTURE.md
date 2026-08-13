@@ -35,7 +35,7 @@ The first selective-install substrate already exists in-repo:
 - `scripts/lib/install-state.js`
 - `scripts/lib/install-executor.js`
 - `scripts/lib/install-lifecycle.js`
-- `scripts/ecc.js`
+- `scripts/aiuby.js`
 - `scripts/install-apply.js`
 - `scripts/install-plan.js`
 - `scripts/list-installed.js`
@@ -168,7 +168,7 @@ Should not own:
 Suggested files:
 
 ```text
-scripts/ecc.js
+scripts/aiuby.js
 scripts/install-apply.js
 scripts/install-plan.js
 scripts/doctor.js
@@ -403,7 +403,7 @@ The lowest-risk migration path is evolutionary, not a rewrite.
 ### Keep
 
 - `install.sh` as the public compatibility shim
-- `scripts/ecc.js` as the unified CLI
+- `scripts/aiuby.js` as the unified CLI
 - `scripts/lib/install-state.js` as the starting point for the state store
 - current target adapter IDs and state locations
 
@@ -848,7 +848,7 @@ scripts/lib/install-targets/
   antigravity-project.js
   registry.js
 scripts/lib/install-state.js
-scripts/ecc.js
+scripts/aiuby.js
 scripts/install-apply.js
 scripts/list-installed.js
 scripts/uninstall.js

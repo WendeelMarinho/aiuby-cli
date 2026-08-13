@@ -79,22 +79,22 @@ function baseMemory(overrides = {}) {
   };
 }
 
-console.log('\n=== Testing ECC memory vault core ===\n');
+console.log('\n=== Testing Aiuby memory vault core ===\n');
 
 test('resolves project, team, and user roots from the nearest project boundary', () => {
   const fixture = createFixture();
   try {
     assert.strictEqual(
       fixture.roots.project,
-      path.join(fixture.projectRoot, '.ecc', 'memory', 'project')
+      path.join(fixture.projectRoot, '.aiuby', 'memory', 'project')
     );
     assert.strictEqual(
       fixture.roots.team,
-      path.join(fixture.projectRoot, '.ecc', 'memory', 'team')
+      path.join(fixture.projectRoot, '.aiuby', 'memory', 'team')
     );
     assert.strictEqual(
       fixture.roots.user,
-      path.join(fixture.homeDir, '.ecc', 'memory')
+      path.join(fixture.homeDir, '.aiuby', 'memory')
     );
   } finally {
     fs.rmSync(fixture.root, { recursive: true, force: true });
@@ -107,8 +107,8 @@ test('uses the working directory for non-git projects instead of a global bucket
   fs.mkdirSync(homeDir);
   try {
     const roots = resolveVaultRoots({ cwd: root, homeDir, env: {} });
-    assert.strictEqual(roots.project, path.join(root, '.ecc', 'memory', 'project'));
-    assert.strictEqual(roots.team, path.join(root, '.ecc', 'memory', 'team'));
+    assert.strictEqual(roots.project, path.join(root, '.aiuby', 'memory', 'project'));
+    assert.strictEqual(roots.team, path.join(root, '.aiuby', 'memory', 'team'));
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
@@ -354,7 +354,7 @@ test('rejects a vault path that traverses a symlink before creating directories'
   const fixture = createFixture();
   const outside = path.join(fixture.root, 'outside');
   fs.mkdirSync(outside);
-  fs.symlinkSync(outside, path.join(fixture.projectRoot, '.ecc'));
+  fs.symlinkSync(outside, path.join(fixture.projectRoot, '.aiuby'));
   try {
     assert.throws(
       () => saveMemory(
@@ -375,8 +375,8 @@ test('rejects a symlinked ancestor when roots come back from initializeVault', (
   fs.mkdirSync(outside);
   try {
     const initialized = initializeVault({ roots: fixture.roots, scopes: ['project'] });
-    fs.rmSync(path.join(fixture.projectRoot, '.ecc'), { recursive: true, force: true });
-    fs.symlinkSync(outside, path.join(fixture.projectRoot, '.ecc'));
+    fs.rmSync(path.join(fixture.projectRoot, '.aiuby'), { recursive: true, force: true });
+    fs.symlinkSync(outside, path.join(fixture.projectRoot, '.aiuby'));
 
     assert.throws(
       () => saveMemory(

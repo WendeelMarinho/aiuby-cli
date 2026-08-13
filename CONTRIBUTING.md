@@ -1,4 +1,4 @@
-# Contributing to Everything Claude Code
+# Contributing to Aiuby AI Engineering
 
 Thanks for wanting to contribute! This repo is a community resource for Claude Code users.
 
@@ -53,7 +53,7 @@ Slash commands that invoke useful workflows:
 ```bash
 # 1. Fork and clone
 gh repo fork WendeelMarinho/aiuby-cli --clone
-cd ECC
+cd aiuby-cli
 
 # 2. Create a branch
 git checkout -b feat/my-contribution

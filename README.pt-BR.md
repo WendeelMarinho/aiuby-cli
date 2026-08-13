@@ -452,8 +452,8 @@ Substitua `<url-do-repositorio>` pela URL definitiva do repositório Aiuby.
 
 ```bash
 npm install
-node scripts/ecc.js list-installed
-node scripts/ecc.js doctor
+node scripts/aiuby.js list-installed
+node scripts/aiuby.js doctor
 ```
 
 ### Claude Code — caminho atual de compatibilidade
@@ -496,16 +496,16 @@ Utilize apenas targets implementados pela versão do repositório que estiver em
 ### Validar a instalação
 
 ```bash
-node scripts/ecc.js doctor
+node scripts/aiuby.js doctor
 ```
 
 ### Reparar ou desinstalar
 
 ```bash
-node scripts/ecc.js list-installed
-node scripts/ecc.js repair
-node scripts/ecc.js uninstall --dry-run
-node scripts/ecc.js uninstall
+node scripts/aiuby.js list-installed
+node scripts/aiuby.js repair
+node scripts/aiuby.js uninstall --dry-run
+node scripts/aiuby.js uninstall
 ```
 
 Não apague arquivos não relacionados dentro dos diretórios de configuração dos harnesses. Prefira os comandos que utilizam o estado gerenciado de instalação.

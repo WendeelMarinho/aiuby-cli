@@ -137,7 +137,7 @@ const handlers = {
     'Skills, agents, rules, hooks, MCP conventions, and operator workflows that move across Claude Code, Codex, OpenCode, Cursor, Gemini, and Zed.',
     '',
     `- repo: ${REPO_URL}`,
-    '- site: https://ecc.tools',
+    '- site: https://aiuby.com',
     `- install: \`/plugin marketplace add affaan-m/everything-claude-code\` then \`/plugin install ecc\``,
     INVITE ? `- invite a friend: ${INVITE}` : '',
   ].filter(Boolean).join('\n'),

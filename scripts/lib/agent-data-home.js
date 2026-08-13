@@ -98,7 +98,7 @@ function getDefaultClaudeAgentDataHome() {
 
 function warnUnsafeProjectConfig() {
   console.error(
-    '[ECC] Ignoring unsafe agent data project config: agentDataHome must stay ' +
+    '[Aiuby] Ignoring unsafe agent data project config: agentDataHome must stay ' +
     'within the default Cursor or Claude data directories. Use ' +
     'ECC_AGENT_DATA_HOME for an explicit trusted override.'
   );
@@ -154,7 +154,7 @@ function readProjectConfigAt(configPath) {
     return allowedHome;
   } catch (error) {
     console.error(
-      `[ECC] Failed to read or parse agent data config at ${configPath}: ${error.message}`
+      `[Aiuby] Failed to read or parse agent data config at ${configPath}: ${error.message}`
     );
     return null;
   }

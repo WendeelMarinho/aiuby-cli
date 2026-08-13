@@ -1,12 +1,12 @@
 # Migrating From ECC 1.x (everything-claude-code) To 2.0
 
-ECC 2.0 renamed the repo (`affaan-m/everything-claude-code` → `affaan-m/ECC`) and the plugin identifier (`everything-claude-code@everything-claude-code` → `aiuby@aiuby`). If you installed 1.x, follow this guide to upgrade cleanly. See also the [Naming + Migration Note](../README.md#naming--migration-note) in the README.
+This project is now **Aiuby AI Engineering** (`WendeelMarinho/aiuby-cli`), forked from ECC. The plugin identifier moved from `everything-claude-code@everything-claude-code` to `aiuby@aiuby`. If you installed 1.x, follow this guide to upgrade cleanly. See also the [Migration Checklist](../README.md#migration-checklist) in the README.
 
 ## TL;DR
 
 ```bash
 # 1. Install 2.0
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/WendeelMarinho/aiuby-cli
 /plugin install aiuby@aiuby
 
 # 2. Remove the old plugin
@@ -37,16 +37,16 @@ No. ECC is a harness layer: skills, commands, agents, hooks. It does not alter y
 
 ## One install path only
 
-Do not stack the plugin install with the manual installer (`install.sh` / `install.ps1` / `npx ecc-install --profile full`). Pick one path; stacking creates duplicate skills and duplicate hook runs. If you already stacked, see [Reset / Uninstall ECC](../README.md#reset--uninstall-ecc).
+Do not stack the plugin install with the manual installer (`install.sh` / `install.ps1` / `npx -p aiuby aiuby-install --profile full`). Pick one path; stacking creates duplicate skills and duplicate hook runs. If you already stacked, see [Reset / Uninstall Aiuby](../README.md#reset--uninstall-aiuby).
 
 ## Using 2.0 across harnesses (Codex, Antigravity/agy, OpenCode, Cursor)
 
 2.0 is cross-harness. Use the manual installer with a target:
 
 ```bash
-npx ecc-install --profile core --target codex      # Codex CLI
-npx ecc-install --profile core --target opencode   # OpenCode
-npx ecc-install --profile core --target cursor     # Cursor
+npx -p aiuby aiuby-install --profile core --target codex      # Codex CLI
+npx -p aiuby aiuby-install --profile core --target opencode   # OpenCode
+npx -p aiuby aiuby-install --profile core --target cursor     # Cursor
 ```
 
 Run `npx aiuby consult "<what you need>" --target <harness>` to preview which components fit before installing. Harness-specific guides: [ANTIGRAVITY-GUIDE.md](./ANTIGRAVITY-GUIDE.md), [HERMES-SETUP.md](./HERMES-SETUP.md), [QWEN-GUIDE.md](./QWEN-GUIDE.md), [JOYCODE-GUIDE.md](./JOYCODE-GUIDE.md).

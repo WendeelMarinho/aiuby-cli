@@ -87,11 +87,21 @@ function detectLegacyState({ home, projectRoot } = {}) {
   ];
 
   const targets = [];
+  const seenLegacyPaths = new Set();
   for (const { scope, base } of scopes) {
     const legacyPath = path.join(base, LEGACY_DIR_NAME);
     if (!directoryExists(legacyPath)) {
       continue;
     }
+    // Running from $HOME makes both scopes resolve to the same directory.
+    // Without this, the same move is planned twice: the first succeeds, the
+    // second throws mid-loop before any schema rewrite runs, and the next
+    // invocation reports "nothing to migrate" over a half-migrated install.
+    const resolvedLegacyPath = fs.realpathSync(legacyPath);
+    if (seenLegacyPaths.has(resolvedLegacyPath)) {
+      continue;
+    }
+    seenLegacyPaths.add(resolvedLegacyPath);
     const canonicalPath = path.join(base, CANONICAL_DIR_NAME);
     targets.push({
       scope,
@@ -166,7 +176,12 @@ function createBackup({ plan, home, timestamp }) {
 
   const entries = moves.map(op => {
     const backupName = `${op.scope}-${LEGACY_DIR_NAME.replace(/^\./, '')}`;
-    fs.cpSync(op.from, path.join(backupPath, backupName), { recursive: true });
+    // dereference: a state dir managed by stow/chezmoi/yadm is often a symlink.
+    // Copying the link instead of the tree makes the "backup" an alias to the
+    // live data, so the schema rewrite mutates it and rollback restores the
+    // already-migrated bytes — both reporting success while the originals are
+    // gone. Materialise the content.
+    fs.cpSync(op.from, path.join(backupPath, backupName), { recursive: true, dereference: true });
     return {
       scope: op.scope,
       backupName,

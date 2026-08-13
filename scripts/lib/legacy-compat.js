@@ -280,6 +280,9 @@ function resolveUserDataDir(options = {}) {
     envName: `${CANONICAL_PREFIX}${DATA_HOME_SUFFIX}`,
     env,
     onDeprecation: options.onDeprecation,
+    // Forwarded, not dropped: hooks resolve state dirs on every invocation and
+    // must be able to suppress the notice. aiuby:compat
+    quiet: options.quiet,
   });
 }
 
@@ -291,6 +294,9 @@ function resolveProjectDataDir(options = {}) {
     envName: `${CANONICAL_PREFIX}PROJECT_DATA_DIR`,
     env,
     onDeprecation: options.onDeprecation,
+    // Forwarded, not dropped: hooks resolve state dirs on every invocation and
+    // must be able to suppress the notice. aiuby:compat
+    quiet: options.quiet,
   });
 }
 

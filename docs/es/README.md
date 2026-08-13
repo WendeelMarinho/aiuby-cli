@@ -212,7 +212,7 @@ La mayoría de los usuarios de Claude Code deben usar exactamente un método de 
 
 - **Opción recomendada por defecto:** instala el plugin de Claude Code, luego copia solo las carpetas de reglas que realmente necesites.
 - **Usa el instalador manual solo si** quieres un control más granular, deseas evitar completamente la ruta del plugin o tu build de Claude Code tiene problemas para resolver la entrada del marketplace autoalojado.
-- **No combines métodos de instalación.** La configuración rota más común es: `/plugin install` primero, luego `install.sh --profile full` o `npx ecc-install --profile full` después.
+- **No combines métodos de instalación.** La configuración rota más común es: `/plugin install` primero, luego `install.sh --profile full` o `npx -p aiuby aiuby-install --profile full` después.
 
 Si ya combinaste múltiples instalaciones y hay duplicados, salta directamente a [Restablecer / Desinstalar ECC](#restablecer--desinstalar-ecc).
 
@@ -227,7 +227,7 @@ Si los hooks te parecen demasiado globales o solo quieres las reglas, agentes, c
 ```powershell
 .\install.ps1 --profile minimal --target claude
 # o
-npx ecc-install --profile minimal --target claude
+npx -p aiuby aiuby-install --profile minimal --target claude
 ```
 
 Este perfil excluye intencionalmente `hooks-runtime`.
@@ -287,13 +287,13 @@ Esto es intencional. Las instalaciones del marketplace/plugin de Anthropic se id
 
 > ADVERTENCIA: **Importante:** Los plugins de Claude Code no pueden distribuir `rules` automáticamente.
 >
-> Si ya instalaste ECC mediante `/plugin install`, **no ejecutes `./install.sh --profile full`, `.\install.ps1 --profile full`, ni `npx ecc-install --profile full` después**. El plugin ya carga las skills, comandos y hooks de ECC. Ejecutar el instalador completo tras una instalación del plugin copia esas mismas superficies en tus directorios de usuario y puede crear skills duplicadas más comportamiento duplicado en tiempo de ejecución.
+> Si ya instalaste ECC mediante `/plugin install`, **no ejecutes `./install.sh --profile full`, `.\install.ps1 --profile full`, ni `npx -p aiuby aiuby-install --profile full` después**. El plugin ya carga las skills, comandos y hooks de ECC. Ejecutar el instalador completo tras una instalación del plugin copia esas mismas superficies en tus directorios de usuario y puede crear skills duplicadas más comportamiento duplicado en tiempo de ejecución.
 >
 > Para instalaciones de plugin, copia manualmente solo los directorios `rules/` que quieras bajo `~/.claude/rules/ecc/`. Empieza con `rules/common` más un pack de lenguaje o framework que uses realmente. No copies todos los directorios de reglas a menos que quieras explícitamente todo ese contexto en Claude.
 >
 > Usa el instalador completo solo cuando hagas una instalación completamente manual de ECC en lugar de la ruta del plugin.
 >
-> Si tu configuración local de Claude fue eliminada o restablecida, eso no significa que necesites volver a comprar ECC. Empieza con `node scripts/ecc.js list-installed`, luego ejecuta `node scripts/ecc.js doctor` y `node scripts/ecc.js repair` antes de reinstalar cualquier cosa. Eso generalmente restaura los archivos gestionados por ECC sin reconstruir tu configuración. Si el problema es el acceso a la cuenta o al marketplace para ECC Tools, gestiona la recuperación de la facturación/cuenta por separado.
+> Si tu configuración local de Claude fue eliminada o restablecida, eso no significa que necesites volver a comprar ECC. Empieza con `node scripts/aiuby.js list-installed`, luego ejecuta `node scripts/aiuby.js doctor` y `node scripts/aiuby.js repair` antes de reinstalar cualquier cosa. Eso generalmente restaura los archivos gestionados por ECC sin reconstruir tu configuración. Si el problema es el acceso a la cuenta o al marketplace para ECC Tools, gestiona la recuperación de la facturación/cuenta por separado.
 
 ```bash
 # Clonar el repo primero
@@ -322,7 +322,7 @@ Copy-Item -Recurse rules/typescript "$HOME/.claude/rules/ecc/"
 
 # Ruta de instalación completamente manual (usa esto en lugar de /plugin install)
 # .\install.ps1 --profile full
-# npx ecc-install --profile full
+# npx -p aiuby aiuby-install --profile full
 ```
 
 Para instrucciones de instalación manual consulta el README en la carpeta `rules/`. Al copiar reglas manualmente, copia el directorio completo del lenguaje (por ejemplo `rules/common` o `rules/golang`), no los archivos dentro de él, para que las referencias relativas sigan funcionando y los nombres de archivo no colisionen.
@@ -338,7 +338,7 @@ Usa esto solo si estás omitiendo intencionalmente la ruta del plugin:
 ```powershell
 .\install.ps1 --profile full
 # o
-npx ecc-install --profile full
+npx -p aiuby aiuby-install --profile full
 ```
 
 Si eliges esta ruta, detente aquí. No ejecutes también `/plugin install`.
@@ -363,10 +363,10 @@ node scripts/uninstall.js
 También puedes usar el wrapper del ciclo de vida:
 
 ```bash
-node scripts/ecc.js list-installed
-node scripts/ecc.js doctor
-node scripts/ecc.js repair
-node scripts/ecc.js uninstall --dry-run
+node scripts/aiuby.js list-installed
+node scripts/aiuby.js doctor
+node scripts/aiuby.js repair
+node scripts/aiuby.js uninstall --dry-run
 ```
 
 ECC solo elimina los archivos registrados en su estado de instalación. No borrará archivos no relacionados que no haya instalado.

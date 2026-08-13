@@ -159,7 +159,7 @@ npm install        # veya: pnpm install | yarn install | bun install
 # .\install.ps1 --target antigravity typescript
 
 # npm-installed uyumluluk entry point'i de çapraz platform çalışır
-npx ecc-install typescript
+npx -p aiuby aiuby-install typescript
 ```
 
 Manuel kurulum talimatları için `rules/` klasöründeki README'ye bakın.

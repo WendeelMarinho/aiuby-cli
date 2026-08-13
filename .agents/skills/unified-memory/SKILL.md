@@ -23,7 +23,7 @@ command -v aiuby-memory-mcp
 ```
 
 A repository checkout may instead run the CLI as
-`node scripts/ecc.js memory ...`, but MCP configurations that name
+`node scripts/aiuby.js memory ...`, but MCP configurations that name
 `aiuby-memory-mcp` still require that binary on `PATH`.
 
 ## When To Use

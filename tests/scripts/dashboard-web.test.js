@@ -828,7 +828,7 @@ test('renderHTML includes LANG and LANG_KEYS in the output', () => {
   const { renderHTML } = require(SCRIPT);
   const data = { agents: [], skills: [], commands: [], rules: [], mcps: [], hooks: [] };
   const html = renderHTML(data);
-  assert.ok(html.includes('ECC Capabilities'));
+  assert.ok(html.includes('Aiuby Capabilities'));
   assert.ok(html.includes('const L ='));
   assert.ok(html.includes('const LANG_KEYS'));
 });
@@ -837,7 +837,7 @@ test('renderHTML includes the dashboard title and footer', () => {
   const { renderHTML } = require(SCRIPT);
   const data = { agents: [], skills: [], commands: [], rules: [], mcps: [], hooks: [] };
   const html = renderHTML(data);
-  assert.ok(html.includes('ECC Capabilities'));
+  assert.ok(html.includes('Aiuby Capabilities'));
   assert.ok(html.includes('github.com/WendeelMarinho/aiuby-cli'));
 });
 
@@ -909,7 +909,7 @@ asyncTest('server returns no-store HTML on GET /', async () => {
     assert.strictEqual(response.headers['content-type'], 'text/html; charset=utf-8');
     assert.strictEqual(response.headers['cache-control'], 'no-store');
     assert.ok(response.body.includes('<!DOCTYPE html>'));
-    assert.ok(response.body.includes('ECC Capabilities'));
+    assert.ok(response.body.includes('Aiuby Capabilities'));
   });
 });
 
@@ -994,7 +994,7 @@ asyncTest('server returns a generic no-store 500 for render failures and remains
 
     const followUpResponse = await requestDashboard(port);
     assert.strictEqual(followUpResponse.statusCode, 200);
-    assert.ok(followUpResponse.body.includes('ECC Capabilities'));
+    assert.ok(followUpResponse.body.includes('Aiuby Capabilities'));
     assert.strictEqual(loggedErrors.length, 1);
     assert.strictEqual(loggedErrors[0].error.message, 'sensitive render detail');
   }, {

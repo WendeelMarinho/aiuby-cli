@@ -175,7 +175,7 @@ aiuby install --profile full --target claude
 Or without a global install:
 
 ```bash
-npx aiuby-install --profile minimal --target claude
+npx -p aiuby aiuby-install --profile minimal --target claude
 ./install.sh --profile minimal --target claude
 ```
 
@@ -555,8 +555,8 @@ Replace `<repository-url>` with the final Aiuby repository URL.
 
 ```bash
 npm install
-node scripts/ecc.js list-installed
-node scripts/ecc.js doctor
+node scripts/aiuby.js list-installed
+node scripts/aiuby.js doctor
 ```
 
 ### Claude Code — current compatibility path
@@ -599,15 +599,15 @@ Use only targets implemented by the repository version you have checked out.
 ### Validate the installation
 
 ```bash
-node scripts/ecc.js doctor
+node scripts/aiuby.js doctor
 ```
 
 ### Reset or uninstall
 
 ```bash
-node scripts/ecc.js list-installed
-node scripts/ecc.js uninstall --dry-run
-node scripts/ecc.js uninstall
+node scripts/aiuby.js list-installed
+node scripts/aiuby.js uninstall --dry-run
+node scripts/aiuby.js uninstall
 ```
 
 Do not delete unrelated files from a harness configuration directory. Prefer state-aware uninstall and repair commands.

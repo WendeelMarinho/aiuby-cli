@@ -47,6 +47,15 @@ jobs:
       - name: Validate workflow security
         run: node scripts/ci/validate-workflow-security.js
 
+      - name: Validate bin targets
+        run: node scripts/ci/validate-bin-targets.js
+
+      - name: Check generated counts
+        run: npm run counts:check
+
+      - name: Audit legacy names
+        run: npm run audit:legacy-names
+
       - name: Validate rules
         run: node scripts/ci/validate-rules.js
 

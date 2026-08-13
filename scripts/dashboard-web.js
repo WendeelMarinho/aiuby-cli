@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ECC Capabilities Dashboard — agents, skills, commands, MCPs, rules & hooks
+ * Aiuby Capabilities Dashboard — agents, skills, commands, MCPs, rules & hooks
  * With multi-language, routing, search suggestions, recently viewed, fine UI
  *
  * Usage: node scripts/dashboard-web.js [port]
@@ -27,7 +27,7 @@ function resolveDashboardHost(env = process.env) {
   if (!configured) return DEFAULT_HOST;
   if (!LOOPBACK_HOSTNAMES.has(configured)) {
     throw new Error(
-      '[ECC] ECC_DASHBOARD_HOST must be loopback-only ' +
+      '[Aiuby] ECC_DASHBOARD_HOST must be loopback-only ' +
       '(127.0.0.1, localhost, or ::1).'
     );
   }
@@ -36,7 +36,7 @@ function resolveDashboardHost(env = process.env) {
 
 function parsePort(v) {
   const n = parseInt(String(v), 10);
-  if (isNaN(n) || n < 1 || n > 65535) { console.error('[ECC] Invalid port: ' + v + ' — using 3456'); return 3456; }
+  if (isNaN(n) || n < 1 || n > 65535) { console.error('[Aiuby] Invalid port: ' + v + ' — using 3456'); return 3456; }
   return n;
 }
 const PORT = parsePort(process.argv[2] || process.env.ECC_DASHBOARD_PORT || '3456');
@@ -101,9 +101,9 @@ function loadMcps(_root) {
   const root = _root || ROOT;
   const r = [];
   const m = path.join(root, '.mcp.json');
-  if (fs.existsSync(m)) { try { const d = JSON.parse(fs.readFileSync(m, 'utf8')); r.push({ f: '.mcp.json', s: Object.entries(d.mcpServers || {}).map(([k, v]) => ({ n: k, cmd: typeof v === 'object' ? (v.command || v.url || '') : String(v), args: v.args || [], env: v.env ? Object.keys(v.env).reduce((a,k)=>{a[k]='••••••'; return a;}, {}) : {}, type: v.type || 'stdio' })) }); } catch (e) { console.error('[ECC] Failed to parse .mcp.json:', e.message); } }
+  if (fs.existsSync(m)) { try { const d = JSON.parse(fs.readFileSync(m, 'utf8')); r.push({ f: '.mcp.json', s: Object.entries(d.mcpServers || {}).map(([k, v]) => ({ n: k, cmd: typeof v === 'object' ? (v.command || v.url || '') : String(v), args: v.args || [], env: v.env ? Object.keys(v.env).reduce((a,k)=>{a[k]='••••••'; return a;}, {}) : {}, type: v.type || 'stdio' })) }); } catch (e) { console.error('[Aiuby] Failed to parse .mcp.json:', e.message); } }
   const dir = path.join(root, 'mcp-configs');
-  if (fs.existsSync(dir)) { for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json'))) { try { const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); r.push({ f, s: Object.entries(d.mcpServers || {}).map(([k, v]) => ({ n: k, cmd: typeof v === 'object' ? (v.command || v.url || '') : String(v), args: v.args || [], env: v.env ? Object.keys(v.env).reduce((a,k)=>{a[k]='••••••'; return a;}, {}) : {}, type: v.type || 'stdio' })) }); } catch (e) { console.error('[ECC] Failed to parse mcp-configs/' + f + ':', e.message); } } }
+  if (fs.existsSync(dir)) { for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json'))) { try { const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); r.push({ f, s: Object.entries(d.mcpServers || {}).map(([k, v]) => ({ n: k, cmd: typeof v === 'object' ? (v.command || v.url || '') : String(v), args: v.args || [], env: v.env ? Object.keys(v.env).reduce((a,k)=>{a[k]='••••••'; return a;}, {}) : {}, type: v.type || 'stdio' })) }); } catch (e) { console.error('[Aiuby] Failed to parse mcp-configs/' + f + ':', e.message); } } }
   return r;
 }
 function loadPostToolUseChildren(root) {
@@ -120,7 +120,7 @@ function loadPostToolUseChildren(root) {
       d: `Managed by the consolidated PostToolUse ${hook.mode} dispatcher`,
     }));
   } catch (error) {
-    console.error('[ECC] Failed to load PostToolUse dispatcher registry:', error.message);
+    console.error('[Aiuby] Failed to load PostToolUse dispatcher registry:', error.message);
     return [];
   }
 }
@@ -138,23 +138,23 @@ function loadHooks(_root) {
     }
     return [...hooks, ...loadPostToolUseChildren(root)];
   } catch (error) {
-    console.error('[ECC] Failed to parse hooks/hooks.json:', error.message);
+    console.error('[Aiuby] Failed to parse hooks/hooks.json:', error.message);
     return [];
   }
 }
 
 const LANG = {
-  en: { name:'English', title:'ECC Capabilities', search:'Search agents, skills, commands...', agents:'Agents', skills:'Skills', commands:'Commands', rules:'Rules', mcps:'MCPs', hooks:'Hooks', ruleSets:'Rule Sets', mcpConfigs:'MCP Configs', all:'All', reviewers:'Reviewers', buildResolvers:'Build Resolvers', architects:'Architects', security:'Security', testing:'Testing', patterns:'Patterns', design:'Design', research:'Research', data:'Data', agent:'Agent', devops:'DevOps', description:'Description', details:'Details', tools:'Tools', copied:'Copied', noMcps:'No MCP configs found', checkMcps:'Check mcp-configs/ directory', noHooks:'No hooks configured', recentlyViewed:'Recently Viewed', clearHistory:'Clear', ruleFiles:'rule files', more:'more', servers:'servers', skill:'Skill', workflow:'workflow', event:'Event', matcher:'Matcher', id:'ID', contribution:'Contribution to ECC' },
-  pt: { name:'Português', title:'Recursos do ECC', search:'Pesquisar agentes, skills, comandos...', agents:'Agentes', skills:'Skills', commands:'Comandos', rules:'Regras', mcps:'MCPs', hooks:'Hooks', ruleSets:'Conjuntos de Regras', mcpConfigs:'Configs MCP', all:'Todos', reviewers:'Revisores', buildResolvers:'Resolvedores', architects:'Arquitetos', security:'Segurança', testing:'Testes', patterns:'Padrões', design:'Design', research:'Pesquisa', data:'Dados', agent:'Agente', devops:'DevOps', description:'Descrição', details:'Detalhes', tools:'Ferramentas', copied:'Copiado', noMcps:'Nenhuma config MCP encontrada', checkMcps:'Verifique mcp-configs/', noHooks:'Nenhum hook configurado', recentlyViewed:'Vistos Recentemente', clearHistory:'Limpar', ruleFiles:'arquivos de regras', more:'mais', servers:'servidores', skill:'Skill', workflow:'workflow', event:'Evento', matcher:'Corresp.', id:'ID', contribution:'Contribuição ao ECC' },
-  zh: { name:'简体中文', title:'ECC 能力', search:'搜索代理、技能、命令...', agents:'代理', skills:'技能', commands:'命令', rules:'规则', mcps:'MCP', hooks:'钩子', ruleSets:'规则集', mcpConfigs:'MCP 配置', all:'全部', reviewers:'审查者', buildResolvers:'构建解析器', architects:'架构师', security:'安全', testing:'测试', patterns:'模式', design:'设计', research:'研究', data:'数据', agent:'代理', devops:'运维', description:'描述', details:'详情', tools:'工具', copied:'已复制', noMcps:'未找到 MCP 配置', checkMcps:'检查 mcp-configs/ 目录', noHooks:'未配置钩子', recentlyViewed:'最近查看', clearHistory:'清除', ruleFiles:'规则文件', more:'更多', servers:'服务器', skill:'技能', workflow:'工作流', event:'事件', matcher:'匹配器', id:'ID', contribution:'对 ECC 的贡献' },
-  zht: { name:'繁體中文', title:'ECC 能力', search:'搜索代理、技能、命令...', agents:'代理', skills:'技能', commands:'命令', rules:'規則', mcps:'MCP', hooks:'鉤子', ruleSets:'規則集', mcpConfigs:'MCP 配置', all:'全部', reviewers:'審查者', buildResolvers:'構建解析器', architects:'架構師', security:'安全', testing:'測試', patterns:'模式', design:'設計', research:'研究', data:'數據', agent:'代理', devops:'運維', description:'描述', details:'詳情', tools:'工具', copied:'已複製', noMcps:'未找到 MCP 配置', checkMcps:'檢查 mcp-configs/ 目錄', noHooks:'未配置鉤子', recentlyViewed:'最近查看', clearHistory:'清除', ruleFiles:'規則文件', more:'更多', servers:'服務器', skill:'技能', workflow:'工作流', event:'事件', matcher:'匹配器', id:'ID', contribution:'對 ECC 的貢獻' },
-  ja: { name:'日本語', title:'ECC 機能一覧', search:'エージェント、スキル、コマンドを検索...', agents:'エージェント', skills:'スキル', commands:'コマンド', rules:'ルール', mcps:'MCP', hooks:'フック', ruleSets:'ルールセット', mcpConfigs:'MCP設定', all:'すべて', reviewers:'レビュアー', buildResolvers:'ビルド解決', architects:'アーキテクト', security:'セキュリティ', testing:'テスト', patterns:'パターン', design:'デザイン', research:'研究', data:'データ', agent:'エージェント', devops:'DevOps', description:'説明', details:'詳細', tools:'ツール', copied:'コピーしました', noMcps:'MCP設定が見つかりません', checkMcps:'mcp-configs/を確認', noHooks:'フックが設定されていません', recentlyViewed:'最近見た項目', clearHistory:'クリア', ruleFiles:'ルールファイル', more:'もっと見る', servers:'サーバー', skill:'スキル', workflow:'ワークフロー', event:'イベント', matcher:'マッチャー', id:'ID', contribution:'ECCへの貢献' },
-  ko: { name:'한국어', title:'ECC 기능', search:'에이전트, 스킬, 명령어 검색...', agents:'에이전트', skills:'스킬', commands:'명령어', rules:'규칙', mcps:'MCP', hooks:'훅', ruleSets:'규칙 세트', mcpConfigs:'MCP 설정', all:'전체', reviewers:'리뷰어', buildResolvers:'빌드 해결사', architects:'아키텍트', security:'보안', testing:'테스트', patterns:'패턴', design:'디자인', research:'연구', data:'데이터', agent:'에이전트', devops:'DevOps', description:'설명', details:'세부정보', tools:'도구', copied:'복사됨', noMcps:'MCP 설정을 찾을 수 없음', checkMcps:'mcp-configs/ 확인', noHooks:'훅이 설정되지 않음', recentlyViewed:'최근 본 항목', clearHistory:'지우기', ruleFiles:'규칙 파일', more:'더보기', servers:'서버', skill:'스킬', workflow:'워크플로우', event:'이벤트', matcher:'매처', id:'ID', contribution:'ECC에 기여' },
-  tr: { name:'Türkçe', title:'ECC Yetenekleri', search:'Ajan, beceri, komut ara...', agents:'Ajanlar', skills:'Beceriler', commands:'Komutlar', rules:'Kurallar', mcps:'MCP\'ler', hooks:'Kancalar', ruleSets:'Kural Setleri', mcpConfigs:'MCP Yapılandırmaları', all:'Tümü', reviewers:'İnceleyenler', buildResolvers:'Derleme Çözücüler', architects:'Mimarlar', security:'Güvenlik', testing:'Test', patterns:'Desenler', design:'Tasarım', research:'Araştırma', data:'Veri', agent:'Ajan', devops:'DevOps', description:'Açıklama', details:'Detaylar', tools:'Araçlar', copied:'Kopyalandı', noMcps:'MCP yapılandırması bulunamadı', checkMcps:'mcp-configs/ dizinini kontrol edin', noHooks:'Kanca yapılandırılmamış', recentlyViewed:'Son Görüntülenenler', clearHistory:'Temizle', ruleFiles:'kural dosyası', more:'daha fazla', servers:'sunucu', skill:'Beceri', workflow:'iş akışı', event:'Olay', matcher:'Eşleştirici', id:'ID', contribution:'ECC\'ye Katkı' },
-  ru: { name:'Русский', title:'Возможности ECC', search:'Поиск агентов, навыков, команд...', agents:'Агенты', skills:'Навыки', commands:'Команды', rules:'Правила', mcps:'MCP', hooks:'Хуки', ruleSets:'Наборы правил', mcpConfigs:'MCP конфиги', all:'Все', reviewers:'Ревьюеры', buildResolvers:'Сборщики', architects:'Архитекторы', security:'Безопасность', testing:'Тестирование', patterns:'Паттерны', design:'Дизайн', research:'Исследования', data:'Данные', agent:'Агент', devops:'DevOps', description:'Описание', details:'Детали', tools:'Инструменты', copied:'Скопировано', noMcps:'MCP конфиги не найдены', checkMcps:'Проверьте mcp-configs/', noHooks:'Хуки не настроены', recentlyViewed:'Недавние', clearHistory:'Очистить', ruleFiles:'файлов правил', more:'ещё', servers:'серверов', skill:'Навык', workflow:'воркфлоу', event:'Событие', matcher:'Матчер', id:'ID', contribution:'Вклад в ECC' },
-  vi: { name:'Tiếng Việt', title:'Năng lực ECC', search:'Tìm kiếm agent, kỹ năng, lệnh...', agents:'Agent', skills:'Kỹ năng', commands:'Lệnh', rules:'Luật', mcps:'MCP', hooks:'Hook', ruleSets:'Bộ luật', mcpConfigs:'Cấu hình MCP', all:'Tất cả', reviewers:'Người đánh giá', buildResolvers:'Trình giải quyết build', architects:'Kiến trúc sư', security:'Bảo mật', testing:'Kiểm thử', patterns:'Mẫu', design:'Thiết kế', research:'Nghiên cứu', data:'Dữ liệu', agent:'Agent', devops:'DevOps', description:'Mô tả', details:'Chi tiết', tools:'Công cụ', copied:'Đã sao chép', noMcps:'Không tìm thấy cấu hình MCP', checkMcps:'Kiểm tra mcp-configs/', noHooks:'Chưa có hook nào', recentlyViewed:'Đã xem gần đây', clearHistory:'Xóa', ruleFiles:'tệp luật', more:'thêm', servers:'máy chủ', skill:'Kỹ năng', workflow:'quy trình', event:'Sự kiện', matcher:'Bộ so khớp', id:'ID', contribution:'Đóng góp cho ECC' },
-  th: { name:'ไทย', title:'ความสามารถ ECC', search:'ค้นหาเอเจนต์ ทักษะ คำสั่ง...', agents:'เอเจนต์', skills:'ทักษะ', commands:'คำสั่ง', rules:'กฎ', mcps:'MCP', hooks:'ฮุค', ruleSets:'ชุดกฎ', mcpConfigs:'การตั้งค่า MCP', all:'ทั้งหมด', reviewers:'ผู้ตรวจสอบ', buildResolvers:'ตัวแก้ไขบิลด์', architects:'สถาปนิก', security:'ความปลอดภัย', testing:'การทดสอบ', patterns:'รูปแบบ', design:'ออกแบบ', research:'วิจัย', data:'ข้อมูล', agent:'เอเจนต์', devops:'DevOps', description:'คำอธิบาย', details:'รายละเอียด', tools:'เครื่องมือ', copied:'คัดลอกแล้ว', noMcps:'ไม่พบการตั้งค่า MCP', checkMcps:'ตรวจสอบ mcp-configs/', noHooks:'ไม่มีการตั้งค่าฮุค', recentlyViewed:'ที่ดูล่าสุด', clearHistory:'ล้าง', ruleFiles:'ไฟล์กฎ', more:'เพิ่มเติม', servers:'เซิร์ฟเวอร์', skill:'ทักษะ', workflow:'เวิร์กโฟลว์', event:'เหตุการณ์', matcher:'ตัวจับคู่', id:'ID', contribution:'มีส่วนร่วมกับ ECC' },
-  de: { name:'Deutsch', title:'ECC-Funktionen', search:'Agenten, Fähigkeiten, Befehle suchen...', agents:'Agenten', skills:'Fähigkeiten', commands:'Befehle', rules:'Regeln', mcps:'MCPs', hooks:'Hooks', ruleSets:'Regelsätze', mcpConfigs:'MCP-Konfigurationen', all:'Alle', reviewers:'Prüfer', buildResolvers:'Build-Resolver', architects:'Architekten', security:'Sicherheit', testing:'Tests', patterns:'Muster', design:'Design', research:'Forschung', data:'Daten', agent:'Agent', devops:'DevOps', description:'Beschreibung', details:'Details', tools:'Werkzeuge', copied:'Kopiert', noMcps:'Keine MCP-Konfigurationen gefunden', checkMcps:'Prüfen Sie mcp-configs/', noHooks:'Keine Hooks konfiguriert', recentlyViewed:'Zuletzt angesehen', clearHistory:'Löschen', ruleFiles:'Regeldateien', more:'mehr', servers:'Server', skill:'Fähigkeit', workflow:'Workflow', event:'Ereignis', matcher:'Matcher', id:'ID', contribution:'Beitrag zu ECC' },
+  en: { name:'English', title:'Aiuby Capabilities', search:'Search agents, skills, commands...', agents:'Agents', skills:'Skills', commands:'Commands', rules:'Rules', mcps:'MCPs', hooks:'Hooks', ruleSets:'Rule Sets', mcpConfigs:'MCP Configs', all:'All', reviewers:'Reviewers', buildResolvers:'Build Resolvers', architects:'Architects', security:'Security', testing:'Testing', patterns:'Patterns', design:'Design', research:'Research', data:'Data', agent:'Agent', devops:'DevOps', description:'Description', details:'Details', tools:'Tools', copied:'Copied', noMcps:'No MCP configs found', checkMcps:'Check mcp-configs/ directory', noHooks:'No hooks configured', recentlyViewed:'Recently Viewed', clearHistory:'Clear', ruleFiles:'rule files', more:'more', servers:'servers', skill:'Skill', workflow:'workflow', event:'Event', matcher:'Matcher', id:'ID', contribution:'Contribution to Aiuby' },
+  pt: { name:'Português', title:'Recursos do Aiuby', search:'Pesquisar agentes, skills, comandos...', agents:'Agentes', skills:'Skills', commands:'Comandos', rules:'Regras', mcps:'MCPs', hooks:'Hooks', ruleSets:'Conjuntos de Regras', mcpConfigs:'Configs MCP', all:'Todos', reviewers:'Revisores', buildResolvers:'Resolvedores', architects:'Arquitetos', security:'Segurança', testing:'Testes', patterns:'Padrões', design:'Design', research:'Pesquisa', data:'Dados', agent:'Agente', devops:'DevOps', description:'Descrição', details:'Detalhes', tools:'Ferramentas', copied:'Copiado', noMcps:'Nenhuma config MCP encontrada', checkMcps:'Verifique mcp-configs/', noHooks:'Nenhum hook configurado', recentlyViewed:'Vistos Recentemente', clearHistory:'Limpar', ruleFiles:'arquivos de regras', more:'mais', servers:'servidores', skill:'Skill', workflow:'workflow', event:'Evento', matcher:'Corresp.', id:'ID', contribution:'Contribuição ao Aiuby' },
+  zh: { name:'简体中文', title:'Aiuby 能力', search:'搜索代理、技能、命令...', agents:'代理', skills:'技能', commands:'命令', rules:'规则', mcps:'MCP', hooks:'钩子', ruleSets:'规则集', mcpConfigs:'MCP 配置', all:'全部', reviewers:'审查者', buildResolvers:'构建解析器', architects:'架构师', security:'安全', testing:'测试', patterns:'模式', design:'设计', research:'研究', data:'数据', agent:'代理', devops:'运维', description:'描述', details:'详情', tools:'工具', copied:'已复制', noMcps:'未找到 MCP 配置', checkMcps:'检查 mcp-configs/ 目录', noHooks:'未配置钩子', recentlyViewed:'最近查看', clearHistory:'清除', ruleFiles:'规则文件', more:'更多', servers:'服务器', skill:'技能', workflow:'工作流', event:'事件', matcher:'匹配器', id:'ID', contribution:'对 Aiuby 的贡献' },
+  zht: { name:'繁體中文', title:'Aiuby 能力', search:'搜索代理、技能、命令...', agents:'代理', skills:'技能', commands:'命令', rules:'規則', mcps:'MCP', hooks:'鉤子', ruleSets:'規則集', mcpConfigs:'MCP 配置', all:'全部', reviewers:'審查者', buildResolvers:'構建解析器', architects:'架構師', security:'安全', testing:'測試', patterns:'模式', design:'設計', research:'研究', data:'數據', agent:'代理', devops:'運維', description:'描述', details:'詳情', tools:'工具', copied:'已複製', noMcps:'未找到 MCP 配置', checkMcps:'檢查 mcp-configs/ 目錄', noHooks:'未配置鉤子', recentlyViewed:'最近查看', clearHistory:'清除', ruleFiles:'規則文件', more:'更多', servers:'服務器', skill:'技能', workflow:'工作流', event:'事件', matcher:'匹配器', id:'ID', contribution:'對 Aiuby 的貢獻' },
+  ja: { name:'日本語', title:'Aiuby 機能一覧', search:'エージェント、スキル、コマンドを検索...', agents:'エージェント', skills:'スキル', commands:'コマンド', rules:'ルール', mcps:'MCP', hooks:'フック', ruleSets:'ルールセット', mcpConfigs:'MCP設定', all:'すべて', reviewers:'レビュアー', buildResolvers:'ビルド解決', architects:'アーキテクト', security:'セキュリティ', testing:'テスト', patterns:'パターン', design:'デザイン', research:'研究', data:'データ', agent:'エージェント', devops:'DevOps', description:'説明', details:'詳細', tools:'ツール', copied:'コピーしました', noMcps:'MCP設定が見つかりません', checkMcps:'mcp-configs/を確認', noHooks:'フックが設定されていません', recentlyViewed:'最近見た項目', clearHistory:'クリア', ruleFiles:'ルールファイル', more:'もっと見る', servers:'サーバー', skill:'スキル', workflow:'ワークフロー', event:'イベント', matcher:'マッチャー', id:'ID', contribution:'Aiubyへの貢献' },
+  ko: { name:'한국어', title:'Aiuby 기능', search:'에이전트, 스킬, 명령어 검색...', agents:'에이전트', skills:'스킬', commands:'명령어', rules:'규칙', mcps:'MCP', hooks:'훅', ruleSets:'규칙 세트', mcpConfigs:'MCP 설정', all:'전체', reviewers:'리뷰어', buildResolvers:'빌드 해결사', architects:'아키텍트', security:'보안', testing:'테스트', patterns:'패턴', design:'디자인', research:'연구', data:'데이터', agent:'에이전트', devops:'DevOps', description:'설명', details:'세부정보', tools:'도구', copied:'복사됨', noMcps:'MCP 설정을 찾을 수 없음', checkMcps:'mcp-configs/ 확인', noHooks:'훅이 설정되지 않음', recentlyViewed:'최근 본 항목', clearHistory:'지우기', ruleFiles:'규칙 파일', more:'더보기', servers:'서버', skill:'스킬', workflow:'워크플로우', event:'이벤트', matcher:'매처', id:'ID', contribution:'Aiuby에 기여' },
+  tr: { name:'Türkçe', title:'Aiuby Yetenekleri', search:'Ajan, beceri, komut ara...', agents:'Ajanlar', skills:'Beceriler', commands:'Komutlar', rules:'Kurallar', mcps:'MCP\'ler', hooks:'Kancalar', ruleSets:'Kural Setleri', mcpConfigs:'MCP Yapılandırmaları', all:'Tümü', reviewers:'İnceleyenler', buildResolvers:'Derleme Çözücüler', architects:'Mimarlar', security:'Güvenlik', testing:'Test', patterns:'Desenler', design:'Tasarım', research:'Araştırma', data:'Veri', agent:'Ajan', devops:'DevOps', description:'Açıklama', details:'Detaylar', tools:'Araçlar', copied:'Kopyalandı', noMcps:'MCP yapılandırması bulunamadı', checkMcps:'mcp-configs/ dizinini kontrol edin', noHooks:'Kanca yapılandırılmamış', recentlyViewed:'Son Görüntülenenler', clearHistory:'Temizle', ruleFiles:'kural dosyası', more:'daha fazla', servers:'sunucu', skill:'Beceri', workflow:'iş akışı', event:'Olay', matcher:'Eşleştirici', id:'ID', contribution:'Aiuby\'ye Katkı' },
+  ru: { name:'Русский', title:'Возможности Aiuby', search:'Поиск агентов, навыков, команд...', agents:'Агенты', skills:'Навыки', commands:'Команды', rules:'Правила', mcps:'MCP', hooks:'Хуки', ruleSets:'Наборы правил', mcpConfigs:'MCP конфиги', all:'Все', reviewers:'Ревьюеры', buildResolvers:'Сборщики', architects:'Архитекторы', security:'Безопасность', testing:'Тестирование', patterns:'Паттерны', design:'Дизайн', research:'Исследования', data:'Данные', agent:'Агент', devops:'DevOps', description:'Описание', details:'Детали', tools:'Инструменты', copied:'Скопировано', noMcps:'MCP конфиги не найдены', checkMcps:'Проверьте mcp-configs/', noHooks:'Хуки не настроены', recentlyViewed:'Недавние', clearHistory:'Очистить', ruleFiles:'файлов правил', more:'ещё', servers:'серверов', skill:'Навык', workflow:'воркфлоу', event:'Событие', matcher:'Матчер', id:'ID', contribution:'Вклад в Aiuby' },
+  vi: { name:'Tiếng Việt', title:'Năng lực Aiuby', search:'Tìm kiếm agent, kỹ năng, lệnh...', agents:'Agent', skills:'Kỹ năng', commands:'Lệnh', rules:'Luật', mcps:'MCP', hooks:'Hook', ruleSets:'Bộ luật', mcpConfigs:'Cấu hình MCP', all:'Tất cả', reviewers:'Người đánh giá', buildResolvers:'Trình giải quyết build', architects:'Kiến trúc sư', security:'Bảo mật', testing:'Kiểm thử', patterns:'Mẫu', design:'Thiết kế', research:'Nghiên cứu', data:'Dữ liệu', agent:'Agent', devops:'DevOps', description:'Mô tả', details:'Chi tiết', tools:'Công cụ', copied:'Đã sao chép', noMcps:'Không tìm thấy cấu hình MCP', checkMcps:'Kiểm tra mcp-configs/', noHooks:'Chưa có hook nào', recentlyViewed:'Đã xem gần đây', clearHistory:'Xóa', ruleFiles:'tệp luật', more:'thêm', servers:'máy chủ', skill:'Kỹ năng', workflow:'quy trình', event:'Sự kiện', matcher:'Bộ so khớp', id:'ID', contribution:'Đóng góp cho Aiuby' },
+  th: { name:'ไทย', title:'ความสามารถ Aiuby', search:'ค้นหาเอเจนต์ ทักษะ คำสั่ง...', agents:'เอเจนต์', skills:'ทักษะ', commands:'คำสั่ง', rules:'กฎ', mcps:'MCP', hooks:'ฮุค', ruleSets:'ชุดกฎ', mcpConfigs:'การตั้งค่า MCP', all:'ทั้งหมด', reviewers:'ผู้ตรวจสอบ', buildResolvers:'ตัวแก้ไขบิลด์', architects:'สถาปนิก', security:'ความปลอดภัย', testing:'การทดสอบ', patterns:'รูปแบบ', design:'ออกแบบ', research:'วิจัย', data:'ข้อมูล', agent:'เอเจนต์', devops:'DevOps', description:'คำอธิบาย', details:'รายละเอียด', tools:'เครื่องมือ', copied:'คัดลอกแล้ว', noMcps:'ไม่พบการตั้งค่า MCP', checkMcps:'ตรวจสอบ mcp-configs/', noHooks:'ไม่มีการตั้งค่าฮุค', recentlyViewed:'ที่ดูล่าสุด', clearHistory:'ล้าง', ruleFiles:'ไฟล์กฎ', more:'เพิ่มเติม', servers:'เซิร์ฟเวอร์', skill:'ทักษะ', workflow:'เวิร์กโฟลว์', event:'เหตุการณ์', matcher:'ตัวจับคู่', id:'ID', contribution:'มีส่วนร่วมกับ Aiuby' },
+  de: { name:'Deutsch', title:'Aiuby-Funktionen', search:'Agenten, Fähigkeiten, Befehle suchen...', agents:'Agenten', skills:'Fähigkeiten', commands:'Befehle', rules:'Regeln', mcps:'MCPs', hooks:'Hooks', ruleSets:'Regelsätze', mcpConfigs:'MCP-Konfigurationen', all:'Alle', reviewers:'Prüfer', buildResolvers:'Build-Resolver', architects:'Architekten', security:'Sicherheit', testing:'Tests', patterns:'Muster', design:'Design', research:'Forschung', data:'Daten', agent:'Agent', devops:'DevOps', description:'Beschreibung', details:'Details', tools:'Werkzeuge', copied:'Kopiert', noMcps:'Keine MCP-Konfigurationen gefunden', checkMcps:'Prüfen Sie mcp-configs/', noHooks:'Keine Hooks konfiguriert', recentlyViewed:'Zuletzt angesehen', clearHistory:'Löschen', ruleFiles:'Regeldateien', more:'mehr', servers:'Server', skill:'Fähigkeit', workflow:'Workflow', event:'Ereignis', matcher:'Matcher', id:'ID', contribution:'Beitrag zu Aiuby' },
 };
 const LANG_KEYS = Object.keys(LANG);
 
@@ -175,7 +175,7 @@ function renderHTML(data) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>ECC Capabilities</title>
+<title>Aiuby Capabilities</title>
 <style>
   :root {
     --bg: #080a0e; --bg2: #0d0f14; --bg3: #13161e; --bg4: #191d2a;
@@ -409,7 +409,7 @@ function renderHTML(data) {
 <div class="header">
   <div class="brand" id="brand-link">
     <div class="logo">E</div>
-    <h1><span id="t-title">ECC Capabilities</span> <span class="ver">v2.0.0-rc.1</span></h1>
+    <h1><span id="t-title">Aiuby Capabilities</span> <span class="ver">v0.1.0</span></h1>
   </div>
   <div class="header-center"></div>
   <div class="header-right">
@@ -442,9 +442,9 @@ function renderHTML(data) {
 <div class="footer">
   <a href="https://github.com/WendeelMarinho/aiuby-cli" target="_blank">github.com/WendeelMarinho/aiuby-cli</a>
   <span class="dt"></span>
-  <span>ECC v2.0.0-rc.1</span>
+  <span>Aiuby v0.1.0</span>
   <span class="dt"></span>
-  <span id="t-contribution">Contribution to ECC</span>
+  <span id="t-contribution">Contribution to Aiuby</span>
   <span class="dt"></span>
   <span>Dashboard :${PORT}</span>
 </div>
@@ -883,7 +883,7 @@ function createDashboardServer({
       } catch (error) {
         reportDashboardFailure(
           reportError,
-          '[ECC] Failed to load dashboard data:',
+          '[Aiuby] Failed to load dashboard data:',
           error
         );
         return sendJson(res, 500, { error: 'Internal server error' });
@@ -897,7 +897,7 @@ function createDashboardServer({
     } catch (error) {
       reportDashboardFailure(
         reportError,
-        '[ECC] Failed to render dashboard:',
+        '[Aiuby] Failed to render dashboard:',
         error
       );
       return sendHtml(
@@ -924,7 +924,7 @@ if (require.main === module) {
   listenDashboardServer(server, { port: PORT, host: HOST, onListening: () => {
     const displayHost = HOST.includes(':') ? `[${HOST}]` : HOST;
     const dashboardUrl = `http://${displayHost}:${PORT}`;
-    console.log(`\n    ECC Capabilities  →  ${dashboardUrl}\n`);
+    console.log(`\n    Aiuby Capabilities  →  ${dashboardUrl}\n`);
     try { const { spawn } = require('child_process'); const p = process.platform; const c = p === 'darwin' ? 'open' : p === 'win32' ? 'start' : 'xdg-open'; if (c === 'start') spawn('cmd', ['/c', 'start', dashboardUrl], { stdio: 'ignore' }); else spawn(c, [dashboardUrl], { stdio: 'ignore' }); } catch { /* best-effort auto-open */ }
   } });
 }

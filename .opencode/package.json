@@ -37,22 +37,24 @@
     "plugin",
     "claude-code",
     "agents",
-    "ecc",
     "ai-coding",
     "developer-tools",
     "hooks",
     "automation"
   ],
-  "author": "affaan-m",
+  "author": {
+    "name": "Wendeel Marinho",
+    "url": "https://github.com/WendeelMarinho"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/affaan-m/ECC.git"
+    "url": "git+https://github.com/WendeelMarinho/aiuby-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/affaan-m/ECC/issues"
+    "url": "https://github.com/WendeelMarinho/aiuby-cli/issues"
   },
-  "homepage": "https://github.com/affaan-m/ECC#readme",
+  "homepage": "https://aiuby.com",
   "publishConfig": {
     "access": "public"
   },

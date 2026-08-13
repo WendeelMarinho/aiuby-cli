@@ -128,7 +128,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       .then(() =>
         log(
           "warn",
-          "[ECC] changed-files tracking disabled: could not load the changed-files store. " +
+          "[Aiuby] changed-files tracking disabled: could not load the changed-files store. " +
             "Run `ecc repair --target opencode` to restore the missing files. Other ECC hooks are unaffected."
         )
       )
@@ -185,11 +185,11 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       if (hookEnabled("post:edit:format", ["strict"]) && event.path.match(/\.(ts|tsx|js|jsx)$/)) {
         try {
           await $`prettier --write ${event.path} 2>/dev/null`
-          log("info", `[ECC] Formatted: ${event.path}`)
+          log("info", `[Aiuby] Formatted: ${event.path}`)
         } catch (error: unknown) {
           // Prettier not installed or failed - log but continue
           const errorMessage = error instanceof Error ? error.message : String(error)
-          log("debug", `[ECC] Prettier formatting failed for ${event.path}: ${errorMessage}`)
+          log("debug", `[Aiuby] Prettier formatting failed for ${event.path}: ${errorMessage}`)
         }
       }
 
@@ -201,7 +201,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
             const lines = result.trim().split("\n").length
             log(
               "warn",
-              `[ECC] console.log found in ${event.path} (${lines} occurrence${lines > 1 ? "s" : ""})`
+              `[Aiuby] console.log found in ${event.path} (${lines} occurrence${lines > 1 ? "s" : ""})`
             )
           }
         } catch {
@@ -244,10 +244,10 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       ) {
         try {
           await $`npx tsc --noEmit 2>&1`
-          log("info", "[ECC] TypeScript check passed")
+          log("info", "[Aiuby] TypeScript check passed")
         } catch (error: unknown) {
           const err = error as { stdout?: string }
-          log("warn", "[ECC] TypeScript errors detected:")
+          log("warn", "[Aiuby] TypeScript errors detected:")
           if (err.stdout) {
             // Log first few errors
             const errors = err.stdout.split("\n").slice(0, 5)
@@ -262,7 +262,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
         input.tool === "bash" &&
         input.args?.toString().includes("gh pr create")
       ) {
-        log("info", "[ECC] PR created - check GitHub Actions status")
+        log("info", "[Aiuby] PR created - check GitHub Actions status")
       }
     },
 
@@ -301,7 +301,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       ) {
         log(
           "info",
-          "[ECC] Remember to review changes before pushing: git diff origin/main...HEAD"
+          "[Aiuby] Remember to review changes before pushing: git diff origin/main...HEAD"
         )
       }
 
@@ -322,7 +322,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
         ) {
           log(
             "warn",
-            `[ECC] Creating ${filePath} - consider if this documentation is necessary`
+            `[Aiuby] Creating ${filePath} - consider if this documentation is necessary`
           )
         }
       }
@@ -337,7 +337,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
         ) {
           log(
             "info",
-            "[ECC] Long-running command detected - consider using background execution"
+            "[Aiuby] Long-running command detected - consider using background execution"
           )
         }
       }
@@ -353,11 +353,11 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
     "session.created": async () => {
       if (!hookEnabled("session:start", ["minimal", "standard", "strict"])) return
 
-      log("info", `[ECC] Session started - profile=${currentProfile}`)
+      log("info", `[Aiuby] Session started - profile=${currentProfile}`)
 
       // Check for project-specific context files
       if (hasProjectFile("CLAUDE.md")) {
-        log("info", "[ECC] Found CLAUDE.md - loading project context")
+        log("info", "[Aiuby] Found CLAUDE.md - loading project context")
       }
     },
 
@@ -372,7 +372,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       if (!hookEnabled("stop:check-console-log", ["minimal", "standard", "strict"])) return
       if (editedFiles.size === 0) return
 
-      log("info", "[ECC] Session idle - running console.log audit")
+      log("info", "[Aiuby] Session idle - running console.log audit")
 
       let totalConsoleLogCount = 0
       const filesWithConsoleLogs: string[] = []
@@ -395,14 +395,14 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       if (totalConsoleLogCount > 0) {
         log(
           "warn",
-          `[ECC] Audit: ${totalConsoleLogCount} console.log statement(s) in ${filesWithConsoleLogs.length} file(s)`
+          `[Aiuby] Audit: ${totalConsoleLogCount} console.log statement(s) in ${filesWithConsoleLogs.length} file(s)`
         )
         filesWithConsoleLogs.forEach((f) =>
           log("warn", `  - ${f}`)
         )
-        log("warn", "[ECC] Remove console.log statements before committing")
+        log("warn", "[Aiuby] Remove console.log statements before committing")
       } else {
-        log("info", "[ECC] Audit passed: No console.log statements found")
+        log("info", "[Aiuby] Audit passed: No console.log statements found")
       }
 
       // Desktop notification (cross-platform)
@@ -420,7 +420,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       } catch (error: unknown) {
         // Notification not supported or failed - log but continue
         const errorMessage = error instanceof Error ? error.message : String(error)
-        log("debug", `[ECC] Desktop notification failed: ${errorMessage}`)
+        log("debug", `[Aiuby] Desktop notification failed: ${errorMessage}`)
       }
 
       // Clear tracked files for next task
@@ -436,7 +436,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
      */
     "session.deleted": async () => {
       if (!hookEnabled("session:end-marker", ["minimal", "standard", "strict"])) return
-      log("info", "[ECC] Session ended - cleaning up")
+      log("info", "[Aiuby] Session ended - cleaning up")
       editedFiles.clear()
       changedFilesStore?.clearChanges()
       pendingToolChanges.clear()
@@ -470,7 +470,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
       const completed = event.todos.filter((t) => t.done).length
       const total = event.todos.length
       if (total > 0) {
-        log("info", `[ECC] Progress: ${completed}/${total} tasks completed`)
+        log("info", `[Aiuby] Progress: ${completed}/${total} tasks completed`)
       }
     },
 
@@ -572,7 +572,7 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
      * Action: Auto-approve reads, formatters, and test commands; log all for audit
      */
     "permission.ask": async (event: PermissionEvent) => {
-      log("info", `[ECC] Permission requested for: ${event.tool}`)
+      log("info", `[Aiuby] Permission requested for: ${event.tool}`)
 
       try {
         // Handle both string args and object args with command property
@@ -587,29 +587,29 @@ export const AiubyHooksPlugin: AiubyHooksPluginFn = async ({
 
         // Auto-approve: read/search tools
         if (["read", "glob", "grep", "search", "list"].includes(event.tool)) {
-          log("debug", `[ECC] Auto-approved read-only tool: ${event.tool}`)
+          log("debug", `[Aiuby] Auto-approved read-only tool: ${event.tool}`)
           return { approved: true, reason: "Read-only operation" }
         }
 
         // Auto-approve: formatters
         if (event.tool === "bash" && /^(npx )?(@biomejs\/biome|prettier|black|gofmt|rustfmt|swift-format)/.test(cmd)) {
-          log("debug", `[ECC] Auto-approved formatter: ${cmd}`)
+          log("debug", `[Aiuby] Auto-approved formatter: ${cmd}`)
           return { approved: true, reason: "Formatter execution" }
         }
 
         // Auto-approve: test execution
         if (event.tool === "bash" && /^(npm test|npx vitest|npx jest|pytest|go test|cargo test)/.test(cmd)) {
-          log("debug", `[ECC] Auto-approved test execution: ${cmd}`)
+          log("debug", `[Aiuby] Auto-approved test execution: ${cmd}`)
           return { approved: true, reason: "Test execution" }
         }
 
         // Everything else: let user decide
-        log("debug", `[ECC] Permission requires user approval: ${event.tool}`)
+        log("debug", `[Aiuby] Permission requires user approval: ${event.tool}`)
         return { approved: undefined }
       } catch (error: unknown) {
         // Error in permission handling - log and deny for safety
         const errorMessage = error instanceof Error ? error.message : String(error)
-        log("error", `[ECC] Permission handling error for ${event.tool}: ${errorMessage}`)
+        log("error", `[Aiuby] Permission handling error for ${event.tool}: ${errorMessage}`)
         return { approved: false, reason: `Error: ${errorMessage}` }
       }
     },

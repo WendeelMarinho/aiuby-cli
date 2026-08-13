@@ -11,16 +11,16 @@ body:
       value: |
         Thanks for reporting this. Keep it short: what happened and which setup you used are enough to start.
 
-        This issue is public. Do not paste secrets, prompts, private repository names, or unredacted home/project paths. ECC never uploads diagnostics automatically.
+        This issue is public. Do not paste secrets, prompts, private repository names, or unredacted home/project paths. Aiuby never uploads diagnostics automatically.
   - type: dropdown
     id: impact
     attributes:
       label: What is the impact?
       options:
-        - ECC will not install
-        - ECC installs, but nothing loads
+        - Aiuby will not install
+        - Aiuby installs, but nothing loads
         - Some components are missing or silently ignored
-        - ECC is duplicated or conflicts with another install
+        - Aiuby is duplicated or conflicts with another install
         - A hook or command interrupts normal work
         - Doctor or repair does not recover the install
         - Other runtime problem
@@ -83,9 +83,9 @@ body:
   - type: input
     id: versions
     attributes:
-      label: ECC and harness versions
+      label: Aiuby and harness versions
       description: If known. A tag, commit, or package version is enough.
-      placeholder: ECC 2.1.0; Claude Code 2.x
+      placeholder: Aiuby 0.1.0; Claude Code 2.x
   - type: textarea
     id: diagnostics
     attributes:

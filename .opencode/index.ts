@@ -1,10 +1,10 @@
 /**
- * ECC Plugin for OpenCode
+ * Aiuby Plugin for OpenCode
  *
- * This package provides the published ECC OpenCode plugin module:
+ * This package provides the published Aiuby OpenCode plugin module:
  * - Plugin hooks (auto-format, TypeScript check, console.log warning, env injection, etc.)
  * - Custom tools (run-tests, check-coverage, security-audit, format-code, lint-check, git-summary)
- * - Bundled reference config/assets for the wider ECC OpenCode setup
+ * - Bundled reference config/assets for the wider Aiuby OpenCode setup
  *
  * Usage:
  *
@@ -20,14 +20,14 @@
  * }
  * ```
  *
- * That enables the published plugin module only. For ECC commands, agents,
+ * That enables the published plugin module only. For Aiuby commands, agents,
  * prompts, and instructions, use this repository's `.opencode/opencode.json`
  * as a base or copy the bundled `.opencode/` assets into your project.
  *
  * Option 2: Clone and use directly
  * ```bash
- * git clone https://github.com/affaan-m/ECC
- * cd ECC
+ * git clone https://github.com/WendeelMarinho/aiuby-cli
+ * cd aiuby-cli
  * opencode
  * ```
  *
@@ -41,17 +41,17 @@ export { AiubyHooksPlugin, default } from "./plugins/index.js"
 export * from "./plugins/index.js"
 
 // Version export
-export const VERSION = "1.6.0"
+export const VERSION = "0.1.0"
 
 // Plugin metadata
 export const metadata = {
   name: "aiuby",
   version: VERSION,
-  description: "ECC plugin for OpenCode",
-  author: "affaan-m",
+  description: "Aiuby plugin for OpenCode",
+  author: "Wendeel Marinho",
   features: {
-    agents: 13,
-    commands: 31,
+    agents: 67,
+    commands: 94,
     skills: 37,
     configAssets: true,
     hookEvents: [

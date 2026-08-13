@@ -6,6 +6,7 @@ const os = require('os');
 const path = require('path');
 
 const { assertWithinTrustedRoot, realpathNearestExisting } = require('./path-safety');
+const { getEnv, resolveUserDataDir, resolveProjectDataDir } = require('./legacy-compat');
 const {
   MAX_BODY_BYTES,
   MAX_DOCUMENT_BYTES,
@@ -63,12 +64,19 @@ function resolveVaultRoots(options = {}) {
     options.homeDir || env.HOME || env.USERPROFILE || os.homedir()
   );
   const projectRoot = findNearestProjectRoot(cwd);
-  const projectVault = env.ECC_MEMORY_PROJECT_ROOT
-    ? resolveOverride(env.ECC_MEMORY_PROJECT_ROOT, cwd)
-    : path.join(projectRoot, '.ecc', 'memory');
-  const userVault = env.ECC_MEMORY_USER_ROOT
-    ? resolveOverride(env.ECC_MEMORY_USER_ROOT, cwd)
-    : path.join(homeDir, '.ecc', 'memory');
+  // Routed through the compatibility bridge instead of hardcoding a state
+  // directory. This component holds more user data than anything else in the
+  // repo, so it must write ~/.aiuby on a fresh install while still reading an
+  // un-migrated ~/.ecc. Hardcoding `.ecc` made every new 0.x install create a
+  // directory already slated for deletion at 1.0.0. aiuby:compat
+  const projectOverride = getEnv('AIUBY_MEMORY_PROJECT_ROOT', { env, quiet: true });
+  const userOverride = getEnv('AIUBY_MEMORY_USER_ROOT', { env, quiet: true });
+  const projectVault = projectOverride
+    ? resolveOverride(projectOverride, cwd)
+    : path.join(resolveProjectDataDir({ projectRoot, env, quiet: true }).path, 'memory');
+  const userVault = userOverride
+    ? resolveOverride(userOverride, cwd)
+    : path.join(resolveUserDataDir({ home: homeDir, env, quiet: true }).path, 'memory');
 
   const roots = {
     project: path.join(projectVault, 'project'),
@@ -77,13 +85,17 @@ function resolveVaultRoots(options = {}) {
   };
   Object.defineProperty(roots, VAULT_ROOT_BOUNDARIES, {
     value: Object.freeze({
-      project: env.ECC_MEMORY_PROJECT_ROOT
+      // Gate on the resolved override, not on a raw legacy env read: with
+      // AIUBY_MEMORY_* set, the vault moved but the boundary would still be
+      // computed as if it had not, so assertMemoryRootSafe would validate the
+      // relocated vault against the wrong trusted root. aiuby:compat
+      project: projectOverride
         ? realpathNearestExisting(projectVault)
         : projectRoot,
-      team: env.ECC_MEMORY_PROJECT_ROOT
+      team: projectOverride
         ? realpathNearestExisting(projectVault)
         : projectRoot,
-      user: env.ECC_MEMORY_USER_ROOT
+      user: userOverride
         ? realpathNearestExisting(userVault)
         : homeDir,
     }),

@@ -108,7 +108,7 @@ async function main() {
           const disabledWarnings = client.logs.filter(
             (entry) =>
               entry.level === "warn" &&
-              entry.message.includes("[ECC] changed-files tracking disabled") &&
+              entry.message.includes("[Aiuby] changed-files tracking disabled") &&
               entry.message.includes("ecc repair --target opencode")
           )
           assert.strictEqual(
@@ -203,7 +203,7 @@ async function main() {
 
         assert.deepStrictEqual($.calls, [], `Unexpected shell probes: ${$.calls.join(", ")}`)
         assert.ok(
-          client.logs.some((entry) => entry.message === "[ECC] Found CLAUDE.md - loading project context"),
+          client.logs.some((entry) => entry.message === "[Aiuby] Found CLAUDE.md - loading project context"),
           "Expected CLAUDE.md detection log"
         )
       }),
@@ -223,7 +223,7 @@ async function main() {
 
           assert.deepStrictEqual($.calls, [], `Unexpected shell probes: ${$.calls.join(", ")}`)
           assert.ok(
-            !client.logs.some((entry) => entry.message === "[ECC] Found CLAUDE.md - loading project context"),
+            !client.logs.some((entry) => entry.message === "[Aiuby] Found CLAUDE.md - loading project context"),
             "Directory named CLAUDE.md should not be treated as project context"
           )
         } finally {

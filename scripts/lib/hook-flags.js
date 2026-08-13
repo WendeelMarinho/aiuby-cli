@@ -23,7 +23,10 @@ function getHookProfile() {
 }
 
 function getDisabledHookIds() {
-  const raw = String(process.env.ECC_DISABLED_HOOKS || '');
+  // Was a bare process.env read while lines 21 and 57 already went through the
+  // bridge, so AIUBY_DISABLED_HOOKS was silently discarded — a §4 precedence
+  // violation that fails silently, exactly the class §6 warns about. aiuby:compat
+  const raw = String(getEnv('AIUBY_DISABLED_HOOKS', { quiet: true }) || '');
   if (!raw.trim()) return new Set();
 
   return new Set(

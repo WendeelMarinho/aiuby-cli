@@ -82,7 +82,7 @@ function runTests() {
       'README should document the shell minimal profile command'
     );
     assert.ok(
-      readme.includes('npx aiuby-install --profile minimal --target claude'),
+      readme.includes('npx -p aiuby aiuby-install --profile minimal --target claude'),
       'README should document the npx minimal profile command'
     );
     assert.ok(
