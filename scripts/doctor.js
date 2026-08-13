@@ -58,7 +58,7 @@ function statusLabel(status) {
 
 function printHuman(report) {
   if (report.results.length === 0) {
-    console.log('No ECC install-state files found for the current home/project context.');
+    console.log('No Aiuby install-state files found for the current home/project context.');
     console.log(`\n${problemReportLines().join('\n')}`);
     return;
   }

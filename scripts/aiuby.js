@@ -139,6 +139,7 @@ ${PRIMARY_COMMANDS.map(command => `  ${command.padEnd(15)} ${COMMANDS[command].d
 
   aiuby [args...]    Without a command, args are routed to "install"
   aiuby help <cmd>   Show help for a specific command
+  aiuby --version    Print the installed version
 
 Compatibility (removed in 1.0.0):
   ecc <command>      Deprecated alias for "aiuby <command>"
@@ -219,6 +220,12 @@ function resolveCommand(argv) {
 
   if (firstArg === '--help' || firstArg === '-h') {
     return { mode: 'help' };
+  }
+
+  // `--version` is the first thing anyone types after installing a CLI, and it
+  // errored out on the published 0.1.0 with "Unknown argument".
+  if (firstArg === '--version' || firstArg === '-v') {
+    return { mode: 'version' };
   }
 
   if (firstArg === 'help') {
@@ -307,6 +314,11 @@ function runCommand(commandName, args) {
 function main() {
   try {
     const resolution = resolveCommand(process.argv);
+
+    if (resolution.mode === 'version') {
+      console.log(require('../package.json').version);
+      process.exit(0);
+    }
 
     if (resolution.mode === 'help') {
       showHelp(0);

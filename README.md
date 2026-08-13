@@ -137,6 +137,9 @@ A **harness** is a distinct agent tool Aiuby installs into; an **install target*
 
 ## Installation
 
+> New here? [docs/USAGE.md](docs/USAGE.md) walks the whole loop end to end —
+> choosing components, installing, verifying, and uninstalling.
+
 ### Find the right components first
 
 Do not guess a profile. Describe the work and let the catalog answer:
