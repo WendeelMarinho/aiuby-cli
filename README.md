@@ -167,7 +167,7 @@ If you choose this path, stop there. The plugin already ships agents, skills, co
 ### Path 2 — CLI
 
 ```bash
-npm install -g aiuby-cli
+npm install -g aiuby
 
 aiuby install --profile full --target claude
 ```

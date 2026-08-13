@@ -58,7 +58,7 @@ that the agents share. Skill-only, minimal, manual, and Claude plugin installs
 do not add the Memory Vault runtime to `PATH`; install it separately first:
 
 ```bash
-npm install -g aiuby-cli
+npm install -g aiuby
 aiuby memory --help
 command -v aiuby-memory-mcp
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "aiuby-cli",
+  "name": "aiuby",
   "version": "0.1.0",
   "description": "Aiuby plugin for OpenCode - agents, commands, hooks, and skills",
   "main": "dist/index.js",

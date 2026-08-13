@@ -2,7 +2,7 @@ name: Release
 
 # Publicacao automatica desativada no fork Aiuby: o job faz `npm publish` do
 # pacote e so deve rodar depois que NPM_TOKEN estiver configurado para
-# aiuby-cli. Rode manualmente pela aba Actions quando isso estiver pronto.
+# aiuby. Rode manualmente pela aba Actions quando isso estiver pronto.
 on:
   workflow_dispatch:
 
@@ -97,7 +97,7 @@ jobs:
           - Improved release-note generation and changelog hygiene
 
           ### Notes
-          - npm package: \`aiuby-cli\`
+          - npm package: \`aiuby\`
           - Claude marketplace/plugin identifier: \`aiuby@aiuby\`
           - For migration tips and compatibility notes, see README and CHANGELOG.
           EOF

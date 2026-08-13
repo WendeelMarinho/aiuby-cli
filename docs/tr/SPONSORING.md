@@ -20,7 +20,7 @@ See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current ti
 
 Aylık paylaşılan metrikler şunları içerebilir:
 
-- npm indirmeleri (`aiuby-cli`, `ecc-agentshield`)
+- npm indirmeleri (`aiuby`, `ecc-agentshield`)
 - Repository benimseme (yıldızlar, fork'lar, katkıda bulunanlar)
 - GitHub App kurulum trendi
 - Sürüm ritmi ve güvenilirlik kilometre taşları

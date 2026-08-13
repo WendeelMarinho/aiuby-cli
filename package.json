@@ -1,5 +1,5 @@
 {
-  "name": "aiuby-cli",
+  "name": "aiuby",
   "version": "0.1.0",
   "description": "Aiuby AI Engineering - agents, context, memory, architecture, observability, evaluation, and security installed as an engineering system across Claude Code, Codex, Cursor, OpenCode, Gemini, Zed, and Copilot",
   "publishConfig": {
@@ -438,7 +438,7 @@
     "ecc-plan-canvas": "scripts/legacy/ecc-plan-canvas.js"
   },
   "scripts": {
-    "welcome": "echo '\\n  aiuby-cli installed!\\n  Run: aiuby typescript\\n  Compat: aiuby install typescript\\n  Docs: https://github.com/WendeelMarinho/aiuby-cli\\n  Run or self-host any open-source model. Any GPU provider works.\\n  The opt-in `aiuby ito find` bridge invokes an Ito CLI you installed and configured yourself;\\n  it submits a live authenticated RFQ and does not reserve capacity.\\n'",
+    "welcome": "echo '\\n  aiuby installed!\\n  Run: aiuby typescript\\n  Compat: aiuby install typescript\\n  Docs: https://github.com/WendeelMarinho/aiuby-cli\\n  Run or self-host any open-source model. Any GPU provider works.\\n  The opt-in `aiuby ito find` bridge invokes an Ito CLI you installed and configured yourself;\\n  it submits a live authenticated RFQ and does not reserve capacity.\\n'",
     "catalog:check": "node scripts/dev/catalog.js --text",
     "catalog:sync": "node scripts/dev/catalog.js --write --text",
     "command-registry:generate": "node scripts/ci/generate-command-registry.js",

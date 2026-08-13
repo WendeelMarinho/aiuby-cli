@@ -14,11 +14,11 @@ harness-specific transcripts or inboxes.
 
 This skill is guidance, not the Memory Vault executable. Skill-only, minimal,
 manual, and Claude plugin installs do not create the required commands on
-`PATH`. Install the `aiuby-cli` npm runtime separately before using the CLI
+`PATH`. Install the `aiuby` npm runtime separately before using the CLI
 or MCP examples:
 
 ```bash
-npm install -g aiuby-cli
+npm install -g aiuby
 ecc memory --help
 command -v aiuby-memory-mcp
 ```

@@ -473,7 +473,7 @@
     {
       "id": "skill:unified-memory",
       "family": "skill",
-      "description": "Cross-harness memory guidance that requires the separately installed aiuby-cli CLI runtime.",
+      "description": "Cross-harness memory guidance that requires the separately installed aiuby CLI runtime.",
       "modules": [
         "skill-unified-memory"
       ]

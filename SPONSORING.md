@@ -27,7 +27,7 @@ channel, or a guaranteed case study unless separately agreed in writing.
 
 Metrics shared monthly can include:
 
-- npm downloads (`aiuby-cli`)
+- npm downloads (`aiuby`)
 - Repository adoption (stars, forks, contributors)
 - GitHub App install trend
 - Release cadence and reliability milestones

@@ -11,7 +11,7 @@ need to inspect a wedged or sibling session, run the packaged CLI from another
 terminal:
 
 ```bash
-npx --package aiuby-cli ecc loop-status --json
+npx --package aiuby ecc loop-status --json
 ```
 
 The CLI scans local Claude transcript JSONL files under

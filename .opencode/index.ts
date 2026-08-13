@@ -10,13 +10,13 @@
  *
  * Option 1: Install via npm
  * ```bash
- * npm install aiuby-cli
+ * npm install aiuby
  * ```
  *
  * Then add to your opencode.json:
  * ```json
  * {
- *   "plugin": ["aiuby-cli"]
+ *   "plugin": ["aiuby"]
  * }
  * ```
  *
@@ -45,7 +45,7 @@ export const VERSION = "1.6.0"
 
 // Plugin metadata
 export const metadata = {
-  name: "aiuby-cli",
+  name: "aiuby",
   version: VERSION,
   description: "ECC plugin for OpenCode",
   author: "affaan-m",

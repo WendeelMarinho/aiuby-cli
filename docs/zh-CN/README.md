@@ -5,7 +5,7 @@
 [![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
 [![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
 [![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
-[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads\&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
+[![npm aiuby](https://img.shields.io/npm/dw/aiuby?label=aiuby%20weekly%20downloads\&logo=npm)](https://www.npmjs.com/package/aiuby)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads\&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -181,7 +181,7 @@ Codex、Hermes 等 harness 之间传递上下文。常规搜索只召回 `projec
 `PATH`。请先单独安装 ECC npm 运行时：
 
 ```bash
-npm install -g aiuby-cli
+npm install -g aiuby
 aiuby memory --help
 command -v aiuby-memory-mcp
 ```
@@ -1242,14 +1242,14 @@ opencode
 **选项 2：作为 npm 包安装**
 
 ```bash
-npm install aiuby-cli
+npm install aiuby
 ```
 
 然后添加到您的 `opencode.json`：
 
 ```json
 {
-  "plugin": ["aiuby-cli"]
+  "plugin": ["aiuby"]
 }
 ```
 

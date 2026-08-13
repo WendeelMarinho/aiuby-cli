@@ -22,14 +22,14 @@ Choose the method that matches your workflow below.
 ### Option 1: npm Package
 
 ```bash
-npm install aiuby-cli
+npm install aiuby
 ```
 
 Add to your `opencode.json`:
 
 ```json
 {
-  "plugin": ["aiuby-cli"]
+  "plugin": ["aiuby"]
 }
 ```
 

@@ -7,7 +7,7 @@
 [![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Fstars&style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
 [![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Fforks&style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
 [![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
-[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
+[![npm aiuby](https://img.shields.io/npm/dw/aiuby?label=aiuby%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
@@ -277,9 +277,9 @@ ECC hat jetzt drei öffentliche Bezeichner, und sie sind nicht austauschbar:
 
 - GitHub-Quell-Repo: `WendeelMarinho/aiuby-cli`
 - Claude-Marketplace-/Plugin-Bezeichner: `aiuby@aiuby`
-- npm-Paket: `aiuby-cli`
+- npm-Paket: `aiuby`
 
-Das ist beabsichtigt. Anthropic-Marketplace-/Plugin-Installationen werden über einen kanonischen Plugin-Bezeichner gekeyt, daher verwendet ECC `aiuby@aiuby`, um Tool-Namen und Slash-Command-Namespaces kurz genug für strenge Desktop-/API-Validatoren zu halten. Ältere Beiträge zeigen möglicherweise noch den früheren langen Marketplace-Bezeichner; behandle diesen lediglich als Legacy-Alias. Das npm-Paket blieb davon getrennt bei `aiuby-cli`, daher verwenden npm-Installationen und Marketplace-Installationen absichtlich unterschiedliche Namen.
+Das ist beabsichtigt. Anthropic-Marketplace-/Plugin-Installationen werden über einen kanonischen Plugin-Bezeichner gekeyt, daher verwendet ECC `aiuby@aiuby`, um Tool-Namen und Slash-Command-Namespaces kurz genug für strenge Desktop-/API-Validatoren zu halten. Ältere Beiträge zeigen möglicherweise noch den früheren langen Marketplace-Bezeichner; behandle diesen lediglich als Legacy-Alias. Das npm-Paket blieb davon getrennt bei `aiuby`, daher verwenden npm-Installationen und Marketplace-Installationen absichtlich unterschiedliche Namen.
 
 ### Schritt 2: Rules nur installieren, wenn du sie brauchst
 
@@ -1498,13 +1498,13 @@ opencode
 
 **Option 2: Als npm-Paket installieren**
 ```bash
-npm install aiuby-cli
+npm install aiuby
 ```
 
 Füge es dann zu deiner `opencode.json` hinzu:
 ```json
 {
-  "plugin": ["aiuby-cli"]
+  "plugin": ["aiuby"]
 }
 ```
 

@@ -48,7 +48,7 @@ test('documents the separately installed ECC runtime on every exposed surface', 
     const source = read(relativePath);
     assert.match(
       source,
-      /npm install -g aiuby-cli/i,
+      /npm install -g aiuby/i,
       `${relativePath} must state how to install the required CLI runtime`
     );
     assert.match(

@@ -7,7 +7,7 @@
 [![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
 [![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
 [![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
-[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
+[![npm aiuby](https://img.shields.io/npm/dw/aiuby?label=aiuby%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 
 > **140K+ sao** | **21K+ fork** | **170+ contributor** | **12+ hệ sinh thái ngôn ngữ** | **Anthropic Hackathon Winner**
@@ -58,9 +58,9 @@ ECC có ba định danh công khai khác nhau:
 
 - Repo GitHub: `WendeelMarinho/aiuby-cli`
 - Plugin Claude marketplace: `aiuby@aiuby`
-- Gói npm: `aiuby-cli`
+- Gói npm: `aiuby`
 
-Các tên này cố ý khác nhau. Plugin Claude Code dùng `aiuby@aiuby`; npm vẫn dùng `aiuby-cli`.
+Các tên này cố ý khác nhau. Plugin Claude Code dùng `aiuby@aiuby`; npm vẫn dùng `aiuby`.
 
 ### Copy rules nếu cần
 

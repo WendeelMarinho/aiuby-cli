@@ -7,7 +7,7 @@
 [![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
 [![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
 [![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
-[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
+[![npm aiuby](https://img.shields.io/npm/dw/aiuby?label=aiuby%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.aiuby.com%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
@@ -234,9 +234,9 @@ npx aiuby consult "security reviews" --target claude
 
 - исходный репозиторий GitHub: `WendeelMarinho/aiuby-cli`
 - идентификатор Claude marketplace/plugin: `aiuby@aiuby`
-- npm-пакет: `aiuby-cli`
+- npm-пакет: `aiuby`
 
-Это сделано намеренно. Установки Anthropic marketplace/plugin ключуются каноническим идентификатором плагина, поэтому ECC использует `aiuby@aiuby`, чтобы имена инструментов и пространства имен slash-команд оставались достаточно короткими для строгих валидаторов Desktop/API. Старые публикации могут всё ещё показывать прежний длинный marketplace-идентификатор; считайте его только устаревшим alias. Отдельно npm-пакет остался `aiuby-cli`, поэтому npm-установки и marketplace-установки намеренно используют разные имена.
+Это сделано намеренно. Установки Anthropic marketplace/plugin ключуются каноническим идентификатором плагина, поэтому ECC использует `aiuby@aiuby`, чтобы имена инструментов и пространства имен slash-команд оставались достаточно короткими для строгих валидаторов Desktop/API. Старые публикации могут всё ещё показывать прежний длинный marketplace-идентификатор; считайте его только устаревшим alias. Отдельно npm-пакет остался `aiuby`, поэтому npm-установки и marketplace-установки намеренно используют разные имена.
 
 ### Шаг 2: Установите правила (обязательно)
 
@@ -1410,13 +1410,13 @@ opencode
 
 **Вариант 2: установить как npm package**
 ```bash
-npm install aiuby-cli
+npm install aiuby
 ```
 
 Затем добавьте в `opencode.json`:
 ```json
 {
-  "plugin": ["aiuby-cli"]
+  "plugin": ["aiuby"]
 }
 ```
 

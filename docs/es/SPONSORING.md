@@ -20,7 +20,7 @@ See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current ti
 
 Las métricas compartidas mensualmente pueden incluir:
 
-- Descargas de npm (`aiuby-cli`, `ecc-agentshield`)
+- Descargas de npm (`aiuby`, `ecc-agentshield`)
 - Adopción del repositorio (estrellas, forks, contribuidores)
 - Tendencia de instalaciones de la GitHub App
 - Cadencia de lanzamientos e hitos de confiabilidad

@@ -47,7 +47,7 @@ a single normative reference.
 | Product | Aiuby AI Engineering | Full product name |
 | Category | Sistema Operacional de Engenharia | Positioning line |
 | Repository | `WendeelMarinho/aiuby-cli` | **Retained** — already referenced in `package.json` |
-| npm package | `aiuby-cli` | Verified available on npm 2026-08-06 |
+| npm package | `aiuby` | Verified available on npm 2026-08-06 |
 | CLI binary | `aiuby` | Primary entrypoint: `aiuby doctor`, `aiuby install`, … |
 | Auxiliary binaries | `aiuby-install`, `aiuby-control-pane`, `aiuby-memory-mcp`, `aiuby-plan-canvas` | Already published |
 | User directory | `~/.aiuby/` | |
@@ -64,15 +64,16 @@ a single normative reference.
 | Website | `https://aiuby.com` | Replaces `ecc.tools` |
 | GitHub | `https://github.com/WendeelMarinho/aiuby-cli` | |
 | Instagram | `https://instagram.com/aiuby.ai` | |
-| User-agent | `aiuby-cli/<version>` | |
+| User-agent | `aiuby/<version>` | |
 
-`@aiuby/cli` and `aiuby` are also available on npm and are **reserved for future
-use**; they are not the shipping name. `aiuby-cli` was chosen because it is
-already the published package identity and requires no npm organization.
+`aiuby-cli` and `@aiuby/cli` are also available on npm and are **reserved**;
+they are not the shipping name. The package ships as `aiuby`, matching the
+binary, so `npm install -g aiuby` and `aiuby <command>` use one word instead
+of two names the operator has to keep straight.
 
-The command surface the operator types is `aiuby <command>`. The npm package name
-(`aiuby-cli`) and the binary name (`aiuby`) are independent; the binary name is
-what matters to users.
+The repository stays `WendeelMarinho/aiuby-cli`. Repository name and package
+name are independent, and renaming the repository would invalidate every
+existing link for no gain.
 
 ### 2. Skill and script renames
 
@@ -208,7 +209,7 @@ in a single unreviewable commit.
 
 Rejected for this cycle. It requires creating and verifying an npm organization
 before anything can publish, adding an external blocker to the critical path.
-`aiuby-cli` is already the package identity, is verified available, and the
+`aiuby` is already the package identity, is verified available, and the
 scoped name stays reserved for a future move.
 
 ### Alternative 3: Date-based compatibility window

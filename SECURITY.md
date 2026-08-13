@@ -45,7 +45,7 @@ If a report is declined, we will explain whether it is not reproducible, out of 
 This policy covers:
 
 - the `WendeelMarinho/aiuby-cli` repository
-- the `aiuby-cli` npm package
+- the `aiuby` npm package
 - Aiuby plugin, install, repair, dashboard, hook, rule, skill, MCP, and command surfaces shipped from this repository
 - GitHub Actions workflows and release automation in this repository
 - the compatibility layer and state migrator (`aiuby migrate`), including backup and rollback behavior
@@ -55,13 +55,13 @@ This policy covers:
 Official Aiuby surfaces are:
 
 - GitHub repo: <https://github.com/WendeelMarinho/aiuby-cli>
-- npm package: `aiuby-cli`
+- npm package: `aiuby`
 - CLI binary: `aiuby`
 - marketplace/plugin slug: `aiuby@aiuby`
 - website: <https://aiuby.com>
 
 The deprecated `ecc`, `ecc-install`, `ecc-control-pane`, `ecc-memory-mcp`, and
-`ecc-plan-canvas` binaries ship from the same `aiuby-cli` package during `0.x`
+`ecc-plan-canvas` binaries ship from the same `aiuby` package during `0.x`
 and are removed at `1.0.0`. They are official; anything else bearing the ECC
 name is not ours.
 

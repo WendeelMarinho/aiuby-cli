@@ -33,7 +33,7 @@ Sponsorluğunuz şunlara yardımcı olur:
 
 Sponsor konuşmalarında bu kanıt noktalarını kullanın:
 
-- `aiuby-cli` ve `ecc-agentshield` için canlı npm kurulum/indirme metrikleri
+- `aiuby` ve `ecc-agentshield` için canlı npm kurulum/indirme metrikleri
 - Marketplace kurulumları aracılığıyla GitHub App dağıtımı
 - Genel benimseme sinyalleri: yıldızlar, fork'lar, katkıda bulunanlar, sürüm ritmi
 - Harness'lar arası destek: Claude Code, Cursor, OpenCode, Codex app/CLI

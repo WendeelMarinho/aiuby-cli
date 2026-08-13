@@ -202,7 +202,7 @@ if (
 
       assert.strictEqual(result.status, 1, `${result.stdout}\n${result.stderr}`);
       assert.match(result.stdout, /Cached plugin manifest missing/);
-      assert.match(result.stdout, /codex plugin marketplace add WendeelMarinho\/aiuby-cli/);
+      assert.match(result.stdout, /codex plugin marketplace add WendeelMarinho\/aiuby/);
     } finally {
       cleanup(homeDir);
     }

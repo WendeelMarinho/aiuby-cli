@@ -827,7 +827,7 @@ function buildRequirements(rootDir, platformReport) {
         && includesAll(releasePublicationChecklist, [
           'Ship `v2.0.0-rc.1` as **ECC**',
           'WendeelMarinho/aiuby-cli',
-          'aiuby-cli',
+          'aiuby',
           'claude plugin tag .claude-plugin --dry-run',
           'codex plugin marketplace add',
           'Do not rename the npm package until rc.1 is published'

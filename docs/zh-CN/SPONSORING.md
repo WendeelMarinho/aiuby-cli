@@ -20,7 +20,7 @@ See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current ti
 
 每月分享的指标可能包括：
 
-* npm 下载量（`aiuby-cli`、`ecc-agentshield`）
+* npm 下载量（`aiuby`、`ecc-agentshield`）
 * 仓库采用情况（星标、分叉、贡献者）
 * GitHub 应用安装趋势
 * 发布节奏和可靠性里程碑

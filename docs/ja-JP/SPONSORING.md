@@ -20,7 +20,7 @@ See [GitHub Sponsors](https://github.com/sponsors/WendeelMarinho) for current ti
 
 月次で共有されるメトリクスには以下が含まれます：
 
-- npmダウンロード数（`aiuby-cli`、`ecc-agentshield`）
+- npmダウンロード数（`aiuby`、`ecc-agentshield`）
 - リポジトリ採用状況（スター、フォーク、コントリビューター）
 - GitHub Appインストール推移
 - リリース頻度と信頼性マイルストーン

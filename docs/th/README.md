@@ -7,7 +7,7 @@
 [![Stars](https://img.shields.io/github/stars/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/stargazers)
 [![Forks](https://img.shields.io/github/forks/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/network/members)
 [![Contributors](https://img.shields.io/github/contributors/WendeelMarinho/aiuby-cli?style=flat)](https://github.com/WendeelMarinho/aiuby-cli/graphs/contributors)
-[![npm aiuby-cli](https://img.shields.io/npm/dw/aiuby-cli?label=aiuby-cli%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby-cli)
+[![npm aiuby](https://img.shields.io/npm/dw/aiuby?label=aiuby%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/aiuby)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 
 > **182K+ ดาว** | **28K+ fork** | **170+ คอนทริบิวเตอร์** | **12+ ระบบนิเวศภาษาโปรแกรม** | **ผู้ชนะ Anthropic Hackathon**
@@ -60,9 +60,9 @@ ECC มีชื่อเรียกในระบบสาธารณะ 3 �
 
 - GitHub repo: `WendeelMarinho/aiuby-cli`
 - Claude marketplace plugin: `aiuby@aiuby`
-- npm package: `aiuby-cli`
+- npm package: `aiuby`
 
-ชื่อเหล่านี้ตั้งใจให้ต่างกัน Plugin บน Claude Code ใช้ `aiuby@aiuby` ส่วน npm ยังคงใช้ `aiuby-cli`
+ชื่อเหล่านี้ตั้งใจให้ต่างกัน Plugin บน Claude Code ใช้ `aiuby@aiuby` ส่วน npm ยังคงใช้ `aiuby`
 
 ### คัดลอกไฟล์ rules เพิ่มเติม (ถ้าต้องการ)
 
